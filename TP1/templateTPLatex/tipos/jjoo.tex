@@ -1,0 +1,15 @@
+\begin{tipo}{JJOO}
+	\observador{a\~{n}o}{j: JJOO}{\ent}
+	\observador{atletas}{j: JJOO}{[Atleta]}
+	\observador{cantDias}{j: JJOO}{\ent}
+	\observador{cronograma}{j: JJOO, dia: \ent}{[Competencia]}
+		\requiere{1 \leq dia \leq cantDias(j)}
+	\observador{jornadaActual}{j: JJOO}{\ent}
+	
+	\medskip
+	\invariante[atletasUnicos]{sinRepetidos(ciaNumbers(atletas(j)))}
+	\invariante[unaDeCadaCategoria]{(\forall i, k \selec [0.. \longitud{competencias(j)}), i \neq k)\\ categoria(competencias(j)_i)\neq categoria(competencias(j)_k)}
+	\invariante[competidoresInscriptos]{(\forall c \selec competencias(j)) incluida(participantes(c), atletas(j)) }
+	\invariante[jornadaValida]{1 \leq jornadaActual(j) \leq cantDias(j)}
+	\invariante[finalizadasSiiYaPasoElDia]{lasPasadasFinalizaron(j) \land lasQueNoPasaronNoFinalizaron(j)}
+\end{tipo}

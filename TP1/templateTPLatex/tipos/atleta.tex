@@ -1,0 +1,14 @@
+\begin{tipo}{Atleta}
+	\observador{nombre}{a: Atleta}{String}
+	\observador{sexo}{a: Atleta}{Sexo}
+	\observador{a\~{n}oNacimiento}{a: Atleta}{\ent}
+	\observador{nacionalidad}{a: Atleta}{Pais}
+	\observador{ciaNumber}{a: Atleta}{\ent}
+	\observador{deportes}{a: Atleta}{[Deporte]}
+	\observador{capacidad}{a: Atleta, d: Deporte}{\ent}  
+		\requiere{d \in deportes(a)}
+	\medskip
+	\invariante{sinRepetidos(deportes(a))}
+	\invariante{ordenada(deportes(a))}
+	\invariante[capacidadEnRango]{(\forall d \selec deportes(a)) 0 \leq capacidad(a, d) \leq 100}
+\end{tipo}

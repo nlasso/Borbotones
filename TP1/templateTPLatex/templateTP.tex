@@ -1,0 +1,63 @@
+\documentclass[a4paper]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{bbm}
+\usepackage{framed}
+\input{macrosAlgo1}
+
+\newcommand{\comen}[2]{%
+\begin{framed}	
+\noindent \textsf{#1:} #2
+\end{framed}
+}
+
+
+
+\begin{document}
+
+\materia{Algoritmos y Estructura de Datos I}
+\cuatrimestre{1}
+\anio{2012}
+
+\fecha{30 de Marzo de 2012}
+
+\nombre{\LARGE TPE OJOTA (Organizaci\'on de Juegos Ol\'impicos Tp de Algoritmos 1) v1.0}
+
+\titulotp
+
+
+\section{Tipos}
+
+\input{tipos/tipos.tex}
+
+\section{Atleta}
+\input{tipos/atleta.tex}
+
+\begin{problema}{entrenarNuevoDeporte}{a: Atleta, d: Deporte, c: \ent}{}
+\end{problema}
+
+
+
+\section{Competencia}
+
+\input{tipos/competencia.tex}
+
+\begin{problema}{finalizarCompetencia}{c: Competencia, posiciones: [Atleta], control: [(Atleta, \bool)]}{}
+\end{problema}
+
+\begin{problema}{linfordChristie}{c: Competencia, a: Atleta}{}
+\end{problema}
+
+
+\section{JJOO}
+\input{tipos/jjoo.tex}
+
+\begin{problema}{dePaseo}{j: JJOO}{[Atleta]} 
+\end{problema}
+
+\section{Auxiliares}
+
+\input{auxiliaresTipos.tex}
+
+\end{document}

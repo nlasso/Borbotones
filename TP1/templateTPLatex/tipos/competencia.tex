@@ -1,0 +1,18 @@
+\begin{tipo}{Competencia}
+	\observador{categoria}{c: Competencia}{(Deporte, Sexo)}
+	\observador{participantes}{c: Competencia}{[Atleta]}
+	\observador{finalizada}{c: Competencia}{\bool}
+	\observador{ranking}{c: Competencia}{[Atleta]}
+		\requiere{finalizada(c)}
+	\observador{lesTocoControlAntiDoping}{c: Competencia}{[Atleta]}
+		\requiere{finalizada(c)}
+	\observador{leDioPositivo}{c: Competencia, a: Atleta}{\bool}
+		\requiere{finalizada(c) \land a \in lesTocoControlAntiDoping(c)}
+
+	\medskip
+
+	\invariante[participaUnaSolaVez]{sinRepetidos(ciaNumbers(participantes(c)))}
+	\invariante[participantesPertenecenACat]{\\(\forall p \selec participantes(c)) prm(categoria(c)) \in deportes(p) \land sgd(categoria(c))==sexo(p)}
+	\invariante[elRankingEsDeParticipantesYNoHayRepetidos]{\\finalizada(c) \Rightarrow incluida(ranking(c), participantes(c))}
+	\invariante[seControlanParticipantesYNoHayRepetidos]{\\finalizada(c) \Rightarrow incluida(lesTocoControlAntiDoping(c), participantes(c))}
+\end{tipo}
