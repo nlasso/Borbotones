@@ -50,10 +50,20 @@
 
 \item
 \begin{problema}{linfordChristie}{c: Competencia, a: Atleta}{}
+\requiere{finalizada(c)==\False}
+\requiere{en(a,participantes(c))}
+\modifica{c}
+\asegura{categoria(c) == categoria(pre(c))}
+\asegura{atletaNoPertenece(a,participantes(c))}
+\asegura{long(participantes(c))==long(participantes(pre(c))-1}
+\asegura{mismos(a:participantes(c),participantes(pre(c)))}
 \end{problema}
 
 \item
 \begin{problema}{gananLosMasCapaces}{c: Competencia}{\bool}
+\requiere{finalizada(c)==\True}
+\requiere{\mid ranking(c)\mid  > 1}
+\asegura{Result == masCapaces(c)}
 \end{problema}
 
 \item
@@ -61,7 +71,10 @@
 \end{problema}
 
 \item
-\begin{problema}{dePaseo}{j: JJOO}{[Atleta]} 
+\begin{problema}{dePaseo}{j: JJOO}{[Atleta]}
+\requiere{cantDias(j) \geq 1}
+\requiere{|atletas(j)| > 0}
+\asegura{result == [x |y \leftarrow cantDias(j), k \leftarrow cronograma(j,y), x \leftarrow atletas(j),x\notin participantes(k)]}
 \end{problema}
 
 \item
@@ -119,4 +132,9 @@
 
 \input{auxiliaresTipos.tex}
 
+\section{Aclaraciones}
+
+En el ejercicio 4 requerimos que el ranking sea mayor a uno ya que 
+sino no quedaria sin efecto la funcion auxiliar ya que de esta manera 
+no se podrian comparar los atletas porque habria uno solo.
 \end{document}
