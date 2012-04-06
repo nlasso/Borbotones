@@ -1,5 +1,10 @@
 
-
+\aux{algunaMedalla}{m: [\ent]}{\bool}{ 
+  (m_0 \not= 0 \vee m_1 \not= 0 \vee m_2 \not= 0)
+}
+\aux{atletaNoPertenece}{a: Atleta, l: [Atletas]}{\bool}{ 
+  (\forall x \selec l, a \not= x)
+}
 \aux{ciaNumbers}{as: [Atleta]}{[\ent]}{\comp{ciaNumber(a)}{a \selec as}}
 \aux{competencias}{j: JJOO}{[Competencia]}{\comp{c}{d \selec [1..cantDias(j)], c \selec cronograma(j, d)}}
 \aux{incluida}{$l_1$, $l_2$:[T]}{\bool}{(\forall x \selec l_1) cuenta(x, l_1) \leq cuenta(x, l_2)}
@@ -10,8 +15,8 @@
 \aux{masCapaces}{c:competencia}{\bool}{ 
   (\forall x \selec [0..|ranking(c)|-1), capacidad(ranking(c)_x) > capacidad(ranking(c)_x_+_1))
 }
-\aux{atletaNoPertenece}{a: Atleta, l: [Atletas]}{\bool}{ 
-  (\forall x \selec l, a \not= x)
+\aux{mejoresOIgualesMedallas}{m: [\ent], p: [\ent]}{\bool}{ 
+  (m_0 \geq p_0 \wedge m_1 \geq p_1 \wedge m_2 \geq p_2)
 }
 \aux{listaPositivos}{c:competencia}{[Atleta]}{[lesTocoControlAntiDoping(c),lesDioPositivo(c,x)==\True]}
 \aux{borrarPositivos}{c:competencia}{[Atleta]}{[x|x\leftarrow ranking(c),(\forall y\leftarrow listaPositivos(c)) y\not= x]}

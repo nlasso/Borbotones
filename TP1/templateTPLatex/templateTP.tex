@@ -103,7 +103,10 @@
 \end{problema}
 
 \item
-\begin{problema}{medallero}{j: JJOO}{[(Pa\'{i}s, \ent)]}
+\begin{problema}{medallero}{j: JJOO}{[(Pa\'{i}s, [\ent])]}
+\asegura{(\forall p \selec result, algunaMedalla(sgd(p)))}
+\asegura{(\forall p \selec result, |sgd(p)| == 3 )}
+\asegura{(\forall x \selec [0..|result|-1), mejoresOIgualesMedallas(sgd(result_x),sgd(result_x_+_1)) )}
 \end{problema}
 
 \item
