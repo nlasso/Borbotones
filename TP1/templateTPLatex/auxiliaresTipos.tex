@@ -13,6 +13,8 @@
 \aux{atletaNoPertenece}{a: Atleta, l: [Atletas]}{\bool}{ 
   (\forall x \selec l, a \not= x)
 }
+\aux{listaPositivos}{c:competencia}{[Atleta]}{[lesTocoControlAntiDoping(c),lesDioPositivo(c,x)==\True]}
+\aux{borrarPositivos}{c:competencia}{[Atleta]}{[x|x\leftarrow ranking(c),(\forall y\leftarrow listaPositivos(c)) y\not= x]}
 
 
 

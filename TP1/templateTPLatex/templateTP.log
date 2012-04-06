@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.2)  5 APR 2012 20:00
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.2)  6 APR 2012 18:50
 entering extended mode
  %&-line parsing enabled.
 **templateTP.tex
@@ -570,20 +570,87 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 44.
 
 
+LaTeX Warning: Command \~ invalid in math mode on input line 50.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.50 ...±oNacimiento(a) == a√±oNacimiento(pre(a))}
+                                                  
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.50 ...±oNacimiento(a) == a√±oNacimiento(pre(a))}
+                                                  
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `\spacefactor' in math mode.
+<argument> ...cefactor \spacefactor }\spacefactor 
+                                                  \accent@spacefactor 
+l.50 ...±oNacimiento(a) == a√±oNacimiento(pre(a))}
+                                                  
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 50.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.50 ...±oNacimiento(a) == a√±oNacimiento(pre(a))}
+                                                  
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.50 ...±oNacimiento(a) == a√±oNacimiento(pre(a))}
+                                                  
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `\spacefactor' in math mode.
+<argument> ...cefactor \spacefactor }\spacefactor 
+                                                  \accent@spacefactor 
+l.50 ...±oNacimiento(a) == a√±oNacimiento(pre(a))}
+                                                  
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+Missing character: There is no Ë in font cmex10!
+Missing character: There is no Ë in font cmex10!
+Missing character: There is no Ë in font cmex10!
+Missing character: There is no Ë in font cmex10!
+[2]
+
 ! LaTeX Error: \begin{enumerate} on input line 41 ended by \end{itemize}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.112 \end{itemize}
+l.137 \end{itemize}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[2] (./tipos/tipos.tex) (./tipos/atleta.tex) (./tipos/competencia.tex)
-(./tipos/jjoo.tex) [3] (./auxiliaresTipos.tex
+[3] (./tipos/tipos.tex) (./tipos/atleta.tex) (./tipos/competencia.tex)
+(./tipos/jjoo.tex) [4] (./auxiliaresTipos.tex
 ! Double subscript.
 <argument> ...king(c)_x) > capacidad(ranking(c)_x_
                                                   +_1)) 
@@ -610,7 +677,7 @@ L/cmm/m/it/10 c\OT1/cmr/m/n/10 )[]) \OML/cmm/m/it/10 > capacidad\OT1/cmr/m/n/10
 ][][]))$\OT1/cmr/bx/n/10 ; 
  []
 
-) [4] (./templateTP.aux) ) 
+) [5] (./templateTP.aux) ) 
 Here is how much of TeX's memory you used:
  3296 strings out of 495061
  39812 string characters out of 1182622
@@ -618,7 +685,7 @@ Here is how much of TeX's memory you used:
  6417 multiletter control sequences out of 15000+50000
  8229 words of font info for 32 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 27i,8n,27p,227b,197s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,8n,27p,227b,268s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texmf-texlive/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.
 pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/s
@@ -629,9 +696,9 @@ c/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
 /cmss10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 ></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/shar
 e/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on templateTP.pdf (4 pages, 137853 bytes).
+Output written on templateTP.pdf (5 pages, 139973 bytes).
 PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
+ 62 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
