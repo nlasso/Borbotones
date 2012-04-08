@@ -123,6 +123,9 @@
 
 \item
 \begin{problema}{stevenBradbury}{j: JJOO}{Atleta}
+\requiere{ (\exists dia \in [1...cantDias(j)], cron \in cronograma(j,dia), comp \in cron) finalizada(comp)} % Requiero que haya alguna competencia del cronograma de algun dia finalizada
+\asegura{ (\exists dia \in [1...cantDias(j)], cron \in cronograma(j,dia), comp \in cron) result == ranking(comp)_0 } % Aseguro que ese atleta gano un ORO
+\asegura{ (\forall a \in atletas(j), a \neq result) capacidad(result) \leq capacidad(a) } % Aseguro que es el menos capaz
 \end{problema}
 
 \item
@@ -162,7 +165,16 @@
 
 \section{Aclaraciones}
 
+\begin{enumerate}
+\item
 En el ejercicio 4 requerimos que el ranking sea mayor a uno ya que 
 sino no quedaria sin efecto la funcion auxiliar ya que de esta manera 
 no se podrian comparar los atletas porque habria uno solo.
+
+\item
+En el ejercicio 7, en caso de empate en medallas de oro, se compara las medallas de plata, si siguen siendo las mismas, se compara las medallas de bronce. En caso de tener las 3 medallas iguales se considera mejor al primero que se comparo.
+\end{enumerate}
+
+
+
 \end{document}

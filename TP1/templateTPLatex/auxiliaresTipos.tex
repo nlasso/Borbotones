@@ -15,9 +15,10 @@
 \aux{masCapaces}{c:competencia}{\bool}{ 
   (\forall x \selec [0..|ranking(c)|-1), capacidad(ranking(c)_x) > capacidad(ranking(c)_x_+_1))
 }
-\aux{mejoresOIgualesMedallas}{m: [\ent], p: [\ent]}{\bool}{ 
-  (m_0 \geq p_0 \wedge m_1 \geq p_1 \wedge m_2 \geq p_2)
-}
+\aux{mejoresOIgualesMedallas}{m: [\ent], p: [\ent]}{\bool}{ superaPorOro(m,p) }
+\aux{superaPorOro}{m: [\ent], p: [\ent]}{\bool}{ifThenElse(m_0 > p_0,\True,ifThenElse(m_0 == p_0,superaPorPlata(m,p),\False))}
+\aux{superaPorPlata}{m: [\ent], p: [\ent]}{\bool}{ifThenElse(m_1 > p_1,\True,ifThenElse(m_1 == p_1,superaPorBronce(m,p),\False))}
+\aux{superaPorBronce}{m: [\ent], p: [\ent]}{\bool}{ifThenElse(m_0 > p_0,\True,ifThenElse(m_0 == p_0,\True,\False))}
 \aux{listaPositivos}{c:competencia}{[Atleta]}{[lesTocoControlAntiDoping(c),lesDioPositivo(c,x)==\True]}
 \aux{borrarPositivos}{c:competencia}{[Atleta]}{[x|x\leftarrow ranking(c),(\forall y\leftarrow listaPositivos(c)) y\not= x]}
 
