@@ -21,8 +21,9 @@
 \aux{superaPorBronce}{m: [\ent], p: [\ent]}{\bool}{ifThenElse(m_0 > p_0,\True,ifThenElse(m_0 == p_0,\True,\False))}
 \aux{listaPositivos}{c:competencia}{[Atleta]}{[lesTocoControlAntiDoping(c),lesDioPositivo(c,x)==\True]}
 \aux{borrarPositivos}{c:competencia}{[Atleta]}{[x|x\leftarrow ranking(c),(\forall y\leftarrow listaPositivos(c)) y\not= x]}
-
-
+\aux{atletasdelpaisout}{cat: (Deporte,Sexo), p: Pais, j: JJOO}{\bool}{ 
+  (x \selec [0..|atletas(j)| -1], p(cat(atletas(j)_x)) \not= atletas(j)_x)
+}
 
 
 

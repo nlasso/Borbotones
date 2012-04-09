@@ -111,6 +111,14 @@
 
 \item
 \begin{problema}{boicotPorDisciplina}{j: JJOO, cat: (Deporte, Sexo), p: Pa\'{i}s }{\ent}
+\requiere{long(atletas(j)>0}
+\modifica{j}
+\asegura{año(j)== año(pre(j))}
+\asegura{cantDias(j)== cantDias(pre(j))}
+\asegura{cronograma(j)== cronograma(pre(j))}
+\asegura{jornadaactual(j)== jornadaactual(pre(j))}
+\asegura{atletasdelpaisout((p(cat(atletas(j))))),atletas(j))} *esta bien llamada el aux?
+\asegura{ result: long(atletas(j))==long(atletas(pre(j))-(p(cat(atletas(j)))))}
 \end{problema}
 
 \item
