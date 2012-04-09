@@ -111,18 +111,6 @@
 
 \item
 \begin{problema}{boicotPorDisciplina}{j: JJOO, cat: (Deporte, Sexo), p: Pa\'{i}s }{\ent}
-\requiere{long(atletas(j)>0}
-\modifica{j}
-\asegura{año(j)== año(pre(j))}
-\asegura{cantDias(j)== cantDias(pre(j))}
-\asegura{cronograma(j)== cronograma(pre(j))}
-\asegura{jornadaactual(j)== jornadaactual(pre(j))}
-\asegura{atletasdelpaisout((p(cat(atletas(j))))),atletas(j))} *esta bien llamada el aux?
-\asegura{ result: long(atletas(j))==long(atletas(pre(j))-(p(cat(atletas(j)))))}
-\end{problema}
-
-\item
-\begin{problema}{boicotPorDisciplina}{j: JJOO, cat: (Deporte, Sexo), p: Pa\'{i}s }{\ent}
 \requiere{long(atletas(j))>0}
 % \requiere{(\exists a \in atletasEnCategoria(j,cat,p)) nacionalidad(a) == p}
 % \requiere{(\exists c \in competencias(j)) categoria(c) == cat} % Requiere que exista la categoria (Deporte,Sexo) en todas las competencias
@@ -133,7 +121,6 @@
 \asegura{jornadaactual(j)== jornadaactual(pre(j))}
 \asegura{(\forall a \in atletasEnCategoria(j,cat,p)) a \notin atletas(j)}
 \asegura{ result == |atletasEnCategoria(j,cat,p)|}
-\aux{atletasEnCategoria}{j:JJOO, cat: Categoria, p: Pa\'{i}s }{[Atleta]}{ [ a | a \in atletas(j), nacionalidad(a)==p \wedge sexo(a)==sgd(cat) \wedge prm(cat) \in deportes(a))] }
 \end{problema}
 
 \item
@@ -179,6 +166,9 @@ y == sgd(atletasYCompetencias(j,p)_|_a_t_l_e_t_a_s_Y_C_o_m_p_e_t_e_n_c_i_a_s_(_j
 
 \item
 \begin{problema}{uyOrdenadoAs\'{i}HayUnPatr\'{o}n}{j: JJOO}{\bool}
+\aux{mejoresAtletas}{j:JJOO}{[Atleta]}{ [ ranking(c)_0 | c \in competenciasFinalizadas(j) ] }
+\aux{paisesConRepetidos}{j: JJOO}{[Pais]}{ [ nacionalidad(a) | a \in atletas(j) ] }
+\aux{orosPorPais}{l:[Atleta]}{\ent}{ [ l |  ] }
 \end{problema}
 
 \item

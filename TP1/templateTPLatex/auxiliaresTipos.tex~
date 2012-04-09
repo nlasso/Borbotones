@@ -7,6 +7,7 @@
 }
 \aux{ciaNumbers}{as: [Atleta]}{[\ent]}{\comp{ciaNumber(a)}{a \selec as}}
 \aux{competencias}{j: JJOO}{[Competencia]}{\comp{c}{d \selec [1..cantDias(j)], c \selec cronograma(j, d)}}
+\aux{competenciasFinalizadas}{j: JJOO}{[Competencia]}{\comp{c}{C \selec [1..cantDias(j)], c \selec cronograma(j, d), finalizada(c)}}
 \aux{incluida}{$l_1$, $l_2$:[T]}{\bool}{(\forall x \selec l_1) cuenta(x, l_1) \leq cuenta(x, l_2)}
 \aux{lasPasadasFinalizaron}{j: JJOO}{\bool}{(\forall d \selec [1..jornadaActual(j)))(\forall c \selec cronograma(j, d))finalizada(c)}
 \aux{lasQueNoPasaronNoFinalizaron}{j: JJOO}{\bool}{\\(\forall d \selec (jornadaActual(j)..cantDias(j)]) (\forall c \selec cronograma(j, d))\neg finalizada(c)}
@@ -24,6 +25,7 @@
 \aux{atletasdelpaisout}{cat: (Deporte,Sexo), p: Pais, j: JJOO}{\bool}{ 
   (x \selec [0..|atletas(j)| -1], p(cat(atletas(j)_x)) \not= atletas(j)_x)
 }
+\aux{atletasEnCategoria}{j:JJOO, cat: Categoria, p: Pa\'{i}s }{[Atleta]}{ [ a | a \in atletas(j), nacionalidad(a)==p \wedge sexo(a)==sgd(cat) \wedge prm(cat) \in deportes(a))] }
 
 
 
