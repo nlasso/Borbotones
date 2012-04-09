@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.2)  8 APR 2012 22:08
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.2)  9 APR 2012 18:22
 entering extended mode
  %&-line parsing enabled.
 **templateTP.tex
@@ -653,199 +653,332 @@ I treat `x_1_2' essentially like `x_1{}_2'.
 ! Double subscript.
 <argument> ... == sgd(atletasYCompetencias(j,p)_|_
                                                   a_t_l_e_t_a_s_Y_C_o_m_p_e_...
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...= sgd(atletasYCompetencias(j,p)_|_a_
                                                   t_l_e_t_a_s_Y_C_o_m_p_e_t_...
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...sgd(atletasYCompetencias(j,p)_|_a_t_
                                                   l_e_t_a_s_Y_C_o_m_p_e_t_e_...
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...d(atletasYCompetencias(j,p)_|_a_t_l_
                                                   e_t_a_s_Y_C_o_m_p_e_t_e_n_...
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...atletasYCompetencias(j,p)_|_a_t_l_e_
                                                   t_a_s_Y_C_o_m_p_e_t_e_n_c_...
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...letasYCompetencias(j,p)_|_a_t_l_e_t_
                                                   a_s_Y_C_o_m_p_e_t_e_n_c_i_...
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...tasYCompetencias(j,p)_|_a_t_l_e_t_a_
                                                   s_Y_C_o_m_p_e_t_e_n_c_i_a_...
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...sYCompetencias(j,p)_|_a_t_l_e_t_a_s_
                                                   Y_C_o_m_p_e_t_e_n_c_i_a_s_...
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...Competencias(j,p)_|_a_t_l_e_t_a_s_Y_
                                                   C_o_m_p_e_t_e_n_c_i_a_s_(_...
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...mpetencias(j,p)_|_a_t_l_e_t_a_s_Y_C_
                                                   o_m_p_e_t_e_n_c_i_a_s_(_j_...
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...etencias(j,p)_|_a_t_l_e_t_a_s_Y_C_o_
                                                   m_p_e_t_e_n_c_i_a_s_(_j_,_...
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...encias(j,p)_|_a_t_l_e_t_a_s_Y_C_o_m_
                                                   p_e_t_e_n_c_i_a_s_(_j_,_p_...
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...cias(j,p)_|_a_t_l_e_t_a_s_Y_C_o_m_p_
                                                   e_t_e_n_c_i_a_s_(_j_,_p_)_...
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...as(j,p)_|_a_t_l_e_t_a_s_Y_C_o_m_p_e_
                                                   t_e_n_c_i_a_s_(_j_,_p_)_|_...
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...(j,p)_|_a_t_l_e_t_a_s_Y_C_o_m_p_e_t_
                                                   e_n_c_i_a_s_(_j_,_p_)_|_-_...
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...,p)_|_a_t_l_e_t_a_s_Y_C_o_m_p_e_t_e_
                                                   n_c_i_a_s_(_j_,_p_)_|_-_1 )]
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...)_|_a_t_l_e_t_a_s_Y_C_o_m_p_e_t_e_n_
                                                   c_i_a_s_(_j_,_p_)_|_-_1 )]
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...|_a_t_l_e_t_a_s_Y_C_o_m_p_e_t_e_n_c_
                                                   i_a_s_(_j_,_p_)_|_-_1 )]
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...a_t_l_e_t_a_s_Y_C_o_m_p_e_t_e_n_c_i_
                                                   a_s_(_j_,_p_)_|_-_1 )]
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...t_l_e_t_a_s_Y_C_o_m_p_e_t_e_n_c_i_a_
                                                   s_(_j_,_p_)_|_-_1 )]
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...l_e_t_a_s_Y_C_o_m_p_e_t_e_n_c_i_a_s_
                                                   (_j_,_p_)_|_-_1 )]
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...e_t_a_s_Y_C_o_m_p_e_t_e_n_c_i_a_s_(_
                                                   j_,_p_)_|_-_1 )]
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...t_a_s_Y_C_o_m_p_e_t_e_n_c_i_a_s_(_j_
                                                   ,_p_)_|_-_1 )]
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...a_s_Y_C_o_m_p_e_t_e_n_c_i_a_s_(_j_,_
                                                   p_)_|_-_1 )]
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...s_Y_C_o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_
                                                   )_|_-_1 )]
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...Y_C_o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_
                                                   |_-_1 )]
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...C_o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_
                                                   -_1 )]
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_
                                                   1 )]
-l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+l.127 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
                                                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
+
+LaTeX Warning: Command \~ invalid in math mode on input line 137.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.137 ...ñoNacimiento(a)==añoNacimiento(pre(a))}
+                                                  
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.137 ...ñoNacimiento(a)==añoNacimiento(pre(a))}
+                                                  
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `\spacefactor' in math mode.
+<argument> ...cefactor \spacefactor }\spacefactor 
+                                                  \accent@spacefactor 
+l.137 ...ñoNacimiento(a)==añoNacimiento(pre(a))}
+                                                  
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 137.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.137 ...ñoNacimiento(a)==añoNacimiento(pre(a))}
+                                                  
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.137 ...ñoNacimiento(a)==añoNacimiento(pre(a))}
+                                                  
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `\spacefactor' in math mode.
+<argument> ...cefactor \spacefactor }\spacefactor 
+                                                  \accent@spacefactor 
+l.137 ...ñoNacimiento(a)==añoNacimiento(pre(a))}
+                                                  
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+Missing character: There is no � in font cmex10!
+Missing character: There is no � in font cmex10!
+Missing character: There is no � in font cmex10!
+Missing character: There is no � in font cmex10!
+
+LaTeX Warning: Command \~ invalid in math mode on input line 141.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.141 \asegura{año(j)==año(pre(j))}
+                                     
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.141 \asegura{año(j)==año(pre(j))}
+                                     
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `\spacefactor' in math mode.
+<argument> ...cefactor \spacefactor }\spacefactor 
+                                                  \accent@spacefactor 
+l.141 \asegura{año(j)==año(pre(j))}
+                                     
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 141.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.141 \asegura{año(j)==año(pre(j))}
+                                     
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.141 \asegura{año(j)==año(pre(j))}
+                                     
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `\spacefactor' in math mode.
+<argument> ...cefactor \spacefactor }\spacefactor 
+                                                  \accent@spacefactor 
+l.141 \asegura{año(j)==año(pre(j))}
+                                     
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+Missing character: There is no � in font cmex10!
+Missing character: There is no � in font cmex10!
+Missing character: There is no � in font cmex10!
+Missing character: There is no � in font cmex10!
+[3]
 
 ! LaTeX Error: \begin{enumerate} on input line 41 ended by \end{itemize}.
 
@@ -853,14 +986,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.150 \end{itemize}
+l.172 \end{itemize}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[3] (./tipos/tipos.tex) (./tipos/atleta.tex) (./tipos/competencia.tex)
-(./tipos/jjoo.tex) [4] (./auxiliaresTipos.tex
+[4] (./tipos/tipos.tex) (./tipos/atleta.tex) (./tipos/competencia.tex)
+(./tipos/jjoo.tex) [5] (./auxiliaresTipos.tex
 ! Double subscript.
 <argument> ...king(c)_x) > capacidad(ranking(c)_x_
                                                   +_1)) 
@@ -907,15 +1040,15 @@ aPorBronce\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m; p\OT1/cmr/m/n/10 )\OML/cmm/m/it/
 10 ; []\OT1/cmr/m/n/10 ))$\OT1/cmr/bx/n/10 ; 
  []
 
-) [5] (./templateTP.aux) ) 
+) [6] (./templateTP.aux) ) 
 Here is how much of TeX's memory you used:
  3296 strings out of 495061
  39812 string characters out of 1182622
- 108254 words of memory out of 3000000
+ 110254 words of memory out of 3000000
  6417 multiletter control sequences out of 15000+50000
  8229 words of font info for 32 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 27i,8n,27p,339b,268s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,8n,27p,348b,268s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texmf-texlive/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.
 pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/s
@@ -927,9 +1060,9 @@ c/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
 ></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share
 /texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-texl
 ive/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on templateTP.pdf (5 pages, 155785 bytes).
+Output written on templateTP.pdf (6 pages, 157650 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
+ 69 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
