@@ -103,7 +103,10 @@
 \end{problema}
 
 \item
-\begin{problema}{medallero}{j: JJOO}{[(Pa\'{i}s, \ent)]}
+\begin{problema}{medallero}{j: JJOO}{[(Pa\'{i}s, [\ent])]}
+\asegura{(\forall p \selec result, algunaMedalla(sgd(p)))}
+\asegura{(\forall p \selec result, |sgd(p)| == 3 )}
+\asegura{(\forall x \selec [0..|result|-1), mejoresOIgualesMedallas(sgd(result_x),sgd(result_x_+_1)) )}
 \end{problema}
 
 \item
@@ -112,6 +115,13 @@
 
 \item
 \begin{problema}{losMasFracasados}{j: JJOO, p: Pa\'{i}s }{[Atleta]}
+\asegura{ordenada(sgd(atletasYCompetencias(j,p)))}
+\asegura{atletasFracasados(j,p)}
+\aux{atletasDelPais}{j:JJOO, p: Pa\'{i}s }{[Atleta]}{ [x | x \leftarrow atletas(j), nacionalidad(x)==p] }
+\aux{atletasYCompetencias}{j:JJOO, p: Pa\'{i}s}{[(Atleta,\ent)]}{[(x, y)|x \leftarrow atletasDelPais(j,p),y = long([z_i | h \leftarrow [1..cantDias(j)], z \leftarrow cronograma(j,h), i\leftarrow [0..|z|-1],j \leftarrow [4..|z|-1], alguno(x == participantes(z_i)) \wedge alguno(ranking(z_i)_j == x)])]}
+\aux{atletasFracasados}{j:JJOO, p: Pa\'{i}s}{[Atleta]}{[x | (x,y) \leftarrow atletasYCompetencias(j,p),\\ 
+y == sgd(atletasYCompetencias(j,p)_|_a_t_l_e_t_a_s_Y_C_o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+
 \end{problema}
 
 \item
@@ -120,6 +130,9 @@
 
 \item
 \begin{problema}{stevenBradbury}{j: JJOO}{Atleta}
+\requiere{ (\exists dia \in [1...cantDias(j)], cron \in cronograma(j,dia), comp \in cron) finalizada(comp)} % Requiero que haya alguna competencia del cronograma de algun dia finalizada
+\asegura{ (\exists dia \in [1...cantDias(j)], cron \in cronograma(j,dia), comp \in cron) result == ranking(comp)_0 } % Aseguro que ese atleta gano un ORO
+\asegura{ (\forall a \in atletas(j), a \neq result) capacidad(result) \leq capacidad(a) } % Aseguro que es el menos capaz
 \end{problema}
 
 \item
@@ -159,7 +172,16 @@
 
 \section{Aclaraciones}
 
+\begin{enumerate}
+\item
 En el ejercicio 4 requerimos que el ranking sea mayor a uno ya que 
 sino no quedaria sin efecto la funcion auxiliar ya que de esta manera 
 no se podrian comparar los atletas porque habria uno solo.
+
+\item
+En el ejercicio 7, en caso de empate en medallas de oro, se compara las medallas de plata, si siguen siendo las mismas, se compara las medallas de bronce. En caso de tener las 3 medallas iguales se considera mejor al primero que se comparo.
+\end{enumerate}
+
+
+
 \end{document}

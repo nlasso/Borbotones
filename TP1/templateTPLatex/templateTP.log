@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.2)  8 APR 2012 16:12
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.2)  8 APR 2012 22:08
 entering extended mode
  %&-line parsing enabled.
 **templateTP.tex
@@ -636,6 +636,216 @@ Missing character: There is no è in font cmex10!
 Missing character: There is no è in font cmex10!
 Missing character: There is no è in font cmex10!
 [2]
+! Double subscript.
+<argument> ...Medallas(sgd(result_x),sgd(result_x_
+                                                  +_1)) )
+l.109 ...allas(sgd(result_x),sgd(result_x_+_1)) )}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...dallas(sgd(result_x),sgd(result_x_+_
+                                                  1)) )
+l.109 ...allas(sgd(result_x),sgd(result_x_+_1)) )}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ... == sgd(atletasYCompetencias(j,p)_|_
+                                                  a_t_l_e_t_a_s_Y_C_o_m_p_e_...
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...= sgd(atletasYCompetencias(j,p)_|_a_
+                                                  t_l_e_t_a_s_Y_C_o_m_p_e_t_...
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...sgd(atletasYCompetencias(j,p)_|_a_t_
+                                                  l_e_t_a_s_Y_C_o_m_p_e_t_e_...
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...d(atletasYCompetencias(j,p)_|_a_t_l_
+                                                  e_t_a_s_Y_C_o_m_p_e_t_e_n_...
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...atletasYCompetencias(j,p)_|_a_t_l_e_
+                                                  t_a_s_Y_C_o_m_p_e_t_e_n_c_...
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...letasYCompetencias(j,p)_|_a_t_l_e_t_
+                                                  a_s_Y_C_o_m_p_e_t_e_n_c_i_...
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...tasYCompetencias(j,p)_|_a_t_l_e_t_a_
+                                                  s_Y_C_o_m_p_e_t_e_n_c_i_a_...
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...sYCompetencias(j,p)_|_a_t_l_e_t_a_s_
+                                                  Y_C_o_m_p_e_t_e_n_c_i_a_s_...
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...Competencias(j,p)_|_a_t_l_e_t_a_s_Y_
+                                                  C_o_m_p_e_t_e_n_c_i_a_s_(_...
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...mpetencias(j,p)_|_a_t_l_e_t_a_s_Y_C_
+                                                  o_m_p_e_t_e_n_c_i_a_s_(_j_...
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...etencias(j,p)_|_a_t_l_e_t_a_s_Y_C_o_
+                                                  m_p_e_t_e_n_c_i_a_s_(_j_,_...
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...encias(j,p)_|_a_t_l_e_t_a_s_Y_C_o_m_
+                                                  p_e_t_e_n_c_i_a_s_(_j_,_p_...
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...cias(j,p)_|_a_t_l_e_t_a_s_Y_C_o_m_p_
+                                                  e_t_e_n_c_i_a_s_(_j_,_p_)_...
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...as(j,p)_|_a_t_l_e_t_a_s_Y_C_o_m_p_e_
+                                                  t_e_n_c_i_a_s_(_j_,_p_)_|_...
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...(j,p)_|_a_t_l_e_t_a_s_Y_C_o_m_p_e_t_
+                                                  e_n_c_i_a_s_(_j_,_p_)_|_-_...
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...,p)_|_a_t_l_e_t_a_s_Y_C_o_m_p_e_t_e_
+                                                  n_c_i_a_s_(_j_,_p_)_|_-_1 )]
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...)_|_a_t_l_e_t_a_s_Y_C_o_m_p_e_t_e_n_
+                                                  c_i_a_s_(_j_,_p_)_|_-_1 )]
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...|_a_t_l_e_t_a_s_Y_C_o_m_p_e_t_e_n_c_
+                                                  i_a_s_(_j_,_p_)_|_-_1 )]
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...a_t_l_e_t_a_s_Y_C_o_m_p_e_t_e_n_c_i_
+                                                  a_s_(_j_,_p_)_|_-_1 )]
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...t_l_e_t_a_s_Y_C_o_m_p_e_t_e_n_c_i_a_
+                                                  s_(_j_,_p_)_|_-_1 )]
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...l_e_t_a_s_Y_C_o_m_p_e_t_e_n_c_i_a_s_
+                                                  (_j_,_p_)_|_-_1 )]
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...e_t_a_s_Y_C_o_m_p_e_t_e_n_c_i_a_s_(_
+                                                  j_,_p_)_|_-_1 )]
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...t_a_s_Y_C_o_m_p_e_t_e_n_c_i_a_s_(_j_
+                                                  ,_p_)_|_-_1 )]
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...a_s_Y_C_o_m_p_e_t_e_n_c_i_a_s_(_j_,_
+                                                  p_)_|_-_1 )]
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...s_Y_C_o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_
+                                                  )_|_-_1 )]
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...Y_C_o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_
+                                                  |_-_1 )]
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...C_o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_
+                                                  -_1 )]
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_
+                                                  1 )]
+l.123 ...o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
+                                                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
 
 ! LaTeX Error: \begin{enumerate} on input line 41 ended by \end{itemize}.
 
@@ -643,7 +853,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.137 \end{itemize}
+l.150 \end{itemize}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -654,19 +864,19 @@ or  <return>  to continue without it.
 ! Double subscript.
 <argument> ...king(c)_x) > capacidad(ranking(c)_x_
                                                   +_1)) 
-l.12 }
+l.17 }
       
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
 <argument> ...ng(c)_x) > capacidad(ranking(c)_x_+_
                                                   1)) 
-l.12 }
+l.17 }
       
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 
-Overfull \hbox (6.17018pt too wide) in paragraph at lines 12--12
+Overfull \hbox (6.17018pt too wide) in paragraph at lines 17--17
  []\OT1/cmtt/m/n/10 aux masCapaces \OT1/cmr/m/n/10 (c:competencia) : $[]$ = $(\
 OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10   \OT1/cmr/m/n/10 [0\OML/c
 mm/m/it/10 ::\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ranking\OT1/cmr/m/n/10 (\OML/cm
@@ -677,6 +887,26 @@ L/cmm/m/it/10 c\OT1/cmr/m/n/10 )[]) \OML/cmm/m/it/10 > capacidad\OT1/cmr/m/n/10
 ][][]))$\OT1/cmr/bx/n/10 ; 
  []
 
+
+Overfull \hbox (13.74162pt too wide) in paragraph at lines 19--19
+ []\OT1/cmtt/m/n/10 aux superaPorOro \OT1/cmr/m/n/10 (m: [$\U/msb/m/n/10 Z$\OT1
+/cmr/m/n/10 ], p: [$\U/msb/m/n/10 Z$\OT1/cmr/m/n/10 ]) : $[]$ = $\OML/cmm/m/it/
+10 ifThenElse\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m[] > p[]; []; ifThenElse\OT1/cm
+r/m/n/10 (\OML/cmm/m/it/10 m[] \OT1/cmr/m/n/10 == \OML/cmm/m/it/10 p[]; superaP
+orPlata\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m; p\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 
+; []\OT1/cmr/m/n/10 ))$\OT1/cmr/bx/n/10 ; 
+ []
+
+
+Overfull \hbox (31.77861pt too wide) in paragraph at lines 20--20
+ []\OT1/cmtt/m/n/10 aux superaPorPlata \OT1/cmr/m/n/10 (m: [$\U/msb/m/n/10 Z$\O
+T1/cmr/m/n/10 ], p: [$\U/msb/m/n/10 Z$\OT1/cmr/m/n/10 ]) : $[]$ = $\OML/cmm/m/i
+t/10 ifThenElse\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m[] > p[]; []; ifThenElse\OT1/
+cmr/m/n/10 (\OML/cmm/m/it/10 m[] \OT1/cmr/m/n/10 == \OML/cmm/m/it/10 p[]; super
+aPorBronce\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m; p\OT1/cmr/m/n/10 )\OML/cmm/m/it/
+10 ; []\OT1/cmr/m/n/10 ))$\OT1/cmr/bx/n/10 ; 
+ []
+
 ) [5] (./templateTP.aux) ) 
 Here is how much of TeX's memory you used:
  3296 strings out of 495061
@@ -685,7 +915,7 @@ Here is how much of TeX's memory you used:
  6417 multiletter control sequences out of 15000+50000
  8229 words of font info for 32 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 27i,8n,27p,227b,268s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,8n,27p,339b,268s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texmf-texlive/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.
 pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/s
@@ -694,11 +924,12 @@ exlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts
 /type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/publi
 c/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
 /cmss10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/shar
-e/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on templateTP.pdf (5 pages, 139973 bytes).
+></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on templateTP.pdf (5 pages, 155785 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
+ 66 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
