@@ -133,6 +133,7 @@
 \asegura{jornadaactual(j)== jornadaactual(pre(j))}
 \asegura{(\forall a \in atletasEnCategoria(j,cat,p)) a \notin atletas(j)}
 \asegura{ result == |atletasEnCategoria(j,cat,p)|}
+\aux{atletasEnCategoria}{j:JJOO, cat: Categoria, p: Pa\'{i}s }{[Atleta]}{ [ a | a \in atletas(j), nacionalidad(a)==p \wedge sexo(a)==sgd(cat) \wedge prm(cat) \in deportes(a))] }
 \end{problema}
 
 \item

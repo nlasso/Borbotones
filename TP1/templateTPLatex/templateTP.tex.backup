@@ -124,15 +124,14 @@
 \item
 \begin{problema}{boicotPorDisciplina}{j: JJOO, cat: (Deporte, Sexo), p: Pa\'{i}s }{\ent}
 \requiere{long(atletas(j))>0}
-% \requiere{(\exists a \in atletasEnCategoria(j,cat,p)) nacionalidad(a) == p}
-% \requiere{(\exists c \in competencias(j)) categoria(c) == cat} % Requiere que exista la categoria (Deporte,Sexo) en todas las competencias
+\requiere{(\exists c \in competencias(j)) categoria(c) == cat} % Requiere que exista la categoria (Deporte,Sexo) en todas las competencias
 \modifica{j}
 \asegura{año(j)== año(pre(j))}
 \asegura{cantDias(j)== cantDias(pre(j))}
 \asegura{cronograma(j)== cronograma(pre(j))}
 \asegura{jornadaactual(j)== jornadaactual(pre(j))}
 \asegura{(\forall a \in atletasEnCategoria(j,cat,p)) a \notin atletas(j)}
-\asegura{ result == |atletasEnCategoria(j,cat,p)|}
+\aux{atletasEnCategoria}{j:JJOO, cat: Categoria, p: Pa\'{i}s }{[Atleta]}{ [ a | a \in atletas(j), nacionalidad(a)==p \wedge sexo(a)==sgd(cat) \wedge prm(cat) \in deportes(a))] }
 \end{problema}
 
 \item

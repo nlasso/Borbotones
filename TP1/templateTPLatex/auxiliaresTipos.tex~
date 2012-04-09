@@ -24,7 +24,6 @@
 \aux{atletasdelpaisout}{cat: (Deporte,Sexo), p: Pais, j: JJOO}{\bool}{ 
   (x \selec [0..|atletas(j)| -1], p(cat(atletas(j)_x)) \not= atletas(j)_x)
 }
-\aux{atletasEnCategoria}{j:JJOO, cat: Categoria, p: Pa\'{i}s }{[Atleta]}{ [ a | a \in atletas(j), nacionalidad(a)==p \wedge sexo(a)==sgd(cat) \wedge prm(cat) \in deportes(a))] }
 
 
 
