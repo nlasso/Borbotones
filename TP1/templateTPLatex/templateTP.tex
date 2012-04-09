@@ -129,9 +129,7 @@
 
 \aux{atletasDelPais}{j:JJOO, p: Pa\'{i}s }{[Atleta]}{ [x | x \leftarrow atletas(j), nacionalidad(x)==p] }
 
-\aux{atletasYCompetencias}{j:JJOO, p: Pa\'{i}s}{[(Atleta,\ent)]}{[(x, y)|x \leftarrow atletasDelPais(j,p),y \leftarrow long([z_i | h \leftarrow [1..cantDias(j)], z \leftarrow cronograma(j,h), i\leftarrow [0..|z|-1],k \leftarrow [4..|z|-1], alguno(x == participantes(z_i)) \wedge alguno(ranking(z_i)_k == x)])]}
-
-\aux{atletasYCompetencias}{j:JJOO, p: Pa\'{i}s}{[(Atleta,\ent)]}{[(x, y)|x \leftarrow atletasDelPais(j,p),y = long([z_i | h \leftarrow [1..cantDias(j)], z \leftarrow cronograma(j,h), i\leftarrow [0..|z|-1],j \leftarrow [3..|z|-1], alguno(x == participantes(z_i)) \wedge alguno(ranking(z_i)_j == x)])]}
+\aux{atletasYCompetencias}{j:JJOO, p: Pa\'{i}s}{[(Atleta,\ent)]}{[(x, y)|x \leftarrow atletasDelPais(j,p),y \leftarrow long([z_i | h \leftarrow [1..cantDias(j)], z \leftarrow cronograma(j,h), i\leftarrow [0..|z|-1],k \leftarrow [3..|z|-1], alguno(x == participantes(z_i)) \wedge alguno(ranking(z_i)_k == x)])]}
 
 \aux{atletasFracasados}{j:JJOO, p: Pa\'{i}s}{[Atleta]}{[x | (x,y) \leftarrow atletasYCompetencias(j,p),\\ 
 y == sgd(atletasYCompetencias(j,p)_|_a_t_l_e_t_a_s_Y_C_o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
