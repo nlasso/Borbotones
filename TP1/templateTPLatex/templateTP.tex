@@ -164,10 +164,11 @@
 
 \item
 \begin{problema}{uyOrdenadoAs\'{i}HayUnPatr\'{o}n}{j: JJOO}{\bool}
-\requiere{algunaCompetenciaFinalizada(j)}
-\asegura{result == rotanDeManeraEstricta(j)}
-\aux{rotanDeManeraEstricta}{j: JJOO}{\bool}{(\forall p \in mejoresPaises(j))}
-
+\aux{competenciaspordia}{j:JJOO}{[Dia][Compentecia]}{dia,comp| dia \leftarrow [1..cantDias(j)}, c \leftarrow cronograma(j,dia), sgd(cronograma)_c == sgd(cronograma)_c_+_1} %saco las compentencias por dia
+\aux{mejoresAtletas}{j:JJOO}{[Dia][Atleta]}{ [ dia, ranking(c)_0 | dia \leftarrow prm(competenciaspordia(j)),  c \in sgd(competenciaspordia(j)) ] } % como guardo la tupla? saco el atleta oro de cada competencia de cada dia
+\aux{paisesoro}{j: JJOO}{[Dia][Pais][\int]}{ [ dia,nacionalidad(a),\int | dia \leftarrow prm(mejoresAtletas(j)), a \in sgd(mejoresAtletas(j)) ] }
+\aux{mejorpaisdeldia}{j: JJOO}{[Dia][\int]}{ [ dia,\int | dia \leftarrow prm(paisesoro(j)), p \leftarrow sgd(paisesoro(j)), cuenta() ] } %como cuento 
+\aux{paisordenado}{j: JJOO}{\bool}{x \leftarrow mejorpaisdeldia(j), h \leftarrow [paisordenado_x_+_1...|paisordenado|-1], k \leftarrow [paisordenado_j...|paisordenado|-2], paisordenado_x == paisordenado_j \wedge paisordenado_x == paisordenado_k_+_(_|_p_a_i_s_o_r_d_e_n_a_d_o_|__x_-_|_|_p_a_i_s_o_r_d_e_n_a_d_o_|__j}
 
 \end{problema}
 
@@ -180,6 +181,15 @@
 
 \item
 \begin{problema}{transcurrirDia}{j: JJOO}{}
+\modifica{j}
+\asegura{año(j)==año(pre(j))}
+\asegura{atletas(j)==atletas(pre(j))}
+\asegura{jornadaActual(j)==jornadaActual(pre(j))+1}
+\asegura{(\forall c \in cronograma( pre(j),jornadaActual(pre(j))) |lesTocaControlAntiDoping(c)|==1 )}
+\asegura{|atletasLesTocoAntiDoping(j,jornadaActual(pre(j)))|}
+\asegura{(\exists a \in atletasLesTocoAntiDoping(j,jornadaActual(pre(j)))) |atletasLesDioPositivo(j,jornadaActual(pre(j))) 0 \leq |*100/|atletasLesTocoAntiDoping(j,jornadaActual(pre(j)))| \leq 5 )}
+\aux{atletasLesTocoAntiDoping}{J:JJOO,d:\ent}{[Atleta]}{[lesTocoControlAntiDoping(c)_0 | c \in cronograma(j,d)]}
+\aux{atletasLesDioPositivo}{J:JJOO,d:\ent}{[Atleta]}{[lesTocoControlAntiDoping(c)_0 | c \in cronograma(j,d), lesTocoControlAntiDoping(c)_0 \in leDioPositivo(c) ]}
 \end{problema}
 
 \end{itemize}
