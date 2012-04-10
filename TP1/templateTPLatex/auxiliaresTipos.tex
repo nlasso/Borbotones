@@ -1,31 +1,30 @@
+% Auxiliares definitivos
 
+\aux{atletasEnCategoria}{j:JJOO, cat: Categoria, p: Pa\'{i}s }{[Atleta]}{ [ a | a \in atletas(j), nacionalidad(a)==p \wedge sexo(a)==sgd(cat) \wedge prm(cat) \in deportes(a))] }
+\aux{algunaCompetenciaFinalizada}{j:JJOO}{\bool}{(\exists dia \in [1...cantDias(j)], cron \in cronograma(j,dia), comp \in cron) finalizada(comp)}
 \aux{algunaMedalla}{m: [\ent]}{\bool}{ 
   (m_0 \not= 0 \vee m_1 \not= 0 \vee m_2 \not= 0)
 }
-\aux{atletaNoPertenece}{a: Atleta, l: [Atletas]}{\bool}{ 
-  (\forall x \selec l, a \not= x)
-}
+\aux{borrarPositivos}{c:competencia}{[Atleta]}{[x|x\leftarrow ranking(c),(\forall y\leftarrow listaPositivos(c)) y\not= x]}
 \aux{ciaNumbers}{as: [Atleta]}{[\ent]}{\comp{ciaNumber(a)}{a \selec as}}
 \aux{competencias}{j: JJOO}{[Competencia]}{\comp{c}{d \selec [1..cantDias(j)], c \selec cronograma(j, d)}}
 \aux{competenciasFinalizadas}{j: JJOO}{[Competencia]}{\comp{c}{C \selec [1..cantDias(j)], c \selec cronograma(j, d), finalizada(c)}}
 \aux{incluida}{$l_1$, $l_2$:[T]}{\bool}{(\forall x \selec l_1) cuenta(x, l_1) \leq cuenta(x, l_2)}
 \aux{lasPasadasFinalizaron}{j: JJOO}{\bool}{(\forall d \selec [1..jornadaActual(j)))(\forall c \selec cronograma(j, d))finalizada(c)}
 \aux{lasQueNoPasaronNoFinalizaron}{j: JJOO}{\bool}{\\(\forall d \selec (jornadaActual(j)..cantDias(j)]) (\forall c \selec cronograma(j, d))\neg finalizada(c)}
+\aux{listaPositivos}{c:competencia}{[Atleta]}{[lesTocoControlAntiDoping(c),lesDioPositivo(c,x)==\True]}
 \aux{ordenada}{l:[T]}{\bool}{(\forall i \selec [0.. \longitud{l}-1)) l_i \leq l_{i+1}}
 \aux{sinRepetidos}{l: [T]}{\bool}{(\forall i, j \selec [0.. \longitud{l}), i \neq j) l_i \neq l_j}
 \aux{masCapaces}{c:competencia}{\bool}{ 
   (\forall x \selec [0..|ranking(c)|-1), capacidad(ranking(c)_x) > capacidad(ranking(c)_x_+_1))
 }
-\aux{mejoresOIgualesMedallas}{m: [\ent], p: [\ent]}{\bool}{ superaPorOro(m,p) }
-\aux{superaPorOro}{m: [\ent], p: [\ent]}{\bool}{ifThenElse(m_0 > p_0,\True,ifThenElse(m_0 == p_0,superaPorPlata(m,p),\False))}
-\aux{superaPorPlata}{m: [\ent], p: [\ent]}{\bool}{ifThenElse(m_1 > p_1,\True,ifThenElse(m_1 == p_1,superaPorBronce(m,p),\False))}
-\aux{superaPorBronce}{m: [\ent], p: [\ent]}{\bool}{ifThenElse(m_0 > p_0,\True,ifThenElse(m_0 == p_0,\True,\False))}
-\aux{listaPositivos}{c:competencia}{[Atleta]}{[lesTocoControlAntiDoping(c),lesDioPositivo(c,x)==\True]}
-\aux{borrarPositivos}{c:competencia}{[Atleta]}{[x|x\leftarrow ranking(c),(\forall y\leftarrow listaPositivos(c)) y\not= x]}
+
+% Auxiliares temporales o dudosos
+
 \aux{atletasdelpaisout}{cat: (Deporte,Sexo), p: Pais, j: JJOO}{\bool}{ 
   (x \selec [0..|atletas(j)| -1], p(cat(atletas(j)_x)) \not= atletas(j)_x)
 }
-\aux{atletasEnCategoria}{j:JJOO, cat: Categoria, p: Pa\'{i}s }{[Atleta]}{ [ a | a \in atletas(j), nacionalidad(a)==p \wedge sexo(a)==sgd(cat) \wedge prm(cat) \in deportes(a))] }
+
 
 
 

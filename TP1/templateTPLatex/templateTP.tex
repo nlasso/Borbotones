@@ -69,10 +69,10 @@
 \item
 \begin{problema}{linfordChristie}{c: Competencia, a: Atleta}{}
 \requiere{finalizada(c)==\False}
-\requiere{en(a,participantes(c))}
+\requiere{atletaPertenezca: a \in participantes(c)}
 \modifica{c}
 \asegura{categoria(c) == categoria(pre(c))}
-\asegura{atletaNoPertenece(a,participantes(c))}
+\asegura{atletaNoPertenece: a \notin participantes(c)}
 \asegura{long(participantes(c))==long(participantes(pre(c))-1}
 \asegura{mismos(a:participantes(c),participantes(pre(c)))}
 \end{problema}
@@ -104,9 +104,13 @@
 
 \item
 \begin{problema}{medallero}{j: JJOO}{[(Pa\'{i}s, [\ent])]}
-\asegura{(\forall p \selec result, algunaMedalla(sgd(p)))}
-\asegura{(\forall p \selec result, |sgd(p)| == 3 )}
-\asegura{(\forall x \selec [0..|result|-1), mejoresOIgualesMedallas(sgd(result_x),sgd(result_x_+_1)) )}
+\asegura{ paisesConMedallas: (\forall p \selec result, algunaMedalla(sgd(p)))}
+\asegura{ soloTresTiposDeMedallas: (\forall p \selec result, |sgd(p)| == 3 )}
+\asegura{ mejoresMedallasQueSiguiente: (\forall x \selec [0..|result|-1), mejoresOIgualesMedallas(sgd(result_x),sgd(result_x_+_1)) )}
+\aux{mejoresOIgualesMedallas}{m: [\ent], p: [\ent]}{\bool}{ superaPorOro(m,p) }
+\aux{superaPorOro}{m: [\ent], p: [\ent]}{\bool}{ifThenElse(m_0 > p_0,\True,ifThenElse(m_0 == p_0,superaPorPlata(m,p),\False))}
+\aux{superaPorPlata}{m: [\ent], p: [\ent]}{\bool}{ifThenElse(m_1 > p_1,\True,ifThenElse(m_1 == p_1,superaPorBronce(m,p),\False))}
+\aux{superaPorBronce}{m: [\ent], p: [\ent]}{\bool}{ifThenElse(m_0 > p_0,\True,ifThenElse(m_0 == p_0,\True,\False))}
 \end{problema}
 
 \item
@@ -125,8 +129,8 @@
 
 \item
 \begin{problema}{losMasFracasados}{j: JJOO, p: Pa\'{i}s }{[Atleta]}
-\asegura{(\forall a \in result) noGanoMedallas(j,a)}
-\asegura{(\forall x \in result,y \in atletasSinMedallasPorPais(j,p)) competenciasDelAtleta(j,x) > competenciasDelAtleta(j,y)}
+\asegura{ ningunoGanoMedallas: (\forall a \in result) noGanoMedallas(j,a)}
+\asegura{ tienenMasCompetenciasQueElResto: (\forall x \in result,y \in atletasSinMedallasPorPais(j,p)) competenciasDelAtleta(j,x) > competenciasDelAtleta(j,y)}
 \aux{noGanoMedallas}{j:JJOO,a:Atleta}{\bool}{(\forall c \in competencias(j), finalizada(c)) a \neq ranking(c)_0 \wedge a \neq ranking(c)_1 \wedge a \neq ranking(c)_2}
 \aux{competenciasDelAtleta}{j:JJOO,a:Atleta}{\bool}{[c | c \in competencias(j), a \in participantes(c) ] }
 \aux{atletasSinMedallasPorPais}{j:JJOO,p:Pais}{\bool}{[a | a \in atletas(j), nacionalidad(a) == p, noGanoMedallas(j,a)] }
@@ -153,17 +157,18 @@
 
 \item
 \begin{problema}{stevenBradbury}{j: JJOO}{Atleta}
-\requiere{ (\exists dia \in [1...cantDias(j)], cron \in cronograma(j,dia), comp \in cron) finalizada(comp)} % Requiero que haya alguna competencia del cronograma de algun dia finalizada
+\requiere{ algunaCompetenciaFinalizada(j)} % Requiero que haya alguna competencia del cronograma de algun dia finalizada
 \asegura{ (\exists dia \in [1...cantDias(j)], cron \in cronograma(j,dia), comp \in cron) result == ranking(comp)_0 } % Aseguro que ese atleta gano un ORO
 \asegura{ (\forall a \in atletas(j), a \neq result) capacidad(result) \leq capacidad(a) } % Aseguro que es el menos capaz
 \end{problema}
 
 \item
 \begin{problema}{uyOrdenadoAs\'{i}HayUnPatr\'{o}n}{j: JJOO}{\bool}
-\aux{mejoresAtletas}{j:JJOO}{[Atleta]}{ [ ranking(c)_0 | c \in competenciasFinalizadas(j) ] }
-\aux{paisesConRepetidos}{j: JJOO}{[Pais]}{ [ nacionalidad(a) | a \in atletas(j) ] }
+\requiere{algunaCompetenciaFinalizada(j)}
+\asegura{result == rotanDeManeraEstricta(j)}
+\aux{rotanDeManeraEstricta}{j: JJOO}{\bool}{(\forall p \in mejoresPaises(j))}
 
-\aux{orosPorPais}{l:[Atleta]}{\ent}{ [ l |  ] }
+
 \end{problema}
 
 \item
