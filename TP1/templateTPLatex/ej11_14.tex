@@ -1,0 +1,34 @@
+\item
+\begin{problema}{stevenBradbury}{j: JJOO}{Atleta}
+\requiere{ algunaCompetenciaFinalizada(j)} % Requiero que haya alguna competencia del cronograma de algun dia finalizada
+\asegura{ (\exists dia \in [1...cantDias(j)], cron \in cronograma(j,dia), comp \in cron) result == ranking(comp)_0 } % Aseguro que ese atleta gano un ORO
+\asegura{ (\forall a \in atletas(j), a \neq result) capacidad(result) \leq capacidad(a) } % Aseguro que es el menos capaz
+\end{problema}
+
+\item
+\begin{problema}{uyOrdenadoAs\'{i}HayUnPatr\'{o}n}{j: JJOO}{\bool}
+
+\end{problema}
+
+\item
+\begin{problema}{sequ\'{i}aOl\'{i}mpica}{j: JJOO}{[Pa\'{i}s]}
+\aux{todosLosPaises}{J:JJOO}{[Pa\'{i}s]}{[nacionalidad(x)| x \leftarrow atletas(j)]}
+\asegura{sinRepetidos(todosLosPaises(j))}
+
+\end{problema}
+
+\item
+\begin{problema}{transcurrirDia}{j: JJOO}{}
+\requiere{jornadaActual(j) < cantDias(j)}
+\modifica{j}
+\asegura{cantDias(j)==cantDias(pre(j))}
+\asegura{a\tilde{n}o(j)==a\tilde{n}o(pre(j))}
+\asegura{mismos(atletas(j),atletas(pre(j))}
+\asegura{(\forall d \in [1...cantDias(pre(j))]) cronograma(pre(j),d) == cronograma(j,d)) }
+\asegura{ cambiaElDia: jornadaActual(j)==jornadaActual(pre(j))+1}
+\asegura{ rankingSegunMasCapaces: (\forall c \in cronograma(pre(j),jornadaActual(pre(j))) masCapaces(c)}
+\asegura{ unControlPorCompetencia: (\forall c \in cronograma( pre(j),jornadaActual(pre(j))) |lesTocaControlAntiDoping(c)|==1 )}
+\asegura{ dopingPositivoMax5Porciento: (\exists a \in atletasLesTocoAntiDoping(j,jornadaActual(pre(j)))) 0 \leq |atletasLesDioPositivo(j,jornadaActual(pre(j)))|*100/|atletasLesTocoAntiDoping(j,jornadaActual(pre(j)))| \leq 5 )}
+\aux{atletasLesTocoAntiDoping}{J:JJOO,d:\ent}{[Atleta]}{[lesTocoControlAntiDoping(c)_0 | c \in cronograma(j,d)]}
+\aux{atletasLesDioPositivo}{J:JJOO,d:\ent}{[Atleta]}{[lesTocoControlAntiDoping(c)_0 | c \in cronograma(j,d), lesTocoControlAntiDoping(c)_0 \in leDioPositivo(c) ]}
+\end{problema}

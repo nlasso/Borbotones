@@ -1,0 +1,51 @@
+\item
+\begin{problema}{medallero}{j: JJOO}{[(Pa\'{i}s, [\ent])]}
+\asegura{ paisesConMedallas: (\forall p \selec result, algunaMedalla(sgd(p)))}
+\asegura{ soloTresTiposDeMedallas: (\forall p \selec result, |sgd(p)| == 3 )}
+\asegura{ mejoresMedallasQueSiguiente: (\forall x \selec [0..|result|-1), mejoresOIgualesMedallas(sgd(result_x),sgd(result_{x+1})) )}
+\aux{mejoresOIgualesMedallas}{m: [\ent], p: [\ent]}{\bool}{ superaPorOro(m,p) }
+\aux{superaPorOro}{m: [\ent], p: [\ent]}{\bool}{ifThenElse(m_0 > p_0,\True,ifThenElse(m_0 == p_0,superaPorPlata(m,p),\False))}
+\aux{superaPorPlata}{m: [\ent], p: [\ent]}{\bool}{ifThenElse(m_1 > p_1,\True,ifThenElse(m_1 == p_1,superaPorBronce(m,p),\False))}
+\aux{superaPorBronce}{m: [\ent], p: [\ent]}{\bool}{ifThenElse(m_0 > p_0,\True,ifThenElse(m_0 == p_0,\True,\False))}
+\end{problema}
+
+\item
+\begin{problema}{boicotPorDisciplina}{j: JJOO, cat: (Deporte, Sexo), p: Pa\'{i}s }{\ent}
+\requiere{long(atletas(j))>0}
+% \requiere{(\exists a \in atletasEnCategoria(j,cat,p)) nacionalidad(a) == p}
+% \requiere{(\exists c \in competencias(j)) categoria(c) == cat} % Requiere que exista la categoria (Deporte,Sexo) en todas las competencias
+\modifica{j}
+\asegura{a\tilde{n}o(j)== a\tilde{n}o(pre(j))}
+\asegura{cantDias(j)== cantDias(pre(j))}
+\asegura{cronograma(j)== cronograma(pre(j))}
+\asegura{jornadaactual(j)== jornadaactual(pre(j))}
+\asegura{(\forall a \in atletasEnCategoria(j,cat,p)) a \notin atletas(j)}
+\asegura{ result == |atletasEnCategoria(j,cat,p)|}
+\end{problema}
+
+\item
+\begin{problema}{losMasFracasados}{j: JJOO, p: Pa\'{i}s }{[Atleta]}
+\asegura{ ningunoGanoMedallas: (\forall a \in result) noGanoMedallas(j,a)}
+\asegura{ tienenMasCompetenciasQueElResto: (\forall x \in result,y \in atletasSinMedallasPorPais(j,p)) |competenciasDelAtleta(j,x)| \geq |competenciasDelAtleta(j,y)|}
+\aux{noGanoMedallas}{j:JJOO,a:Atleta}{\bool}{(\forall c \in competencias(j), finalizada(c)) a \neq ranking(c)_0 \wedge a \neq ranking(c)_1 \wedge a \neq ranking(c)_2}
+\aux{competenciasDelAtleta}{j:JJOO,a:Atleta}{[Competencia]}{[c | c \in competencias(j), a \in participantes(c) ] }
+\aux{atletasSinMedallasPorPais}{j:JJOO,p:Pais}{[Atleta]}{[a | a \in atletas(j), nacionalidad(a) == p, noGanoMedallas(j,a)] }
+\end{problema}
+
+\item
+\begin{problema}{liuSong}{j: JJOO, a: Atleta, p: Pa\'{i}s }{}
+\requiere{a \in atletas(j)}
+\modifica{a,j}
+\asegura{nombre(a)==nombre(pre(a))}
+\asegura{sexo(a)==sexo(pre(a))}
+\asegura{a\tilde{n}oNacimiento(a)==a\tilde{n}oNacimiento(pre(a))}
+\asegura{ciaNumber(a)==ciaNumber(pre(a))}
+\asegura{mismos(deportes(a),deportes(pre(a)))}
+\asegura{cambioNacionalidad: nacionalidad(a)==p}
+\asegura{a\tilde{n}o(j)==a\tilde{n}o(pre(j))}
+\asegura{cantDias(j)==cantDias(pre(j))}
+\asegura{mismos(cronograma(j),cronograma(pre(j)))}
+\asegura{jornadaActual(j)==jornadaActual(pre(j))}
+\asegura{|atletas(j)|==|atletas(pre(j))|}
+\asegura{ mismosAtletas: (\forall x \in atletas(pre(j))) ciaNumber(x) \in ciaNumbers(j)}
+\end{problema}

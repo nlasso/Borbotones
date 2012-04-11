@@ -16,7 +16,7 @@
 \aux{ordenada}{l:[T]}{\bool}{(\forall i \selec [0.. \longitud{l}-1)) l_i \leq l_{i+1}}
 \aux{sinRepetidos}{l: [T]}{\bool}{(\forall i, j \selec [0.. \longitud{l}), i \neq j) l_i \neq l_j}
 \aux{masCapaces}{c:competencia}{\bool}{ 
-  (\forall x \selec [0..|ranking(c)|-1), capacidad(ranking(c)_x) > capacidad(ranking(c)_x_+_1))
+  (\forall x \selec [0..|ranking(c)|-1), capacidad(ranking(c)_x) > capacidad(ranking(c)_{x+1}))
 }
 
 % Auxiliares temporales o dudosos

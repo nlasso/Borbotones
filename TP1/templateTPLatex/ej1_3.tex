@@ -1,0 +1,36 @@
+\item
+\begin{problema}{entrenarNuevoDeporte}{a: Atleta, d: Deporte, c: \ent}{}
+\requiere {d \notin deportes(pre(a))}
+\requiere {0 \leq c \leq 100}
+\modifica {a}
+\asegura{nombre(a) == nombre(pre(a))}
+\asegura{sexo(a) == sexo(pre(a))}
+\asegura{a\tilde{n}oNacimiento(a) == a\tilde{n}oNacimiento(pre(a))}
+\asegura{naionalidad(a) == nacionalidad(pre(a))}
+\asegura{ciaNumber(a) == ciaNumber(pre(a))}
+\asegura{mismos(deportes(a),deportes(pre(a)):d)}
+\asegura{ordenada(deportes(a))}
+\asegura{capacidad(a,d)==c}
+\end{problema}
+
+\item
+\begin{problema}{finalizarCompetencia}{c: Competencia, posiciones: [Atleta], control: [(Atleta, \bool)]}{}
+\modifica{c}
+\asegura{categoria(c)==categoria(pre(c))}
+\asegura{participantes(c)==participantes(pre(c))}
+\asegura{finalizada(c)}
+\asegura{ranking(c)==posiciones}
+\asegura{mismos([prm(d)|d \leftarrow control], lesTocoControlAntiDoping(c))}
+\asegura{(\forall x \leftarrow control), lesDioPositivo(c,prm(x)) == sgd(x)}
+\end{problema}
+
+\item
+\begin{problema}{linfordChristie}{c: Competencia, a: Atleta}{}
+\requiere{finalizada(c)==\False}
+\requiere{atletaPertenezca: a \in participantes(c)}
+\modifica{c}
+\asegura{categoria(c) == categoria(pre(c))}
+\asegura{atletaNoPertenece: a \notin participantes(c)}
+\asegura{long(participantes(c))==long(participantes(pre(c))-1}
+\asegura{mismos(a:participantes(c),participantes(pre(c)))}
+\end{problema}
