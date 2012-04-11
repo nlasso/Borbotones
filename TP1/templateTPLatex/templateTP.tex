@@ -1,4 +1,4 @@
-\documentclass[a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -181,13 +181,16 @@
 
 \item
 \begin{problema}{transcurrirDia}{j: JJOO}{}
+\requiere{jornadaActual(j) < cantDias(j)}
 \modifica{j}
+\asegura{cantDias(j)==cantDias(pre(j))}
 \asegura{año(j)==año(pre(j))}
 \asegura{atletas(j)==atletas(pre(j))}
-\asegura{jornadaActual(j)==jornadaActual(pre(j))+1}
-\asegura{(\forall c \in cronograma( pre(j),jornadaActual(pre(j))) |lesTocaControlAntiDoping(c)|==1 )}
-\asegura{|atletasLesTocoAntiDoping(j,jornadaActual(pre(j)))|}
-\asegura{(\exists a \in atletasLesTocoAntiDoping(j,jornadaActual(pre(j)))) |atletasLesDioPositivo(j,jornadaActual(pre(j))) 0 \leq |*100/|atletasLesTocoAntiDoping(j,jornadaActual(pre(j)))| \leq 5 )}
+\asegura{(\forall d \in [1...cantDias(pre(j))]) cronograma(pre(j),d) == cronograma(j,d)) }
+\asegura{ cambiaElDia: jornadaActual(j)==jornadaActual(pre(j))+1}
+\asegura{ rankingSegunMasCapaces: (\forall c \in cronograma(pre(j),jornadaActual(pre(j))) masCapaces(c)}
+\asegura{ unControlPorCompetencia: (\forall c \in cronograma( pre(j),jornadaActual(pre(j))) |lesTocaControlAntiDoping(c)|==1 )}
+\asegura{ dopingPositivoMax5Porciento: (\exists a \in atletasLesTocoAntiDoping(j,jornadaActual(pre(j)))) 0 \leq |atletasLesDioPositivo(j,jornadaActual(pre(j)))|*100/|atletasLesTocoAntiDoping(j,jornadaActual(pre(j)))| \leq 5 )}
 \aux{atletasLesTocoAntiDoping}{J:JJOO,d:\ent}{[Atleta]}{[lesTocoControlAntiDoping(c)_0 | c \in cronograma(j,d)]}
 \aux{atletasLesDioPositivo}{J:JJOO,d:\ent}{[Atleta]}{[lesTocoControlAntiDoping(c)_0 | c \in cronograma(j,d), lesTocoControlAntiDoping(c)_0 \in leDioPositivo(c) ]}
 \end{problema}
