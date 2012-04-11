@@ -138,21 +138,20 @@
 
 \item
 \begin{problema}{liuSong}{j: JJOO, a: Atleta, p: Pa\'{i}s }{}
-\requiere{a \in atletas(pre(j))}
+\requiere{a \in atletas(j)}
 \modifica{a,j}
 \asegura{nombre(a)==nombre(pre(a))}
 \asegura{sexo(a)==sexo(pre(a))}
 \asegura{añoNacimiento(a)==añoNacimiento(pre(a))}
 \asegura{ciaNumber(a)==ciaNumber(pre(a))}
-\asegura{depores(a)==deportes(pre(a))}
-\asegura{nacionalidad(a)==p}
+\asegura{mismos(deportes(a),deportes(pre(a)))}
+\asegura{cambioNacionalidad: nacionalidad(a)==p}
 \asegura{año(j)==año(pre(j))}
 \asegura{cantDias(j)==cantDias(pre(j))}
-\asegura{cronograma(j)==cronograma(pre(j))}
+\asegura{mismos(cronograma(j),cronograma(pre(j)))}
 \asegura{jornadaActual(j)==jornadaActual(pre(j))}
 \asegura{|atletas(j)|==|atletas(pre(j))|}
-\aux{quitarAtleta}{j:JJOO,a:Atleta}{[Atleta]}{[x | x \leftarrow atletas(j), x\not= a]}
-\asegura {atletas(j)==(quitarAtleta(pre(j),pre(a)):a)}
+\asegura{ mismosAtletas: (\forall x \in atletas(pre(j))) ciaNumber(x) \in ciaNumbers(j)}
 \end{problema}
 
 \item
@@ -185,7 +184,7 @@
 \modifica{j}
 \asegura{cantDias(j)==cantDias(pre(j))}
 \asegura{año(j)==año(pre(j))}
-\asegura{atletas(j)==atletas(pre(j))}
+\asegura{mismos(atletas(j),atletas(pre(j))}
 \asegura{(\forall d \in [1...cantDias(pre(j))]) cronograma(pre(j),d) == cronograma(j,d)) }
 \asegura{ cambiaElDia: jornadaActual(j)==jornadaActual(pre(j))+1}
 \asegura{ rankingSegunMasCapaces: (\forall c \in cronograma(pre(j),jornadaActual(pre(j))) masCapaces(c)}
