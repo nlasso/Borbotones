@@ -15,11 +15,18 @@
 
 \item
 \begin{problema}{finalizarCompetencia}{c: Competencia, posiciones: [Atleta], control: [(Atleta, \bool)]}{}
+\requiere{|participantes(c)| > 0}
+\requiere{(\forall a \in control) prm(a) \in participantes(c)}
+\requiere{(\forall a \in posiciones) a \in participantes(c)}
+\requiere{finalizada(c) == False}
 \modifica{c}
 \asegura{categoria(c)==categoria(pre(c))}
-\asegura{participantes(c)==participantes(pre(c))}
+\asegura mismos(participantes(c),participantes(pre(c))}
 \asegura{finalizada(c)}
+\asegura{(\forall a \in ranking(c)) a \in participantes(c)}
 \asegura{ranking(c)==posiciones}
+\asegura{(\forall a \in control) prm(a) \in lesTocoControlAntiDoping(c)}
+\asegura{(\forall a \in lesTocoControlAntiDoping(c)) a \in participantes(c)}
 \asegura{mismos([prm(d)|d \leftarrow control], lesTocoControlAntiDoping(c))}
 \asegura{(\forall x \leftarrow control), lesDioPositivo(c,prm(x)) == sgd(x)}
 \end{problema}

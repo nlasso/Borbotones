@@ -56,6 +56,7 @@ x \leftarrow todosLosPaises(j), i=0, k\leftarrow [0..|sgd(todosLosPaises(j))|-1]
 \asegura{mismos(atletas(j),atletas(pre(j))}
 \asegura{(\forall d \in [1...cantDias(pre(j))]) cronograma(pre(j),d) == cronograma(j,d)) }
 \asegura{ cambiaElDia: jornadaActual(j)==jornadaActual(pre(j))+1}
+\asegura{lasPasadasFinalizaron(pre(j))}
 \asegura{ rankingSegunMasCapaces: (\forall c \in cronograma(pre(j),jornadaActual(pre(j))) masCapaces(c)}
 \asegura{ unControlPorCompetencia: (\forall c \in cronograma( pre(j),jornadaActual(pre(j))) \\ |lesTocaControlAntiDoping(c)|==1 )}
 \asegura{ dopingPositivoMax5Porciento: (\exists a \in atletasLesTocoAntiDoping(j,jornadaActual(pre(j)))) \\ 0 \leq porcentajePositivos(j) \leq 5 )}

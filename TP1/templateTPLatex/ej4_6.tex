@@ -2,23 +2,26 @@
 \begin{problema}{gananLosMasCapaces}{c: Competencia}{\bool}
 \requiere{finalizada(c)==\True}
 \requiere{\mid ranking(c)\mid  > 1}
+\requiere{|participantes(c)| > 1}
+\asegura{(\forall a \in ranking(c)) a \in participantes(c)}
 \asegura{Result == masCapaces(c)}
 \end{problema}
 
 \item
 \begin{problema}{sancionarTramposos}{c: Competencia}{}
+\requiere{finalizada(c) == true}
 \modifica{c}
 \asegura{categoria(c)==categoria(pre(c))}
-\asegura{finalizada(c)}
+\asegura{finalizada(c)== finalizada(pre(c)}
 \asegura{participantes(c)==participantes(pre(c))}
 \asegura{lesTocoControlAntiDoping(c) == lesTocoControlAntiDoping(pre(c))}
-\asegura{leDioPositivo(c,a)==leDioPositivo(pre(c),pre(a))}
+\asegura{(\forall a \in participantes(c)) leDioPositivo(c,a)==leDioPositivo(pre(c),a))}
 \asegura{ranking(c)==borrarPositivos(pre(c))}
+\aux{borrarPositivos}{c:competencia}{[Atleta]}{[x|x\leftarrow ranking(c),(\forall y\leftarrow listaPositivos(c)) y\not= x]}
 \end{problema}
 
 \item
 \begin{problema}{dePaseo}{j: JJOO}{[Atleta]}
-\requiere{cantDias(j) \geq 1}
 \requiere{|atletas(j)| > 0}
 \asegura{result == [x |y \leftarrow cantDias(j), k \leftarrow cronograma(j,y), x \leftarrow atletas(j),x\notin participantes(k)]}
 \end{problema}

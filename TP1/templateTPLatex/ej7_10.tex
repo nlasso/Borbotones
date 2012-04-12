@@ -1,5 +1,6 @@
 \item
 \begin{problema}{medallero}{j: JJOO}{[(Pa\'{i}s, [\ent])]}
+\requiere{ |atletas(j)|>0 }
 \asegura{ paisesConMedallas: (\forall p \selec result, algunaMedalla(sgd(p)))}
 \asegura{ soloTresTiposDeMedallas: (\forall p \selec result, |sgd(p)| == 3 )}
 \asegura{ mejoresMedallasQueSiguiente: (\forall x \selec [0..|result|-1), mejoresOIgualesMedallas(sgd(result_x),sgd(result_{x+1})) )}
@@ -7,17 +8,20 @@
 \aux{superaPorOro}{m: [\ent], p: [\ent]}{\bool}{ifThenElse(m_0 > p_0,\True,ifThenElse(m_0 == p_0,superaPorPlata(m,p),\False))}
 \aux{superaPorPlata}{m: [\ent], p: [\ent]}{\bool}{ifThenElse(m_1 > p_1,\True,ifThenElse(m_1 == p_1,superaPorBronce(m,p),\False))}
 \aux{superaPorBronce}{m: [\ent], p: [\ent]}{\bool}{ifThenElse(m_0 > p_0,\True,ifThenElse(m_0 == p_0,\True,\False))}
+\aux{algunaMedalla}{m: [\ent]}{\bool}{ 
+  (m_0 \not= 0 \vee m_1 \not= 0 \vee m_2 \not= 0)
+}
 \end{problema}
 
 \item
 \begin{problema}{boicotPorDisciplina}{j: JJOO, cat: (Deporte, Sexo), p: Pa\'{i}s }{\ent}
 \requiere{long(atletas(j))>0}
-% \requiere{(\exists a \in atletasEnCategoria(j,cat,p)) nacionalidad(a) == p}
-% \requiere{(\exists c \in competencias(j)) categoria(c) == cat} % Requiere que exista la categoria (Deporte,Sexo) en todas las competencias
+\requiere{(\forall a \in atletasEnCategoria(j,cat,p)) nacionalidad(a) == p}
+\requiere{(\exists c \in competencias(j)) categoria(c) == cat} % Requiere que exista la categoria (Deporte,Sexo) en todas las competencias
 \modifica{j}
 \asegura{a\tilde{n}o(j)== a\tilde{n}o(pre(j))}
 \asegura{cantDias(j)== cantDias(pre(j))}
-\asegura{cronograma(j)== cronograma(pre(j))}
+\asegura{mismos(cronograma(j),cronograma(pre(j)))}
 \asegura{jornadaactual(j)== jornadaactual(pre(j))}
 \asegura{(\forall a \in atletasEnCategoria(j,cat,p)) a \notin atletas(j)}
 \asegura{ result == |atletasEnCategoria(j,cat,p)|}
@@ -25,16 +29,13 @@
 
 \item
 \begin{problema}{losMasFracasados}{j: JJOO, p: Pa\'{i}s }{[Atleta]}
+\requiere{(\exists a \in atletas(j)) nacionalidad(a) == p }
 \aux{atletasDelPais}{j:JJOO,p: Pa\'{i}s }{[Atleta]}{[x | x\leftarrow atletas(j), nacionalidad(x)==p]}
-
 \aux{competenciasAtleta}{j:JJOO, p:Pais, a:Atleta}{[Competencia]}{[x | x\leftarrow competencias(j),alguno(participantes(x)==a) \wedge en(prm(categoria(x)), deportes(a))]}
-
 \aux{atletasFracasados}{j:JJOO, p:Pais}{[(atleta, \ent)]}{[(y,|competenciasAtleta(j,p,y)|) | \\
 y\leftarrow atletasDelPais(j,p), c \leftarrow competenciasAtleta(j,y,p), en(y,sub(ranking(c),3,|ranking(c)-1|))]}
-
 \aux{masFracasados}{j:JJOO, p:Pais}{[Atleta]}{[prm(y) | y\leftarrow atletasFracasados(j,p),\\
 k \leftarrow atletasFracasados(j,p), sgd(y) \geq sgd(k)]}
-
 \asegura{result == masFracasados(j,p)}
 \end{problema}
 
