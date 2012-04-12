@@ -25,11 +25,17 @@
 
 \item
 \begin{problema}{losMasFracasados}{j: JJOO, p: Pa\'{i}s }{[Atleta]}
-\asegura{ ningunoGanoMedallas: (\forall a \in result) noGanoMedallas(j,a)}
-\asegura{ tienenMasCompetenciasQueElResto: (\forall x \in result,y \in atletasSinMedallasPorPais(j,p)) |competenciasDelAtleta(j,x)| \geq |competenciasDelAtleta(j,y)|}
-\aux{noGanoMedallas}{j:JJOO,a:Atleta}{\bool}{(\forall c \in competencias(j), finalizada(c)) a \neq ranking(c)_0 \wedge a \neq ranking(c)_1 \wedge a \neq ranking(c)_2}
-\aux{competenciasDelAtleta}{j:JJOO,a:Atleta}{[Competencia]}{[c | c \in competencias(j), a \in participantes(c) ] }
-\aux{atletasSinMedallasPorPais}{j:JJOO,p:Pais}{[Atleta]}{[a | a \in atletas(j), nacionalidad(a) == p, noGanoMedallas(j,a)] }
+\aux{atletasDelPais}{j:JJOO,p: Pa\'{i}s }{[Atleta]}{[x | x\leftarrow atletas(j), nacionalidad(x)==p]}
+
+\aux{competenciasAtleta}{j:JJOO, p:Pais, a:Atleta}{[Competencia]}{[x | x\leftarrow competencias(j),alguno(participantes(x)==a) \wedge en(prm(categoria(x)), deportes(a))]}
+
+\aux{atletasFracasados}{j:JJOO, p:Pais}{[(atleta, \ent)]}{[(y,|competenciasAtleta(j,p,y)|) | \\
+y\leftarrow atletasDelPais(j,p), c \leftarrow competenciasAtleta(j,y,p), en(y,sub(ranking(c),3,|ranking(c)-1|))]}
+
+\aux{masFracasados}{j:JJOO, p:Pais}{[Atleta]}{[prm(y) | y\leftarrow atletasFracasados(j,p),\\
+k \leftarrow atletasFracasados(j,p), sgd(y) \geq sgd(k)]}
+
+\asegura{result == masFracasados(j,p)}
 \end{problema}
 
 \item
