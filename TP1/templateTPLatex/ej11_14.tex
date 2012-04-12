@@ -8,6 +8,23 @@
 \item
 \begin{problema}{uyOrdenadoAs\'{i}HayUnPatr\'{o}n}{j: JJOO}{\bool}
 
+\asegura {result == verificaPaises(j)}
+
+\aux{competenciasPorDia}{j:JJOO}{[(\ent, [Competencia])]}{[(dia,c) | dia \leftarrow[1..jornadaActual(j)], c \leftarrow cronograma(j,dia)]}
+
+\aux{oroPorDia}{j:JJOO}{[(\ent, [Atleta])]}{[(dia,a)| h\leftarrow competenciasPorDia(j), dia\leftarrow prm(h), x\leftarrow sgd(h),   i \leftarrow [0..|x|-1], a \leftarrow ranking(x_i)_0 ]}
+
+\aux{paisesPorDia}{j:JJOO}{[(\ent ,[Pais])]}{[(dia, p) | x\leftarrow oroPorDia(j),dia \leftarrow prm(x), h\leftarrow sgd(x), i\leftarrow[0..|h|-1], p\leftarrow nacionalidad(h_i)]}
+
+\aux{mejoresPaises}{j:JJOO}{[(\ent , [pais])]}{[(dia, p) | x\leftarrow paisesPorDia(j),dia\leftarrowprm(x), p\leftarrow sgd(x),\\
+i\leftarrow [0..|sgd(x)|-2],(cuenta(p, sgd(x)) \geq cuenta(sgd(x)_{i+1},sgd(x)))]}
+
+\aux{paisesMasGrosos}{j:JJOO}{[pais]}{[p | x\leftarrow mejoresPaises(j), p\leftarrow sgd(x),i\leftarrow [0..|sgd(x)|-2], p \leq sgd(x)_{i+1}]}
+
+\aux{patronDePaises}{j:JJOO}{[[Pais]]}{[ sub(paisesMasGrosos(j), 0, i-2) | i \leftarrow [0..|paisesMasGrosos|-1], \neg sinRepetidos(sub(paisesMasGrosos(j), 0, i))]}
+
+\aux{verificaPaises}{j:JJOO}{Bool}{\forall i \in [0..|paisesMasGrosos(j)|-1], \\ paisesMasGrosos(j)_i == paisesMasGrosos(j)_{i+|patronDePaises(j)_0|}\wedge \\((i+|patronDePaises(j)_0|) \leq |paisesMasGrosos(j)|)}
+
 \end{problema}
 
 \item
