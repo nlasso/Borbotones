@@ -12,18 +12,18 @@
 
 \aux{competenciasPorDia}{j:JJOO}{[(\ent, [Competencia])]}{[(dia,c) | dia \leftarrow[1..jornadaActual(j)], c \leftarrow cronograma(j,dia)]}
 
-\aux{oroPorDia}{j:JJOO}{[(\ent, [Atleta])]}{[(dia,a)| h\leftarrow competenciasPorDia(j), dia\leftarrow prm(h), x\leftarrow sgd(h),   i \leftarrow [0..|x|-1], a \leftarrow ranking(x_i)_0 ]}
+\aux{oroPorDia}{j:JJOO}{[(\ent, [Atleta])]}{[(dia,a)| h\leftarrow competenciasPorDia(j), dia\leftarrow prm(h), x\leftarrow sgd(h),\\ i \leftarrow [0..|x|-1], a \leftarrow ranking(x_i)_0 ]}
 
-\aux{paisesPorDia}{j:JJOO}{[(\ent ,[Pais])]}{[(dia, p) | x\leftarrow oroPorDia(j),dia \leftarrow prm(x), h\leftarrow sgd(x), i\leftarrow[0..|h|-1], p\leftarrow nacionalidad(h_i)]}
+\aux{paisesPorDia}{j:JJOO}{[(\ent ,[Pais])]}{[(dia, p) | x\leftarrow oroPorDia(j),dia \leftarrow prm(x), h\leftarrow sgd(x), \\ i\leftarrow[0..|h|-1], p\leftarrow nacionalidad(h_i)]}
 
-\aux{mejoresPaises}{j:JJOO}{[(\ent , [pais])]}{[(dia, p) | x\leftarrow paisesPorDia(j),dia\leftarrowprm(x), p\leftarrow sgd(x),\\
-i\leftarrow [0..|sgd(x)|-2],(cuenta(p, sgd(x)) \geq cuenta(sgd(x)_{i+1},sgd(x)))]}
+\aux{mejoresPaises}{j:JJOO}{[(\ent , [Pais])]}{[(dia, p) | x\leftarrow paisesPorDia(j),dia \leftarrow prm(x), p \leftarrow sgd(x),\\
+i \leftarrow [0..|sgd(x)|-2],(cuenta(p, sgd(x)) \geq cuenta(sgd(x)_{i+1},sgd(x)))]}
 
-\aux{paisesMasGrosos}{j:JJOO}{[pais]}{[p | x\leftarrow mejoresPaises(j), p\leftarrow sgd(x),i\leftarrow [0..|sgd(x)|-2], p \leq sgd(x)_{i+1}]}
+\aux{paisesMasGrosos}{j:JJOO}{[Pais]}{[p | x\leftarrow mejoresPaises(j), p\leftarrow sgd(x),i\leftarrow [0..|sgd(x)|-2], p \leq sgd(x)_{i+1}]}
 
-\aux{patronDePaises}{j:JJOO}{[[Pais]]}{[ sub(paisesMasGrosos(j), 0, i-2) | i \leftarrow [0..|paisesMasGrosos|-1], \neg sinRepetidos(sub(paisesMasGrosos(j), 0, i))]}
+\aux{patronDePaises}{j:JJOO}{[Pais]}{[ sub(paisesMasGrosos(j), 0, i-2) | i \leftarrow [0..|paisesMasGrosos|-1], \neg sinRepetidos(sub(paisesMasGrosos(j), 0, i))]_0}
 
-\aux{verificaPaises}{j:JJOO}{Bool}{\forall i \in [0..|paisesMasGrosos(j)|-1], \\ paisesMasGrosos(j)_i == paisesMasGrosos(j)_{i+|patronDePaises(j)_0|}\wedge \\((i+|patronDePaises(j)_0|) \leq |paisesMasGrosos(j)|)}
+\aux{verificaPaises}{j:JJOO}{Bool}{\forall i \in [0..|paisesMasGrosos(j)|-1], \\ paisesMasGrosos(j)_i == paisesMasGrosos(j)_{i+|patronDePaises(j)|}\wedge \\((i+|patronDePaises(j)|) \leq |paisesMasGrosos(j)|)}
 
 \end{problema}
 
@@ -44,8 +44,9 @@ i\leftarrow [0..|sgd(x)|-2],(cuenta(p, sgd(x)) \geq cuenta(sgd(x)_{i+1},sgd(x)))
 \asegura{(\forall d \in [1...cantDias(pre(j))]) cronograma(pre(j),d) == cronograma(j,d)) }
 \asegura{ cambiaElDia: jornadaActual(j)==jornadaActual(pre(j))+1}
 \asegura{ rankingSegunMasCapaces: (\forall c \in cronograma(pre(j),jornadaActual(pre(j))) masCapaces(c)}
-\asegura{ unControlPorCompetencia: (\forall c \in cronograma( pre(j),jornadaActual(pre(j))) |lesTocaControlAntiDoping(c)|==1 )}
-\asegura{ dopingPositivoMax5Porciento: (\exists a \in atletasLesTocoAntiDoping(j,jornadaActual(pre(j)))) 0 \leq |atletasLesDioPositivo(j,jornadaActual(pre(j)))|*100/|atletasLesTocoAntiDoping(j,jornadaActual(pre(j)))| \leq 5 )}
-\aux{atletasLesTocoAntiDoping}{J:JJOO,d:\ent}{[Atleta]}{[lesTocoControlAntiDoping(c)_0 | c \in cronograma(j,d)]}
-\aux{atletasLesDioPositivo}{J:JJOO,d:\ent}{[Atleta]}{[lesTocoControlAntiDoping(c)_0 | c \in cronograma(j,d), lesTocoControlAntiDoping(c)_0 \in leDioPositivo(c) ]}
+\asegura{ unControlPorCompetencia: (\forall c \in cronograma( pre(j),jornadaActual(pre(j))) \\ |lesTocaControlAntiDoping(c)|==1 )}
+\asegura{ dopingPositivoMax5Porciento: (\exists a \in atletasLesTocoAntiDoping(j,jornadaActual(pre(j)))) \\ 0 \leq porcentajePositivos(j) \leq 5 )}
+\aux{porcentajePositivos}{j:JJOO}{$\mathbb{R}$}{ |atletasLesDioPositivo(j,jornadaActual(pre(j)))| * 100 \\ / |atletasLesTocoAntiDoping(j,jornadaActual(pre(j)))| }
+\aux{atletasLesTocoAntiDoping}{j:JJOO,d:\ent}{[Atleta]}{[lesTocoControlAntiDoping(c)_0 | c \in cronograma(j,d)]}
+\aux{atletasLesDioPositivo}{j:JJOO,d:\ent}{[Atleta]}{[lesTocoControlAntiDoping(c)_0 | c \in cronograma(j,d), \\ lesTocoControlAntiDoping(c)_0 \in leDioPositivo(c) ]}
 \end{problema}
