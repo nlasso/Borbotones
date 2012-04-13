@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.9)  12 APR 2012 09:57
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.9)  13 APR 2012 12:35
 entering extended mode
 **ej11_14.tex
 (C:\Users\nicolas.lasso\Borbotones2\Borbotones\TP1\templateTPLatex\ej11_14.tex
@@ -14,2031 +13,6 @@ an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese,
 romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
 sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
 senglishmax, welsh, loaded.
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 \begin
-          {problema}{stevenBradbury}{j: JJOO}{Atleta}{result}
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Environment problema undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 \begin{problema}
-                    {stevenBradbury}{j: JJOO}{Atleta}{result}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no B in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no y in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no : in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no t in font nullfont!
-! Undefined control sequence.
-l.3 \requiere
-             { algunaCompetenciaFinalizada(j)} % Requiero que haya alguna co...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no C in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no F in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no z in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no ) in font nullfont!
-! Undefined control sequence.
-l.4 \asegura
-            { (\exists dia \in [1...cantDias(j)], cron \in cronograma(j,dia)...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no ( in font nullfont!
-! Missing $ inserted.
-<inserted text> 
-                $
-l.4 \asegura{ (\exists
-                       dia \in [1...cantDias(j)], cron \in cronograma(j,dia)...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 4.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 4.
-! Extra }, or forgotten $.
-l.4 ... comp \in cron) result == ranking(comp)_0 }
-                                                   % Aseguro que ese atleta ...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Undefined control sequence.
-l.5 \asegura
-            { (\forall a \in atletas(j), a \neq result) capacidad(result) \l...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: \begin{document} ended by \end{problema}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 \end{problema}
-                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.6 \end{problema}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.6 \end{problema}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Overfull \hbox (28.93585pt too wide) in paragraph at lines 2--7
-$\OMS/cmsy/m/n/10 9\OML/cmm/m/it/10 dia \OMS/cmsy/m/n/10 2$
- []
-
-
-Overfull \hbox (106.41493pt too wide) in paragraph at lines 2--7
-$\OT1/cmr/m/n/10 [1\OML/cmm/m/it/10 :::cantDias\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
-0 j\OT1/cmr/m/n/10 )]\OML/cmm/m/it/10 ; cron \OMS/cmsy/m/n/10 2$
- []
-
-
-Overfull \hbox (121.2515pt too wide) in paragraph at lines 2--7
-$\OML/cmm/m/it/10 cronograma\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 j; dia\OT1/cmr/m/
-n/10 )\OML/cmm/m/it/10 ; comp \OMS/cmsy/m/n/10 2$
- []
-
-
-Overfull \hbox (68.83812pt too wide) in paragraph at lines 2--7
-$\OML/cmm/m/it/10 cron\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 result \OT1/cmr/m/n/10 
-==$
- []
-
-
-Overfull \hbox (342.38733pt too wide) in paragraph at lines 2--7
-$\OML/cmm/m/it/10 ranking\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 comp\OT1/cmr/m/n/10 
-)[][]$ 
- []
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9 \begin
-          {problema}{uyOrdenadoAs\'{i}HayUnPatr\'{o}n}{j: JJOO}{\bool}
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Environment problema undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9 \begin{problema}
-                    {uyOrdenadoAs\'{i}HayUnPatr\'{o}n}{j: JJOO}{\bool}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-Missing character: There is no u in font nullfont!
-Missing character: There is no y in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no s in font nullfont!
-LaTeX Font Info:    Try loading font information for +cmr on input line 9.
-LaTeX Font Info:    No file cmr.fd. on input line 9.
-
-LaTeX Font Warning: Font shape `/cmr/m/n' undefined
-(Font)              using `/cmr/m/n' instead on input line 9.
-
-! Corrupted NFSS tables.
-wrong@fontshape ...message {Corrupted NFSS tables}
-                                                  error@fontshape else let f...
-l.9 \begin{problema}{uyOrdenadoAs\'{i}
-                                      HayUnPatr\'{o}n}{j: JJOO}{\bool}
-This error message was generated by an \errmessage
-command, so I can't give any explicit help.
-Pretend that you're Hercule Poirot: Examine all clues,
-and deduce the truth by order and method.
-
-
-LaTeX Font Warning: Font shape `/cmr/m/n' undefined
-(Font)              using `OT1/cmr/m/n' instead on input line 9.
-
-Missing character: There is no H in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no y in font nullfont!
-Missing character: There is no U in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no : in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no O in font nullfont!
-! Undefined control sequence.
-l.9 ...enadoAs\'{i}HayUnPatr\'{o}n}{j: JJOO}{\bool
-                                                  }
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (12.77782pt too wide) in paragraph at lines 9--10
-\/cmr/m/n/10 io
- []
-
-! Undefined control sequence.
-l.11 \asegura
-              {result == verificaPaises(j)}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no r in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no = in font nullfont!
-Missing character: There is no = in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no ) in font nullfont!
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 11--12
-[]
- []
-
-! Undefined control sequence.
-l.13 \aux
-         {competenciasPorDia}{j:JJOO}{[(\ent, [Competencia])]}{[(dia,c) | di...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no : in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no ( in font nullfont!
-! Undefined control sequence.
-l.13 \aux{competenciasPorDia}{j:JJOO}{[(\ent
-                                            , [Competencia])]}{[(dia,c) | di...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no , in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no C in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no ] in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no ] in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no | in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-! Missing $ inserted.
-<inserted text> 
-                $
-l.13 ...[Competencia])]}{[(dia,c) | dia \leftarrow
-                                                  [1..jornadaActual(j)], c \...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.13 ...tual(j)], c \leftarrow cronograma(j,dia)]}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.14 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 13--14
-[]
- []
-
-
-Overfull \hbox (10.00002pt too wide) in paragraph at lines 13--14
-$\OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (115.86496pt too wide) in paragraph at lines 13--14
-$\/cmr/m/n/10 [1\OML/cmm/m/it/10 ::jornadaActual\/cmr/m/n/10 (\OML/cmm/m/it/10 
-j\/cmr/m/n/10 )]\OML/cmm/m/it/10 ; c \OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (87.1543pt too wide) in paragraph at lines 13--14
-$\OML/cmm/m/it/10 cronograma\/cmr/m/n/10 (\OML/cmm/m/it/10 j; dia\/cmr/m/n/10 )
-]$ 
- []
-
-! Undefined control sequence.
-l.15 \aux
-         {oroPorDia}{j:JJOO}{[(\ent, [Atleta])]}{[(dia,a)| h\leftarrow compe...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no : in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no ( in font nullfont!
-! Undefined control sequence.
-l.15 \aux{oroPorDia}{j:JJOO}{[(\ent
-                                   , [Atleta])]}{[(dia,a)| h\leftarrow compe...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no , in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no ] in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no ] in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no | in font nullfont!
-Missing character: There is no h in font nullfont!
-! Missing $ inserted.
-<inserted text> 
-                $
-l.15 ...{[(\ent, [Atleta])]}{[(dia,a)| h\leftarrow
-                                                   competenciasPorDia(j), di...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.15 ...[0..|x|-1], a \leftarrow ranking(x_i)_0 ]}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.16 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 15--16
-[]
- []
-
-
-Overfull \hbox (10.00002pt too wide) in paragraph at lines 15--16
-$\OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (138.01816pt too wide) in paragraph at lines 15--16
-$\OML/cmm/m/it/10 competenciasPorDia\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/1
-0 )\OML/cmm/m/it/10 ; dia \OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (55.07755pt too wide) in paragraph at lines 15--16
-$\OML/cmm/m/it/10 prm\/cmr/m/n/10 (\OML/cmm/m/it/10 h\/cmr/m/n/10 )\OML/cmm/m/i
-t/10 ; x \OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (33.00462pt too wide) in paragraph at lines 15--16
-$\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 h\/cmr/m/n/10 )\OML/cmm/m/i
-t/10 ; [] $
- []
-
-
-Overfull \hbox (16.22285pt too wide) in paragraph at lines 15--16
-$\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (32.38202pt too wide) in paragraph at lines 15--16
-$\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x\OMS/cms
-y/m/n/10 j  $
- []
-
-
-Overfull \hbox (30.28583pt too wide) in paragraph at lines 15--16
-$\/cmr/m/n/10 1]\OML/cmm/m/it/10 ; a \OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (60.26067pt too wide) in paragraph at lines 15--16
-$\OML/cmm/m/it/10 ranking\/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\/cmr/m/n/10 )[]]$ 
- []
-
-! Undefined control sequence.
-l.17 \aux
-         {paisesPorDia}{j:JJOO}{[(\ent ,[Pais])]}{[(dia, p) | x\leftarrow or...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no p in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no : in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no ( in font nullfont!
-! Undefined control sequence.
-l.17 \aux{paisesPorDia}{j:JJOO}{[(\ent
-                                       ,[Pais])]}{[(dia, p) | x\leftarrow or...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no , in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ] in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no ] in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no | in font nullfont!
-Missing character: There is no x in font nullfont!
-! Missing $ inserted.
-<inserted text> 
-                $
-l.17 ...{[(\ent ,[Pais])]}{[(dia, p) | x\leftarrow
-                                                   oroPorDia(j),dia \leftarr...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.17 ...0..|h|-1], p\leftarrow nacionalidad(h_i)]}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.18 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 17--18
-[]
- []
-
-
-Overfull \hbox (10.00002pt too wide) in paragraph at lines 17--18
-$\OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (92.84373pt too wide) in paragraph at lines 17--18
-$\OML/cmm/m/it/10 oroPorDia\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\OML/c
-mm/m/it/10 ; dia \OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (55.07755pt too wide) in paragraph at lines 17--18
-$\OML/cmm/m/it/10 prm\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OML/cmm/m/i
-t/10 ; h \OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (32.95831pt too wide) in paragraph at lines 17--18
-$\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OML/cmm/m/i
-t/10 ; [] $
- []
-
-
-Overfull \hbox (16.22285pt too wide) in paragraph at lines 17--18
-$\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (32.42833pt too wide) in paragraph at lines 17--18
-$\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 h\OMS/cms
-y/m/n/10 j  $
- []
-
-
-Overfull \hbox (30.03119pt too wide) in paragraph at lines 17--18
-$\/cmr/m/n/10 1]\OML/cmm/m/it/10 ; p \OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (77.16417pt too wide) in paragraph at lines 17--18
-$\OML/cmm/m/it/10 nacionalidad\/cmr/m/n/10 (\OML/cmm/m/it/10 h[]\/cmr/m/n/10 )]
-$ 
- []
-
-! Undefined control sequence.
-l.19 \aux
-         {mejoresPaises}{j:JJOO}{[(\ent , [Pais])]}{[(dia, p) | x\leftarrow ...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no m in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no : in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no ( in font nullfont!
-! Undefined control sequence.
-l.19 \aux{mejoresPaises}{j:JJOO}{[(\ent
-                                        , [Pais])]}{[(dia, p) | x\leftarrow ...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no , in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ] in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no ] in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no | in font nullfont!
-Missing character: There is no x in font nullfont!
-! Missing $ inserted.
-<inserted text> 
-                $
-l.19 ...[(\ent , [Pais])]}{[(dia, p) | x\leftarrow
-                                                   paisesPorDia(j),dia \left...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.20 ...gd(x)) \geq cuenta(sgd(x)_{i+1},sgd(x)))]}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.21 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 19--21
-[]
- []
-
-
-Overfull \hbox (10.00002pt too wide) in paragraph at lines 19--21
-$\OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (106.15344pt too wide) in paragraph at lines 19--21
-$\OML/cmm/m/it/10 paisesPorDia\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\OM
-L/cmm/m/it/10 ; dia \OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (54.34721pt too wide) in paragraph at lines 19--21
-$\OML/cmm/m/it/10 prm\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OML/cmm/m/i
-t/10 ; p \OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (32.95831pt too wide) in paragraph at lines 19--21
-$\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OML/cmm/m/i
-t/10 ; [] $
- []
-
-
-Overfull \hbox (16.22285pt too wide) in paragraph at lines 19--21
-$\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (55.18065pt too wide) in paragraph at lines 19--21
-$\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 sgd\/cmr/
-m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OMS/cmsy/m/n/10 j  $
- []
-
-
-Overfull \hbox (102.04175pt too wide) in paragraph at lines 19--21
-$\/cmr/m/n/10 2]\OML/cmm/m/it/10 ; \/cmr/m/n/10 (\OML/cmm/m/it/10 cuenta\/cmr/m
-/n/10 (\OML/cmm/m/it/10 p; sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )) \
-OMS/cmsy/m/n/10 $
- []
-
-
-Overfull \hbox (118.97879pt too wide) in paragraph at lines 19--21
-$\OML/cmm/m/it/10 cuenta\/cmr/m/n/10 (\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cm
-m/m/it/10 x\/cmr/m/n/10 )[]\OML/cmm/m/it/10 ; sgd\/cmr/m/n/10 (\OML/cmm/m/it/10
- x\/cmr/m/n/10 )))]$ 
- []
-
-! Undefined control sequence.
-l.22 \aux
-         {paisesMasGrosos}{j:JJOO}{[Pais]}{[p | x\leftarrow mejoresPaises(j)...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no p in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no M in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no G in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no : in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ] in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no | in font nullfont!
-Missing character: There is no x in font nullfont!
-! Missing $ inserted.
-<inserted text> 
-                $
-l.22 ...asGrosos}{j:JJOO}{[Pais]}{[p | x\leftarrow
-                                                   mejoresPaises(j), p\lefta...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.22 ...row [0..|sgd(x)|-2], p \leq sgd(x)_{i+1}]}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.23 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 22--23
-[]
- []
-
-
-Overfull \hbox (10.00002pt too wide) in paragraph at lines 22--23
-$\OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (102.40025pt too wide) in paragraph at lines 22--23
-$\OML/cmm/m/it/10 mejoresPaises\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\O
-ML/cmm/m/it/10 ; p \OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (49.18117pt too wide) in paragraph at lines 22--23
-$\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OML/cmm/m/i
-t/10 ; i \OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (55.18065pt too wide) in paragraph at lines 22--23
-$\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 sgd\/cmr/
-m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OMS/cmsy/m/n/10 j  $
- []
-
-
-Overfull \hbox (27.80898pt too wide) in paragraph at lines 22--23
-$\/cmr/m/n/10 2]\OML/cmm/m/it/10 ; p \OMS/cmsy/m/n/10 $
- []
-
-
-Overfull \hbox (44.74602pt too wide) in paragraph at lines 22--23
-$\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )[]]$ 
- []
-
-! Undefined control sequence.
-l.24 \aux
-         {patronDePaises}{j:JJOO}{[Pais]}{[ sub(paisesMasGrosos(j), 0, i-2) ...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no p in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no : in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ] in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no M in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no G in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no | in font nullfont!
-Missing character: There is no i in font nullfont!
-! Missing $ inserted.
-<inserted text> 
-                $
-l.24 ...paisesMasGrosos(j), 0, i-2) | i \leftarrow
-                                                   [0..|paisesMasGrosos(j)|-...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.24 ...petidos(sub(paisesMasGrosos(j), 0, i))]_0}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.25 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 24--25
-[]
- []
-
-
-Overfull \hbox (10.00002pt too wide) in paragraph at lines 24--25
-$\OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (119.41493pt too wide) in paragraph at lines 24--25
-$\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 paisesMas
-Grosos\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\OMS/cmsy/m/n/10 j  $
- []
-
-
-Overfull \hbox (224.43906pt too wide) in paragraph at lines 24--25
-$\/cmr/m/n/10 1]\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 :\OML/cmm/m/it/10 sinRepeti
-dos\/cmr/m/n/10 (\OML/cmm/m/it/10 sub\/cmr/m/n/10 (\OML/cmm/m/it/10 paisesMasGr
-osos\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\OML/cmm/m/it/10 ; \/cmr/m/n/
-10 0\OML/cmm/m/it/10 ; i\/cmr/m/n/10 ))][]$ 
- []
-
-! Undefined control sequence.
-l.26 \aux
-         {verificaPaises}{j:JJOO}{Bool}{\forall i \in [0..|paisesMasGrosos(j...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no v in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no : in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no B in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no l in font nullfont!
-! Missing $ inserted.
-<inserted text> 
-                $
-l.26 \aux{verificaPaises}{j:JJOO}{Bool}{\forall
-                                                i \in [0..|paisesMasGrosos(j...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.26 ...nDePaises(j)|) \leq |paisesMasGrosos(j)|)}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.27 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (38.4451pt too wide) in paragraph at lines 26--27
-[]$\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 2$
- []
-
-
-Overfull \hbox (119.41493pt too wide) in paragraph at lines 26--27
-$\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 paisesMas
-Grosos\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\OMS/cmsy/m/n/10 j  $
- []
-
-
-Overfull \hbox (12.22221pt too wide) in paragraph at lines 26--27
-$\/cmr/m/n/10 1]\OML/cmm/m/it/10 ; [] $
- []
-
-
-Overfull \hbox (114.41078pt too wide) in paragraph at lines 26--27
-$\OML/cmm/m/it/10 paisesMasGrosos\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )
-[] ==$
- []
-
-
-Overfull \hbox (183.12158pt too wide) in paragraph at lines 26--27
-$\OML/cmm/m/it/10 paisesMasGrosos\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )
-[] \OMS/cmsy/m/n/10 ^$
- []
-
-
-Overfull \hbox (19.00073pt too wide) in paragraph at lines 26--27
-$\/cmr/m/n/10 ((\OML/cmm/m/it/10 i \/cmr/m/n/10 +$
- []
-
-
-Overfull \hbox (105.82pt too wide) in paragraph at lines 26--27
-$\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 patronDePaises\/cmr/m/n/10 (\OML/cmm/m/it/1
-0 j\/cmr/m/n/10 )\OMS/cmsy/m/n/10 j\/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $
- []
-
-
-Overfull \hbox (102.19266pt too wide) in paragraph at lines 26--27
-$\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 paisesMasGrosos\/cmr/m/n/10 (\OML/cmm/m/it/
-10 j\/cmr/m/n/10 )\OMS/cmsy/m/n/10 j\/cmr/m/n/10 )$ 
- []
-
-
-! LaTeX Error: \begin{document} ended by \end{problema}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.28 \end{problema}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.28 \end{problema}
-                   
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.28 \end{problema}
-                   
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.28 \end{problema}
-                   
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.28 \end{problema}
-                   
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.28 \end{problema}
-                   
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.28 \end{problema}
-                   
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.28 \end{problema}
-                   
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.31 \begin
-           {problema}{sequ\'{i}aOl\'{i}mpica}{j: JJOO}{[Pa\'{i}s]}
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Environment problema undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.31 \begin{problema}
-                     {sequ\'{i}aOl\'{i}mpica}{j: JJOO}{[Pa\'{i}s]}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no q in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no : in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ] in font nullfont!
-
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 31--32
-[]\/cmr/m/n/10 i[]i
- []
-
-
-Overfull \hbox (2.77779pt too wide) in paragraph at lines 31--32
-[]\/cmr/m/n/10 i 
- []
-
-! Undefined control sequence.
-l.33 \aux
-         {atletasDelPais}{j:JJOO,p: Pa\'{i}s }{[Atleta]}{[x | x\leftarrow at...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no : in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no : in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no ] in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no x in font nullfont!
-Missing character: There is no | in font nullfont!
-Missing character: There is no x in font nullfont!
-! Missing $ inserted.
-<inserted text> 
-                $
-l.33 ...O,p: Pa\'{i}s }{[Atleta]}{[x | x\leftarrow
-                                                   atletas(j), nacionalidad(...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.33 ...leftarrow atletas(j), nacionalidad(x)==p]}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.34 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 33--34
-[]
- []
-
-
-Overfull \hbox (2.77779pt too wide) in paragraph at lines 33--34
-[]\/cmr/m/n/10 i
- []
-
-
-Overfull \hbox (10.00002pt too wide) in paragraph at lines 33--34
-$\OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (136.57515pt too wide) in paragraph at lines 33--34
-$\OML/cmm/m/it/10 atletas\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\OML/cmm
-/m/it/10 ; nacionalidad\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 ) ==$
- []
-
-
-Overfull \hbox (7.80904pt too wide) in paragraph at lines 33--34
-$\OML/cmm/m/it/10 p\/cmr/m/n/10 ]$ 
- []
-
-! Undefined control sequence.
-l.35 \aux
-         {todosLosPaises}{J:JJOO}{[(Pa\'{i}s,[Bool]]}{[(nacionalidad(x), [al...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no L in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no : in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no B in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no ] in font nullfont!
-Missing character: There is no ] in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no x in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no k in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no y in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no ] in font nullfont!
-Missing character: There is no = in font nullfont!
-Missing character: There is no = in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no x in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no ] in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no | in font nullfont!
-Missing character: There is no x in font nullfont!
-! Missing $ inserted.
-<inserted text> 
-                $
-l.35 ...DelPais(j,nacionalidad(x))])| x \leftarrow
-                                                   atletas(j), i\leftarrow[0...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.35 ...cantDias(j)], y\leftarrow cronograma(j,i)}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.36 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (22.77779pt too wide) in paragraph at lines 35--36
-[][]\/cmr/m/n/10 i
- []
-
-
-Overfull \hbox (10.00002pt too wide) in paragraph at lines 35--36
-$\OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (63.4539pt too wide) in paragraph at lines 35--36
-$\OML/cmm/m/it/10 atletas\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\OML/cmm
-/m/it/10 ; i \OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (92.26556pt too wide) in paragraph at lines 35--36
-$\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::cantDias\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cm
-r/m/n/10 )]\OML/cmm/m/it/10 ; y \OMS/cmsy/m/n/10  $
- []
-
-
-Overfull \hbox (73.88576pt too wide) in paragraph at lines 35--36
-$\OML/cmm/m/it/10 cronograma\/cmr/m/n/10 (\OML/cmm/m/it/10 j; i\/cmr/m/n/10 )$ 
-
- []
-
-! Undefined control sequence.
-l.37 \aux
-         
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.38 \asegura
-             {sinRepetidos(todosLosPaises(j))}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no s in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no R in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no L in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no ) in font nullfont!
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 38--39
-[] 
- []
-
-
-! LaTeX Error: \begin{document} ended by \end{problema}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.40 \end{problema}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.40 \end{problema}
-                   
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.40 \end{problema}
-                   
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.43 \begin
-           {problema}{transcurrirDia}{j: JJOO}{}
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Environment problema undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.43 \begin{problema}
-                     {transcurrirDia}{j: JJOO}{}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no : in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no O in font nullfont!
-! Undefined control sequence.
-l.44 \requiere
-              {jornadaActual(j) < cantDias(j)}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no j in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no < in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no ) in font nullfont!
-! Undefined control sequence.
-l.45 \modifica
-              {j}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no j in font nullfont!
-! Undefined control sequence.
-l.46 \asegura
-             {cantDias(j)==cantDias(pre(j))}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no = in font nullfont!
-Missing character: There is no = in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no ) in font nullfont!
-! Undefined control sequence.
-l.47 \asegura
-             {a\tilde{n}o(j)==a\tilde{n}o(pre(j))}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no a in font nullfont!
-! Missing $ inserted.
-<inserted text> 
-                $
-l.47 \asegura{a\tilde
-                     {n}o(j)==a\tilde{n}o(pre(j))}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.47 \asegura{a\tilde{n}o(j)==a\tilde{n}o(pre(j))}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Undefined control sequence.
-l.48 \asegura
-             {mismos(atletas(j),atletas(pre(j))}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.49 \asegura
-             {(\forall d \in [1...cantDias(pre(j))]) cronograma(pre(j),d) ==...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.50 \asegura
-             { cambiaElDia: jornadaActual(j)==jornadaActual(pre(j))+1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.51 \asegura
-             { rankingSegunMasCapaces: (\forall c \in cronograma(pre(j),jorn...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.52 \asegura
-             { unControlPorCompetencia: (\forall c \in cronograma( pre(j),jo...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.53 \asegura
-             { dopingPositivoMax5Porciento: (\exists a \in atletasLesTocoAnt...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.54 \aux
-         {porcentajePositivos}{j:JJOO}{$\mathbb{R}$}{ |atletasLesDioPositivo...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.54 \aux{porcentajePositivos}{j:JJOO}{$
-                                        \mathbb{R}$}{ |atletasLesDioPositivo...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Undefined control sequence.
-l.54 \aux{porcentajePositivos}{j:JJOO}{$\mathbb
-                                               {R}$}{ |atletasLesDioPositivo...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no R in font nullfont!
-! Extra }, or forgotten $.
-<recently read> }
-                 
-l.54 ...porcentajePositivos}{j:JJOO}{$\mathbb{R}$}
-                                                  { |atletasLesDioPositivo(j...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Undefined control sequence.
-l.55 \aux
-         {atletasLesTocoAntiDoping}{j:JJOO,d:\ent}{[Atleta]}{[lesTocoControl...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.55 \aux{atletasLesTocoAntiDoping}{j:JJOO,d:\ent
-                                                 }{[Atleta]}{[lesTocoControl...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.56 \aux
-         {atletasLesDioPositivo}{j:JJOO,d:\ent}{[Atleta]}{[lesTocoControlAnt...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.56 \aux{atletasLesDioPositivo}{j:JJOO,d:\ent
-                                              }{[Atleta]}{[lesTocoControlAnt...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: \begin{document} ended by \end{problema}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.57 \end{problema}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.57 \end{problema}
-                   
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.57 \end{problema}
-                   
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-)
-! Emergency stop.
-<*> ej11_14.tex
-               
-*** (job aborted, no legal \end found)
-
- 
-Here is how much of TeX's memory you used:
- 20 strings out of 494045
- 394 string characters out of 3145946
- 54890 words of memory out of 3000000
- 3411 multiletter control sequences out of 15000+200000
- 3640 words of font info for 14 fonts, out of 3000000 for 9000
- 715 hyphenation exceptions out of 8191
- 18i,3n,16p,255b,95s stack positions out of 5000i,500n,10000p,200000b,50000s
-!  ==> Fatal error occurred, no output PDF file produced!
-=======
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.5)  13 APR 2012 02:59
-entering extended mode
- %&-line parsing enabled.
-**ej11_14.tex
-(./ej11_14.tex
-LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, loaded.
 
 ! LaTeX Error: Lonely \item--perhaps a missing list environment.
 
@@ -2239,25 +213,25 @@ my insertion and my current dilemma will both disappear.
 
 
 Overfull \hbox (20.28586pt too wide) in paragraph at lines 2--8
-\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 2
+$\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 2$
  []
 
 
 Overfull \hbox (99.32666pt too wide) in paragraph at lines 2--8
-\OML/cmm/m/it/10 atletasConOro\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 j\OT1/cmr/m/n/1
-0 )\OML/cmm/m/it/10 ; a \OMS/cmsy/m/n/10 6\OT1/cmr/m/n/10 =
+$\OML/cmm/m/it/10 atletasConOro\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 j\OT1/cmr/m/n/
+10 )\OML/cmm/m/it/10 ; a \OMS/cmsy/m/n/10 6\OT1/cmr/m/n/10 =$
  []
 
 
 Overfull \hbox (169.48991pt too wide) in paragraph at lines 2--8
-\OML/cmm/m/it/10 result\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 sumaDeCapacidades\OT1/
-cmr/m/n/10 (\OML/cmm/m/it/10 result\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T
+$\OML/cmm/m/it/10 result\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 sumaDeCapacidades\OT1
+/cmr/m/n/10 (\OML/cmm/m/it/10 result\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $
  []
 
 
 Overfull \hbox (677.30782pt too wide) in paragraph at lines 2--8
-\OML/cmm/m/it/10 sumaDeCapacidades\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a\OT1/cmr/m
-/n/10 )[][][][][][][][]$ 
+$\OML/cmm/m/it/10 sumaDeCapacidades\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a\OT1/cmr/
+m/n/10 )[][][][][][][][]$ 
  []
 
 
@@ -2344,7 +318,7 @@ and I'll forget about whatever was undefined.
 
 
 Overfull \hbox (12.77782pt too wide) in paragraph at lines 10--11
-\/cmr/m/n/10 ^^Si^^So
+\/cmr/m/n/10 io
  []
 
 ! Undefined control sequence.
@@ -2490,24 +464,24 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 14--15
 
 
 Overfull \hbox (10.00002pt too wide) in paragraph at lines 14--15
-\OMS/cmsy/m/n/10  
+$\OMS/cmsy/m/n/10  $
  []
 
 
 Overfull \hbox (98.75967pt too wide) in paragraph at lines 14--15
-\/cmr/m/n/10 [1\OML/cmm/m/it/10 ::jornadaActual\/cmr/m/n/10 (\OML/cmm/m/it/10 j
-\/cmr/m/n/10 )]\OML/cmm/m/it/10 ; [] 
+$\/cmr/m/n/10 [1\OML/cmm/m/it/10 ::jornadaActual\/cmr/m/n/10 (\OML/cmm/m/it/10 
+j\/cmr/m/n/10 )]\OML/cmm/m/it/10 ; [] $
  []
 
 
 Overfull \hbox (22.66087pt too wide) in paragraph at lines 14--15
-\OML/cmm/m/it/10 c \/cmr/m/n/10 ==
+$\OML/cmm/m/it/10 c \/cmr/m/n/10 ==$
  []
 
 
 Overfull \hbox (130.15973pt too wide) in paragraph at lines 14--15
-\OML/cmm/m/it/10 mismos\/cmr/m/n/10 (\OML/cmm/m/it/10 cronograma\/cmr/m/n/10 (\
-OML/cmm/m/it/10 j; dia\/cmr/m/n/10 ))]$ 
+$\OML/cmm/m/it/10 mismos\/cmr/m/n/10 (\OML/cmm/m/it/10 cronograma\/cmr/m/n/10 (
+\OML/cmm/m/it/10 j; dia\/cmr/m/n/10 ))]$ 
  []
 
 ! Undefined control sequence.
@@ -2598,46 +572,46 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 16--17
 
 
 Overfull \hbox (10.00002pt too wide) in paragraph at lines 16--17
-\OMS/cmsy/m/n/10  
+$\OMS/cmsy/m/n/10  $
  []
 
 
 Overfull \hbox (138.01816pt too wide) in paragraph at lines 16--17
-\OML/cmm/m/it/10 competenciasPorDia\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10
- )\OML/cmm/m/it/10 ; dia \OMS/cmsy/m/n/10  
+$\OML/cmm/m/it/10 competenciasPorDia\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/1
+0 )\OML/cmm/m/it/10 ; dia \OMS/cmsy/m/n/10  $
  []
 
 
 Overfull \hbox (55.07755pt too wide) in paragraph at lines 16--17
-\OML/cmm/m/it/10 prm\/cmr/m/n/10 (\OML/cmm/m/it/10 h\/cmr/m/n/10 )\OML/cmm/m/it
-/10 ; x \OMS/cmsy/m/n/10  
+$\OML/cmm/m/it/10 prm\/cmr/m/n/10 (\OML/cmm/m/it/10 h\/cmr/m/n/10 )\OML/cmm/m/i
+t/10 ; x \OMS/cmsy/m/n/10  $
  []
 
 
 Overfull \hbox (33.00462pt too wide) in paragraph at lines 16--17
-\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 h\/cmr/m/n/10 )\OML/cmm/m/it
-/10 ; [] 
+$\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 h\/cmr/m/n/10 )\OML/cmm/m/i
+t/10 ; [] $
  []
 
 
 Overfull \hbox (16.22285pt too wide) in paragraph at lines 16--17
-\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10  
+$\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10  $
  []
 
 
 Overfull \hbox (32.38202pt too wide) in paragraph at lines 16--17
-\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x\OMS/cmsy
-/m/n/10 j ^^@
+$\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x\OMS/cms
+y/m/n/10 j  $
  []
 
 
 Overfull \hbox (30.28583pt too wide) in paragraph at lines 16--17
-\/cmr/m/n/10 1]\OML/cmm/m/it/10 ; a \OMS/cmsy/m/n/10  
+$\/cmr/m/n/10 1]\OML/cmm/m/it/10 ; a \OMS/cmsy/m/n/10  $
  []
 
 
 Overfull \hbox (60.26067pt too wide) in paragraph at lines 16--17
-\OML/cmm/m/it/10 ranking\/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\/cmr/m/n/10 )[]]$ 
+$\OML/cmm/m/it/10 ranking\/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\/cmr/m/n/10 )[]]$ 
  []
 
 ! Undefined control sequence.
@@ -2729,47 +703,47 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 18--19
 
 
 Overfull \hbox (10.00002pt too wide) in paragraph at lines 18--19
-\OMS/cmsy/m/n/10  
+$\OMS/cmsy/m/n/10  $
  []
 
 
 Overfull \hbox (92.84373pt too wide) in paragraph at lines 18--19
-\OML/cmm/m/it/10 oroPorDia\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\OML/cm
-m/m/it/10 ; dia \OMS/cmsy/m/n/10  
+$\OML/cmm/m/it/10 oroPorDia\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\OML/c
+mm/m/it/10 ; dia \OMS/cmsy/m/n/10  $
  []
 
 
 Overfull \hbox (55.07755pt too wide) in paragraph at lines 18--19
-\OML/cmm/m/it/10 prm\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OML/cmm/m/it
-/10 ; h \OMS/cmsy/m/n/10  
+$\OML/cmm/m/it/10 prm\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OML/cmm/m/i
+t/10 ; h \OMS/cmsy/m/n/10  $
  []
 
 
 Overfull \hbox (32.95831pt too wide) in paragraph at lines 18--19
-\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OML/cmm/m/it
-/10 ; [] 
+$\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OML/cmm/m/i
+t/10 ; [] $
  []
 
 
 Overfull \hbox (16.22285pt too wide) in paragraph at lines 18--19
-\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10  
+$\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10  $
  []
 
 
 Overfull \hbox (32.42833pt too wide) in paragraph at lines 18--19
-\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 h\OMS/cmsy
-/m/n/10 j ^^@
+$\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 h\OMS/cms
+y/m/n/10 j  $
  []
 
 
 Overfull \hbox (30.03119pt too wide) in paragraph at lines 18--19
-\/cmr/m/n/10 1]\OML/cmm/m/it/10 ; p \OMS/cmsy/m/n/10  
+$\/cmr/m/n/10 1]\OML/cmm/m/it/10 ; p \OMS/cmsy/m/n/10  $
  []
 
 
 Overfull \hbox (77.16417pt too wide) in paragraph at lines 18--19
-\OML/cmm/m/it/10 nacionalidad\/cmr/m/n/10 (\OML/cmm/m/it/10 h[]\/cmr/m/n/10 )]$
- 
+$\OML/cmm/m/it/10 nacionalidad\/cmr/m/n/10 (\OML/cmm/m/it/10 h[]\/cmr/m/n/10 )]
+$ 
  []
 
 ! Undefined control sequence.
@@ -2862,50 +836,50 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 20--22
 
 
 Overfull \hbox (10.00002pt too wide) in paragraph at lines 20--22
-\OMS/cmsy/m/n/10  
+$\OMS/cmsy/m/n/10  $
  []
 
 
 Overfull \hbox (106.15344pt too wide) in paragraph at lines 20--22
-\OML/cmm/m/it/10 paisesPorDia\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\OML
-/cmm/m/it/10 ; dia \OMS/cmsy/m/n/10  
+$\OML/cmm/m/it/10 paisesPorDia\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\OM
+L/cmm/m/it/10 ; dia \OMS/cmsy/m/n/10  $
  []
 
 
 Overfull \hbox (54.34721pt too wide) in paragraph at lines 20--22
-\OML/cmm/m/it/10 prm\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OML/cmm/m/it
-/10 ; p \OMS/cmsy/m/n/10  
+$\OML/cmm/m/it/10 prm\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OML/cmm/m/i
+t/10 ; p \OMS/cmsy/m/n/10  $
  []
 
 
 Overfull \hbox (32.95831pt too wide) in paragraph at lines 20--22
-\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OML/cmm/m/it
-/10 ; [] 
+$\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OML/cmm/m/i
+t/10 ; [] $
  []
 
 
 Overfull \hbox (16.22285pt too wide) in paragraph at lines 20--22
-\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10  
+$\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10  $
  []
 
 
 Overfull \hbox (55.18065pt too wide) in paragraph at lines 20--22
-\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 sgd\/cmr/m
-/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OMS/cmsy/m/n/10 j ^^@
+$\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 sgd\/cmr/
+m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OMS/cmsy/m/n/10 j  $
  []
 
 
 Overfull \hbox (102.04175pt too wide) in paragraph at lines 20--22
-\/cmr/m/n/10 2]\OML/cmm/m/it/10 ; \/cmr/m/n/10 (\OML/cmm/m/it/10 cuenta\/cmr/m/
-n/10 (\OML/cmm/m/it/10 p; sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )) \O
-MS/cmsy/m/n/10 ^^U
+$\/cmr/m/n/10 2]\OML/cmm/m/it/10 ; \/cmr/m/n/10 (\OML/cmm/m/it/10 cuenta\/cmr/m
+/n/10 (\OML/cmm/m/it/10 p; sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )) \
+OMS/cmsy/m/n/10 $
  []
 
 
 Overfull \hbox (118.97879pt too wide) in paragraph at lines 20--22
-\OML/cmm/m/it/10 cuenta\/cmr/m/n/10 (\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm
-/m/it/10 x\/cmr/m/n/10 )[]\OML/cmm/m/it/10 ; sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 
-x\/cmr/m/n/10 )))]$ 
+$\OML/cmm/m/it/10 cuenta\/cmr/m/n/10 (\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cm
+m/m/it/10 x\/cmr/m/n/10 )[]\OML/cmm/m/it/10 ; sgd\/cmr/m/n/10 (\OML/cmm/m/it/10
+ x\/cmr/m/n/10 )))]$ 
  []
 
 ! Undefined control sequence.
@@ -2980,35 +954,35 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 23--24
 
 
 Overfull \hbox (10.00002pt too wide) in paragraph at lines 23--24
-\OMS/cmsy/m/n/10  
+$\OMS/cmsy/m/n/10  $
  []
 
 
 Overfull \hbox (102.40025pt too wide) in paragraph at lines 23--24
-\OML/cmm/m/it/10 mejoresPaises\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\OM
-L/cmm/m/it/10 ; p \OMS/cmsy/m/n/10  
+$\OML/cmm/m/it/10 mejoresPaises\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\O
+ML/cmm/m/it/10 ; p \OMS/cmsy/m/n/10  $
  []
 
 
 Overfull \hbox (49.18117pt too wide) in paragraph at lines 23--24
-\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OML/cmm/m/it
-/10 ; i \OMS/cmsy/m/n/10  
+$\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OML/cmm/m/i
+t/10 ; i \OMS/cmsy/m/n/10  $
  []
 
 
 Overfull \hbox (55.18065pt too wide) in paragraph at lines 23--24
-\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 sgd\/cmr/m
-/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OMS/cmsy/m/n/10 j ^^@
+$\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 sgd\/cmr/
+m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OMS/cmsy/m/n/10 j  $
  []
 
 
 Overfull \hbox (27.80898pt too wide) in paragraph at lines 23--24
-\/cmr/m/n/10 2]\OML/cmm/m/it/10 ; p \OMS/cmsy/m/n/10 ^^T
+$\/cmr/m/n/10 2]\OML/cmm/m/it/10 ; p \OMS/cmsy/m/n/10 $
  []
 
 
 Overfull \hbox (44.74602pt too wide) in paragraph at lines 23--24
-\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )[]]$ 
+$\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )[]]$ 
  []
 
 ! Undefined control sequence.
@@ -3110,30 +1084,30 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 25--26
 
 
 Overfull \hbox (10.00002pt too wide) in paragraph at lines 25--26
-\OMS/cmsy/m/n/10  
+$\OMS/cmsy/m/n/10  $
  []
 
 
 Overfull \hbox (106.94664pt too wide) in paragraph at lines 25--26
-\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 paisesMasG
-rosos\OMS/cmsy/m/n/10 j ^^@
+$\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 paisesMas
+Grosos\OMS/cmsy/m/n/10 j  $
  []
 
 
 Overfull \hbox (12.22221pt too wide) in paragraph at lines 25--26
-\/cmr/m/n/10 1]\OML/cmm/m/it/10 ; [] 
+$\/cmr/m/n/10 1]\OML/cmm/m/it/10 ; [] $
  []
 
 
 Overfull \hbox (212.21684pt too wide) in paragraph at lines 25--26
-\OMS/cmsy/m/n/10 :\OML/cmm/m/it/10 sinRepetidos\/cmr/m/n/10 (\OML/cmm/m/it/10 s
-ub\/cmr/m/n/10 (\OML/cmm/m/it/10 paisesMasGrosos\/cmr/m/n/10 (\OML/cmm/m/it/10 
-j\/cmr/m/n/10 )\OML/cmm/m/it/10 ; \/cmr/m/n/10 0\OML/cmm/m/it/10 ; i\/cmr/m/n/1
-0 ))][]$ 
+$\OMS/cmsy/m/n/10 :\OML/cmm/m/it/10 sinRepetidos\/cmr/m/n/10 (\OML/cmm/m/it/10 
+sub\/cmr/m/n/10 (\OML/cmm/m/it/10 paisesMasGrosos\/cmr/m/n/10 (\OML/cmm/m/it/10
+ j\/cmr/m/n/10 )\OML/cmm/m/it/10 ; \/cmr/m/n/10 0\OML/cmm/m/it/10 ; i\/cmr/m/n/
+10 ))][]$ 
  []
 
 ! Undefined control sequence.
-l.27 \aux
+l.28 \aux
          {verificaPaises}{j:JJOO}{Bool}{\forall i \in [0..|paisesMasGrosos(j...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3168,13 +1142,13 @@ Missing character: There is no l in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.27 \aux{verificaPaises}{j:JJOO}{Bool}{\forall
+l.28 \aux{verificaPaises}{j:JJOO}{Bool}{\forall
                                                 i \in [0..|paisesMasGrosos(j...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.27 ...nDePaises(j)|) \leq |paisesMasGrosos(j)|)}
+l.28 ...nDePaises(j)|) \leq |paisesMasGrosos(j)|)}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -3185,54 +1159,54 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.28 
+l.29 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (38.4451pt too wide) in paragraph at lines 27--28
-[]$\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 2
+Overfull \hbox (38.4451pt too wide) in paragraph at lines 28--29
+[]$\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 2$
  []
 
 
-Overfull \hbox (119.41493pt too wide) in paragraph at lines 27--28
-\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 paisesMasG
-rosos\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\OMS/cmsy/m/n/10 j ^^@
+Overfull \hbox (119.41493pt too wide) in paragraph at lines 28--29
+$\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 paisesMas
+Grosos\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\OMS/cmsy/m/n/10 j  $
  []
 
 
-Overfull \hbox (12.22221pt too wide) in paragraph at lines 27--28
-\/cmr/m/n/10 1]\OML/cmm/m/it/10 ; [] 
+Overfull \hbox (12.22221pt too wide) in paragraph at lines 28--29
+$\/cmr/m/n/10 1]\OML/cmm/m/it/10 ; [] $
  []
 
 
-Overfull \hbox (114.41078pt too wide) in paragraph at lines 27--28
-\OML/cmm/m/it/10 paisesMasGrosos\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )[
-] ==
+Overfull \hbox (114.41078pt too wide) in paragraph at lines 28--29
+$\OML/cmm/m/it/10 paisesMasGrosos\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )
+[] ==$
  []
 
 
-Overfull \hbox (183.12158pt too wide) in paragraph at lines 27--28
-\OML/cmm/m/it/10 paisesMasGrosos\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )[
-] \OMS/cmsy/m/n/10 ^
+Overfull \hbox (183.12158pt too wide) in paragraph at lines 28--29
+$\OML/cmm/m/it/10 paisesMasGrosos\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )
+[] \OMS/cmsy/m/n/10 ^$
  []
 
 
-Overfull \hbox (19.00073pt too wide) in paragraph at lines 27--28
-\/cmr/m/n/10 ((\OML/cmm/m/it/10 i \/cmr/m/n/10 +
+Overfull \hbox (19.00073pt too wide) in paragraph at lines 28--29
+$\/cmr/m/n/10 ((\OML/cmm/m/it/10 i \/cmr/m/n/10 +$
  []
 
 
-Overfull \hbox (105.82pt too wide) in paragraph at lines 27--28
-\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 patronDePaises\/cmr/m/n/10 (\OML/cmm/m/it/10
- j\/cmr/m/n/10 )\OMS/cmsy/m/n/10 j\/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T
+Overfull \hbox (105.82pt too wide) in paragraph at lines 28--29
+$\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 patronDePaises\/cmr/m/n/10 (\OML/cmm/m/it/1
+0 j\/cmr/m/n/10 )\OMS/cmsy/m/n/10 j\/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $
  []
 
 
-Overfull \hbox (102.19266pt too wide) in paragraph at lines 27--28
-\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 paisesMasGrosos\/cmr/m/n/10 (\OML/cmm/m/it/1
-0 j\/cmr/m/n/10 )\OMS/cmsy/m/n/10 j\/cmr/m/n/10 )$ 
+Overfull \hbox (102.19266pt too wide) in paragraph at lines 28--29
+$\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 paisesMasGrosos\/cmr/m/n/10 (\OML/cmm/m/it/
+10 j\/cmr/m/n/10 )\OMS/cmsy/m/n/10 j\/cmr/m/n/10 )$ 
  []
 
 
@@ -3242,7 +1216,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.29 \end{problema}
+l.30 \end{problema}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3251,7 +1225,7 @@ or  <return>  to continue without it.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.29 \end{problema}
+l.30 \end{problema}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -3262,7 +1236,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.29 \end{problema}
+l.30 \end{problema}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -3273,7 +1247,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.29 \end{problema}
+l.30 \end{problema}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -3284,7 +1258,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.29 \end{problema}
+l.30 \end{problema}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -3295,7 +1269,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.29 \end{problema}
+l.30 \end{problema}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -3306,7 +1280,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.29 \end{problema}
+l.30 \end{problema}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -3317,7 +1291,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.29 \end{problema}
+l.30 \end{problema}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -3332,7 +1306,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.32 \begin
+l.33 \begin
            {problema}{sequ\'{i}aOl\'{i}mpica}{j: JJOO}{[Pa\'{i}s]}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3344,7 +1318,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.32 \begin{problema}
+l.33 \begin{problema}
                      {sequ\'{i}aOl\'{i}mpica}{j: JJOO}{[Pa\'{i}s]}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3374,17 +1348,93 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no ] in font nullfont!
 
-Overfull \hbox (5.55557pt too wide) in paragraph at lines 32--33
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 33--34
 []\/cmr/m/n/10 i[]i
  []
 
 
-Overfull \hbox (2.77779pt too wide) in paragraph at lines 32--33
+Overfull \hbox (2.77779pt too wide) in paragraph at lines 33--34
 []\/cmr/m/n/10 i 
  []
 
 ! Undefined control sequence.
-l.34 \aux
+l.35 \asegura
+             {sinRepetidos(elPeorPais(j))}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no R in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no j in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 35--36
+[] 
+ []
+
+! Undefined control sequence.
+l.37 \asegura
+             {result == elPeorPais(j)}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no j in font nullfont!
+Missing character: There is no ) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 37--38
+[]
+ []
+
+! Undefined control sequence.
+l.39 \aux
          {atletasDelPais}{j:JJOO,p: Pa\'{i}s }{[Atleta]}{[x | x\leftarrow at...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3433,13 +1483,13 @@ Missing character: There is no x in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.34 ...O,p: Pa\'{i}s }{[Atleta]}{[x | x\leftarrow
+l.39 ...O,p: Pa\'{i}s }{[Atleta]}{[x | x\leftarrow
                                                    atletas(j), nacionalidad(...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.34 ...leftarrow atletas(j), nacionalidad(x)==p]}
+l.39 ...leftarrow atletas(j), nacionalidad(x)==p]}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -3450,40 +1500,40 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.35 
+l.40 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 34--35
+Overfull \hbox (20.0pt too wide) in paragraph at lines 39--40
 []
  []
 
 
-Overfull \hbox (2.77779pt too wide) in paragraph at lines 34--35
+Overfull \hbox (2.77779pt too wide) in paragraph at lines 39--40
 []\/cmr/m/n/10 i
  []
 
 
-Overfull \hbox (10.00002pt too wide) in paragraph at lines 34--35
-\OMS/cmsy/m/n/10  
+Overfull \hbox (10.00002pt too wide) in paragraph at lines 39--40
+$\OMS/cmsy/m/n/10  $
  []
 
 
-Overfull \hbox (136.57515pt too wide) in paragraph at lines 34--35
-\OML/cmm/m/it/10 atletas\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\OML/cmm/
-m/it/10 ; nacionalidad\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 ) ==
+Overfull \hbox (136.57515pt too wide) in paragraph at lines 39--40
+$\OML/cmm/m/it/10 atletas\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\OML/cmm
+/m/it/10 ; nacionalidad\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 ) ==$
  []
 
 
-Overfull \hbox (7.80904pt too wide) in paragraph at lines 34--35
-\OML/cmm/m/it/10 p\/cmr/m/n/10 ]$ 
+Overfull \hbox (7.80904pt too wide) in paragraph at lines 39--40
+$\OML/cmm/m/it/10 p\/cmr/m/n/10 ]$ 
  []
 
 ! Undefined control sequence.
-l.36 \aux
-         {todosLosPaises}{J:JJOO}{[(Pa\'{i}s,[Bool]]}{[(nacionalidad(x), [al...
+l.41 \aux
+         {todosLosPaises}{J:JJOO}{[(Pa\'{i}s,[Bool])]}{[(nacionalidad(x), [a...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3522,6 +1572,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no ] in font nullfont!
+Missing character: There is no ) in font nullfont!
 Missing character: There is no ] in font nullfont!
 Missing character: There is no [ in font nullfont!
 Missing character: There is no ( in font nullfont!
@@ -3553,13 +1604,13 @@ Missing character: There is no h in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.36 ...]]}{[(nacionalidad(x), [alguno(h\leftarrow
+l.41 ...)]}{[(nacionalidad(x), [alguno(h\leftarrow
                                                    (ranking(y)[0,1,2])\\k\le...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.36 ...antDias(j)], y\leftarrow cronograma(j,i)]}
+l.41 ...antDias(j)], y\leftarrow cronograma(j,i)]}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -3570,65 +1621,174 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.37 
+l.42 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (22.77779pt too wide) in paragraph at lines 36--37
+Overfull \hbox (22.77779pt too wide) in paragraph at lines 41--42
 [][]\/cmr/m/n/10 i
  []
 
 
-Overfull \hbox (10.00002pt too wide) in paragraph at lines 36--37
-\OMS/cmsy/m/n/10  
+Overfull \hbox (10.00002pt too wide) in paragraph at lines 41--42
+$\OMS/cmsy/m/n/10  $
  []
 
 
-Overfull \hbox (86.43604pt too wide) in paragraph at lines 36--37
-\/cmr/m/n/10 (\OML/cmm/m/it/10 ranking\/cmr/m/n/10 (\OML/cmm/m/it/10 y\/cmr/m/n
-/10 )[0\OML/cmm/m/it/10 ; \/cmr/m/n/10 1\OML/cmm/m/it/10 ; \/cmr/m/n/10 2])[] 
+Overfull \hbox (86.43604pt too wide) in paragraph at lines 41--42
+$\/cmr/m/n/10 (\OML/cmm/m/it/10 ranking\/cmr/m/n/10 (\OML/cmm/m/it/10 y\/cmr/m/
+n/10 )[0\OML/cmm/m/it/10 ; \/cmr/m/n/10 1\OML/cmm/m/it/10 ; \/cmr/m/n/10 2])[] 
+$
  []
 
 
-Overfull \hbox (18.29857pt too wide) in paragraph at lines 36--37
-\OML/cmm/m/it/10 k \OMS/cmsy/m/n/10  
+Overfull \hbox (18.29857pt too wide) in paragraph at lines 41--42
+$\OML/cmm/m/it/10 k \OMS/cmsy/m/n/10  $
  []
 
 
-Overfull \hbox (191.38399pt too wide) in paragraph at lines 36--37
-\/cmr/m/n/10 (\OML/cmm/m/it/10 atletasDelPais\/cmr/m/n/10 (\OML/cmm/m/it/10 j; 
-nacionalidad\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )))\OML/cmm/m/it/10 ; 
-k \/cmr/m/n/10 ==
+Overfull \hbox (191.38399pt too wide) in paragraph at lines 41--42
+$\/cmr/m/n/10 (\OML/cmm/m/it/10 atletasDelPais\/cmr/m/n/10 (\OML/cmm/m/it/10 j;
+ nacionalidad\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )))\OML/cmm/m/it/10 ;
+ k \/cmr/m/n/10 ==$
  []
 
 
-Overfull \hbox (37.58795pt too wide) in paragraph at lines 36--37
-\OML/cmm/m/it/10 h\/cmr/m/n/10 )])\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x \OMS/cms
-y/m/n/10  
+Overfull \hbox (37.58795pt too wide) in paragraph at lines 41--42
+$\OML/cmm/m/it/10 h\/cmr/m/n/10 )])\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x \OMS/cm
+sy/m/n/10  $
  []
 
 
-Overfull \hbox (63.4539pt too wide) in paragraph at lines 36--37
-\OML/cmm/m/it/10 atletas\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\OML/cmm/
-m/it/10 ; i \OMS/cmsy/m/n/10  
+Overfull \hbox (63.4539pt too wide) in paragraph at lines 41--42
+$\OML/cmm/m/it/10 atletas\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\OML/cmm
+/m/it/10 ; i \OMS/cmsy/m/n/10  $
  []
 
 
-Overfull \hbox (92.26556pt too wide) in paragraph at lines 36--37
-\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::cantDias\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr
-/m/n/10 )]\OML/cmm/m/it/10 ; y \OMS/cmsy/m/n/10  
+Overfull \hbox (92.26556pt too wide) in paragraph at lines 41--42
+$\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::cantDias\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cm
+r/m/n/10 )]\OML/cmm/m/it/10 ; y \OMS/cmsy/m/n/10  $
  []
 
 
-Overfull \hbox (76.66354pt too wide) in paragraph at lines 36--37
-\OML/cmm/m/it/10 cronograma\/cmr/m/n/10 (\OML/cmm/m/it/10 j; i\/cmr/m/n/10 )]$ 
-
+Overfull \hbox (76.66354pt too wide) in paragraph at lines 41--42
+$\OML/cmm/m/it/10 cronograma\/cmr/m/n/10 (\OML/cmm/m/it/10 j; i\/cmr/m/n/10 )]$
+ 
  []
 
 ! Undefined control sequence.
-l.38 \aux
+l.43 \aux
+         {lugaresDistintos}{j:JJOO, b:[Bool]}{[\ent]}{[x+1 | x\leftarrow[0.....
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no D in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no j in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no J in font nullfont!
+Missing character: There is no J in font nullfont!
+Missing character: There is no O in font nullfont!
+Missing character: There is no O in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no [ in font nullfont!
+! Undefined control sequence.
+l.43 ...{lugaresDistintos}{j:JJOO, b:[Bool]}{[\ent
+                                                  ]}{[x+1 | x\leftarrow[0..|...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ] in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no x in font nullfont!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.43 ...JJOO, b:[Bool]}{[\ent]}{[x+1 | x\leftarrow
+                                                  [0..|b|-1], b_x \not= b_{x...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.43 ...x\leftarrow[0..|b|-1], b_x \not= b_{x+1}]}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.44 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 43--44
+[]
+ []
+
+
+Overfull \hbox (10.00002pt too wide) in paragraph at lines 43--44
+$\OMS/cmsy/m/n/10  $
+ []
+
+
+Overfull \hbox (30.9584pt too wide) in paragraph at lines 43--44
+$\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 b\OMS/cms
+y/m/n/10 j  $
+ []
+
+
+Overfull \hbox (32.10411pt too wide) in paragraph at lines 43--44
+$\/cmr/m/n/10 1]\OML/cmm/m/it/10 ; b[] \OMS/cmsy/m/n/10 6\/cmr/m/n/10 =$
+ []
+
+
+Overfull \hbox (22.22922pt too wide) in paragraph at lines 43--44
+$\OML/cmm/m/it/10 b[]\/cmr/m/n/10 ]$ 
+ []
+
+! Undefined control sequence.
+l.45 \aux
          {paisesConDiasSep}{j:JJOO}{[(Pais,[[Bool]])]}{
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3685,17 +1845,17 @@ Missing character: There is no x in font nullfont!
 Missing character: There is no ) in font nullfont!
 Missing character: There is no , in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no T in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no E in font nullfont!
-Missing character: There is no l in font nullfont!
 Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no b in font nullfont!
 Missing character: There is no ( in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no , in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no g in font nullfont!
 Missing character: There is no d in font nullfont!
@@ -3705,13 +1865,13 @@ Missing character: There is no ) in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.39 [(prm(x),[ifThenElse(sgd(x)_
-                                 i \not= sgd(x)_k, \\ sub(todosLosPaises(j),...
+l.46 [(prm(x),[sub(sgd(x),sgd(x)_
+                                 h, sgd(x)_{h+1} )]|
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.40 ...eftarrow [0..|sgd(todosLosPaises(j))|-1]]}
+l.47 ...tarrow cons(0,lugaresDistintos(j,sgd(x)))}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -3722,74 +1882,37 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.41 
+l.48 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 38--41
+Overfull \hbox (20.0pt too wide) in paragraph at lines 45--48
 []
  []
 
 
-Overfull \hbox (13.8848pt too wide) in paragraph at lines 38--41
-[] \OMS/cmsy/m/n/10 6\/cmr/m/n/10 =
+Overfull \hbox (81.38432pt too wide) in paragraph at lines 45--48
+$[]\OML/cmm/m/it/10 ; sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )[])]\OMS
+/cmsy/m/n/10 j\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10  $
  []
 
 
-Overfull \hbox (37.87848pt too wide) in paragraph at lines 38--41
-\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )[]\OML/cmm/m/
-it/10 ; [] 
+Overfull \hbox (105.56157pt too wide) in paragraph at lines 45--48
+$\OML/cmm/m/it/10 todosLosPaises\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\
+OML/cmm/m/it/10 ; h \OMS/cmsy/m/n/10  $
  []
 
 
-Overfull \hbox (126.80309pt too wide) in paragraph at lines 38--41
-\OML/cmm/m/it/10 sub\/cmr/m/n/10 (\OML/cmm/m/it/10 todosLosPaises\/cmr/m/n/10 (
-\OML/cmm/m/it/10 j\/cmr/m/n/10 )\OML/cmm/m/it/10 ; i; k \OMS/cmsy/m/n/10 ^^@
- []
-
-
-Overfull \hbox (15.5556pt too wide) in paragraph at lines 38--41
-\/cmr/m/n/10 1) \OMS/cmsy/m/n/10 ^
- []
-
-
-Overfull \hbox (21.77844pt too wide) in paragraph at lines 38--41
-\OML/cmm/m/it/10 i \/cmr/m/n/10 ==
- []
-
-
-Overfull \hbox (33.45831pt too wide) in paragraph at lines 38--41
-\OML/cmm/m/it/10 k\/cmr/m/n/10 )]\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x \OMS/cmsy
-/m/n/10  
- []
-
-
-Overfull \hbox (101.0229pt too wide) in paragraph at lines 38--41
-\OML/cmm/m/it/10 todosLosPaises\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\O
-ML/cmm/m/it/10 ; i \/cmr/m/n/10 =
- []
-
-
-Overfull \hbox (27.743pt too wide) in paragraph at lines 38--41
-\/cmr/m/n/10 0\OML/cmm/m/it/10 ; k \OMS/cmsy/m/n/10  
- []
-
-
-Overfull \hbox (132.04323pt too wide) in paragraph at lines 38--41
-\/cmr/m/n/10 [0\OML/cmm/m/it/10 ::\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 sgd\/cmr/m
-/n/10 (\OML/cmm/m/it/10 todosLosPaises\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n
-/10 ))\OMS/cmsy/m/n/10 j ^^@
- []
-
-
-Overfull \hbox (10.55559pt too wide) in paragraph at lines 38--41
-\/cmr/m/n/10 1]]$ 
+Overfull \hbox (158.30457pt too wide) in paragraph at lines 45--48
+$\OML/cmm/m/it/10 cons\/cmr/m/n/10 (0\OML/cmm/m/it/10 ; lugaresDistintos\/cmr/m
+/n/10 (\OML/cmm/m/it/10 j; sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )))$
+ 
  []
 
 ! Undefined control sequence.
-l.42 \aux
+l.49 \aux
          {elijoLosFracasados}{j:JJOO}{[(pais,[[Bool]])]}{[(prm(x), [y])\\ | ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3856,13 +1979,13 @@ Missing character: There is no x in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.42 ...[[Bool]])]}{[(prm(x), [y])\\ | x\leftarrow
+l.49 ...[[Bool]])]}{[(prm(x), [y])\\ | x\leftarrow
                                                    paisesConDiasSep(j), (\fo...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.42 ...tarrow y \leftarrow sgd(x))(h == False))]}
+l.49 ...tarrow y \leftarrow sgd(x))(h == False))]}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -3873,46 +1996,46 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.43 
+l.50 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 42--43
+Overfull \hbox (20.0pt too wide) in paragraph at lines 49--50
 [] 
  []
 
 
-Overfull \hbox (10.00002pt too wide) in paragraph at lines 42--43
-\OMS/cmsy/m/n/10  
+Overfull \hbox (10.00002pt too wide) in paragraph at lines 49--50
+$\OMS/cmsy/m/n/10  $
  []
 
 
-Overfull \hbox (129.77338pt too wide) in paragraph at lines 42--43
-\OML/cmm/m/it/10 paisesConDiasSep\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )
-\OML/cmm/m/it/10 ; \/cmr/m/n/10 (\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 h \OMS/cmsy
-/m/n/10  
+Overfull \hbox (129.77338pt too wide) in paragraph at lines 49--50
+$\OML/cmm/m/it/10 paisesConDiasSep\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 
+)\OML/cmm/m/it/10 ; \/cmr/m/n/10 (\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 h \OMS/cms
+y/m/n/10  $
  []
 
 
-Overfull \hbox (18.03932pt too wide) in paragraph at lines 42--43
-\OML/cmm/m/it/10 y \OMS/cmsy/m/n/10  
+Overfull \hbox (18.03932pt too wide) in paragraph at lines 49--50
+$\OML/cmm/m/it/10 y \OMS/cmsy/m/n/10  $
  []
 
 
-Overfull \hbox (60.3866pt too wide) in paragraph at lines 42--43
-\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 ))(\OML/cmm/m/
-it/10 h \/cmr/m/n/10 ==
+Overfull \hbox (60.3866pt too wide) in paragraph at lines 49--50
+$\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 ))(\OML/cmm/m
+/it/10 h \/cmr/m/n/10 ==$
  []
 
 
-Overfull \hbox (36.18527pt too wide) in paragraph at lines 42--43
-\OML/cmm/m/it/10 False\/cmr/m/n/10 ))]$ 
+Overfull \hbox (36.18527pt too wide) in paragraph at lines 49--50
+$\OML/cmm/m/it/10 False\/cmr/m/n/10 ))]$ 
  []
 
 ! Undefined control sequence.
-l.44 \aux
+l.51 \aux
          {mayorCantidadDeDIas}{j:JJOO}{[(pais, \ent)]}{[(prm(x),long(y))\\ |...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3953,7 +2076,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no , in font nullfont!
 ! Undefined control sequence.
-l.44 ...{mayorCantidadDeDIas}{j:JJOO}{[(pais, \ent
+l.51 ...{mayorCantidadDeDIas}{j:JJOO}{[(pais, \ent
                                                   )]}{[(prm(x),long(y))\\ | ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3985,13 +2108,13 @@ Missing character: There is no x in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.44 ...\ent)]}{[(prm(x),long(y))\\ | x \leftarrow
+l.51 ...\ent)]}{[(prm(x),long(y))\\ | x \leftarrow
                                                    elijoLosFracasados(j), y\...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.44 ...\leftarrow sgd(x), long(y) \geq long(h) ]}
+l.51 ...\leftarrow sgd(x), long(y) \geq long(h) ]}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -4002,46 +2125,46 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.45 
+l.52 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 44--45
+Overfull \hbox (20.0pt too wide) in paragraph at lines 51--52
 [] 
  []
 
 
-Overfull \hbox (10.00002pt too wide) in paragraph at lines 44--45
-\OMS/cmsy/m/n/10  
+Overfull \hbox (10.00002pt too wide) in paragraph at lines 51--52
+$\OMS/cmsy/m/n/10  $
  []
 
 
-Overfull \hbox (124.33316pt too wide) in paragraph at lines 44--45
-\OML/cmm/m/it/10 elijoLosFracasados\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10
- )\OML/cmm/m/it/10 ; y \OMS/cmsy/m/n/10  
+Overfull \hbox (124.33316pt too wide) in paragraph at lines 51--52
+$\OML/cmm/m/it/10 elijoLosFracasados\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/1
+0 )\OML/cmm/m/it/10 ; y \OMS/cmsy/m/n/10  $
  []
 
 
-Overfull \hbox (51.49762pt too wide) in paragraph at lines 44--45
-\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OML/cmm/m/it
-/10 ; h \OMS/cmsy/m/n/10  
+Overfull \hbox (51.49762pt too wide) in paragraph at lines 51--52
+$\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OML/cmm/m/i
+t/10 ; h \OMS/cmsy/m/n/10  $
  []
 
 
-Overfull \hbox (75.71184pt too wide) in paragraph at lines 44--45
-\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OML/cmm/m/it
-/10 ; long\/cmr/m/n/10 (\OML/cmm/m/it/10 y\/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^U
+Overfull \hbox (75.71184pt too wide) in paragraph at lines 51--52
+$\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 )\OML/cmm/m/i
+t/10 ; long\/cmr/m/n/10 (\OML/cmm/m/it/10 y\/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $
  []
 
 
-Overfull \hbox (35.47578pt too wide) in paragraph at lines 44--45
-\OML/cmm/m/it/10 long\/cmr/m/n/10 (\OML/cmm/m/it/10 h\/cmr/m/n/10 )]$ 
+Overfull \hbox (35.47578pt too wide) in paragraph at lines 51--52
+$\OML/cmm/m/it/10 long\/cmr/m/n/10 (\OML/cmm/m/it/10 h\/cmr/m/n/10 )]$ 
  []
 
 ! Undefined control sequence.
-l.46 \aux
+l.53 \aux
          {elPeorPais}{j:JJOO}{[pais]}{[prm(x) | x\leftarrow mayorCantidadDeD...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4083,13 +2206,13 @@ Missing character: There is no x in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.46 ...ais}{j:JJOO}{[pais]}{[prm(x) | x\leftarrow
+l.53 ...ais}{j:JJOO}{[pais]}{[prm(x) | x\leftarrow
                                                    mayorCantidadDeDias(j), \...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.46 ...ayorCantidadDeDias(j), sgd(x)\geq sgd(y)]}
+l.53 ...ayorCantidadDeDias(j), sgd(x)\geq sgd(y)]}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -4097,54 +2220,45 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-! Undefined control sequence.
-l.47 \asegura
-             {result == elPeorPais(j)}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.48 
+l.54 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 46--48
+Overfull \hbox (20.0pt too wide) in paragraph at lines 53--54
 []
  []
 
 
-Overfull \hbox (10.00002pt too wide) in paragraph at lines 46--48
-\OMS/cmsy/m/n/10  
+Overfull \hbox (10.00002pt too wide) in paragraph at lines 53--54
+$\OMS/cmsy/m/n/10  $
  []
 
 
-Overfull \hbox (122.96819pt too wide) in paragraph at lines 46--48
-\OML/cmm/m/it/10 mayorCantidadDeDias\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/1
-0 )\OML/cmm/m/it/10 ; [] 
+Overfull \hbox (122.96819pt too wide) in paragraph at lines 53--54
+$\OML/cmm/m/it/10 mayorCantidadDeDias\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/
+10 )\OML/cmm/m/it/10 ; [] $
  []
 
 
-Overfull \hbox (18.03932pt too wide) in paragraph at lines 46--48
-\OML/cmm/m/it/10 y \OMS/cmsy/m/n/10  
+Overfull \hbox (18.03932pt too wide) in paragraph at lines 53--54
+$\OML/cmm/m/it/10 y \OMS/cmsy/m/n/10  $
  []
 
 
-Overfull \hbox (162.0376pt too wide) in paragraph at lines 46--48
-\OML/cmm/m/it/10 mayorCantidadDeDias\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/1
-0 )\OML/cmm/m/it/10 ; sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 ) \OMS/cm
-sy/m/n/10 ^^U
+Overfull \hbox (162.0376pt too wide) in paragraph at lines 53--54
+$\OML/cmm/m/it/10 mayorCantidadDeDias\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/
+10 )\OML/cmm/m/it/10 ; sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 x\/cmr/m/n/10 ) \OMS/c
+msy/m/n/10 $
  []
 
 
-Overfull \hbox (142.23302pt too wide) in paragraph at lines 46--48
-\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 y\/cmr/m/n/10 )][]$ 
+Overfull \hbox (30.83801pt too wide) in paragraph at lines 53--54
+$\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 y\/cmr/m/n/10 )]$ 
  []
 
 
@@ -4154,7 +2268,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.49 \end{problema}
+l.55 \end{problema}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -4163,7 +2277,7 @@ or  <return>  to continue without it.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 \end{problema}
+l.55 \end{problema}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -4174,7 +2288,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 \end{problema}
+l.55 \end{problema}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -4185,7 +2299,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 \end{problema}
+l.55 \end{problema}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -4196,7 +2310,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 \end{problema}
+l.55 \end{problema}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -4207,7 +2321,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 \end{problema}
+l.55 \end{problema}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -4218,7 +2332,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.49 \end{problema}
+l.55 \end{problema}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -4226,64 +2340,16 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-
-! LaTeX Error: Environment problema undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.51 \begin{problema}
-                     {sequ\'{i}aOl\'{i}mpica}{j: JJOO}{[Pa\'{i}s]}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no q in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no : in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no ] in font nullfont!
-
-! LaTeX Error: \begin{document} ended by \end{problema}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.52 \end{problema}
+! Missing } inserted.
+<inserted text> 
+                }
+l.55 \end{problema}
                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Overfull \hbox (25.55557pt too wide) in paragraph at lines 51--53
-[][]\/cmr/m/n/10 i[]i
- []
-
-
-Overfull \hbox (2.77779pt too wide) in paragraph at lines 51--53
-[]\/cmr/m/n/10 i
- []
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
 
 ! LaTeX Error: Lonely \item--perhaps a missing list environment.
@@ -4292,7 +2358,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.55 \begin
+l.58 \begin
            {problema}{transcurrirDia}{j: JJOO}{}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4304,7 +2370,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.55 \begin{problema}
+l.58 \begin{problema}
                      {transcurrirDia}{j: JJOO}{}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -4331,7 +2397,7 @@ Missing character: There is no J in font nullfont!
 Missing character: There is no O in font nullfont!
 Missing character: There is no O in font nullfont!
 ! Undefined control sequence.
-l.56 \requiere
+l.59 \requiere
               {jornadaActual(j) < cantDias(j)}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4368,7 +2434,7 @@ Missing character: There is no ( in font nullfont!
 Missing character: There is no j in font nullfont!
 Missing character: There is no ) in font nullfont!
 ! Undefined control sequence.
-l.57 \modifica
+l.60 \modifica
               {j}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4378,7 +2444,7 @@ and I'll forget about whatever was undefined.
 
 Missing character: There is no j in font nullfont!
 ! Undefined control sequence.
-l.58 \asegura
+l.61 \asegura
              {cantDias(j)==cantDias(pre(j))}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4416,7 +2482,7 @@ Missing character: There is no j in font nullfont!
 Missing character: There is no ) in font nullfont!
 Missing character: There is no ) in font nullfont!
 ! Undefined control sequence.
-l.59 \asegura
+l.62 \asegura
              {a\tilde{n}o(j)==a\tilde{n}o(pre(j))}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4428,13 +2494,13 @@ Missing character: There is no a in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.59 \asegura{a\tilde
+l.62 \asegura{a\tilde
                      {n}o(j)==a\tilde{n}o(pre(j))}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.59 \asegura{a\tilde{n}o(j)==a\tilde{n}o(pre(j))}
+l.62 \asegura{a\tilde{n}o(j)==a\tilde{n}o(pre(j))}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -4443,7 +2509,7 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 ! Undefined control sequence.
-l.60 \asegura
+l.63 \asegura
              {mismos(atletas(j),atletas(pre(j))}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4452,7 +2518,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.61 \asegura
+l.64 \asegura
              {(\forall d \in [1...cantDias(pre(j))]) cronograma(pre(j),d) ==...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4461,7 +2527,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.62 \asegura
+l.65 \asegura
              { cambiaElDia: jornadaActual(j)==jornadaActual(pre(j))+1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4470,7 +2536,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.63 \asegura
+l.66 \asegura
              {lasPasadasFinalizaron(pre(j))}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4479,7 +2545,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.64 \asegura
+l.67 \asegura
              { rankingSegunMasCapaces: (\forall c \in cronograma(pre(j),jorn...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4488,7 +2554,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.65 \asegura
+l.68 \asegura
              { unControlPorCompetencia: (\forall c \in cronograma( pre(j),jo...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4497,7 +2563,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.66 \asegura
+l.69 \asegura
              { dopingPositivoMax5Porciento: (\exists a \in atletasLesTocoAnt...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4506,7 +2572,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.67 \aux
+l.70 \aux
          {porcentajePositivos}{j:JJOO}{$\mathbb{R}$}{ |atletasLesDioPositivo...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4517,7 +2583,7 @@ and I'll forget about whatever was undefined.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.67 \aux{porcentajePositivos}{j:JJOO}{$
+l.70 \aux{porcentajePositivos}{j:JJOO}{$
                                         \mathbb{R}$}{ |atletasLesDioPositivo...
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -4526,7 +2592,7 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 ! Undefined control sequence.
-l.67 \aux{porcentajePositivos}{j:JJOO}{$\mathbb
+l.70 \aux{porcentajePositivos}{j:JJOO}{$\mathbb
                                                {R}$}{ |atletasLesDioPositivo...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4538,7 +2604,7 @@ Missing character: There is no R in font nullfont!
 ! Extra }, or forgotten $.
 <recently read> }
                  
-l.67 ...porcentajePositivos}{j:JJOO}{$\mathbb{R}$}
+l.70 ...porcentajePositivos}{j:JJOO}{$\mathbb{R}$}
                                                   { |atletasLesDioPositivo(j...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -4547,7 +2613,7 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 ! Undefined control sequence.
-l.68 \aux
+l.71 \aux
          {atletasLesTocoAntiDoping}{j:JJOO,d:\ent}{[Atleta]}{[lesTocoControl...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4556,7 +2622,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.68 \aux{atletasLesTocoAntiDoping}{j:JJOO,d:\ent
+l.71 \aux{atletasLesTocoAntiDoping}{j:JJOO,d:\ent
                                                  }{[Atleta]}{[lesTocoControl...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4565,7 +2631,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.69 \aux
+l.72 \aux
          {atletasLesDioPositivo}{j:JJOO,d:\ent}{[Atleta]}{[lesTocoControlAnt...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4574,7 +2640,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.69 \aux{atletasLesDioPositivo}{j:JJOO,d:\ent
+l.72 \aux{atletasLesDioPositivo}{j:JJOO,d:\ent
                                               }{[Atleta]}{[lesTocoControlAnt...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4589,7 +2655,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.70 \end{problema}
+l.73 \end{problema}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -4598,7 +2664,7 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.70 \end{problema}
+l.73 \end{problema}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -4609,7 +2675,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.70 \end{problema}
+l.73 \end{problema}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -4625,12 +2691,11 @@ my insertion and my current dilemma will both disappear.
 
  
 Here is how much of TeX's memory you used:
- 18 strings out of 495061
- 242 string characters out of 1182622
- 52108 words of memory out of 3000000
- 3294 multiletter control sequences out of 15000+50000
+ 20 strings out of 494045
+ 394 string characters out of 3145946
+ 56890 words of memory out of 3000000
+ 3411 multiletter control sequences out of 15000+200000
  3640 words of font info for 14 fonts, out of 3000000 for 9000
- 28 hyphenation exceptions out of 8191
- 18i,3n,16p,293b,95s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 715 hyphenation exceptions out of 8191
+ 18i,3n,16p,294b,95s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!
->>>>>>> 9827ecb384b7b183d13ee84051712c5fdb66117d

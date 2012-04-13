@@ -32,24 +32,26 @@ i \leftarrow [0..|sgd(x)|-2],(cuenta(p, sgd(x)) \geq cuenta(sgd(x)_{i+1},sgd(x))
 \item
 \begin{problema}{sequ\'{i}aOl\'{i}mpica}{j: JJOO}{[Pa\'{i}s]}
 
+\asegura{sinRepetidos(elPeorPais(j))}
+
+\asegura{result == elPeorPais(j)}
+
 \aux{atletasDelPais}{j:JJOO,p: Pa\'{i}s }{[Atleta]}{[x | x\leftarrow atletas(j), nacionalidad(x)==p]}
 
-\aux{todosLosPaises}{J:JJOO}{[(Pa\'{i}s,[Bool]]}{[(nacionalidad(x), [alguno(h\leftarrow (ranking(y)[0,1,2])\\k\leftarrow (atletasDelPais(j,nacionalidad(x))), k == h)])| x \leftarrow atletas(j), i\leftarrow[0..cantDias(j)], y\leftarrow cronograma(j,i)]}
+\aux{todosLosPaises}{J:JJOO}{[(Pa\'{i}s,[Bool])]}{[(nacionalidad(x), [alguno(h\leftarrow (ranking(y)[0,1,2])\\k\leftarrow (atletasDelPais(j,nacionalidad(x))), k == h)])| x \leftarrow atletas(j), i\leftarrow[0..cantDias(j)], y\leftarrow cronograma(j,i)]}
+
+\aux{lugaresDistintos}{j:JJOO, b:[Bool]}{[\ent]}{[x+1 | x\leftarrow[0..|b|-1], b_x \not= b_{x+1}]}
 
 \aux{paisesConDiasSep}{j:JJOO}{[(Pais,[[Bool]])]}{
-[(prm(x),[ifThenElse(sgd(x)_i \not= sgd(x)_k, \\ sub(todosLosPaises(j), i, k-1) \wedge i==k)] | 
-x \leftarrow todosLosPaises(j), i=0, k\leftarrow [0..|sgd(todosLosPaises(j))|-1]]}
+[(prm(x),[sub(sgd(x),sgd(x)_h, sgd(x)_{h+1} )]| 
+x \leftarrow todosLosPaises(j), h\leftarrow cons(0,lugaresDistintos(j,sgd(x)))}
 
 \aux{elijoLosFracasados}{j:JJOO}{[(pais,[[Bool]])]}{[(prm(x), [y])\\ | x\leftarrow paisesConDiasSep(j), (\forall h \leftarrow y \leftarrow sgd(x))(h == False))]}
 
 \aux{mayorCantidadDeDIas}{j:JJOO}{[(pais, \ent)]}{[(prm(x),long(y))\\ | x \leftarrow elijoLosFracasados(j), y\leftarrow sgd(x), h\leftarrow sgd(x), long(y) \geq long(h) ]}
 
 \aux{elPeorPais}{j:JJOO}{[pais]}{[prm(x) | x\leftarrow mayorCantidadDeDias(j), \\ y\leftarrow mayorCantidadDeDias(j), sgd(x)\geq sgd(y)]}
-\asegura{result == elPeorPais(j)}
 
-\end{problema}
-
-\begin{problema}{sequ\'{i}aOl\'{i}mpica}{j: JJOO}{[Pa\'{i}s]}
 \end{problema}
 
 \item
