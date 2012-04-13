@@ -2,10 +2,6 @@
 
 \aux{atletasEnCategoria}{j:JJOO, cat: Categoria, p: Pa\'{i}s }{[Atleta]}{ [ a | a \in atletas(j), nacionalidad(a)==p \wedge sexo(a)==sgd(cat) \wedge prm(cat) \in deportes(a))] }
 \aux{algunaCompetenciaFinalizada}{j:JJOO}{\bool}{(\exists dia \in [1...cantDias(j)], cron \in cronograma(j,dia), comp \in cron) finalizada(comp)}
-\aux{algunaMedalla}{m: [\ent]}{\bool}{ 
-  (m_0 \not= 0 \vee m_1 \not= 0 \vee m_2 \not= 0)
-}
-\aux{borrarPositivos}{c:competencia}{[Atleta]}{[x|x\leftarrow ranking(c),(\forall y\leftarrow listaPositivos(c)) y\not= x]}
 \aux{ciaNumbers}{as: [Atleta]}{[\ent]}{\comp{ciaNumber(a)}{a \selec as}}
 \aux{competencias}{j: JJOO}{[Competencia]}{\comp{c}{d \selec [1..cantDias(j)], c \selec cronograma(j, d)}}
 \aux{competenciasFinalizadas}{j: JJOO}{[Competencia]}{\comp{c}{C \selec [1..cantDias(j)], c \selec cronograma(j, d), finalizada(c)}}

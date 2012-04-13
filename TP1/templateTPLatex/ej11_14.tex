@@ -1,8 +1,9 @@
 \item
 \begin{problema}{stevenBradbury}{j: JJOO}{Atleta}
 \requiere{ algunaCompetenciaFinalizada(j)} % Requiero que haya alguna competencia del cronograma de algun dia finalizada
-\asegura{ (\exists dia \in [1...cantDias(j)], cron \in cronograma(j,dia), comp \in cron) result == ranking(comp)_0 } % Aseguro que ese atleta gano un ORO
-\asegura{ (\forall a \in atletas(j), a \neq result) capacidad(result) \leq capacidad(a) } % Aseguro que es el menos capaz
+\asegura{ esElMenosCapaz: \\ (\forall a \in atletasConOro(j), a \neq result) sumaDeCapacidades(result) \leq sumaDeCapacidades(a) } % Aseguro que es el menos capaz
+\aux{atletasConOro}{j:JJOO}{[Atleta]}{[ ranking(c)_0 | c \in competencias(j)]}
+\aux{sumaDeCapacidades}{a:Atleta}{\ent}{ \sum [ capacidad(d) | d \in deportes(a)] }
 \end{problema}
 
 \item
@@ -10,7 +11,7 @@
 
 \asegura {result == verificaPaises(j)}
 
-\aux{competenciasPorDia}{j:JJOO}{[(\ent, [Competencia])]}{[(dia,c) | dia \leftarrow[1..jornadaActual(j)], c \leftarrow cronograma(j,dia)]}
+\aux{competenciasPorDia}{j:JJOO}{[(\ent, [Competencia])]}{[(dia,c) | dia \leftarrow[1..jornadaActual(j)], \\ c == mismos(cronograma(j,dia))]}
 
 \aux{oroPorDia}{j:JJOO}{[(\ent, [Atleta])]}{[(dia,a)| h\leftarrow competenciasPorDia(j), dia\leftarrow prm(h), x\leftarrow sgd(h),\\ i \leftarrow [0..|x|-1], a \leftarrow ranking(x_i)_0 ]}
 
@@ -21,7 +22,8 @@ i \leftarrow [0..|sgd(x)|-2],(cuenta(p, sgd(x)) \geq cuenta(sgd(x)_{i+1},sgd(x))
 
 \aux{paisesMasGrosos}{j:JJOO}{[Pais]}{[p | x\leftarrow mejoresPaises(j), p\leftarrow sgd(x),i\leftarrow [0..|sgd(x)|-2], p \leq sgd(x)_{i+1}]}
 
-\aux{patronDePaises}{j:JJOO}{[Pais]}{[ sub(paisesMasGrosos(j), 0, i-2) | i \leftarrow [0..|paisesMasGrosos(j)|-1], \neg sinRepetidos(sub(paisesMasGrosos(j), 0, i))]_0}
+\aux{patronDePaises}{j:JJOO}{[Pais]}{[ sub(paisesMasGrosos(j), 0, i-2) | i \leftarrow [0..|paisesMasGrosos|-1], \\ \neg sinRepetidos(sub(paisesMasGrosos(j), 0, i))]_0}
+
 
 \aux{verificaPaises}{j:JJOO}{Bool}{\forall i \in [0..|paisesMasGrosos(j)|-1], \\ paisesMasGrosos(j)_i == paisesMasGrosos(j)_{i+|patronDePaises(j)|}\wedge \\((i+|patronDePaises(j)|) \leq |paisesMasGrosos(j)|)}
 
@@ -32,12 +34,22 @@ i \leftarrow [0..|sgd(x)|-2],(cuenta(p, sgd(x)) \geq cuenta(sgd(x)_{i+1},sgd(x))
 
 \aux{atletasDelPais}{j:JJOO,p: Pa\'{i}s }{[Atleta]}{[x | x\leftarrow atletas(j), nacionalidad(x)==p]}
 
-\aux{todosLosPaises}{J:JJOO}{[(Pa\'{i}s,[Bool]]}{[(nacionalidad(x), [alguno(ranking(y)[0,1,2]==atletasDelPais(j,nacionalidad(x))])| x \leftarrow atletas(j), i\leftarrow[0..cantDias(j)], y\leftarrow cronograma(j,i)}
+\aux{todosLosPaises}{J:JJOO}{[(Pa\'{i}s,[Bool]]}{[(nacionalidad(x), [alguno(h\leftarrow (ranking(y)[0,1,2])\\k\leftarrow (atletasDelPais(j,nacionalidad(x))), k == h)])| x \leftarrow atletas(j), i\leftarrow[0..cantDias(j)], y\leftarrow cronograma(j,i)]}
 
-\aux{masDiasSinGanar}{j:JJOO}{[Pa\'{i}s]}{prm(x) | x\leftarrow todosLosPaises(j), }
+\aux{paisesConDiasSep}{j:JJOO}{[(Pais,[[Bool]])]}{
+[(prm(x),[ifThenElse(sgd(x)_i \not= sgd(x)_k, \\ sub(todosLosPaises(j), i, k-1) \wedge i==k)] | 
+x \leftarrow todosLosPaises(j), i=0, k\leftarrow [0..|sgd(todosLosPaises(j))|-1]]}
 
-\asegura{sinRepetidos(todosLosPaises(j))}
+\aux{elijoLosFracasados}{j:JJOO}{[(pais,[[Bool]])]}{[(prm(x), [y])\\ | x\leftarrow paisesConDiasSep(j), (\forall h \leftarrow y \leftarrow sgd(x))(h == False))]}
 
+\aux{mayorCantidadDeDIas}{j:JJOO}{[(pais, \ent)]}{[(prm(x),long(y))\\ | x \leftarrow elijoLosFracasados(j), y\leftarrow sgd(x), h\leftarrow sgd(x), long(y) \geq long(h) ]}
+
+\aux{elPeorPais}{j:JJOO}{[pais]}{[prm(x) | x\leftarrow mayorCantidadDeDias(j), \\ y\leftarrow mayorCantidadDeDias(j), sgd(x)\geq sgd(y)]}
+\asegura{result == elPeorPais(j)}
+
+\end{problema}
+
+\begin{problema}{sequ\'{i}aOl\'{i}mpica}{j: JJOO}{[Pa\'{i}s]}
 \end{problema}
 
 \item
@@ -49,6 +61,7 @@ i \leftarrow [0..|sgd(x)|-2],(cuenta(p, sgd(x)) \geq cuenta(sgd(x)_{i+1},sgd(x))
 \asegura{mismos(atletas(j),atletas(pre(j))}
 \asegura{(\forall d \in [1...cantDias(pre(j))]) cronograma(pre(j),d) == cronograma(j,d)) }
 \asegura{ cambiaElDia: jornadaActual(j)==jornadaActual(pre(j))+1}
+\asegura{lasPasadasFinalizaron(pre(j))}
 \asegura{ rankingSegunMasCapaces: (\forall c \in cronograma(pre(j),jornadaActual(pre(j))) masCapaces(c)}
 \asegura{ unControlPorCompetencia: (\forall c \in cronograma( pre(j),jornadaActual(pre(j))) \\ |lesTocaControlAntiDoping(c)|==1 )}
 \asegura{ dopingPositivoMax5Porciento: (\exists a \in atletasLesTocoAntiDoping(j,jornadaActual(pre(j)))) \\ 0 \leq porcentajePositivos(j) \leq 5 )}
