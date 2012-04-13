@@ -1,9 +1,16 @@
 \documentclass[10pt,titlepage,a4paper]{article}
 \usepackage[spanish]{babel} % Le indicamos a LaTeX que vamos a escribir en espaol.
 \usepackage[utf8]{inputenc} % Permite utilizar tildes y ees normalmente
-%\usepackage{framed}
+\usepackage{lastpage}
 \usepackage{caratula}
 \usepackage{verbatim}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\fancyfoot[C]{ \hspace{195pt} \footnotesize{\thepage\ \textsl{/} \pageref{LastPage}}}
+\renewcommand{\headrulewidth}{0pt}
+
 
 \titulo{TP OJOTA (Organizaci\'on de Juegos Ol\'impicos) v1.0}
 \submateria{Primer cuatrimestre 2012}
@@ -27,6 +34,22 @@
 
 \newpage
 
+\section{Aclaraciones}
+
+\begin{enumerate}
+\item
+En el ejercicio 4 requerimos que el ranking sea mayor a uno ya que 
+sino no quedaria sin efecto la funcion auxiliar ya que de esta manera 
+no se podrian comparar los atletas porque habria uno solo.
+
+\item
+En el ejercicio 7, en caso de empate en medallas de oro, se compara las medallas de plata, si siguen siendo las mismas, se compara las medallas de bronce. En caso de tener las 3 medallas iguales se considera mejor al primero que se comparo.
+Si no hay ningun pais con medallas la lista resultante sera vacia.
+
+\item
+En el ejercicio 12, consideramos a un patron, como la secuencia de paises hasta que aparece un elemento repetido sin incluirlo. Por Ej: [ Argentina, USA, Canada, Argentina, Chile ] el patron seria [ Argentina, USA, Canada ], en cambio en [ Argentina, USA, USA, Argentina, Chile ] el patron seria [ Argentina, USA ].
+\end{enumerate}
+
 \section{Resolucion}
 
 \begin{enumerate}
@@ -37,7 +60,6 @@
 \input{ej11_14}
 
 \end{enumerate}
-
 
 \newpage
 
@@ -58,23 +80,6 @@
 \section{Auxiliares}
 
 \input{auxiliaresTipos.tex}
-
-\section{Aclaraciones}
-
-\begin{enumerate}
-\item
-En el ejercicio 4 requerimos que el ranking sea mayor a uno ya que 
-sino no quedaria sin efecto la funcion auxiliar ya que de esta manera 
-no se podrian comparar los atletas porque habria uno solo.
-
-\item
-En el ejercicio 7, en caso de empate en medallas de oro, se compara las medallas de plata, si siguen siendo las mismas, se compara las medallas de bronce. En caso de tener las 3 medallas iguales se considera mejor al primero que se comparo.
-Si no hay ningun pais con medallas la lista resultante sera vacia.
-
-\item
-En el ejercicio 12, consideramos a un patron, como la secuencia de paises hasta que aparece un elemento repetido sin incluirlo.
-\end{enumerate}
-
 
 
 \end{document}
