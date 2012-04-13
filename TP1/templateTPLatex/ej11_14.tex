@@ -43,7 +43,7 @@ i \leftarrow [0..|sgd(x)|-2],(cuenta(p, sgd(x)) \geq cuenta(sgd(x)_{i+1},sgd(x))
 \aux{lugaresDistintos}{j:JJOO, b:[Bool]}{[\ent]}{[x+1 | x\leftarrow[0..|b|-1], b_x \not= b_{x+1}]}
 
 \aux{paisesConDiasSep}{j:JJOO}{[(Pais,[[Bool]])]}{
-[(prm(x),[sub(sgd(x),sgd(x)_h, sgd(x)_{h+1} )]| 
+[(prm(x),[sub(sgd(x),sgd(x)_h, sgd(x)_{(h+1)-1} )]|\\ 
 x \leftarrow todosLosPaises(j), h\leftarrow cons(0,lugaresDistintos(j,sgd(x)))}
 
 \aux{elijoLosFracasados}{j:JJOO}{[(pais,[[Bool]])]}{[(prm(x), [y])\\ | x\leftarrow paisesConDiasSep(j), (\forall h \leftarrow y \leftarrow sgd(x))(h == False))]}
