@@ -21,7 +21,7 @@ i \leftarrow [0..|sgd(x)|-2],(cuenta(p, sgd(x)) \geq cuenta(sgd(x)_{i+1},sgd(x))
 
 \aux{paisesMasGrosos}{j:JJOO}{[Pais]}{[p | x\leftarrow mejoresPaises(j), p\leftarrow sgd(x),i\leftarrow [0..|sgd(x)|-2], p \leq sgd(x)_{i+1}]}
 
-\aux{patronDePaises}{j:JJOO}{[Pais]}{[ sub(paisesMasGrosos(j), 0, i-2) | i \leftarrow [0..|paisesMasGrosos|-1], \neg sinRepetidos(sub(paisesMasGrosos(j), 0, i))]_0}
+\aux{patronDePaises}{j:JJOO}{[Pais]}{[ sub(paisesMasGrosos(j), 0, i-2) | i \leftarrow [0..|paisesMasGrosos(j)|-1], \neg sinRepetidos(sub(paisesMasGrosos(j), 0, i))]_0}
 
 \aux{verificaPaises}{j:JJOO}{Bool}{\forall i \in [0..|paisesMasGrosos(j)|-1], \\ paisesMasGrosos(j)_i == paisesMasGrosos(j)_{i+|patronDePaises(j)|}\wedge \\((i+|patronDePaises(j)|) \leq |paisesMasGrosos(j)|)}
 
@@ -29,7 +29,13 @@ i \leftarrow [0..|sgd(x)|-2],(cuenta(p, sgd(x)) \geq cuenta(sgd(x)_{i+1},sgd(x))
 
 \item
 \begin{problema}{sequ\'{i}aOl\'{i}mpica}{j: JJOO}{[Pa\'{i}s]}
-\aux{todosLosPaises}{J:JJOO}{[Pa\'{i}s]}{[nacionalidad(x)| x \leftarrow atletas(j)]}
+
+\aux{atletasDelPais}{j:JJOO,p: Pa\'{i}s }{[Atleta]}{[x | x\leftarrow atletas(j), nacionalidad(x)==p]}
+
+\aux{todosLosPaises}{J:JJOO}{[(Pa\'{i}s,[Bool]]}{[(nacionalidad(x), [alguno(ranking(y)[0,1,2]==atletasDelPais(j,nacionalidad(x))])| x \leftarrow atletas(j), i\leftarrow[0..cantDias(j)], y\leftarrow cronograma(j,i)}
+
+\aux{masDiasSinGanar}{j:JJOO}{[Pa\'{i}s]}{prm(x) | x\leftarrow todosLosPaises(j), }
+
 \asegura{sinRepetidos(todosLosPaises(j))}
 
 \end{problema}
