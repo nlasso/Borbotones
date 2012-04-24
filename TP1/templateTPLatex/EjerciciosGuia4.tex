@@ -1,0 +1,56 @@
+\documentclass[10pt,titlepage,a4paper]{article}
+\usepackage[spanish]{babel} % Le indicamos a LaTeX que vamos a escribir en espaol.
+\usepackage[utf8]{inputenc} % Permite utilizar tildes y ees normalmente
+\usepackage{caratula}
+\usepackage{verbatim}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\fancyfoot[C]{ \hspace{195pt} \footnotesize{\thepage\ \textsl{/} \pageref{LastPage}}}
+\renewcommand{\headrulewidth}{0pt}
+
+\input{macrosAlgo1}
+\newcommand{\comen}[2]{%
+\begin{framed}	
+\noindent \textsf{#1:} #2
+\end{framed}
+}
+
+\begin{document}
+\newpage
+
+\begin{problema}{diferenciaMaxima}{l:[\Re]}{\Re}
+\requiere{ordenada(l)}
+\asegura{result == l_{|l-1|}-l_0}
+\end{problema}
+
+\begin{problema}{diferenciaMaxima}{l:[\ent]}{\ent}
+\asegura{result \in l}
+\asegura{(\nexists x\leftarrow l)long([y | y\leftarrow l, y \mod x == 0]) > long([h | h\leftarrow l , h \mod result == 0]) \wedge x \not= result}
+\end{problema}
+
+\begin{problema}{cantApariciones}{l:[T]}{[(T,\ent)]}
+\requiere{|l|>0}
+\asegura{(\forall x\leftarrow result), prm(result)\in l \wedge sgd(result) == cuenta(prm(result),l)}
+\asegura{sinRepetidos(result)}
+\end{problema}
+
+\begin{problema}{concatMultiple}{ls:[[T]]}{[T]}
+\asegura{result == [x_i | x\leftarrow ls, i\leftarrow[0..|x|-1]]}
+\end{problema}
+
+\begin{problema}{mayorSubLista}{l:[[\ent]]}{[\ent]}
+\requiere{|l|> 0}
+\asegura{mayor(result)==mayor(concatMultiple(l))}
+\asegura{(\exists x\leftarrow ls)(\forall i\leftarrow[0..|x|-1])result_i == x_i \wedge, long(result)==long(x)}
+\end{problema}
+
+\begin{problema}{escaleraMasLarga}{l:[\ent]}{[\ent:\ent]}
+\requiere{|l|>0}
+\asegura{pertenece :(\forall x\leftarrow result), x\in l}
+\asegura{enEscalera:(\forall x\leftarrow result, i\leftarrow[0..|result|-1)), l_i == (l_{i+1}-1}
+\asegura{laMasLarga: }
+\aux{escaleras}{l:[\ent]}{[[\ent]]}{[[sub(l, )] | x\leftarrow]}
+\end{problema}
+\end{document}
