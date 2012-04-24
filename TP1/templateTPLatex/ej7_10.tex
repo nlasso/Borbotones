@@ -1,8 +1,7 @@
 \item
 \begin{problema}{medallero}{j: JJOO}{[(Pa\'{i}s, [\ent])]}
-\requiere{ |atletas(j)|>0 }
-\asegura{ paisesConMedallas: (\forall p \selec result, algunaMedalla(sgd(p)))}
 \asegura{ soloTresTiposDeMedallas: (\forall p \selec result, |sgd(p)| == 3 )}
+\asegura{ paisesConMedallas: (\forall p \selec result, algunaMedalla(sgd(p)))}
 \asegura{ mejoresMedallasQueSiguiente: \\ (\forall x \selec [0..|result|-1), mejoresOIgualesMedallas(sgd(result_x),sgd(result_{x+1})) )}
 \aux{mejoresOIgualesMedallas}{m: [\ent], p: [\ent]}{\bool}{ superaPorOro(m,p) }
 \aux{superaPorOro}{m: [\ent], p: [\ent]}{\bool}{\\ifThenElse(m_0 > p_0,\True,  ifThenElse(m_0 == p_0,superaPorPlata(m,p),\False))}
@@ -15,21 +14,18 @@
 
 \item
 \begin{problema}{boicotPorDisciplina}{j: JJOO, cat: (Deporte, Sexo), p: Pa\'{i}s }{\ent}
-\requiere{long(atletas(j))>0}
 \requiere{(\forall a \in atletasEnCategoria(j,cat,p)) nacionalidad(a) == p}
 \requiere{(\exists c \in competencias(j)) categoria(c) == cat} % Requiere que exista la categoria (Deporte,Sexo) en todas las competencias
 \modifica{j}
 \asegura{a\tilde{n}o(j)== a\tilde{n}o(pre(j))}
 \asegura{cantDias(j)== cantDias(pre(j))}
-\asegura{mismos(cronograma(j),cronograma(pre(j)))}
+\asegura{mismos(cronograma(j),cronograma(pre(j),d))}
 \asegura{jornadaactual(j)== jornadaactual(pre(j))}
-\asegura{(\forall a \in atletasEnCategoria(j,cat,p)) a \notin atletas(j)}
 \asegura{ result == |atletasEnCategoria(j,cat,p)|}
 \end{problema}
 
 \item
 \begin{problema}{losMasFracasados}{j: JJOO, p: Pa\'{i}s }{[Atleta]}
-\requiere{(\exists a \in atletas(j)) nacionalidad(a) == p }
 \aux{atletasDelPais}{j:JJOO,p: Pa\'{i}s }{[Atleta]}{[x | x\leftarrow atletas(j), nacionalidad(x)==p]}
 \aux{competenciasAtleta}{j:JJOO, p:Pais, a:Atleta}{[Competencia]}{ [x | x \leftarrow competencias(j), \\ alguno(participantes(x)==a) \wedge en(prm(categoria(x)), deportes(a))]}
 \aux{atletasFracasados}{j:JJOO, p:Pais}{[(atleta, \ent)]}{[(y,|competenciasAtleta(j,p,y)|) | \\
