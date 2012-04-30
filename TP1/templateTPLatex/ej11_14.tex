@@ -2,54 +2,41 @@
 \begin{problema}{stevenBradbury}{j: JJOO}{Atleta}
 \requiere{ algunaCompetenciaFinalizada(j)} % Requiero que haya alguna competencia del cronograma de algun dia finalizada
 \asegura{ esElMenosCapaz: \\ (\forall a \in atletasConOro(j), a \neq result) sumaDeCapacidades(result) \leq sumaDeCapacidades(a) } % Aseguro que es el menos capaz
-\aux{atletasConOro}{j:JJOO}{[Atleta]}{[ ranking(c)_0 | c \in competencias(j)]}
-\aux{sumaDeCapacidades}{a:Atleta}{\ent}{ \sum [ capacidad(d) | d \in deportes(a)] }
+\aux{atletasConOro}{j:JJOO}{[Atleta]}{[ ranking(c)_0 | c \in competencias(j), finalizada(c) \wedge |ranking(c)|>0 ]}
+\aux{sumaDeCapacidades}{a:Atleta}{\ent}{ \sum [ capacidad(a,d) | d \in deportes(a)] }
 \end{problema}
 
 \item
 \begin{problema}{uyOrdenadoAs\'{i}HayUnPatr\'{o}n}{j: JJOO}{\bool}
 
 \asegura {result == verificaPaises(j)}
-
-\aux{competenciasPorDia}{j:JJOO}{[(\ent, [Competencia])]}{[(dia,c) | dia \leftarrow[1..jornadaActual(j)], \\ c == mismos(cronograma(j,dia))]}
-
-\aux{oroPorDia}{j:JJOO}{[(\ent, [Atleta])]}{[(dia,a)| h\leftarrow competenciasPorDia(j), dia\leftarrow prm(h), x\leftarrow sgd(h),\\ i \leftarrow [0..|x|-1], a \leftarrow ranking(x_i)_0 ]}
-
-\aux{paisesPorDia}{j:JJOO}{[(\ent ,[Pais])]}{[(dia, p) | x\leftarrow oroPorDia(j),dia \leftarrow prm(x), h\leftarrow sgd(x), \\ i\leftarrow[0..|h|-1], p\leftarrow nacionalidad(h_i)]}
-
+\aux{verificaPaises}{j:JJOO}{Bool}{\forall i \in [0..|paisesMasGrosos(j)|-1], \\ paisesMasGrosos(j)_i == paisesMasGrosos(j)_{i+|patronDePaises(j)|}\wedge \\((i+|patronDePaises(j)|) \leq |paisesMasGrosos(j)|)}
+\aux{patronDePaises}{j:JJOO}{[Pais]}{[ sub(paisesMasGrosos(j), 0, i-2) | i \leftarrow [0..|paisesMasGrosos|-1], \\ \neg sinRepetidos(sub(paisesMasGrosos(j), 0, i))]_0}
+\aux{paisesMasGrosos}{j:JJOO}{[Pais]}{[p | x\leftarrow mejoresPaises(j), p\leftarrow sgd(x),i\leftarrow [0..|sgd(x)|-2], p \leq sgd(x)_{i+1}]}
 \aux{mejoresPaises}{j:JJOO}{[(\ent , [Pais])]}{[(dia, p) | x\leftarrow paisesPorDia(j),dia \leftarrow prm(x), p \leftarrow sgd(x),\\
 i \leftarrow [0..|sgd(x)|-2],(cuenta(p, sgd(x)) \geq cuenta(sgd(x)_{i+1},sgd(x)))]}
+\aux{paisesPorDia}{j:JJOO}{[(\ent ,[Pais])]}{[(dia, p) | x\leftarrow oroPorDia(j),dia \leftarrow prm(x), h\leftarrow sgd(x), \\ i\leftarrow[0..|h|-1], p\leftarrow nacionalidad(h_i)]}
+\aux{oroPorDia}{j:JJOO}{[(\ent, [Atleta])]}{[(dia,a)| h\leftarrow competenciasPorDia(j), dia\leftarrow prm(h), x\leftarrow sgd(h),\\ i \leftarrow [0..|x|-1], a \leftarrow ranking(x_i)_0 ]}
+\aux{competenciasPorDia}{j:JJOO}{[(\ent, [Competencia])]}{[(dia,c) | dia \leftarrow[1..jornadaActual(j)], \\ c == mismos(cronograma(j,dia))]}
 
-\aux{paisesMasGrosos}{j:JJOO}{[Pais]}{[p | x\leftarrow mejoresPaises(j), p\leftarrow sgd(x),i\leftarrow [0..|sgd(x)|-2], p \leq sgd(x)_{i+1}]}
+\end{problema}
 
-\aux{patronDePaises}{j:JJOO}{[Pais]}{[ sub(paisesMasGrosos(j), 0, i-2) | i \leftarrow [0..|paisesMasGrosos|-1], \\ \neg sinRepetidos(sub(paisesMasGrosos(j), 0, i))]_0}
-
-
-\aux{verificaPaises}{j:JJOO}{Bool}{\forall i \in [0..|paisesMasGrosos(j)|-1], \\ paisesMasGrosos(j)_i == paisesMasGrosos(j)_{i+|patronDePaises(j)|}\wedge \\((i+|patronDePaises(j)|) \leq |paisesMasGrosos(j)|)}
-
+\begin{problema}{uyOrdenadoAs\'{i}HayUnPatr\'{o}n}{j: JJOO}{\bool}
+\aux{faltaelnombre}{}{}{}
 \end{problema}
 
 \item
 \begin{problema}{sequ\'{i}aOl\'{i}mpica}{j: JJOO}{[Pa\'{i}s]}
 
-\asegura{sinRepetidos(elPeorPais(j))}
-
-\asegura{result == elPeorPais(j)}
-
+\asegura{mismos(result,elPeorPais(j))}
 \aux{atletasDelPais}{j:JJOO,p: Pa\'{i}s }{[Atleta]}{[x | x\leftarrow atletas(j), nacionalidad(x)==p]}
-
 \aux{todosLosPaises}{J:JJOO}{[(Pa\'{i}s,[Bool])]}{[(nacionalidad(x), [alguno(h\leftarrow (ranking(y)[0,1,2])\\k\leftarrow (atletasDelPais(j,nacionalidad(x))), k == h)])| x \leftarrow atletas(j), i\leftarrow[0..cantDias(j)], y\leftarrow cronograma(j,i)]}
-
 \aux{lugaresDistintos}{j:JJOO, b:[Bool]}{[\ent]}{[x+1 | x\leftarrow[0..|b|-1], b_x \not= b_{x+1}]}
-
 \aux{paisesConDiasSep}{j:JJOO}{[(Pais,[[Bool]])]}{
 [(prm(x),[sub(sgd(x),cons(0,lugresDistintos(j,sgd(x)))_h, \\(cons(0,lugresDistintos(j,sgd(x)))_{h+1} )]|
 x \leftarrow todosLosPaises(j), \\h\leftarrow [0..|cons(0,lugaresDistintos(j,sgd(x)))|-2]]}
-
 \aux{elijoLosFracasados}{j:JJOO}{[(pais,[[Bool]])]}{[(prm(x), [y])\\ | x\leftarrow paisesConDiasSep(j), (\forall h \leftarrow y \leftarrow sgd(x))(h == False))]}
-
 \aux{mayorCantidadDeDIas}{j:JJOO}{[(pais, \ent)]}{[(prm(x),long(y))\\ | x \leftarrow elijoLosFracasados(j), y\leftarrow sgd(x), h\leftarrow sgd(x), long(y) \geq long(h) ]}
-
 \aux{elPeorPais}{j:JJOO}{[pais]}{[prm(x) | x\leftarrow mayorCantidadDeDias(j), \\ y\leftarrow mayorCantidadDeDias(j), sgd(x)\geq sgd(y)]}
 
 \end{problema}

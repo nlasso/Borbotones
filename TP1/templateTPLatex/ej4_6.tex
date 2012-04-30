@@ -1,6 +1,6 @@
 \item
 \begin{problema}{gananLosMasCapaces}{c: Competencia}{\bool}
-\requiere{finalizada(c)==\True}
+\requiere{finalizada(c)==true}
 \asegura{(\forall a \in ranking(c)) a \in participantes(c)}
 \asegura{Result == masCapaces(c,prm(categoria(c)))}
 \end{problema}
@@ -15,10 +15,11 @@
 \asegura{mismos(lesTocoControlAntiDoping(c),lesTocoControlAntiDoping(pre(c)))}
 \asegura{(\forall a \in participantes(c)) leDioPositivo(c,a)==leDioPositivo(pre(c),a))}
 \asegura{ranking(c)==borrarPositivos(pre(c))}
-\aux{borrarPositivos}{c:competencia}{[Atleta]}{[x|x\leftarrow ranking(c),(\forall y\leftarrow listaPositivos(c)) y\not= x]}%falta revisar el auxiliar
+\aux{borrarPositivos}{c:competencia}{[Atleta]}{[x|x\leftarrow ranking(c),x \notin lesTocoControlAntiDoping(c) \vee (x \in lesTocoControlAntiDoping(c) \wedge leDioPositivo(c,x) == False) ]}
 \end{problema}
 
 \item
 \begin{problema}{dePaseo}{j: JJOO}{[Atleta]}
-\asegura{result == [x |y \leftarrow cantDias(j), k \leftarrow cronograma(j,y), x \leftarrow atletas(j),x\notin participantes(k)]}
+\asegura{mismos(result,noParticiparon(j)}
+\aux{noParticiparon}{j: JJOO}{[Atleta]}{[x |k \leftarrow competencias(j), x \leftarrow atletas(j),x\notin participantes(k)]}
 \end{problema}

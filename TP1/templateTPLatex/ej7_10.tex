@@ -1,12 +1,13 @@
 \item
 \begin{problema}{medallero}{j: JJOO}{[(Pa\'{i}s, [\ent])]}
+\asegura{mismos(result,extraerSinMedallas(j))}
 \asegura{ soloTresTiposDeMedallas: (\forall p \selec result, |sgd(p)| == 3 )}
 \asegura{ paisesConMedallas: (\forall p \selec result, algunaMedalla(sgd(p)))}
 \asegura{ mejoresMedallasQueSiguiente: \\ (\forall x \selec [0..|result|-1), mejoresOIgualesMedallas(sgd(result_x),sgd(result_{x+1})) )}
 \aux{mejoresOIgualesMedallas}{m: [\ent], p: [\ent]}{\bool}{ superaPorOro(m,p) }
 \aux{superaPorOro}{m: [\ent], p: [\ent]}{\bool}{\\ifThenElse(m_0 > p_0,\True,  ifThenElse(m_0 == p_0,superaPorPlata(m,p),\False))}
 \aux{superaPorPlata}{m: [\ent], p: [\ent]}{\bool}{\\ifThenElse(m_1 > p_1,\True, ifThenElse(m_1 == p_1,superaPorBronce(m,p),\False))}
-\aux{superaPorBronce}{m: [\ent], p: [\ent]}{\bool}{\\ifThenElse(m_0 > p_0,\True, ifThenElse(m_0 == p_0,\True,\False))}
+\aux{superaPorBronce}{m: [\ent], p: [\ent]}{\bool}{\\ifThenElse(m_0 > p_0,\True, m_0 == p_0)}
 \aux{algunaMedalla}{m: [\ent]}{\bool}{ 
   (m_0 \not= 0 \vee m_1 \not= 0 \vee m_2 \not= 0)
 }
@@ -14,41 +15,40 @@
 
 \item
 \begin{problema}{boicotPorDisciplina}{j: JJOO, cat: (Deporte, Sexo), p: Pa\'{i}s }{\ent}
-\requiere{(\forall a \in atletasEnCategoria(j,cat,p)) nacionalidad(a) == p}
 \requiere{(\exists c \in competencias(j)) categoria(c) == cat} % Requiere que exista la categoria (Deporte,Sexo) en todas las competencias
 \modifica{j}
 \asegura{a\tilde{n}o(j)== a\tilde{n}o(pre(j))}
 \asegura{cantDias(j)== cantDias(pre(j))}
-\asegura{mismos(cronograma(j),cronograma(pre(j),d))}
+\asegura{mismos(atletas(j),atletas(pre(j)}
+\asegura{(\forall d \leftarrow [0..cantDias(j)))mismos(cronograma(j,d),cronograma(pre(j),d))}
 \asegura{jornadaactual(j)== jornadaactual(pre(j))}
-\asegura{ result == |atletasEnCategoria(j,cat,p)|}
+\asegura{result== participantesDeLaCat(j,cat,p)}
+\asegura{(\forall c \leftarrow competencias(j), categoria(c)==cat),(\forall a \leftarrow atletasDelPais(j,p)) a \notin participantes(c)}
+\aux{participantesDeLaCat}{j:JJOO, cat: (Deporte, Sexo), p: Pa\'{i}s}{\ent}{long([i| i\leftarrow atletasDelPais(j,p), x \leftarrow competencias(j),categoria(x)==cat \wedge i \in participantes(x))}
 \end{problema}
 
 \item
 \begin{problema}{losMasFracasados}{j: JJOO, p: Pa\'{i}s }{[Atleta]}
-\aux{atletasDelPais}{j:JJOO,p: Pa\'{i}s }{[Atleta]}{[x | x\leftarrow atletas(j), nacionalidad(x)==p]}
-\aux{competenciasAtleta}{j:JJOO, p:Pais, a:Atleta}{[Competencia]}{ [x | x \leftarrow competencias(j), \\ alguno(participantes(x)==a) \wedge en(prm(categoria(x)), deportes(a))]}
+\asegura{mismos(result,masFracasados(j,p))}
+\aux{competenciasAtleta}{j:JJOO, p:Pais, a:Atleta}{[Competencia]}{ [x | x \leftarrow competencias(j), \\ (\exists p \in participantes(x)) p==a  \wedge en(prm(categoria(x)), deportes(a))]}
 \aux{atletasFracasados}{j:JJOO, p:Pais}{[(atleta, \ent)]}{[(y,|competenciasAtleta(j,p,y)|) | \\
-y\leftarrow atletasDelPais(j,p), c \leftarrow competenciasAtleta(j,y,p), en(y,sub(ranking(c),3,|ranking(c)-1|))]}
+y\leftarrow atletasDelPais(j,p), c \leftarrow competenciasAtleta(j,y,p), \neg en(y,sub(ranking(c),0,2))]}
 \aux{masFracasados}{j:JJOO, p:Pais}{[Atleta]}{[prm(y) | y\leftarrow atletasFracasados(j,p),\\
 k \leftarrow atletasFracasados(j,p), sgd(y) \geq sgd(k)]}
-\asegura{result == masFracasados(j,p)}
 \end{problema}
 
 \item
 \begin{problema}{liuSong}{j: JJOO, a: Atleta, p: Pa\'{i}s }{}
 \requiere{a \in atletas(j)}
-\modifica{a,j}
-\asegura{nombre(a)==nombre(pre(a))}
-\asegura{sexo(a)==sexo(pre(a))}
-\asegura{a\tilde{n}oNacimiento(a)==a\tilde{n}oNacimiento(pre(a))}
-\asegura{ciaNumber(a)==ciaNumber(pre(a))}
-\asegura{mismos(deportes(a),deportes(pre(a)))}
-\asegura{cambioNacionalidad: nacionalidad(a)==p}
-\asegura{a\tilde{n}o(j)==a\tilde{n}o(pre(j))}
+\modifica{j}
+\asegura{año(j)=año(pre(j))}
 \asegura{cantDias(j)==cantDias(pre(j))}
-\asegura{mismos(cronograma(j),cronograma(pre(j)))}
 \asegura{jornadaActual(j)==jornadaActual(pre(j))}
-\asegura{|atletas(j)|==|atletas(pre(j))|}
-\asegura{ mismosAtletas: (\forall x \in atletas(pre(j))) ciaNumber(x) \in ciaNumbers(j)}
+\asegura{(\forall d \leftarrow [0..cantDias(j)))mismos(cronograma(j,d),cronograma(pre(j),d))}
+\asegura{(\forall h \leftarrow atletas(j), ciaNumber(h) == ciaNumber(a))nacionalidad(h) == p}
+\asegura{(\forall c \leftarrow competencias(j), q \leftarrow participantes(c), ciaNumber(q) == ciaNumber(a)) nacionalidad(q) == p}
+\asegura{(\forall c \leftarrow competencias(j), q \leftarrow ranking(c), finalizada(c)==True, ciaNumber(q) == ciaNumber(a)) nacionalidad(q) == p}
+\asegura{(\forall c \leftarrow competencias(j), q \leftarrow lesTocoControlAntiDoping(c), finalizada(c)==True, ciaNumber(q) == ciaNumber(a)) nacionalidad(q) == p}
+\asegura{ mismos(atletas(pre(j)),reemplazaAtleta(a,atletas(j))) }
+\aux{reemplazaAtleta}{a: Atleta, ls: [Atleta]}{ [Atleta] }{ [if ciaNumber(x)==ciaNumber(a) then a else x | x \in ls ] }
 \end{problema}

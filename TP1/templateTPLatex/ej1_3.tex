@@ -9,7 +9,7 @@
 \asegura{naionalidad(a) == nacionalidad(pre(a))}
 \asegura{ciaNumber(a) == ciaNumber(pre(a))}
 \asegura{mismos(deportes(a),deportes(pre(a)):d)}
-\asegura{capacidad(a,d)==capacidad(pre(a),d)}% esta bien poner asi q la capacidad de los otros deportes no varian?
+\asegura{(\forall d \in deportes(pre(a)))capacidad(a,d)==capacidad(pre(a),d)}
 \asegura{capacidad(a,d)==c}
 \end{problema}
 

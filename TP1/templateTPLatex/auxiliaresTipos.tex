@@ -1,7 +1,5 @@
 % Auxiliares definitivos
-
-\aux{atletasEnCategoria}{j:JJOO, cat: Categoria, p: Pa\'{i}s }{[Atleta]}{ [ a | a \in atletas(j), nacionalidad(a)==p \wedge sexo(a)==sgd(cat) \wedge prm(cat) \in deportes(a))] }
-\aux{algunaCompetenciaFinalizada}{j:JJOO}{\bool}{(\exists dia \in [1...cantDias(j)], cron \in cronograma(j,dia), comp \in cron) finalizada(comp)}
+\aux{algunaCompetenciaFinalizada}{j:JJOO}{\bool}{(\exists x \in competencias(j)) finalizada(x)==true \wedge |ranking(x)|>0}
 \aux{ciaNumbers}{as: [Atleta]}{[\ent]}{\comp{ciaNumber(a)}{a \selec as}}
 \aux{competencias}{j: JJOO}{[Competencia]}{\comp{c}{d \selec [1..cantDias(j)], c \selec cronograma(j, d)}}
 \aux{competenciasFinalizadas}{j: JJOO}{[Competencia]}{\comp{c}{C \selec [1..cantDias(j)], c \selec cronograma(j, d), finalizada(c)}}
@@ -12,8 +10,14 @@
 \aux{ordenada}{l:[T]}{\bool}{(\forall i \selec [0.. \longitud{l}-1)) l_i \leq l_{i+1}}
 \aux{sinRepetidos}{l: [T]}{\bool}{(\forall i, j \selec [0.. \longitud{l}), i \neq j) l_i \neq l_j}
 \aux{masCapaces}{c:competencia}{\bool}{ 
-  (\forall x \selec [0..|ranking(c)|-1), capacidad(ranking(c)_x) > capacidad(ranking(c)_{x+1}))
+  (\forall x \selec [0..|ranking(c)|-1), capacidad(ranking(c)_x,d) > capacidad(ranking(c)_{x+1}))
 }
+\aux{atletasDelPais}{j:JJOO,p: Pa\'{i}s }{[Atleta]}{[x | x\leftarrow atletas(j), nacionalidad(x)==p]}
+\aux{medallasDelPais}{j:JJOO, p:Pais, pos:\ent}{\ent}{long([x | x\leftarrow atletasDelPais(j,p), y \leftarrow competencias(j),\\ x==ranking(y)_{pos}])}
+\aux{todosLosPaises}{j:JJOO}{[Pais]}{[nacionalidad(x) | x\leftarrow atletas(j)]}
+\aux{extraerRepetidos}{ls:[T]}{[T]}{[x | x\leftarrow [0..|ls|), \neg en(ls_x,sub(ls, 0, x))]}
+\aux{obtenerMedallero}{j:JJOO}{[(Pa\'{i}s, [\ent])]}{[(x,[medallasDelPais(j,x,y)]) | x\leftarrow extraerRepetidos(todosLosPaises(j)),\\ y\leftarrow [0,1,2]]}
+\aux{extraerSinMedallas}{j:JJOO}{[(Pa\'{i}s, [\ent])]}{[x | x\leftarrow obtenerMedallero(j),(\exists x\leftarrow sgd(x)) x>0]}
 
 % Auxiliares temporales o dudosos
 

@@ -1,11 +1,10 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.5)  10 APR 2012 17:18
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2012.4.5)  29 APR 2012 14:35
 entering extended mode
- %&-line parsing enabled.
 **auxiliaresTipos.tex
-(./auxiliaresTipos.tex
+(C:\Users\guido\Borbotones\TP1\templateTPLatex\auxiliaresTipos.tex
 LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, loaded.
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, german-x-2009-06-19, ngerman-x-2009-06-19, french, loaded.
 ! Undefined control sequence.
 l.3 \aux
         {atletasEnCategoria}{j:JJOO, cat: Categoria, p: Pa\'{i}s }{[Atleta]}...
@@ -145,42 +144,6 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 l.5 \aux
-        {algunaMedalla}{m: [\ent]}{\bool}{
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.5 \aux{algunaMedalla}{m: [\ent
-                                ]}{\bool}{
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.5 \aux{algunaMedalla}{m: [\ent]}{\bool
-                                        }{
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.8 \aux
-        {borrarPositivos}{c:competencia}{[Atleta]}{[x|x\leftarrow ranking(c)...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.9 \aux
         {ciaNumbers}{as: [Atleta]}{[\ent]}{\comp{ciaNumber(a)}{a \selec as}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -189,7 +152,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.9 \aux{ciaNumbers}{as: [Atleta]}{[\ent
+l.5 \aux{ciaNumbers}{as: [Atleta]}{[\ent
                                         ]}{\comp{ciaNumber(a)}{a \selec as}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -198,7 +161,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.9 \aux{ciaNumbers}{as: [Atleta]}{[\ent]}{\comp
+l.5 \aux{ciaNumbers}{as: [Atleta]}{[\ent]}{\comp
                                                 {ciaNumber(a)}{a \selec as}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -207,7 +170,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.9 ...leta]}{[\ent]}{\comp{ciaNumber(a)}{a \selec
+l.5 ...leta]}{[\ent]}{\comp{ciaNumber(a)}{a \selec
                                                    as}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -216,8 +179,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.10 \aux
-         {competencias}{j: JJOO}{[Competencia]}{\comp{c}{d \selec [1..cantDi...
+l.6 \aux
+        {competencias}{j: JJOO}{[Competencia]}{\comp{c}{d \selec [1..cantDia...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -225,7 +188,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.10 ...ompetencias}{j: JJOO}{[Competencia]}{\comp
+l.6 ...competencias}{j: JJOO}{[Competencia]}{\comp
                                                   {c}{d \selec [1..cantDias(...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -234,7 +197,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.10 ...{j: JJOO}{[Competencia]}{\comp{c}{d \selec
+l.6 ...}{j: JJOO}{[Competencia]}{\comp{c}{d \selec
                                                    [1..cantDias(j)], c \sele...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -243,7 +206,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.10 ...omp{c}{d \selec [1..cantDias(j)], c \selec
+l.6 ...comp{c}{d \selec [1..cantDias(j)], c \selec
                                                    cronograma(j, d)}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -252,8 +215,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.11 \aux
-         {competenciasFinalizadas}{j: JJOO}{[Competencia]}{\comp{c}{C \selec...
+l.7 \aux
+        {competenciasFinalizadas}{j: JJOO}{[Competencia]}{\comp{c}{C \selec ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -261,7 +224,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.11 ...Finalizadas}{j: JJOO}{[Competencia]}{\comp
+l.7 ...sFinalizadas}{j: JJOO}{[Competencia]}{\comp
                                                   {c}{C \selec [1..cantDias(...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -270,7 +233,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.11 ...{j: JJOO}{[Competencia]}{\comp{c}{C \selec
+l.7 ...}{j: JJOO}{[Competencia]}{\comp{c}{C \selec
                                                    [1..cantDias(j)], c \sele...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -279,7 +242,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.11 ...omp{c}{C \selec [1..cantDias(j)], c \selec
+l.7 ...comp{c}{C \selec [1..cantDias(j)], c \selec
                                                    cronograma(j, d), finaliz...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -288,8 +251,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.12 \aux
-         {incluida}{$l_1$, $l_2$:[T]}{\bool}{(\forall x \selec l_1) cuenta(x...
+l.8 \aux
+        {incluida}{$l_1$, $l_2$:[T]}{\bool}{(\forall x \selec l_1) cuenta(x,...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -299,8 +262,8 @@ and I'll forget about whatever was undefined.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.12 \aux{incluida}{$
-                     l_1$, $l_2$:[T]}{\bool}{(\forall x \selec l_1) cuenta(x...
+l.8 \aux{incluida}{$
+                    l_1$, $l_2$:[T]}{\bool}{(\forall x \selec l_1) cuenta(x,...
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -311,8 +274,8 @@ Missing character: There is no l in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.12 \aux{incluida}{$l_
-                       1$, $l_2$:[T]}{\bool}{(\forall x \selec l_1) cuenta(x...
+l.8 \aux{incluida}{$l_
+                      1$, $l_2$:[T]}{\bool}{(\forall x \selec l_1) cuenta(x,...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
@@ -322,8 +285,8 @@ Missing character: There is no [ in font nullfont!
 Missing character: There is no T in font nullfont!
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
-l.12 \aux{incluida}{$l_1$, $l_2$:[T]}{\bool
-                                           }{(\forall x \selec l_1) cuenta(x...
+l.8 \aux{incluida}{$l_1$, $l_2$:[T]}{\bool
+                                          }{(\forall x \selec l_1) cuenta(x,...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -334,13 +297,13 @@ Missing character: There is no ( in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.12 ...ncluida}{$l_1$, $l_2$:[T]}{\bool}{(\forall
+l.8 ...incluida}{$l_1$, $l_2$:[T]}{\bool}{(\forall
                                                    x \selec l_1) cuenta(x, l...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Undefined control sequence.
-l.12 ...$l_1$, $l_2$:[T]}{\bool}{(\forall x \selec
+l.8 ...{$l_1$, $l_2$:[T]}{\bool}{(\forall x \selec
                                                    l_1) cuenta(x, l_1) \leq ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -349,7 +312,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Extra }, or forgotten $.
-l.12 ...c l_1) cuenta(x, l_1) \leq cuenta(x, l_2)}
+l.8 ...ec l_1) cuenta(x, l_1) \leq cuenta(x, l_2)}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -358,8 +321,8 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 ! Undefined control sequence.
-l.13 \aux
-         {lasPasadasFinalizaron}{j: JJOO}{\bool}{(\forall d \selec [1..jorna...
+l.9 \aux
+        {lasPasadasFinalizaron}{j: JJOO}{\bool}{(\forall d \selec [1..jornad...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -367,8 +330,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.13 \aux{lasPasadasFinalizaron}{j: JJOO}{\bool
-                                               }{(\forall d \selec [1..jorna...
+l.9 \aux{lasPasadasFinalizaron}{j: JJOO}{\bool
+                                              }{(\forall d \selec [1..jornad...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -376,7 +339,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.13 ...lizaron}{j: JJOO}{\bool}{(\forall d \selec
+l.9 ...alizaron}{j: JJOO}{\bool}{(\forall d \selec
                                                    [1..jornadaActual(j)))(\f...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -385,7 +348,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.13 ...ec [1..jornadaActual(j)))(\forall c \selec
+l.9 ...lec [1..jornadaActual(j)))(\forall c \selec
                                                    cronograma(j, d))finaliza...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -394,7 +357,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.14 \aux
+l.10 \aux
          {lasQueNoPasaronNoFinalizaron}{j: JJOO}{\bool}{\\(\forall d \selec ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -403,7 +366,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.14 ...sQueNoPasaronNoFinalizaron}{j: JJOO}{\bool
+l.10 ...sQueNoPasaronNoFinalizaron}{j: JJOO}{\bool
                                                   }{\\(\forall d \selec (jor...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -412,7 +375,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.14 ...zaron}{j: JJOO}{\bool}{\\(\forall d \selec
+l.10 ...zaron}{j: JJOO}{\bool}{\\(\forall d \selec
                                                    (jornadaActual(j)..cantDi...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -421,7 +384,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.14 ...Actual(j)..cantDias(j)]) (\forall c \selec
+l.10 ...Actual(j)..cantDias(j)]) (\forall c \selec
                                                    cronograma(j, d))\neg fin...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -430,7 +393,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.15 \aux
+l.11 \aux
          {listaPositivos}{c:competencia}{[Atleta]}{[lesTocoControlAntiDoping...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -439,7 +402,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.15 ...olAntiDoping(c),lesDioPositivo(c,x)==\True
+l.11 ...olAntiDoping(c),lesDioPositivo(c,x)==\True
                                                   ]}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -448,7 +411,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.16 \aux
+l.12 \aux
          {ordenada}{l:[T]}{\bool}{(\forall i \selec [0.. \longitud{l}-1)) l_...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -457,7 +420,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.16 \aux{ordenada}{l:[T]}{\bool
+l.12 \aux{ordenada}{l:[T]}{\bool
                                 }{(\forall i \selec [0.. \longitud{l}-1)) l_...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -466,7 +429,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.16 ...{ordenada}{l:[T]}{\bool}{(\forall i \selec
+l.12 ...{ordenada}{l:[T]}{\bool}{(\forall i \selec
                                                    [0.. \longitud{l}-1)) l_i...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -475,7 +438,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.16 ...]}{\bool}{(\forall i \selec [0.. \longitud
+l.12 ...]}{\bool}{(\forall i \selec [0.. \longitud
                                                   {l}-1)) l_i \leq l_{i+1}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -484,7 +447,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.17 \aux
+l.13 \aux
          {sinRepetidos}{l: [T]}{\bool}{(\forall i, j \selec [0.. \longitud{l...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -493,7 +456,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.17 \aux{sinRepetidos}{l: [T]}{\bool
+l.13 \aux{sinRepetidos}{l: [T]}{\bool
                                      }{(\forall i, j \selec [0.. \longitud{l...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -502,7 +465,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.17 ...tidos}{l: [T]}{\bool}{(\forall i, j \selec
+l.13 ...tidos}{l: [T]}{\bool}{(\forall i, j \selec
                                                    [0.. \longitud{l}), i \ne...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -511,7 +474,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.17 ...\bool}{(\forall i, j \selec [0.. \longitud
+l.13 ...\bool}{(\forall i, j \selec [0.. \longitud
                                                   {l}), i \neq j) l_i \neq l_j}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -520,7 +483,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.18 \aux
+l.14 \aux
          {masCapaces}{c:competencia}{\bool}{
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -529,7 +492,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.18 \aux{masCapaces}{c:competencia}{\bool
+l.14 \aux{masCapaces}{c:competencia}{\bool
                                           }{
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -538,96 +501,86 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.19   (\forall x \selec
-                         [0..|ranking(c)|-1), capacidad(ranking(c)_x) > capa...
+l.15   (\forall x \selec
+                         [0..|ranking(c)|-1), capacidad(ranking(c)_x,d) > ca...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-! Double subscript.
-l.19 ...ad(ranking(c)_x) > capacidad(ranking(c)_x_
-                                                  +_1))
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-! Double subscript.
-l.19 ...(ranking(c)_x) > capacidad(ranking(c)_x_+_
-                                                  1))
-I treat `x_1_2' essentially like `x_1{}_2'.
-
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.21 
+l.17 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 3--21
+Overfull \hbox (20.0pt too wide) in paragraph at lines 3--17
 []
  []
 
 
-Overfull \hbox (7.7778pt too wide) in paragraph at lines 3--21
-\/cmr/m/n/10 ^^Si
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 3--17
+\/cmr/m/n/10 i
  []
 
 
-Overfull \hbox (6.66669pt too wide) in paragraph at lines 3--21
-\OMS/cmsy/m/n/10 2
+Overfull \hbox (6.66669pt too wide) in paragraph at lines 3--17
+$\OMS/cmsy/m/n/10 2$
  []
 
 
-Overfull \hbox (136.14577pt too wide) in paragraph at lines 3--21
-\OML/cmm/m/it/10 atletas\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\OML/cmm/
-m/it/10 ; nacionalidad\/cmr/m/n/10 (\OML/cmm/m/it/10 a\/cmr/m/n/10 ) ==
+Overfull \hbox (136.14577pt too wide) in paragraph at lines 3--17
+$\OML/cmm/m/it/10 atletas\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )\OML/cmm
+/m/it/10 ; nacionalidad\/cmr/m/n/10 (\OML/cmm/m/it/10 a\/cmr/m/n/10 ) ==$
  []
 
 
-Overfull \hbox (11.69794pt too wide) in paragraph at lines 3--21
-\OML/cmm/m/it/10 p \OMS/cmsy/m/n/10 ^
+Overfull \hbox (11.69794pt too wide) in paragraph at lines 3--17
+$\OML/cmm/m/it/10 p \OMS/cmsy/m/n/10 ^$
  []
 
 
-Overfull \hbox (51.30327pt too wide) in paragraph at lines 3--21
-\OML/cmm/m/it/10 sexo\/cmr/m/n/10 (\OML/cmm/m/it/10 a\/cmr/m/n/10 ) ==
+Overfull \hbox (51.30327pt too wide) in paragraph at lines 3--17
+$\OML/cmm/m/it/10 sexo\/cmr/m/n/10 (\OML/cmm/m/it/10 a\/cmr/m/n/10 ) ==$
  []
 
 
-Overfull \hbox (42.68988pt too wide) in paragraph at lines 3--21
-\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 cat\/cmr/m/n/10 ) \OMS/cmsy/
-m/n/10 ^
+Overfull \hbox (42.68988pt too wide) in paragraph at lines 3--17
+$\OML/cmm/m/it/10 sgd\/cmr/m/n/10 (\OML/cmm/m/it/10 cat\/cmr/m/n/10 ) \OMS/cmsy
+/m/n/10 ^$
  []
 
 
-Overfull \hbox (49.04752pt too wide) in paragraph at lines 3--21
-\OML/cmm/m/it/10 prm\/cmr/m/n/10 (\OML/cmm/m/it/10 cat\/cmr/m/n/10 ) \OMS/cmsy/
-m/n/10 2
+Overfull \hbox (49.04752pt too wide) in paragraph at lines 3--17
+$\OML/cmm/m/it/10 prm\/cmr/m/n/10 (\OML/cmm/m/it/10 cat\/cmr/m/n/10 ) \OMS/cmsy
+/m/n/10 2$
  []
 
 
-Overfull \hbox (2232.30566pt too wide) in paragraph at lines 3--21
-\OML/cmm/m/it/10 deportes\/cmr/m/n/10 (\OML/cmm/m/it/10 a\/cmr/m/n/10 ))][][][]
-[][][][][][][][][][][][][][][][][][][][][][][]$$[]$
+Overfull \hbox (1622.82869pt too wide) in paragraph at lines 3--17
+$\OML/cmm/m/it/10 deportes\/cmr/m/n/10 (\OML/cmm/m/it/10 a\/cmr/m/n/10 ))][][][
+][][][][][][][][][][][][][][][]$$[]$
  []
 
 
-Overfull \hbox (95.67027pt too wide) in paragraph at lines 3--21
-\OML/cmm/m/it/10 l[]$$\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 xl[]\/cmr/m/n/10 )\OML
-/cmm/m/it/10 cuenta\/cmr/m/n/10 (\OML/cmm/m/it/10 x; l[]\/cmr/m/n/10 ) \OMS/cms
-y/m/n/10 ^^T
+Overfull \hbox (95.67027pt too wide) in paragraph at lines 3--17
+$\OML/cmm/m/it/10 l[]$$\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 xl[]\/cmr/m/n/10 )\OM
+L/cmm/m/it/10 cuenta\/cmr/m/n/10 (\OML/cmm/m/it/10 x; l[]\/cmr/m/n/10 ) \OMS/cm
+sy/m/n/10 $
  []
 
 
-Overfull \hbox (2211.49417pt too wide) in paragraph at lines 3--21
-\OML/cmm/m/it/10 cuenta\/cmr/m/n/10 (\OML/cmm/m/it/10 x; l[]\/cmr/m/n/10 )[][][
-][][][][][][][][][][][][][][][][][][][][][]$ 
+Overfull \hbox (2220.14345pt too wide) in paragraph at lines 3--17
+$\OML/cmm/m/it/10 cuenta\/cmr/m/n/10 (\OML/cmm/m/it/10 x; l[]\/cmr/m/n/10 )[][]
+[][][][][][][][][][][][][][][][][][][][][][]$ 
  []
 
 ! Undefined control sequence.
-l.24 \aux
+l.20 \aux
          {atletasdelpaisout}{cat: (Deporte,Sexo), p: Pais, j: JJOO}{\bool}{
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -642,7 +595,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.24 \aux{a
+l.20 \aux{a
            tletasdelpaisout}{cat: (Deporte,Sexo), p: Pais, j: JJOO}{\bool}{
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -697,7 +650,7 @@ Missing character: There is no J in font nullfont!
 Missing character: There is no O in font nullfont!
 Missing character: There is no O in font nullfont!
 ! Undefined control sequence.
-l.24 ...t: (Deporte,Sexo), p: Pais, j: JJOO}{\bool
+l.20 ...t: (Deporte,Sexo), p: Pais, j: JJOO}{\bool
                                                   }{
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -708,7 +661,7 @@ and I'll forget about whatever was undefined.
 Missing character: There is no ( in font nullfont!
 Missing character: There is no x in font nullfont!
 ! Undefined control sequence.
-l.25   (x \selec
+l.21   (x \selec
                  [0..|atletas(j)| -1], p(cat(atletas(j)_x)) \not= atletas(j)_x)
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -755,13 +708,13 @@ Missing character: There is no ) in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.25 ...ec [0..|atletas(j)| -1], p(cat(atletas(j)_
+l.21 ...ec [0..|atletas(j)| -1], p(cat(atletas(j)_
                                                   x)) \not= atletas(j)_x)
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.26 }
+l.22 }
       
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -772,24 +725,24 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.27 
+l.23 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 24--27
+Overfull \hbox (20.0pt too wide) in paragraph at lines 20--23
 []
  []
 
 
-Overfull \hbox (23.36804pt too wide) in paragraph at lines 24--27
-[]\/cmr/m/n/10 )) \OMS/cmsy/m/n/10 6\/cmr/m/n/10 =
+Overfull \hbox (23.36804pt too wide) in paragraph at lines 20--23
+$[]\/cmr/m/n/10 )) \OMS/cmsy/m/n/10 6\/cmr/m/n/10 =$
  []
 
 
-Overfull \hbox (51.71027pt too wide) in paragraph at lines 24--27
-\OML/cmm/m/it/10 atletas\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )[])$ 
+Overfull \hbox (51.71027pt too wide) in paragraph at lines 20--23
+$\OML/cmm/m/it/10 atletas\/cmr/m/n/10 (\OML/cmm/m/it/10 j\/cmr/m/n/10 )[])$ 
  []
 
 )
@@ -800,11 +753,11 @@ Overfull \hbox (51.71027pt too wide) in paragraph at lines 24--27
 
  
 Here is how much of TeX's memory you used:
- 16 strings out of 495061
- 255 string characters out of 1182622
- 48108 words of memory out of 3000000
- 3292 multiletter control sequences out of 15000+50000
+ 18 strings out of 495285
+ 355 string characters out of 3180395
+ 48037 words of memory out of 3000000
+ 3316 multiletter control sequences out of 15000+200000
  3640 words of font info for 14 fonts, out of 3000000 for 9000
- 28 hyphenation exceptions out of 8191
+ 14 hyphenation exceptions out of 8191
  18i,3n,16p,226b,91s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!
