@@ -22,20 +22,25 @@ i \leftarrow [0..|sgd(x)|-2],(cuenta(p, sgd(x)) \geq cuenta(sgd(x)_{i+1},sgd(x))
 \end{problema}
 
 \begin{problema}{uyOrdenadoAs\'{i}HayUnPatr\'{o}n}{j: JJOO}{\bool}
-\aux{faltaelnombre}{}{}{}
+\asegura{result ==  verificaPaises(j)}
+\aux{medallasDeOro}{j:JJOO, p:Pais, d:Dia}{\ent}{long([x | x\leftarrow atletasDelPais(j,p), y\leftarrow cronograma(j,d), x\in participantes(y) \wedge x==ranking(y)_0])}
+\aux{paisesDelDia}{j:JJOO, d:Dia}{[Pais]}{[nacionalidad(x) | y\leftarrow cronograma(j,d), x\leftarrow participantes(y)]}
+\aux{mejoresPaises}{j:JJOO}{[Pais]}{[p |d \leftarrow [1..jornadaActual(j)] p \leftarrow extraerRepetidos(PaisesDelDia(j,d)), q \leftarrow extraerRepetidos(PaisesDelDia(j,d)), medallasDeOro(j,p,d) \geq medallasDeOro(j,q,d) \wedge p > q]}
+\aux{patronDePaises}{j:JJOO}{[Pais]}{[ sub(mejoresPaises(j), 0, i-2) | i \leftarrow [0..|mejoresPaises|-1], \\ \neg sinRepetidos(sub(mejoresPaises(j), 0, i))]_0}
+\aux{verificaPaises}{j:JJOO}{Bool}{\forall i \in [0..|mejoresPaises(j)|-1],\\((i+|patronDePaises(j)|) \leq |mejoresPaises(j)|) \wedge \\ paisesMasGrosos(j)_i == mejoresPaises(j)_{i+|patronDePaises(j)|} }
 \end{problema}
 
 \item
 \begin{problema}{sequ\'{i}aOl\'{i}mpica}{j: JJOO}{[Pa\'{i}s]}
 
-\asegura{mismos(result,elPeorPais(j))}
+\asegura{mismos(result,extraerRepetidos(elPeorPais(j)))}
 \aux{atletasDelPais}{j:JJOO,p: Pa\'{i}s }{[Atleta]}{[x | x\leftarrow atletas(j), nacionalidad(x)==p]}
-\aux{todosLosPaises}{J:JJOO}{[(Pa\'{i}s,[Bool])]}{[(nacionalidad(x), [alguno(h\leftarrow (ranking(y)[0,1,2])\\k\leftarrow (atletasDelPais(j,nacionalidad(x))), k == h)])| x \leftarrow atletas(j), i\leftarrow[0..cantDias(j)], y\leftarrow cronograma(j,i)]}
+\aux{paisesConMedallas}{J:JJOO}{[(Pa\'{i}s,[Bool])]}{[(nacionalidad(x), [alguno(h\leftarrow (ranking(y)[0,1,2])\\k\leftarrow (atletasDelPais(j,nacionalidad(x))), k == h)])| x \leftarrow atletas(j), i\leftarrow[0..cantDias(j)], y\leftarrow cronograma(j,i)]}
 \aux{lugaresDistintos}{j:JJOO, b:[Bool]}{[\ent]}{[x+1 | x\leftarrow[0..|b|-1], b_x \not= b_{x+1}]}
-\aux{paisesConDiasSep}{j:JJOO}{[(Pais,[[Bool]])]}{
+\aux{paisesConDiasSeparados}{j:JJOO}{[(Pais,[[Bool]])]}{
 [(prm(x),[sub(sgd(x),cons(0,lugresDistintos(j,sgd(x)))_h, \\(cons(0,lugresDistintos(j,sgd(x)))_{h+1} )]|
-x \leftarrow todosLosPaises(j), \\h\leftarrow [0..|cons(0,lugaresDistintos(j,sgd(x)))|-2]]}
-\aux{elijoLosFracasados}{j:JJOO}{[(pais,[[Bool]])]}{[(prm(x), [y])\\ | x\leftarrow paisesConDiasSep(j), (\forall h \leftarrow y \leftarrow sgd(x))(h == False))]}
+x \leftarrow paisesConMedallas(j), \\h\leftarrow [0..|cons(0,lugaresDistintos(j,sgd(x)))|-2]]}
+\aux{elijoLosFracasados}{j:JJOO}{[(pais,[[Bool]])]}{[(prm(x), [y])\\ | x\leftarrow paisesConDiasSeparados(j), (\forall y \leftarrow sgd(x), h \leftarrow y)(h == False))]}
 \aux{mayorCantidadDeDIas}{j:JJOO}{[(pais, \ent)]}{[(prm(x),long(y))\\ | x \leftarrow elijoLosFracasados(j), y\leftarrow sgd(x), h\leftarrow sgd(x), long(y) \geq long(h) ]}
 \aux{elPeorPais}{j:JJOO}{[pais]}{[prm(x) | x\leftarrow mayorCantidadDeDias(j), \\ y\leftarrow mayorCantidadDeDias(j), sgd(x)\geq sgd(y)]}
 
@@ -57,4 +62,20 @@ x \leftarrow todosLosPaises(j), \\h\leftarrow [0..|cons(0,lugaresDistintos(j,sgd
 \aux{porcentajePositivos}{j:JJOO}{$\mathbb{R}$}{ |atletasLesDioPositivo(j,jornadaActual(pre(j)))| * 100 \\ / |atletasLesTocoAntiDoping(j,jornadaActual(pre(j)))| }
 \aux{atletasLesTocoAntiDoping}{j:JJOO,d:\ent}{[Atleta]}{[lesTocoControlAntiDoping(c)_0 | c \in cronograma(j,d)]}
 \aux{atletasLesDioPositivo}{j:JJOO,d:\ent}{[Atleta]}{[lesTocoControlAntiDoping(c)_0 | c \in cronograma(j,d), \\ lesTocoControlAntiDoping(c)_0 \in leDioPositivo(c) ]}
+\end{problema}
+
+\item
+\begin{problema}{deportesNoOlimpicos}{j:JJOO}{[deporte]}
+\asegura{mismos(result,noCompiten(j, todosLosDeportes(j)))}
+\asegura{(\forall x\leftarrow result),(\exists a\leftarrow atletas(j))x\in deportes(a)}
+\asegura{(\forall x\leftarrow result, y\leftarrow competencias(j))x \not= prm(categoria(y))}
+\aux{todosLosDeportes}{j:JJOO}{[deporte]}{[deportes(a) | a\leftarrow atletas(j)]}
+\aux{noCompiten}{j:JJOO, ds:[deporte]}{[deporte]}{[d | d\leftarrow extraerRepetidos(ds), c\leftarrow competencias(j), d \not= prm(categoria(c))]}
+\end{problema}
+
+\item
+\begin{problema}{atletaProdigio}{js:[JJOO], cat:(Deporte, Sexo)}{Atleta}
+\requiere{(\forall j\leftarrow js),(\exists c\leftarrow competencias(j)) prm(cat)==prm(categoria(c)) \wedge sgd(cat)==sgd(categoria(c))}
+\asegura{(\exists j\leftarrow js, c\leftarrow competencias(j), d\leftarrow deportes(result))(\forall p\leftarrow participantes(c)), cat==categoria(c)\wedge d==prm(cat)\wedge sexo(result)==sgd(cat)\wedge result== ranking(c)_0 \wedge añoNacimiento(result) > añoNacimiento(p)\wedge result\not= p}
+\aux{competioresOroPorCategoria}{js:[JJOO]}{}{}
 \end{problema}

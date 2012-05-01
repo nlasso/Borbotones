@@ -19,7 +19,18 @@
 \end{problema}
 
 \item
+\begin{problema}{clasific\'{o}Tarde}{c:Competencia, a:Atleta}{}
+\requiere{finalizada(c)==True}
+\requiere{a\notin participantes(c)}
+\requiere{(\exists d \leftarrow deportes(a)), d==prm(categoria(c)) \wedge sexo(a)==sgd(categoria(c))}
+\modifica{c}
+\asegura{categoria(c)==categoria(pre(c))}
+\asegura{mismos(paticipantes(c), participantes(pre(c)):a)}
+\asegura{finalizada(c)==finalizada(pre(c))}
+\end{problema}
+
+\item
 \begin{problema}{dePaseo}{j: JJOO}{[Atleta]}
-\asegura{mismos(result,noParticiparon(j)}
+\asegura{mismos(result,noParticiparon(j))}
 \aux{noParticiparon}{j: JJOO}{[Atleta]}{[x |k \leftarrow competencias(j), x \leftarrow atletas(j),x\notin participantes(k)]}
 \end{problema}
