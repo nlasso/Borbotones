@@ -61,8 +61,8 @@ x \leftarrow paisesConMedallas(j), \\h\leftarrow [0..|cons(0,lugaresDistintos(j,
 \neg finalizada(c),\\ |participantes(c)| > 0) \\ |lesTocaControlAntiDoping(c)|==1}
 \asegura{ifThenElse(todosLosAntiDoping > 0,0 \leq sonPositivos(j)/todosLosAntiDoping(j)\leq 0,05, true)}%este asegura se asegura que funciona :) nlasso
 %esto es todo lo de nlasso, sino les gusta borrenlo :) 
-\aux{SonPositivos}{j:JJOO}{\ent}{long([y | x\leftarrow cronograma(j,jornadaActual(pre(j))), \\y\leftarrow LesTocoControlAntiDoping(c), LeDioPositivo(x,y)])}
-\aux{todosLosAntiDoping}{j:JJOO}{\ent}{long(concat([LesTocoControlAntiDoping(x)| \\x\leftarrow cronograma(j,jornadaActual(pre(j))),|participantes(c)|>0]))}
+\aux{SonPositivos}{j:JJOO}{\ent}{long([y | x\leftarrow cronograma(j,jornadaActual(pre(j))), \\y\leftarrow LesTocoControlAntiDoping(x), LeDioPositivo(x,y)])}
+\aux{todosLosAntiDoping}{j:JJOO}{\ent}{long(concat([LesTocoControlAntiDoping(x)| \\x\leftarrow cronograma(j,jornadaActual(pre(j))),|participantes(x)|>0]))}
 \end{problema}
 
 \item
@@ -78,6 +78,7 @@ x \leftarrow paisesConMedallas(j), \\h\leftarrow [0..|cons(0,lugaresDistintos(j,
 \begin{problema}{atletaProdigio}{js:[JJOO], cat:(Deporte, Sexo)}{Atleta}
 \requiere{(\exists j\leftarrow js, c\leftarrow competencias(j)) prm(cat)==prm(categoria(c)) \wedge sgd(cat)==sgd(categoria(c))}
 \asegura{result\in competidoresOroPorCategoria(js, cat)}
-\asegura{(\exists j\leftarrow js, c\leftarrow competencias(j), d\leftarrow deportes(result))(\forall p\leftarrow participantes(c)), cat==categoria(c)\wedge d==prm(cat)\wedge sexo(result)==sgd(cat)\wedge result== ranking(c)_0 \wedge añoNacimiento(result) \geq añoNacimiento(p)}
+\asegura{(\forall a \leftarrow competidoresOroPorCategoria(js,cat), a\not= result) añoNacimiento(result) \geq añoNacimiento(a)}
+\asegura{(\exists d\in deportes(result))d == prm(cat)\wedge sexo(result)==sgd(cat)}
 \aux{competioresOroPorCategoria}{js:[JJOO], cat:(Deporte, Sexo)}{[Atleta]}{[ranking(c)_0 | j\leftarrow js, c\leftarrow competencias(j),\\ prm(categoria(c))== prm(cat) \wedge sgd(categoria(c))==sgd(cat)]}
 \end{problema}
