@@ -47,13 +47,14 @@ k \leftarrow atletasFracasados(j,p), sgd(y) \geq sgd(k)]}
 \asegura{(\forall d \leftarrow [1..cantDias(j)))mismos(cronograma(j,d),cronograma(pre(j),d))}
 \asegura{(\forall h \leftarrow atletas(j), ciaNumber(h) == ciaNumber(a))nacionalidad(h) == p}
 \asegura{|atletas(j)|==|atletas(pre(j))|}
+\asegura{ mismos(atletas(j),reemplazaAtleta(a,atletas(pre(j)))) }
 \asegura{(\forall f\leftarrow atletas(j), ciaNumber(f)\not= ciaNumber(a))(\exists b\leftarrow atletas(pre(j))) f == b }
 \asegura{(\forall c \leftarrow competencias(j), q \leftarrow participantes(c), ciaNumber(q) == ciaNumber(a)) nacionalidad(q) == p}
 \asegura{(\forall c\leftarrow competencias(j), p\leftarrow participantes(c), h\leftarrow participantes(c), ciaNumber(p)\not= ciaNumber(h)), p\not= h}
 \asegura{(\forall c \leftarrow competencias(j), q \leftarrow ranking(c), finalizada(c)==True, ciaNumber(q) == ciaNumber(a))\\ nacionalidad(q) == p}
 \asegura{(\forall c\leftarrow competencias(j), a \leftarrow ranking(c), finalizada(c)) a\in participantes(c)}
-\asegura{(\forall c \leftarrow competencias(j), q \leftarrow lesTocoControlAntiDoping(c), finalizada(c)==True, ciaNumber(q) == ciaNumber(a)) nacionalidad(q) == p}
+\asegura{(\forall c \leftarrow competencias(j), q \leftarrow lesTocoControlAntiDoping(c), finalizada(c)==True,\\ ciaNumber(q) == ciaNumber(a)) nacionalidad(q) == p}
 \asegura{(\forall c\leftarrow competencias(j), a\leftarrow lesTocoControlAntiDoping(c), finalizada(c)), a\in participantes(c)}
-\asegura{ mismos(atletas(j),reemplazaAtleta(a,atletas(pre(j)))) }
+\asegura{(\forall c \leftarrow competencias(j), x \leftarrow competencias(pre(j)), p \leftarrow lesTocoControlAntiDoping(c))\\(\exists a \leftarrow lesTocoControlAntiDoping(x)) leDioPositivo(c,p)==leDioPositivo(x,a) }
 \aux{reemplazaAtleta}{a: Atleta, ls: [Atleta]}{ [Atleta] }{ [if ciaNumber(x)==ciaNumber(a) then a else x | x \in ls ] }
 \end{problema}

@@ -1,7 +1,6 @@
 \item
 \begin{problema}{gananLosMasCapaces}{c: Competencia}{\bool}
 \requiere{finalizada(c)==true}
-\asegura{(\forall a \in ranking(c)) a \in participantes(c)}
 \asegura{Result == masCapaces(c)}
 \end{problema}
 
@@ -15,7 +14,7 @@
 \asegura{mismos(lesTocoControlAntiDoping(c),lesTocoControlAntiDoping(pre(c)))}
 \asegura{(\forall a \in participantes(c)) leDioPositivo(c,a)==leDioPositivo(pre(c),a))}
 \asegura{ranking(c)==borrarPositivos(pre(c))}
-\aux{borrarPositivos}{c:competencia}{[Atleta]}{[x|x\leftarrow ranking(c),x \notin lesTocoControlAntiDoping(c) \vee (x \in lesTocoControlAntiDoping(c) \wedge leDioPositivo(c,x) == False) ]}
+\aux{borrarPositivos}{c:competencia}{[Atleta]}{[x|x\leftarrow ranking(c),x \notin lesTocoControlAntiDoping(c) \vee \\ (x \in lesTocoControlAntiDoping(c) \wedge leDioPositivo(c,x) == False) ]}
 \end{problema}
 
 \item

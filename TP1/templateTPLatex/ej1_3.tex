@@ -15,7 +15,6 @@
 
 \item
 \begin{problema}{finalizarCompetencia}{c: Competencia, posiciones: [Atleta], control: [(Atleta, \bool)]}{}
-\requiere{|participantes(c)| > 0}
 \requiere{(\forall a \in control) prm(a) \in participantes(c)}
 \requiere{(\forall a \in posiciones) a \in participantes(c)}
 \requiere{finalizada(c) == False}
