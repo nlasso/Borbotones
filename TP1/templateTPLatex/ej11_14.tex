@@ -53,15 +53,16 @@ x \leftarrow paisesConMedallas(j), \\h\leftarrow [0..|cons(0,lugaresDistintos(j,
 \asegura{cantDias(j)==cantDias(pre(j))}
 \asegura{a\tilde{n}o(j)==a\tilde{n}o(pre(j))}
 \asegura{mismos(atletas(j),atletas(pre(j))}
-\asegura{(\forall d \in [1...cantDias(pre(j))]) cronograma(pre(j),d) == cronograma(j,d)) }
+\asegura{(\forall d \in [1...cantDias(pre(j))],d \not= jornadaActual(pre(j))) mismos(cronograma(pre(j),d),cronograma(j,d)) }
 \asegura{ cambiaElDia: jornadaActual(j)==jornadaActual(pre(j))+1}
-\asegura{lasPasadasFinalizaron(pre(j))}
-\asegura{ rankingSegunMasCapaces: (\forall c \in cronograma(pre(j),jornadaActual(pre(j))) masCapaces(c)}
-\asegura{ unControlPorCompetencia: (\forall c \in cronograma( pre(j),jornadaActual(pre(j))) \\ |lesTocaControlAntiDoping(c)|==1 )}
-\asegura{ dopingPositivoMax5Porciento: (\exists a \in atletasLesTocoAntiDoping(j,jornadaActual(pre(j)))) \\ 0 \leq porcentajePositivos(j) \leq 5 )}
-\aux{porcentajePositivos}{j:JJOO}{$\mathbb{R}$}{ |atletasLesDioPositivo(j,jornadaActual(pre(j)))| * 100 \\ / |atletasLesTocoAntiDoping(j,jornadaActual(pre(j)))| }
-\aux{atletasLesTocoAntiDoping}{j:JJOO,d:\ent}{[Atleta]}{[lesTocoControlAntiDoping(c)_0 | c \in cronograma(j,d)]}
-\aux{atletasLesDioPositivo}{j:JJOO,d:\ent}{[Atleta]}{[lesTocoControlAntiDoping(c)_0 | c \in cronograma(j,d), \\ lesTocoControlAntiDoping(c)_0 \in leDioPositivo(c) ]}
+\asegura{ rankingSegunMasCapaces: (\forall c \in cronograma(pre(j),jornadaActual(pre(j))),
+\\finalizada(c), |participantes(c)| > 0) masCapaces(c)}
+\asegura{ unControlPorCompetencia: (\forall c \in cronograma(pre(j),jornadaActual(pre(j))), 
+\neg finalizada(c),\\ |participantes(c)| > 0) \\ |lesTocaControlAntiDoping(c)|==1}
+\asegura{ifThenElse(todosLosAntiDoping > 0,0 \leq sonPositivos(j)/todosLosAntiDoping(j)\leq 0,05, true)}%este asegura se asegura que funciona :) nlasso
+%esto es todo lo de nlasso, sino les gusta borrenlo :) 
+\aux{SonPositivos}{j:JJOO}{\ent}{long([y | x\leftarrow cronograma(j,jornadaActual(pre(j))), \\y\leftarrow LesTocoControlAntiDoping(c), LeDioPositivo(x,y)])}
+\aux{todosLosAntiDoping}{j:JJOO}{\ent}{long(concat([LesTocoControlAntiDoping(x)| \\x\leftarrow cronograma(j,jornadaActual(pre(j))),|participantes(c)|>0]))}
 \end{problema}
 
 \item
@@ -75,7 +76,8 @@ x \leftarrow paisesConMedallas(j), \\h\leftarrow [0..|cons(0,lugaresDistintos(j,
 
 \item
 \begin{problema}{atletaProdigio}{js:[JJOO], cat:(Deporte, Sexo)}{Atleta}
-\requiere{(\forall j\leftarrow js),(\exists c\leftarrow competencias(j)) prm(cat)==prm(categoria(c)) \wedge sgd(cat)==sgd(categoria(c))}
-\asegura{(\exists j\leftarrow js, c\leftarrow competencias(j), d\leftarrow deportes(result))(\forall p\leftarrow participantes(c)), cat==categoria(c)\wedge d==prm(cat)\wedge sexo(result)==sgd(cat)\wedge result== ranking(c)_0 \wedge añoNacimiento(result) > añoNacimiento(p)\wedge result\not= p}
-\aux{competioresOroPorCategoria}{js:[JJOO]}{}{}
+\requiere{(\exists j\leftarrow js, c\leftarrow competencias(j)) prm(cat)==prm(categoria(c)) \wedge sgd(cat)==sgd(categoria(c))}
+\asegura{result\in competidoresOroPorCategoria(js, cat)}
+\asegura{(\exists j\leftarrow js, c\leftarrow competencias(j), d\leftarrow deportes(result))(\forall p\leftarrow participantes(c)), cat==categoria(c)\wedge d==prm(cat)\wedge sexo(result)==sgd(cat)\wedge result== ranking(c)_0 \wedge añoNacimiento(result) \geq añoNacimiento(p)}
+\aux{competioresOroPorCategoria}{js:[JJOO], cat:(Deporte, Sexo)}{[Atleta]}{[ranking(c)_0 | j\leftarrow js, c\leftarrow competencias(j),\\ prm(categoria(c))== prm(cat) \wedge sgd(categoria(c))==sgd(cat)]}
 \end{problema}

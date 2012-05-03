@@ -44,11 +44,11 @@ k \leftarrow atletasFracasados(j,p), sgd(y) \geq sgd(k)]}
 \asegura{año(j)=año(pre(j))}
 \asegura{cantDias(j)==cantDias(pre(j))}
 \asegura{jornadaActual(j)==jornadaActual(pre(j))}
-\asegura{(\forall d \leftarrow [0..cantDias(j)))mismos(cronograma(j,d),cronograma(pre(j),d))}
+\asegura{(\forall d \leftarrow [1..cantDias(j)))mismos(cronograma(j,d),cronograma(pre(j),d))}
 \asegura{(\forall h \leftarrow atletas(j), ciaNumber(h) == ciaNumber(a))nacionalidad(h) == p}
 \asegura{(\forall c \leftarrow competencias(j), q \leftarrow participantes(c), ciaNumber(q) == ciaNumber(a)) nacionalidad(q) == p}
 \asegura{(\forall c \leftarrow competencias(j), q \leftarrow ranking(c), finalizada(c)==True, ciaNumber(q) == ciaNumber(a)) nacionalidad(q) == p}
 \asegura{(\forall c \leftarrow competencias(j), q \leftarrow lesTocoControlAntiDoping(c), finalizada(c)==True, ciaNumber(q) == ciaNumber(a)) nacionalidad(q) == p}
-\asegura{ mismos(atletas(pre(j)),reemplazaAtleta(a,atletas(j))) }
+\asegura{ mismos(atletas(j),reemplazaAtleta(a,atletas(pre(j)))) }
 \aux{reemplazaAtleta}{a: Atleta, ls: [Atleta]}{ [Atleta] }{ [if ciaNumber(x)==ciaNumber(a) then a else x | x \in ls ] }
 \end{problema}

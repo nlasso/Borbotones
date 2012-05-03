@@ -10,7 +10,7 @@
 \aux{ordenada}{l:[T]}{\bool}{(\forall i \selec [0.. \longitud{l}-1)) l_i \leq l_{i+1}}
 \aux{sinRepetidos}{l: [T]}{\bool}{(\forall i, j \selec [0.. \longitud{l}), i \neq j) l_i \neq l_j}
 \aux{masCapaces}{c:competencia}{\bool}{ 
-  (\forall x \selec [0..|ranking(c)|-1), capacidad(ranking(c)_x,d) > capacidad(ranking(c)_{x+1}))
+  (\forall x \selec [0..|ranking(c)|-1), capacidad(ranking(c)_x,prm(categoria(c))) > capacidad(ranking(c)_{x+1},prm(categoria(c)))
 }
 \aux{atletasDelPais}{j:JJOO,p: Pa\'{i}s }{[Atleta]}{[x | x\leftarrow atletas(j), nacionalidad(x)==p]}
 \aux{medallasDelPais}{j:JJOO, p:Pais, pos:\ent}{\ent}{long([x | x\leftarrow atletasDelPais(j,p), y \leftarrow competencias(j),\\ x==ranking(y)_{pos}])}
