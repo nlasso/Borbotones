@@ -64,7 +64,7 @@ x \leftarrow paisesConMedallas(j), \\h\leftarrow [0..|cons(0,lugaresDistintos(j,
 \begin{problema}{atletaProdigio}{js:[JJOO], cat:(Deporte, Sexo)}{Atleta}
 \requiere{(\exists j\leftarrow js, c\leftarrow competencias(j)) prm(cat)==prm(categoria(c)) \wedge sgd(cat)==sgd(categoria(c))}
 \asegura{result\in competidoresOroPorCategoria(js, cat)}
-\asegura{(\forall a \leftarrow competidoresOroPorCategoria(js,cat), a\not= result) añoNacimiento(result) \geq añoNacimiento(a)}
+\asegura{(\forall a \leftarrow competidoresOroPorCategoria(js,cat), a\not= result) a\tilde{n}oNacimiento(result) \geq a\tilde{n}oNacimiento(a)}
 \asegura{(\exists d\in deportes(result))d == prm(cat)\wedge sexo(result)==sgd(cat)}
 \aux{competioresOroPorCategoria}{js:[JJOO], cat:(Deporte, Sexo)}{[Atleta]}{[ranking(c)_0 | j\leftarrow js, c\leftarrow competencias(j),\\ prm(categoria(c))== prm(cat) \wedge sgd(categoria(c))==sgd(cat)]}
 \end{problema}
