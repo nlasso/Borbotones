@@ -57,7 +57,7 @@ x \leftarrow paisesConMedallas(j), \\h\leftarrow [0..|cons(0,lugaresDistintos(j,
 \asegura{(\forall x\leftarrow result),(\exists a\leftarrow atletas(j))x\in deportes(a)}
 \asegura{(\forall x\leftarrow result, y\leftarrow competencias(j))x \not= prm(categoria(y))}
 \aux{todosLosDeportes}{j:JJOO}{[deporte]}{[deportes(a) | a\leftarrow atletas(j)]}
-\aux{noCompiten}{j:JJOO, ds:[deporte]}{[deporte]}{[d | d\leftarrow extraerRepetidos(ds), c\leftarrow competencias(j), d \not= prm(categoria(c))]}
+\aux{noCompiten}{j:JJOO, ds:[deporte]}{[deporte]}{[d | d\leftarrow extraerRepetidos(ds), c\leftarrow competencias(j),\\ d \not= prm(categoria(c))]}
 \end{problema}
 
 \item
