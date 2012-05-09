@@ -42,8 +42,14 @@ deportesFinal:: Deporte -> [(Deporte,Int)] -> Int -> [(Deporte,Int)]
 deportesFinal d [] cap = [(d,cap)] 
 deportesFinal d ((x,xs):xss) cap
 	| d == x = error "El deporte ya pertenece a la lista"
-	| d /= x = (x,xs):deportesFinal d xss cap
+	| d /= x = insertarOrdenado ((x,xs):xss) d cap
 	
+insertarOrdenado :: [(Deporte,Int)] -> Deporte -> Int -> [(Deporte,Int)]
+insertarOrdenado [] d cap = [(d,cap)]
+insertarOrdenado ((x,xs):xss) d cap
+	| x > d  = ((d,cap):(x,xs):xss)
+	| otherwise = (x,xs): insertarOrdenado xss d cap
+
 todosDistintos:: [(Deporte,Int)] -> Bool
 todosDistintos [] = True
 todosDistintos [(x,xs)] = True
