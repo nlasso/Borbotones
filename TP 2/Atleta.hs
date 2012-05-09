@@ -32,12 +32,25 @@ capacidadA (A n s r p c ((x,xs):xss)) d
 	| x /= d = capacidadA (A n s r p c xss) d
 
 entrenarDeporteA:: Atleta -> Deporte -> Int -> Atleta
-entrenarDeporteA (A n s a p c (xss)) d cap = (A n s a p c (deportesFinal d xss cap))
+entrenarDeporteA (A n s a p c (xss)) d cap
+	| todosDistintos xss && deportesOrdenados xss && cap<100 = (A n s a p c (deportesFinal d xss cap))
+	| not(todosDistintos xss) = error "Los deportes no pueden repetirse"
+	| not(deportesOrdenados xss) = error "Los deportes deben ingresarse ordenados" 
+	| cap>100 = error "La capacidad debe estar entre 0 y 100"
 
 deportesFinal:: Deporte -> [(Deporte,Int)] -> Int -> [(Deporte,Int)]
 deportesFinal d [] cap = [(d,cap)] 
 deportesFinal d ((x,xs):xss) cap
 	| d == x = error "El deporte ya pertenece a la lista"
 	| d /= x = (x,xs):deportesFinal d xss cap
+	
+todosDistintos:: [(Deporte,Int)] -> Bool
+todosDistintos [] = True
+todosDistintos [(x,xs)] = True
+todosDistintos ((x,xs):(y,ys):xss) = not(x == y) && todosDistintos ((y,ys):xss)
 
+deportesOrdenados::[(Deporte,Int)]->Bool
+deportesOrdenados[] = True
+deportesOrdenados [(x,xs)] = True
+deportesOrdenados ((x,xs):(y,ys):xss) = x<=y && deportesOrdenados ((y,ys):xss)
 	
