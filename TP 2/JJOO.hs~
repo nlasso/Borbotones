@@ -1,0 +1,26 @@
+module JJOO (JJOO, nuevoJ, anioJ, atletasJ, cantDiasJ, cronogramaJ,
+jornadaActualJ, dePaseoJ, medalleroJ,
+boicotPorDisciplinaJ, losMasFracasadosJ, liuSongJ,
+stevenBradburyJ, uyOrdenadoAsiHayUnPatronJ, sequiaOlimpicaJ,
+transcurrirDiaJ)
+where
+
+import Tipos
+import Atleta
+import Competencia
+
+data JJOO = J Int [Atleta] Int | NuevoDia [Competencia] JJOO deriving (Show)
+
+nuevoJ :: Int -> [Atleta] -> [[Competencia]] -> JJOO
+nuevoJ anio atletas comp = agregarDia (J anio atletas 1)   
+
+anioJ :: JJOO -> Int 
+anioJ (J anio _ _) = anio
+
+--------------AUXILIARES----------------
+agregarDia :: JJOO -> [[Competencia]] -> JJOO
+agregarDia jjoo competencias 
+	| competencias == [] = NuevoDia x jjoo
+agregarDia jjoo (x:xs) = agregarDia (NuevoDia x jjoo) xs
+
+
