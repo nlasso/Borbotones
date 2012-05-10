@@ -1,0 +1,12 @@
+Competencia> participantesC ( Participar (nuevoA "SASA" Masculino 1234 "aef" 4355 ) (C ("FOBAL",Masculino) ))
+
+nuevoA "SASfdsfsdA" Masculino 1234 "aef" 4355
+nuevoA "SfdsASA" Masculino 1234324 "asdef" 43543245
+nuevoA "SASA" Masculino 1236544 "afdsfef" 42525355
+
+
+([entrenarDeporteA (nuevoA "SASA" Masculino 1236544 "afdsfef" 42525355) "pato" 54])
+
+([entrenarDeporteA (nuevoA "SASA" Masculino 1236544 "afdsfef" 42525355) "pato" 54])
+
+([entrenarDeporteA (nuevoA "SASA" Masculino 1236544 "afdsfef" 42525355) "pato" 54])
