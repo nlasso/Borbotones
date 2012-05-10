@@ -1,4 +1,4 @@
-module Competencia (Competencia, nuevaC, categoriaC,participantesC)
+module Competencia (Competencia, nuevaC, categoriaC,participantesC, finalizadaC, rankingC, lesTocoControlAntiDopingC)
 
 where
 import Tipos
@@ -38,4 +38,50 @@ participantesC ( C _ ) = []
 participantesC ( Participar a c ) = (a : participantesC c)
 participantesC ( Finalizar _ _ c ) = participantesC c
 
+finalizadaC:: Competencia -> Bool
+finalizadaC ( C _) = False
+finalizadaC (Finalizar rank dop c) = True
+finalizadaC (Participar _ c) = finalizadaC c
+
+rankingC:: Competencia -> [Atleta]
+rankingC (C _) = error "La competencia debe estar finalizada"
+rankingC (Finalizar rank dop c) = atletasCiaNumber (participantesC c) rank
+rankingC (Participar _ c) = rankingC c
+
+atletasCiaNumber:: [Atleta] -> [Int] -> [Atleta]
+atletasCiaNumber [] xs = []
+atletasCiaNumber (y:ys) xs
+	| ciaNumberA y `elem` xs  = y: atletasCiaNumber ys xs 
+	| not(ciaNumberA y `elem` xs)  = atletasCiaNumber ys xs
+
+lesTocoControlAntiDopingC:: Competencia -> [Atleta]	
+lesTocoControlAntiDopingC (C _) = error "La competencia debe estar finalizada"
+lesTocoControlAntiDopingC (Finalizar rank dop c) = atletasCiaNumberDupla (participantesC c) dop
+lesTocoControlAntiDopingC (Participar _ c) = lesTocoControlAntiDopingC c
+
+atletasCiaNumberDupla:: [Atleta] -> [(Int,Bool)] -> [Atleta]
+atletasCiaNumberDupla [] xss = []
+atletasCiaNumberDupla (y:ys) ((x,xs):xss)
+	| ciaNumberA y `elem` primerElemento((x,xs):xss)   = y: atletasCiaNumberDupla ys ((x,xs):xss) 
+	| not(ciaNumberA y `elem` primerElemento((x,xs):xss)) = atletasCiaNumberDupla ys ((x,xs):xss)
+	
+primerElemento:: [(Int,Bool)] -> [Int]
+primerElemento [] = []
+primerElemento ((x,xs):xss) = x: primerElemento xss
+
+leDioPositivoC:: Eq Atleta => Atleta -> Competencia -> Bool
+leDioPositivoC a(Finalizar _ dop c) 
+	| not(a `elem` lesTocoControlAntiDopingC c) = error "El atleta debe pertenecer a la lista de control antidoping"
+	| a `elem` lesTocoControlAntiDopingC c = resultadoDoping a dop
+
+resultadoDoping:: Atleta -> [(Int,Bool)] -> Bool
+resultadoDoping (a) ((x,xs):xss)
+	| ciaNumberA a == x = xs
+	| not(ciaNumberA a == x) = resultadoDoping a xss
+
+
+	
+	
+	
+	
 
