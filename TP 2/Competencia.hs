@@ -110,3 +110,23 @@ capacidadesOrdenadas::[Int]->Bool
 capacidadesOrdenadas[] = True
 capacidadesOrdenadas(x:xs) = True
 capacidadesOrdenadas(x:y:xs) = x<=y && capacidadesOrdenadas (x:y:xs)
+
+sancionarTrampososC :: Competencia -> Competencia
+sancionarTrampososC (Finalizar rank [(atl,dop)] c) = (Finalizar (rankSinDop (rank) (participantesDopados [(atl,dop)]))  [(atl,dop)] c)
+
+participantesDopados :: [(Int,Bool)] -> [Int]
+participantesDopados [] = []
+participantesDopados ((x,xs):xss)
+    | xs == True = x:(participantesDopados xss)
+    | xs == False = participantesDopados xss
+
+rankSinDop :: [Int] -> [Int] -> [Int]
+rankSinDop [] ys = []
+rankSinDop (x:xs) ys
+    | (x `elem` ys) = (rankSinDop xs ys)
+    | not( x `elem` ys) = x:(rankSinDop xs ys)
+
+
+	
+	
+	
