@@ -1,4 +1,4 @@
-module Competencia (Competencia, nuevaC, categoriaC,participantesC, finalizadaC, rankingC, lesTocoControlAntiDopingC)
+module Competencia (Competencia, nuevaC, categoriaC,participantesC, finalizadaC, rankingC, lesTocoControlAntiDopingC, leDioPositivoC, finalizarC, linfordChristieC)
 
 where
 import Tipos
@@ -79,9 +79,13 @@ resultadoDoping (a) ((x,xs):xss)
 	| ciaNumberA a == x = xs
 	| not(ciaNumberA a == x) = resultadoDoping a xss
 
-
+finalizarC:: Competencia -> [Int] -> [(Int,Bool)] -> Competencia
+finalizarC (C (dep,sex)) _ _ = (C (dep,sex))
+finalizarC (Participar a c) _ _ = (Participar a c)
+finalizarC (Finalizar _ _ c) cia [(cian,dop)] = (Finalizar cia [(cian,dop)] c)
 	
+linfordChristieC :: Competencia -> Atleta -> Competencia
+linfordChristieC (C (dep,sex)) at = (C (dep,sex))
+linfordChristieC (Participar a (C (dep,sex))) at 
+	| at /= a = (Participar a (C (dep,sex)))
 	
-	
-	
-
