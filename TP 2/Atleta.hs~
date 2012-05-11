@@ -3,11 +3,7 @@ nacionalidadA, ciaNumberA, deportesA, capacidadA,
 entrenarDeporteA)
 where
 import Tipos
-
 data Atleta = A String Sexo Int Pais Int [(Deporte, Int)] deriving (Show)
-
-instance Eq Atleta where 
-	(==) a1 a2 = (nombreA(a1)==nombreA(a2) && sexoA(a1) == sexoA(a2) && anioNacimientoA(a1) == anioNacimientoA(a2) && nacionalidadA(a) == nacionalidadA(a2) && ciaNumberA(a1) == ciaNumberA(a2) && deportesA(a1) == deportesA(a2) && capacidadA(a1) == capacidadA(a2))
 
 nuevoA:: String -> Sexo -> Int -> Pais -> Int -> Atleta
 nuevoA nom s a nac cia = (A nom s a nac cia [])

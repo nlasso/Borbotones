@@ -1,4 +1,5 @@
-module JJOO (JJOO, nuevoJ, anioJ)
+module JJOO (JJOO, nuevoJ, anioJ, atletasJ, cantDiasJ, cronogramaJ,
+jornadaActualJ, dePaseoJ)
 where
 
 import Tipos
@@ -35,17 +36,37 @@ jornadaActualJ (J _ _ diaActual) = diaActual
 jornadaActualJ (NuevoDia competencias jjoo) = jornadaActualJ jjoo
 
 dePaseoJ JJOO -> [Atleta]
-dePaseoJ
+dePaseoJ (J _ atletas _) = fueronAPasear J atletas
 
 --------------AUXILIARES----------------
+--------------AUXILIARES NUEVOJ------------
 agregarDia :: JJOO -> [[Competencia]] -> JJOO
 agregarDia jjoo [] = jjoo
 agregarDia jjoo (x:xs) = agregarDia (NuevoDia x jjoo) xs
 
+--------------AUXILIARES CRONOGRAMAJ----------------
 buscaDia :: JJOO -> Int -> [Competencia]
 buscaDia (NuevoDia competencias jjoo) dia
 	| dia == 1 = competencias
 	| dia > 1 = buscaDia jjoo (dia-1)
+-------------------AUXILIARES EJERCICIO DE PASEO---------------------
+fueronAPasear :: JJOO -> [Atleta] -> [Atleta]  --
+fueronAPasear (J _ [] _) [] = []
+fueronAPasear (NuevoDia competencias jjoo) [] = []
+fueronAPasear (NuevoDia competencias jjoo) (x:xs)
+	|(atletaNoPertenece competencias x) = x : fueronAPasear (NuevoDia competencias jjoo) xs
+	|(atletaNoPertenece competencias x) == False = fueronAPasear (NuevoDia competencias jjoo) xs
+
+atletaNoPertenece :: [Competencia] -> Atleta-> Bool
+atletaNoPertenece [] x = True
+atletaNoPertenece (x:xs) y
+	|not(y `elem` participantesC x) = atletaNoPertenece xs y
+	|(y `elem` participantesC x) = False
+
+
+
+
+
  
 
 
