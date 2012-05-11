@@ -17,11 +17,11 @@ anioJ (J anio _ _) = anio
 anioJ (NuevoDia _ jjoo) = anioJ jjoo
 
 atletasJ JJOO -> [Atleta]
-atletasJ (J _ atletas _) = atletas --el mismos importa?? porque estamos respetando un orden.
+atletasJ (J _ atletas _) = atletas 
 atletasJ (NuevoDia _ jjoo) = atletasJ jjoo
 
 cantDiasJ JJOO -> Int
-cantDiasJ (J _ _ _) = 1   --No suma porque no es un nuevo dia sino que es le caso base.
+cantDiasJ (J _ _ _) = 1 
 cantDiasJ (NuevoDia competencias jjoo) = 1 + (cantDiasJ jjoo)
 
 cronogramaJ JJOO -> Int -> [Competencia]
@@ -36,7 +36,12 @@ jornadaActualJ (J _ _ diaActual) = diaActual
 jornadaActualJ (NuevoDia competencias jjoo) = jornadaActualJ jjoo
 
 dePaseoJ JJOO -> [Atleta]
-dePaseoJ (J _ atletas _) = fueronAPasear J atletas
+dePaseoJ (J anio atletas diaActual) = fueronAPasear (J anio atletas diaActual)  atletas
+dePaseoJ (NuevoDia competencias jjoo) = dePaseoJ jjoo
+
+medalleroJ JJOO -> [(Pais,[Int])]
+medalleroJ (J anio atletas diaActual)
+medalleroJ (NuevoDia competencias jjoo)
 
 --------------AUXILIARES----------------
 --------------AUXILIARES NUEVOJ------------
@@ -50,7 +55,7 @@ buscaDia (NuevoDia competencias jjoo) dia
 	| dia == 1 = competencias
 	| dia > 1 = buscaDia jjoo (dia-1)
 -------------------AUXILIARES EJERCICIO DE PASEO---------------------
-fueronAPasear :: JJOO -> [Atleta] -> [Atleta]  --
+fueronAPasear :: JJOO -> [Atleta] -> [Atleta] 
 fueronAPasear (J _ [] _) [] = []
 fueronAPasear (NuevoDia competencias jjoo) [] = []
 fueronAPasear (NuevoDia competencias jjoo) (x:xs)
@@ -60,15 +65,10 @@ fueronAPasear (NuevoDia competencias jjoo) (x:xs)
 atletaNoPertenece :: [Competencia] -> Atleta-> Bool
 atletaNoPertenece [] x = True
 atletaNoPertenece (x:xs) y
-	|(comparaCiaNumber y (participantesC x)) == False = atletaNoPertenece xs y
-	|(comparaCiaNumber y (participantesC x)) == True = False
+	|not(y `elem` participantesC x) = atletaNoPertenece xs y
+	|(y `elem` participantesC x) = False
 
-comparaCiaNumber :: Atleta -> [Atleta] -> Bool
-comparaCiaNumber y [] = False
-comparaCiaNumber y (x:xs)
-	|ciaNumberA y == ciaNumberA x = True
-	|ciaNumberA y /= ciaNumberA x = comparaCiaNumber y xs
-
+----------------------AUXILIARES EJERICICIO MEDALLERO---------------
 
 
 
