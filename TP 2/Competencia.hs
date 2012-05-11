@@ -84,8 +84,29 @@ finalizarC (C (dep,sex)) _ _ = (C (dep,sex))
 finalizarC (Participar a c) _ _ = (Participar a c)
 finalizarC (Finalizar _ _ c) cia [(cian,dop)] = (Finalizar cia [(cian,dop)] c)
 	
-linfordChristieC :: Competencia -> Atleta -> Competencia
-linfordChristieC (C (dep,sex)) at = (C (dep,sex))
-linfordChristieC (Participar a (C (dep,sex))) at 
-	| at /= a = (Participar a (C (dep,sex)))
-	
+linfordChristieC ::  Atleta -> Competencia -> Competencia
+linfordChristieC at (Participar a c) 
+    | ciaNumberA a == ciaNumberA at = c
+    | otherwise = Participar a ( linfordChristieC at c)
+
+gananLosMasCapacesC::Competencia -> Bool
+gananLosMasCapacesC (Finalizar rank _ c) = capacidadesOrdenadas(reverso (atletasCapaces (rank) (participantesC c) (categoriaC c)))
+
+atletasCapaces:: [Int] -> [Atleta] -> (Deporte,Sexo) -> [Int]
+atletasCapaces [] (y:ys) (dep,sex) = []
+atletasCapaces (x:xs) (y:ys) (dep,sex)
+	| x == ciaNumberA y = (capacidadA y dep) : (atletasCapaces xs ys (dep,sex))
+	| not(x == ciaNumberA y) = atletasCapaces xs ys (dep,sex)
+
+reverso:: [Int] -> [Int]
+reverso [] = []
+reverso (x:xs) = agregarAtras x (reverso xs)
+
+agregarAtras::Int->[Int]->[Int]
+agregarAtras x [] = [x]
+agregarAtras x (y:ys) = y:(agregarAtras x ys) 
+
+capacidadesOrdenadas::[Int]->Bool
+capacidadesOrdenadas[] = True
+capacidadesOrdenadas(x:xs) = True
+capacidadesOrdenadas(x:y:xs) = x<=y && capacidadesOrdenadas (x:y:xs)
