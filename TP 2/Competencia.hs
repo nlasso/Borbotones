@@ -31,15 +31,15 @@ rankingC (C _) = error "La competencia debe estar finalizada"
 rankingC (Finalizar rank dop c) = atletasCiaNumber (participantesC c) rank
 rankingC (Participar _ c) = rankingC c
 
-lesTocoControlAntiDopingC:: Competencia -> [Atleta]	
+lesTocoControlAntiDopingC :: Competencia -> [Atleta]	
 lesTocoControlAntiDopingC (C _) = error "La competencia debe estar finalizada"
 lesTocoControlAntiDopingC (Finalizar rank dop c) = atletasCiaNumberDupla (participantesC c) dop
 lesTocoControlAntiDopingC (Participar _ c) = lesTocoControlAntiDopingC c
 	
-leDioPositivoC:: Eq Atleta => Atleta -> Competencia -> Bool
+leDioPositivoC :: Atleta -> Competencia -> Bool
 leDioPositivoC a(Finalizar _ dop c) 
-	| not(a `elem` lesTocoControlAntiDopingC c) = error "El atleta debe pertenecer a la lista de control antidoping"
-	| a `elem` lesTocoControlAntiDopingC c = resultadoDoping a dop
+	|(compararAtleta a (lesTocoControlAntiDopingC c)) = error "El atleta debe pertenecer a la lista de control antidoping"
+	|(compararAtleta a (lesTocoControlAntiDopingC c)) = resultadoDoping a dop
 
 finalizarC:: Competencia -> [Int] -> [(Int,Bool)] -> Competencia
 finalizarC (C (dep,sex)) _ _ = (C (dep,sex))
@@ -49,9 +49,9 @@ finalizarC (Finalizar _ _ c) cia [(cian,dop)] = (Finalizar cia [(cian,dop)] c)
 linfordChristieC ::  Atleta -> Competencia -> Competencia
 linfordChristieC at (Participar a c) 
     | ciaNumberA a == ciaNumberA at = c
-    | otherwise = Participar a ( linfordChristieC at c)
+    | otherwise = Participar a (linfordChristieC at c)
 
-gananLosMasCapacesC::Competencia -> Bool
+gananLosMasCapacesC :: Competencia -> Bool
 gananLosMasCapacesC (Finalizar rank _ c) = capacidadesOrdenadas(reverso (atletasCapaces (rank) (participantesC c) (categoriaC c)))
 
 
@@ -65,7 +65,7 @@ sexoIgual s (x:xs)
 	| not(s == (sexoA x))= False
 	| s == (sexoA x) = sexoIgual s xs
 	
-deporteIgual :: Eq Deporte => Deporte -> [Atleta] -> Bool
+deporteIgual :: Deporte -> [Atleta] -> Bool
 deporteIgual d [] = True
 deporteIgual d (x:xs)
 	| not(d `elem` (deportesA x)) = False
@@ -138,3 +138,9 @@ rankSinDop [] ys = []
 rankSinDop (x:xs) ys
     | (x `elem` ys) = (rankSinDop xs ys)
     | not( x `elem` ys) = x:(rankSinDop xs ys)
+
+compararAtleta :: Atleta -> [Atleta] -> Bool
+compararAtleta atleta [] = False
+compararAtleta atleta (x:xs)
+	|ciaNumberA atleta == ciaNumberA x = True
+	|ciaNumberA atleta /= ciaNumberA x = compararAtleta atleta xs
