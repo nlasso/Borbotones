@@ -1,5 +1,5 @@
 module JJOO (JJOO, nuevoJ, anioJ, atletasJ, cantDiasJ, cronogramaJ,
-jornadaActualJ, dePaseoJ)
+jornadaActualJ,medalleroJ)
 where
 
 import Tipos
@@ -16,32 +16,35 @@ anioJ :: JJOO -> Int
 anioJ (J anio _ _) = anio
 anioJ (NuevoDia _ jjoo) = anioJ jjoo
 
-atletasJ JJOO -> [Atleta]
+atletasJ:: JJOO -> [Atleta]
 atletasJ (J _ atletas _) = atletas 
 atletasJ (NuevoDia _ jjoo) = atletasJ jjoo
 
-cantDiasJ JJOO -> Int
+cantDiasJ:: JJOO -> Int
 cantDiasJ (J _ _ _) = 1 
 cantDiasJ (NuevoDia competencias jjoo) = 1 + (cantDiasJ jjoo)
 
-cronogramaJ JJOO -> Int -> [Competencia]
+cronogramaJ:: JJOO -> Int -> [Competencia]
 cronogramaJ jjoo dia
 	| dia < 1 || dia > (cantDiasJ jjoo) = error "El dia no esta contemplado"
 cronogramaJ (NuevoDia competencias jjoo) dia
 	|dia == (cantDiasJ jjoo) = competencias
 cronogramaJ (NuevoDia competencias jjoo) dia = buscaDia jjoo (dia-1) 
 
-jornadaActualJ JJOO -> Int 
+jornadaActualJ:: JJOO -> Int 
 jornadaActualJ (J _ _ diaActual) = diaActual 
 jornadaActualJ (NuevoDia competencias jjoo) = jornadaActualJ jjoo
 
-dePaseoJ JJOO -> [Atleta]
-dePaseoJ (J anio atletas diaActual) = fueronAPasear (J anio atletas diaActual)  atletas
-dePaseoJ (NuevoDia competencias jjoo) = dePaseoJ jjoo
+--dePaseoJ :: JJOO -> [Atleta]
+--dePaseoJ (J anio atletas diaActual) = fueronAPasear (J anio atletas diaActual)  atletas
+--dePaseoJ (NuevoDia competencias jjoo) = dePaseoJ jjoo
 
-medalleroJ JJOO -> [(Pais,[Int])]
-medalleroJ (J anio atletas diaActual)
-medalleroJ (NuevoDia competencias jjoo)
+medalleroJ :: JJOO -> [(Pais,[Int])]
+medalleroJ (J _ _ _) = []
+medalleroJ (NuevoDia competencias jjoo) = paisesMedallas ( paisesGanadoresSinRep ( concatenoPaisesGanadores (paisesOroSinRep (paisesOro (competenciasFinalizadas (todasLasCompetencias jjoo)))) (paisesPlataSinRep(paisesPlata (competenciasFinalizadas (todasLasCompetencias jjoo)))) (paisesBronceSinRep(paisesBronce (competenciasFinalizadas (todasLasCompetencias jjoo)))))) (competenciasFinalizadas (todasLasCompetencias jjoo))
+
+losMasFracasadosJ:: JJOO -> Pais -> [Atleta]
+losMasFracasadosJ 
 
 --------------AUXILIARES----------------
 --------------AUXILIARES NUEVOJ------------
@@ -55,26 +58,100 @@ buscaDia (NuevoDia competencias jjoo) dia
 	| dia == 1 = competencias
 	| dia > 1 = buscaDia jjoo (dia-1)
 -------------------AUXILIARES EJERCICIO DE PASEO---------------------
-fueronAPasear :: JJOO -> [Atleta] -> [Atleta] 
+fueronAPasear :: Eq Atleta => JJOO -> [Atleta] -> [Atleta] 
 fueronAPasear (J _ [] _) [] = []
 fueronAPasear (NuevoDia competencias jjoo) [] = []
 fueronAPasear (NuevoDia competencias jjoo) (x:xs)
 	|(atletaNoPertenece competencias x) = x : fueronAPasear (NuevoDia competencias jjoo) xs
 	|(atletaNoPertenece competencias x) == False = fueronAPasear (NuevoDia competencias jjoo) xs
 
-atletaNoPertenece :: [Competencia] -> Atleta-> Bool
+atletaNoPertenece ::Eq Atleta => [Competencia] -> Atleta-> Bool
 atletaNoPertenece [] x = True
 atletaNoPertenece (x:xs) y
 	|not(y `elem` participantesC x) = atletaNoPertenece xs y
 	|(y `elem` participantesC x) = False
 
-----------------------AUXILIARES EJERICICIO MEDALLERO---------------
+----------------------AUXILIARES EJERCICIO MEDALLERO---------------
 
+paisesOro:: [Competencia] -> [Pais]
+paisesOro [] = []
+paisesOro (x:xs)
+	|length (rankingC x) >0 = (nacionalidadA ((rankingC x)!!0)):(paisesOro xs)
+	
+paisesPlata:: [Competencia] -> [Pais]
+paisesPlata [] = []
+paisesPlata (x:xs)
+	|length (rankingC x) >1 = (nacionalidadA ((rankingC x)!!1)):(paisesPlata xs)
+	|otherwise = paisesPlata xs
+	
+paisesBronce:: [Competencia] -> [Pais]
+paisesBronce [] = []
+paisesBronce (x:xs)
+	|length (rankingC x) >2 = (nacionalidadA ((rankingC x)!!2)):(paisesBronce xs)
+	|otherwise = paisesBronce xs
 
+paisesOroSinRep:: [Pais] -> [Pais]
+paisesOroSinRep [] = []
+paisesOroSinRep (x:xs)
+	| x `elem` xs = paisesOroSinRep xs
+	| otherwise = x:paisesOroSinRep xs
+	
+paisesPlataSinRep:: [Pais] -> [Pais]
+paisesPlataSinRep [] = []
+paisesPlataSinRep (x:xs)
+	| x `elem` xs = paisesPlataSinRep xs
+	| otherwise = x:paisesPlataSinRep xs
+	
+paisesBronceSinRep:: [Pais] -> [Pais]
+paisesBronceSinRep [] = []
+paisesBronceSinRep (x:xs)
+	| x `elem` xs = paisesOroSinRep xs
+	| otherwise = x:paisesOroSinRep xs
+	
+concatenoPaisesGanadores:: [Pais] -> [Pais] -> [Pais] -> [Pais]
+concatenoPaisesGanadores [] [] [] = []
+concatenoPaisesGanadores x [] [] = x
+concatenoPaisesGanadores [] y [] = y
+concatenoPaisesGanadores [] [] z = z
+concatenoPaisesGanadores x y [] = x++y
+concatenoPaisesGanadores [] y z = y++z
+concatenoPaisesGanadores x [] z = x++z
+concatenoPaisesGanadores x y z = x++y++z
 
+paisesGanadoresSinRep :: [Pais] -> [Pais]
+paisesGanadoresSinRep [] = []
+paisesGanadoresSinRep (x:xs)
+	| x `elem`xs = paisesGanadoresSinRep xs
+	| otherwise = x:paisesGanadoresSinRep xs
+	
+paisOro :: Pais -> [Competencia] -> Int
+paisOro p [] = 0
+paisOro p (x:xs)
+	| p == nacionalidadA((rankingC x)!!0) && length(rankingC x) > 0 = 1 + paisOro p xs
+	| otherwise = 0 + paisOro p xs
+	
+paisPlata :: Pais -> [Competencia] -> Int
+paisPlata p [] = 0
+paisPlata p (x:xs)
+	| p == nacionalidadA((rankingC x)!!1) && length(rankingC x) > 1 = 1 + paisPlata p xs
+	| otherwise = 0 + paisPlata p xs	
 
- 
+paisBronce :: Pais -> [Competencia] -> Int
+paisBronce p [] = 0
+paisBronce p (x:xs)
+	| p == nacionalidadA((rankingC x)!!2) && length(rankingC x) > 0 = 1 + paisBronce p xs
+	| otherwise = 0 + paisBronce p xs
+		
+paisesMedallas :: [Pais] -> [Competencia] -> [(Pais,[Int])]
+paisesMedallas [] c = []
+paisesMedallas (x:xs) c =(x,(paisOro x c):(paisPlata x c):[(paisBronce  x c)]):paisesMedallas xs c
 
-
-
-
+competenciasFinalizadas :: [Competencia] -> [Competencia]
+compentenciasFinalizadas [] = []
+competenciasFinalizadas (x:xs)
+	| finalizadaC x = x:(competenciasFinalizadas xs)
+	| not(finalizadaC x) = (competenciasFinalizadas xs)
+	
+todasLasCompetencias:: JJOO -> [Competencia]
+todasLasCompetencias (J _ _ _) = []
+todasLasCompetencias (NuevoDia competencias jjoo) = (competencias++ todasLasCompetencias jjoo)
