@@ -10,3 +10,36 @@ nuevoA "SASA" Masculino 1236544 "afdsfef" 42525355
 ([entrenarDeporteA (nuevoA "SASA" Masculino 1236544 "afdsfef" 42525355) "pato" 54])
 
 ([entrenarDeporteA (nuevoA "SASA" Masculino 1236544 "afdsfef" 42525355) "pato" 54])
+
+stevenBradburyJ:: JJOO -> Atleta
+stevenBradburyJ (J _ _ _) = error "no hay competencias ni medallas"
+stevenBradBuryJ (NuevoDia competencias jjoo) = dameElMenosCapaz(capacidadDeGanadores( atletasGanadores(competenciasFinalizadas(todasLasCompetencias (NuevoDia competencias jjoo))))) 
+
+
+
+
+dameElMenosCapaz:: [(Atleta,Int)] -> Atleta
+dameElMenosCapaz [(x,xs)] = x
+dameElMenosCapaz ((x,xs):xss)
+	| xs < (snd(head(xss))) = x
+	| otherwise = dameElMenosCapaz xss
+
+
+ todasLasCompetencias (NuevoDia [(nuevaC ("pato") (Masculino) ([entrenarDeporteA (nuevoA "SASA" Masculino 1236544 "afdsfef" 42525355) "pato" 54])),(nuevaC ("futbol") (Masculino) ([entrenarDeporteA (nuevoA "SASA" Masculino 1236544 "afdsfef" 42525355) "futbol" 54]))] (J 2010 ([(entrenarDeporteA (nuevoA "SASA" Masculino 1236544 "afdsfef" 42525355) "pato" 54),(entrenarDeporteA (nuevoA "SASA" Masculino 1236544 "afdsfef" 42525355) "futbol" 54)]) 123 ))
+
+
+ participantesC ( Participar (nuevoA "SASA" Masculino 1234 "aef" 4355 ) ( Participar (nuevoA "SASA" Masculino 1234 "aef" 4355 ) (C ("FOBAL",Masculino) )))
+
+(Constructor (_) (Constructor (_)) (C (_) )))
+
+
+
+
+ todasLasCompetencias (NuevoDia [(nuevaC ("pato") (Masculino) ([entrenarDeporteA (nuevoA "SASA" Masculino 1236544 "afdsfef" 42525355) "pato" 54])),(nuevaC ("futbol") (Masculino) ([entrenarDeporteA (nuevoA "SASA" Masculino 1236544 "afdsfef" 42525355) "futbol" 54]))] (J 2010 ([(entrenarDeporteA (nuevoA "SASA" Masculino 1236544 "afdsfef" 42525355) "pato" 54),(entrenarDeporteA (nuevoA "SASA" Masculino 1236544 "afdsfef" 42525355) "futbol" 54)]) 123 ))
+
+
+
+
+
+todasLasCompetencias(NuevoDia [(nuevaC ("pato") (Masculino) ([entrenarDeporteA (nuevoA "SASA" Masculino 1236544 "afdsfef" 42525355) "pato" 54])),(nuevaC ("futbol") (Masculino) ([entrenarDeporteA (nuevoA "SASA" Masculino 1236544 "afdsfef" 42525355) "futbol" 54]))](NuevoDia [(nuevaC ("pato") (Masculino) ([entrenarDeporteA (nuevoA "SASA" Masculino 1236544 "afdsfef" 42525355) "pato" 54])),(nuevaC ("futbol") (Masculino) ([entrenarDeporteA (nuevoA "SASA" Masculino 1236544 "afdsfef" 42525355) "futbol" 54]))] (J 2010 ([(entrenarDeporteA (nuevoA "SASA" Masculino 1236544 "afdsfef" 42525355) "pato" 54),(entrenarDeporteA (nuevoA "SASA" Masculino 1236544 "afdsfef" 42525355) "futbol" 54)]) 123 )))
+[C ("pato",Masculino),C ("futbol",Masculino),C ("pato",Masculino),C ("futbol",Masculino)]

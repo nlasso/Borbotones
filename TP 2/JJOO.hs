@@ -70,13 +70,13 @@ categoriaPertenece (x:xs) (deporte, sexo)
 modificarCompetencias :: [Competencia] -> (Deporte,Sexo) -> Pais -> [Competencia]
 modificarCompetencias [] (deporte,sexo) p = []
 modificarCompetencias (x:xs) (deporte, sexo) p
-	|categoriaC x == (deporte, sexo) = (modificarCompetencia x p):xs
+	|categoriaC x == (deporte, sexo) = (modificarCompetencia x (deporte,sexo) p):xs
 	|otherwise = x:(modificarCompetencias xs (deporte, sexo) p)
 
-modificarCompetencia :: Competencia -> Pais -> Competencia
-modificarCompetencia (Finalizar ranking doping competencia) p = Finalizar (quitarDelRanking ranking p (participantesC competencia)) (quitarParticipantes doping p) (Participar ((quitarParticipantes (participantesC competencia) p) (C categoriaC(competencia))))
-modificarCompetencia (Participar participantes competencia) p = Participar ((quitarParticipantes participantes p) (C categoriaC(competencia))) 
-modificarCompetencia C categoria = C categoria
+modificarCompetencia :: Competencia -> (Deporte, Sexo) -> Pais -> Competencia
+modificarCompetencia competencia (deporte,sexo) p = nuevaC deporte sexo (quitarParticipantes (participantesC competencia) p)
+modificarCompetencia competencia (deporte,sexo) p
+	|finalizadaC competencia = finalizarC competencia (listadoEnCiaNumber(quitarParticipantes (rankingC competencia) p)) (sacarlosDelControl (quitarParticipantes (lesTocoControlAntiDopingC competencia) p) competencia)
 
 quitarParticipantes :: [Atleta] -> Pais -> [Atleta]
 quitarParticipantes [] p = []
@@ -84,12 +84,13 @@ quitarParticipantes (x:xs) p
 	|nacionalidadA x == p = quitarParticipantes xs p
 	|otherwise = x:(quitarParticipantes xs p)
 
-quitarDelRanking :: [Int] -> Pais -> [Atleta] -> [Int]
-quitarDelRanking [] p atletas = []
-quitarDelRanking (x:xs) p (y:ys)
-	|nacionalidadA x == p = (ciaNumberA x): quitarDelRanking xs p
-	|otherwise = quitarDelRanking xs p
+listadoEnCiaNumber :: [Atleta] -> [Int]
+listadoEnCiaNumber [] = []
+listadoEnCiaNumber (x:xs) = (ciaNumberA x) : listadoEnCiaNumber xs 
 
+sacarlosDelControl :: [Atleta] -> Competencia -> [(Int,Bool)]
+sacarlosDelControl [] c = []
+sacarlosDelControl (x:xs) c = (ciaNumberA x, leDioPositivoC x c):sacarlosDelControl xs c
 
 --------------AUXILIARES----------------
 --------------AUXILIARES NUEVOJ------------
@@ -103,17 +104,17 @@ buscaDia (NuevoDia competencias jjoo) dia
 	| dia == 1 = competencias
 	| dia > 1 = buscaDia jjoo (dia-1)
 -------------------AUXILIARES EJERCICIO DE PASEO---------------------
-fueronAPasear :: Eq Atleta => JJOO -> [Atleta] -> [Atleta] 
+fueronAPasear :: JJOO -> [Atleta] -> [Atleta] 
 fueronAPasear (J _ [] _) [] = []
 fueronAPasear (NuevoDia competencias jjoo) [] = []
 fueronAPasear (NuevoDia competencias jjoo) (x:xs)
 	|(atletaNoPertenece competencias x) = x : fueronAPasear (NuevoDia competencias jjoo) xs
 	|(atletaNoPertenece competencias x) == False = fueronAPasear (NuevoDia competencias jjoo) xs
 
-atletaNoPertenece ::Eq Atleta => [Competencia] -> Atleta-> Bool
-atletaNoPertenece [] x = True
-atletaNoPertenece (x:xs) y
-	|(compararAtleta atleta (participantesC x)) == False = atletaNoPertenece xs y
+atletaNoPertenece :: [Competencia] -> Atleta-> Bool
+atletaNoPertenece [] atleta = True
+atletaNoPertenece (x:xs) atleta
+	|(compararAtleta atleta (participantesC x)) == False = atletaNoPertenece xs atleta
 	|(compararAtleta atleta (participantesC x)) = False
 
 compararAtleta :: Atleta -> [Atleta] -> Bool
