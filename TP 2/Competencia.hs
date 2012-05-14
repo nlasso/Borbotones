@@ -1,4 +1,5 @@
-module Competencia (Competencia, nuevaC, categoriaC,participantesC, finalizadaC, rankingC, lesTocoControlAntiDopingC, leDioPositivoC, finalizarC, linfordChristieC)
+module Competencia (Competencia, nuevaC, categoriaC,participantesC, finalizadaC, rankingC, lesTocoControlAntiDopingC, leDioPositivoC, finalizarC, linfordChristieC,
+gananLosMasCapacesC, sancionarTrampososC)
 
 where
 import Tipos
@@ -54,7 +55,8 @@ linfordChristieC (Participar a c) at
 gananLosMasCapacesC :: Competencia -> Bool
 gananLosMasCapacesC (Finalizar rank _ c) = capacidadesOrdenadas(reverso (atletasCapaces (rank) (participantesC c) (categoriaC c)))
 
-
+sancionarTrampososC :: Competencia -> Competencia
+sancionarTrampososC (Finalizar rank dop c) = (Finalizar (rankSinDop rank (participantesDopados dop)) dop c)
 
 ----------------------------AUXILIARES--------------------------------------------
 ----------------------------Auxiliar NuevaC---------------------------------------
@@ -131,9 +133,6 @@ agregarAtras x (y:ys) = y:(agregarAtras x ys)
 capacidadesOrdenadas::[Int]->Bool
 capacidadesOrdenadas(x:(y:ys)) = x<=y && capacidadesOrdenadas (y:ys)
 capacidadesOrdenadas _ = True
-
-sancionarTrampososC :: Competencia -> Competencia
-sancionarTrampososC (Finalizar rank dop c) = (Finalizar (rankSinDop rank (participantesDopados dop)) dop c)
 
 participantesDopados :: [(Int,Bool)] -> [Int]
 participantesDopados [] = []
