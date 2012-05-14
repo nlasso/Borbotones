@@ -49,9 +49,9 @@ finalizarC (Finalizar _ _ c) cia [(cian,dop)] = (Finalizar cia [(cian,dop)] c)
 linfordChristieC ::  Atleta -> Competencia -> Competencia
 linfordChristieC at (Participar a c) 
     | ciaNumberA a == ciaNumberA at = c
-    | otherwise = Participar a ( linfordChristieC at c)
+    | otherwise = Participar a (linfordChristieC at c)
 
-gananLosMasCapacesC::Competencia -> Bool
+gananLosMasCapacesC :: Competencia -> Bool
 gananLosMasCapacesC (Finalizar rank _ c) = capacidadesOrdenadas(reverso (atletasCapaces (rank) (participantesC c) (categoriaC c)))
 
 

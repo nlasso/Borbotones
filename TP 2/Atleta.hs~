@@ -7,11 +7,7 @@ import Tipos
 data Atleta = A String Sexo Int Pais Int [(Deporte, Int)] deriving (Show)
 
 --instance Eq Atleta where 
-<<<<<<< HEAD
 --	(==) a1 a2 = ( nombreA(a1)==nombreA(a2) && sexoA(a1) == sexoA(a2) && anioNacimientoA(a1) == anioNacimientoA(a2) && nacionalidadA(a1) == nacionalidadA(a2) && ciaNumberA(a1) == ciaNumberA(a2) && deportesA(a1) == deportesA(a2) && (capacidadesA a1 (deportesA a1)) == (capacidadesA a2 (deportesA a2)))
-=======
-	--(==) a1 a2 = (nombreA(a1)==nombreA(a2) && sexoA(a1) == sexoA(a2) && anioNacimientoA(a1) == anioNacimientoA(a2) && nacionalidadA(a1) == nacionalidadA(a2) && ciaNumberA(a1) == ciaNumberA(a2) && deportesA(a1) == deportesA(a2) && capacidadA(a1) == capacidadA(a2))
->>>>>>> 700748ebe028e79d83b04117f67adef9a19e2e1a
 
 nuevoA:: String -> Sexo -> Int -> Pais -> Int -> Atleta
 nuevoA nom s a nac cia = (A nom s a nac cia [])

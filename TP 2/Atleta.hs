@@ -6,9 +6,6 @@ import Tipos
 
 data Atleta = A String Sexo Int Pais Int [(Deporte, Int)] deriving (Show)
 
---instance Eq Atleta where 
---	(==) a1 a2 = ( nombreA(a1)==nombreA(a2) && sexoA(a1) == sexoA(a2) && anioNacimientoA(a1) == anioNacimientoA(a2) && nacionalidadA(a1) == nacionalidadA(a2) && ciaNumberA(a1) == ciaNumberA(a2) && deportesA(a1) == deportesA(a2) && (capacidadesA a1 (deportesA a1)) == (capacidadesA a2 (deportesA a2)))
-
 nuevoA:: String -> Sexo -> Int -> Pais -> Int -> Atleta
 nuevoA nom s a nac cia = (A nom s a nac cia [])
 
@@ -28,17 +25,16 @@ ciaNumberA:: Atleta -> Int
 ciaNumberA (A _ _ _ _ c _ ) = c
 
 deportesA:: Atleta -> [Deporte]
-deportesA (A _ _ _ _ _ [(d,_)]) = [d]
+deportesA (A _ _ _ _ _ deportes ) = recorrerDeportes deportes
+
+recorrerDeportes :: [(Deporte,Int)] -> [Deporte]
+recorrerDeportes [] = []
+recorrerDeportes (x:xs) = (fst x):(recorrerDeportes xs)
 
 capacidadA::Atleta -> Deporte -> Int
 capacidadA (A n s r p c ((x,xs):xss)) d
 	| x == d = xs
 	| x /= d = capacidadA (A n s r p c xss) d
-
---capacidadesA :: Atleta -> [Deporte] -> [(Deporte,Int)]
---capacidadesA atleta (x:xs)
---	| (x:xs) == [] = []
---	| (x:xs) /= [] = (x, (capacidadA atleta x)) : capacidadesA atleta xs
 
 entrenarDeporteA:: Atleta -> Deporte -> Int -> Atleta
 entrenarDeporteA (A n s a p c (xss)) d cap
