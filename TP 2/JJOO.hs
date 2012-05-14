@@ -43,9 +43,12 @@ dePaseoJ (NuevoDia competencias jjoo) = dePaseoJ jjoo
 
 medalleroJ :: JJOO -> [(Pais,[Int])]
 medalleroJ (J _ _ _) = []
-medalleroJ (NuevoDia competencias jjoo) = ordenar(paisesMedallas ( paisesGanadoresSinRep ( concatenoPaisesGanadores (paisesOroSinRep (paisesOro (competenciasFinalizadas (todasLasCompetencias jjoo)))) (paisesPlataSinRep(paisesPlata (competenciasFinalizadas (todasLasCompetencias jjoo)))) (paisesBronceSinRep(paisesBronce (competenciasFinalizadas (todasLasCompetencias jjoo)))))) (competenciasFinalizadas (todasLasCompetencias jjoo)))
-
-
+medalleroJ (NuevoDia competencias jjoo) = ordenar(paisesMedallas (paisesGanadoresSinRep ( concatenoPaisesGanadores (oroSinRep) (plataSinRep) (bronceSinRep))) (competenciasFinalizadas (todasLasCompetencias jjoo)))
+	where
+	oroSinRep=(paisesOroSinRep(paisesOro (competenciasFinalizadas (todasLasCompetencias jjoo))))
+	plataSinRep=(paisesPlataSinRep(paisesPlata (competenciasFinalizadas (todasLasCompetencias jjoo))))
+	bronceSinRep=(paisesBronceSinRep(paisesBronce (competenciasFinalizadas (todasLasCompetencias jjoo))))
+	
 boicotPorDisciplinaJ :: JJOO -> (Deporte, Sexo) -> Pais -> (Int, JJOO)
 boicotPorDisciplinaJ (J anio atletas diaActual) (deporte, sexo) p = (0,(J anio atletas diaActual))
 boicotPorDisciplinaJ (NuevoDia (x:xs) jjoo) (deporte, sexo) p
@@ -65,7 +68,7 @@ stevenBradBuryJ (NuevoDia competencias jjoo) = dameElMenosCapaz(minimo(capacidad
 
 uyOrdenadoAsiHayUnPatronJ:: JJOO -> Bool
 uyOrdenadoAsiHayUnPatronJ (J _ _ _) = error "No hay competencias que comparar para obtener patron"
-uyOrdenadoAsiHayUnPatronJ (NuevoDia competencias jjoo) = (hayPatron(listaMejoresPaises jjoo) (listaPatron (listaMejoresPaises jjoo) (posicion (listaMejoresPaises jjoo!!0) (listaMejoresPaises jjoo))))
+uyOrdenadoAsiHayUnPatronJ (NuevoDia competencias jjoo) = (hayPatron(listaMejoresPaises jjoo) (listaPatron (listaMejoresPaises jjoo) (posicion (listaMejoresPaises jjoo!!0) (tail(listaMejoresPaises jjoo)))))
 
 sequiaOlimpicaJ :: JJOO -> [Pais]
 sequiaOlimpicaJ jjoo = secosOlimpicos (paisesJ jjoo) jjoo
