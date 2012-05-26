@@ -38,22 +38,8 @@ capacidadA (A n s r p c ((x,xs):xss)) d
 
 entrenarDeporteA:: Atleta -> Deporte -> Int -> Atleta
 entrenarDeporteA (A n s a p c (xss)) d cap
-	| todosDistintos xss && deportesOrdenados xss && cap<100 = (A n s a p c (deportesFinal d xss cap))
-	| not(todosDistintos xss) = error "Los deportes no pueden repetirse"
-	| not(deportesOrdenados xss) = error "Los deportes deben ingresarse ordenados" 
+	| todosDistintos xss && deportesOrdenados xss && cap<100 = (A n s a p c (ordenar(agregarNuevoDeporte xss d cap)))
 	| cap>100 = error "La capacidad debe estar entre 0 y 100"
-
-deportesFinal:: Deporte -> [(Deporte,Int)] -> Int -> [(Deporte,Int)]
-deportesFinal d [] cap = [(d,cap)] 
-deportesFinal d ((x,xs):xss) cap
-	| d == x = error "El deporte ya pertenece a la lista"
-	| d /= x = insertarOrdenado ((x,xs):xss) d cap
-	
-insertarOrdenado :: [(Deporte,Int)] -> Deporte -> Int -> [(Deporte,Int)]
-insertarOrdenado [] d cap = [(d,cap)]
-insertarOrdenado ((x,xs):xss) d cap
-	| x > d  = ((d,cap):(x,xs):xss)
-	| otherwise = (x,xs): insertarOrdenado xss d cap
 
 todosDistintos:: [(Deporte,Int)] -> Bool
 todosDistintos [] = True
@@ -65,3 +51,21 @@ deportesOrdenados[] = True
 deportesOrdenados [(x,xs)] = True
 deportesOrdenados ((x,xs):(y,ys):xss) = x<=y && deportesOrdenados ((y,ys):xss)
 	
+agregarNuevoDeporte::[(Deporte,Int)] -> Deporte -> Int -> [(Deporte,Int)]
+agregarNuevoDeporte [] dep cap = [(dep,cap)]
+agregarNuevoDeporte ((x,xs):xss) dep cap
+	| x == dep = agregarNuevoDeporte xss dep cap
+	|otherwise = (x,xs):agregarNuevoDeporte xss dep cap
+	
+ordenar::[(Deporte,Int)]->[(Deporte,Int)]
+ordenar [] = []
+ordenar (xss) = (minimo xss):(ordenar xssSinMinimo)
+	where xssSinMinimo = sacarUnaAparicion (minimo xss) xss
+minimo::[(Deporte,Int)]->(Deporte,Int)
+minimo [(x,xs)] = (x,xs)
+minimo ((x,xs):xss) | x <= fst(minimo xss) = (x,xs)
+	|otherwise = minimo xss
+sacarUnaAparicion:: (Deporte,Int)->[(Deporte,Int)]->[(Deporte,Int)]
+sacarUnaAparicion (y,ys) ((x,xs):xss)
+	| x==y = xss
+	| otherwise = (x,xs):(sacarUnaAparicion (y,ys) xss)

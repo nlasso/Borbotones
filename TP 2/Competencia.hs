@@ -45,6 +45,7 @@ leDioPositivoC :: Competencia -> Atleta -> Bool
 leDioPositivoC (Finalizar _ dop c) a = resultadoDoping a dop
 
 finalizarC :: Competencia -> [Int] -> [(Int,Bool)] -> Competencia
+finalizarC (C cat) rank dop = (Finalizar [] [] (C cat))
 finalizarC (Participar a c) rank dop = Finalizar rank dop (Participar a c)
 	
 linfordChristieC ::  Competencia -> Atleta -> Competencia
@@ -69,9 +70,7 @@ sexoIgual s (x:xs)
 	
 deporteIgual :: Deporte -> [Atleta] -> Bool
 deporteIgual d [] = True
-deporteIgual d (x:xs)
-	| not(d `elem` (deportesA x)) = False
-	| d `elem` (deportesA x) = deporteIgual d xs
+deporteIgual d (x:xs) = d `elem` (deportesA x) && deporteIgual d xs
 
 todosDistintos:: [Atleta] -> Bool
 todosDistintos [] = True
@@ -82,9 +81,9 @@ todosDistintos (x:y:xs) = ciaNumberA x /= ciaNumberA y && todosDistintos (y:xs)
 
 atletasCiaNumber:: [Int] -> [Atleta] -> [Atleta]
 atletasCiaNumber [] _ = []
-atletasCiaNumber (x:xs) atletas
-	| x `elem` (ciaNumbersA atletas)  = (atletaPorCiaNumber x atletas):(atletasCiaNumber xs atletas) 
-	| otherwise  = atletasCiaNumber xs atletas
+atletasCiaNumber (y:ys) (x:xs)
+	| ciaNumberA x == y  = (atletaPorCiaNumber y xs):(atletasCiaNumber ys xs) 
+	| otherwise  = atletasCiaNumber ys xs 
 	
 ciaNumbersA :: [Atleta] -> [Int]
 ciaNumbersA [] = []
@@ -118,6 +117,7 @@ resultadoDoping (a) ((x,xs):xss)
 
 atletasCapaces:: [Int] -> [Atleta] -> (Deporte,Sexo) -> [Int]
 atletasCapaces [] (y:ys) (dep,sex) = []
+atletasCapaces _ [] (dep,sex)= []
 atletasCapaces (x:xs) (y:ys) (dep,sex)
 	| x == ciaNumberA y = (capacidadA y dep) : (atletasCapaces xs ys (dep,sex))
 	| not(x == ciaNumberA y) = atletasCapaces xs ys (dep,sex)
