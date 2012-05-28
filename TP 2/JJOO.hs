@@ -73,7 +73,7 @@ stevenBradBuryJ (NuevoDia competencias jjoo) = dameElMenosCapaz(minimo(capacidad
 
 uyOrdenadoAsiHayUnPatronJ:: JJOO -> Bool
 uyOrdenadoAsiHayUnPatronJ (J _ _ _) = True
-uyOrdenadoAsiHayUnPatronJ jjoo = (hayPatron (reverso2(listaMejoresPaises jjoo)) (listaPatron (reverso2(listaMejoresPaises jjoo)) (posicion (reverso2(listaMejoresPaises jjoo)!!0) (reverso2(tail(listaMejoresPaises jjoo))))))
+uyOrdenadoAsiHayUnPatronJ jjoo = (hayPatron (listaMejoresPaises jjoo) (listaPatron (listaMejoresPaises jjoo) (posicion ((listaMejoresPaises jjoo)!!0) (tail(listaMejoresPaises jjoo)))))
 
 sequiaOlimpicaJ :: JJOO -> [Pais]
 sequiaOlimpicaJ jjoo = secosOlimpicos (paisesJ jjoo) jjoo
@@ -584,7 +584,7 @@ c3 = nuevaC "Volley" Femenino [ad3]
 cf1 = finalizarC c1 [10,12,99,93] [(12,True),(99,False)]
 cf1_prima = finalizarC c1 [12, 10] [(12,True),(99,False)]
 
-j1 = nuevoJ 2012 [add1, add2, ad3, ad4,ad5,ad6] [[cf1],[cf1_prima],[cf1]]
+j1 = nuevoJ 2012 [add1, add2, ad3, ad4,ad5,ad6] [[cf1,cf1,cf1_prima,cf1_prima],[cf1_prima,c1],[c3],[cf1],[cf1_prima],[c2]]
 
 
 
