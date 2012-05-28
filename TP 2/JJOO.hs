@@ -586,5 +586,7 @@ cf1_prima = finalizarC c1 [12, 10] [(12,True),(99,False)]
 
 j1 = nuevoJ 2012 [add1, add2, ad3, ad4,ad5,ad6] [[cf1,cf1,cf1_prima,cf1_prima],[cf1_prima,c1],[c3],[cf1],[cf1_prima],[c2]]
 
+j2 = nuevoJ 2012 [add1, add2, ad3, ad4,ad5,ad6] [[cf1,cf1,cf1_prima,cf1_prima]]
 
+j3 = nuevoJ 2012 [add1, add2, ad3, ad4,ad5,ad6] []
 
