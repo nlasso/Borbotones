@@ -28,18 +28,18 @@ cantDiasJ (NuevoDia competencias jjoo) = 1 + (cantDiasJ jjoo)
 cronogramaJ :: JJOO -> Int -> [Competencia]
 cronogramaJ jjoo dia
 	| dia < 1 || dia > (cantDiasJ jjoo) = error "El dia no esta contemplado"
+cronogramaJ (J _ _ _) dia = []
 cronogramaJ (NuevoDia competencias jjoo) dia
-	|dia == (cantDiasJ jjoo) = competencias
-cronogramaJ (NuevoDia competencias jjoo) dia = buscaDia jjoo (dia-1) 
-
+	|dia == (contarDias (NuevoDia competencias jjoo)) = competencias
+	|otherwise = cronogramaJ jjoo dia
 
 jornadaActualJ :: JJOO -> Int 
 jornadaActualJ (J _ _ diaActual) = diaActual 
 jornadaActualJ (NuevoDia competencias jjoo) = jornadaActualJ jjoo
 
 dePaseoJ :: JJOO -> [Atleta]
-dePaseoJ (J anio atletas diaActual) = fueronAPasear (J anio atletas diaActual)  atletas
-dePaseoJ (NuevoDia competencias jjoo) = dePaseoJ jjoo
+dePaseoJ (J _ atletas _) = atletas 
+dePaseoJ (NuevoDia competencias jjoo) = buscarAtletasDePaseo (NuevoDia competencias jjoo) (atletasJ (NuevoDia competencias jjoo))
 
 medalleroJ :: JJOO -> [(Pais,[Int])]
 medalleroJ (J _ _ _) = []
@@ -80,7 +80,9 @@ sequiaOlimpicaJ jjoo = secosOlimpicos (paisesJ jjoo) jjoo
 
 transcurrirDiaJ :: JJOO -> JJOO
 transcurrirDiaJ (J anio atletas diaActual) = (J anio atletas (diaActual + 1))
-transcurrirDiaJ (NuevoDia compentencias jjoo) = (NuevoDia (terminarDia (cronogramaJ jjoo  (jornadaActualJ jjoo))) jjoo)
+transcurrirDiaJ (NuevoDia compentencias jjoo)
+	|(jornadaActualJ (NuevoDia competencias jjoo) == (contarDias (NuevoDia competencias jjoo))) =  (NuevoDia (terminarDia (cronogramaJ jjoo  (jornadaActualJ jjoo))) jjoo)
+	|otherwise = transcurrirDiaJ jjoo
 
 
 
@@ -91,13 +93,18 @@ agregarDia jjoo [] = jjoo
 agregarDia jjoo (x:xs) = agregarDia (NuevoDia x jjoo) xs
 
 --------------AUXILIARES CRONOGRAMAJ----------------
-buscaDia :: JJOO -> Int -> [Competencia]
-buscaDia (NuevoDia competencias jjoo) dia
-	| dia == 1 = competencias
-	| dia > 1 = buscaDia jjoo (dia-1)
+contarDias :: JJOO -> Int
+contarDias (J _ _ _) = 0
+contarDias (NuevoDia competencias jjoo) = 1 + contarDias jjoo
+
 -------------------AUXILIARES EJERCICIO DE PASEO---------------------
+buscarAtletasDePaseo :: JJOO -> [Atleta] -> [Atleta]
+buscarAtletasDePaseo (J _ _ _) atletas = atletas
+buscarAtletasDePaseo (NuevoDia competencias jjoo) atletas = buscarAtletasDePaseo jjoo (fueronAPasear (NuevoDia compentencias jjoo) atletas)
+
 fueronAPasear :: JJOO -> [Atleta] -> [Atleta] 
 fueronAPasear (J _ [] _) [] = []
+fueronAPasear (J _ _ _) []  = []
 fueronAPasear (NuevoDia competencias jjoo) [] = []
 fueronAPasear (NuevoDia competencias jjoo) (x:xs)
 	|(atletaNoPertenece competencias x) = x : fueronAPasear (NuevoDia competencias jjoo) xs
@@ -416,7 +423,7 @@ hayPatron (x:xs) listpatro
 secosOlimpicos :: [Pais] -> JJOO -> [Pais]
 secosOlimpicos [] jjoo = []
 secosOlimpicos (x:xs) jjoo
-	|total jjoo x == maxDiasSinMedallas jjoo = x : secosOlimpicos xs jjoo
+	|seguidillaMasLarga jjoo x == maxDiasSinMedallas jjoo = x : secosOlimpicos xs jjoo
 	|otherwise = secosOlimpicos xs jjoo
 
 maxDiasSinMedallas :: JJOO -> Int
@@ -424,7 +431,7 @@ maxDiasSinMedallas jjoo = maximoInt(todosLosPaisesYMedallas (paisesJ jjoo) jjoo)
 
 todosLosPaisesYMedallas :: [Pais] -> JJOO -> [Int]
 todosLosPaisesYMedallas [] jjoo = []
-todosLosPaisesYMedallas (x:xs) jjoo = (total jjoo x) : todosLosPaisesYMedallas xs jjoo 
+todosLosPaisesYMedallas (x:xs) jjoo = (seguidillaMasLarga jjoo x) : todosLosPaisesYMedallas xs jjoo 
 
 maximoInt :: [Int] -> Int
 maximoInt [x] = x
@@ -437,19 +444,21 @@ maxDif [] = []
 maxDif [x] = []
 maxDif (x:y:xs) = (y-x): maxDif (y:xs)
 
-total :: JJOO -> Pais -> Int
-total jjoo p = maximoInt(maxDif(reverso(masDiasSinMedallas jjoo p)))
+seguidillaMasLarga :: JJOO -> Pais -> Int
+seguidillaMasLarga jjoo p = maximoInt(maxDif(reverso([jornadaActualJ jjoo] ++ masDiasSinMedallas jjoo p)))
 
 masDiasSinMedallas :: JJOO -> Pais -> [Int]
 masDiasSinMedallas (J _ _ _) p = [0]
 masDiasSinMedallas (NuevoDia compentencias jjoo) p
-	|ganoMedallaEseDia compentencias p =  jornadaActualJ(NuevoDia compentencias jjoo) : masDiasSinMedallas jjoo p
+	|(jornadaActualJ (NuevoDia competencias jjoo) > contarDias (NuevoDia competencias jjoo) ) && (ganoMedallaEseDia compentencias p) =  contarDias (NuevoDia compentencias jjoo) : masDiasSinMedallas jjoo p
 	|otherwise = masDiasSinMedallas jjoo p
 
 ganoMedallaEseDia :: [Competencia]-> Pais -> Bool
 ganoMedallaEseDia [] p = False
 ganoMedallaEseDia (x:xs) p
-	|finalizadaC x && (p == nacionalidadA((rankingC x)!!0) || (p == nacionalidadA((rankingC x)!!1)) || (p == nacionalidadA((rankingC x)!!2))) = True
+	|finalizadaC x && (p == nacionalidadA((rankingC x)!!0)) && (length (rankingC x)) >= 1 = True
+	|finalizadaC x && (p == nacionalidadA((rankingC x)!!1)) && (length (rankingC x)) >= 2 = True
+	|finalizadaC x && (p == nacionalidadA((rankingC x)!!2)) && (length (rankingC x)) >= 3 = True
 	|otherwise = ganoMedallaEseDia xs p
 
 paisesJ :: JJOO -> [Pais]
