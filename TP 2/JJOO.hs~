@@ -26,8 +26,6 @@ cantDiasJ (J _ _ _) = 0
 cantDiasJ (NuevoDia competencias jjoo) = 1 + (cantDiasJ jjoo)
 
 cronogramaJ :: JJOO -> Int -> [Competencia]
-cronogramaJ jjoo dia
-	| dia < 1 || dia > (cantDiasJ jjoo) = error "El dia no esta contemplado"
 cronogramaJ (J _ _ _) dia = []
 cronogramaJ (NuevoDia competencias jjoo) dia
 	|dia == (contarDias (NuevoDia competencias jjoo)) = competencias
