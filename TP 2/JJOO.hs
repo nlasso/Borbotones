@@ -156,7 +156,7 @@ paisesBronce (x:xs)
 	|length (rankingC x) >2 = (nacionalidadA ((rankingC x)!!2)):(paisesBronce xs)
 	|otherwise = paisesBronce xs
 
-sinRep::(Eq Pais) => [Pais] -> [Pais]
+sinRep::(Eq a) => [a] -> [a]
 sinRep [] = []
 sinRep (x:xs)
 	| x `elem` xs = sinRep xs
@@ -582,7 +582,7 @@ crearControlAntiDoping (x:xs) = [(x, False)]
 
 ----------------------------------------------DEPORTES NO OLIMPICOS J------------------
 buscarDeportesNoOlimp :: [Atleta] -> [Deporte] -> [Deporte]
-buscarDeportesNoOlimp [] deportes = git []
+buscarDeportesNoOlimp [] deportes = []
 buscarDeportesNoOlimp (x:xs) deportes = (deportesDistintos (deportesA x) deportes) ++ buscarDeportesNoOlimp xs deportes
 
 deportesDistintos :: [Deporte] -> [Deporte] -> [Deporte]
@@ -594,7 +594,11 @@ deportesDistintos (x:xs) ys
 
 todosLosDeportesJ :: JJOO -> Int -> [Deporte]
 todosLosDeportesJ jjoo 0 = []
-todosLosDeportesJ jjoo x = (cronogramaJ jjoo x) ++ todosLosDeportesJ jjoo (x-1)
+todosLosDeportesJ jjoo x = transformarADeporte (cronogramaJ jjoo x) ++ todosLosDeportesJ jjoo (x-1)
+
+transformarADeporte :: [Competencia] -> [Deporte]
+transformarADeporte [] = []
+transformarADeporte (x:xs) = fst (categoriaC x) : transformarADeporte xs
 
 --------------------------------------- AuxiliaresAtletaProdigioJ-----------------------------
 
