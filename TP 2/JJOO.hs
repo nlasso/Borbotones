@@ -579,7 +579,7 @@ crearControlAntiDoping (x:xs) = [(x, False)]
 
 ----------------------------------------------DEPORTES NO OLIMPICOS J------------------
 buscarDeportesNoOlimp :: [Atleta] -> [Deporte] -> [Deporte]
-buscarDeportesNoOlimp [] deportes = []
+buscarDeportesNoOlimp [] deportes = git []
 buscarDeportesNoOlimp (x:xs) deportes = (deportesDistintos (deportesA x) deportes) ++ buscarDeportesNoOlimp xs deportes
 
 deportesDistintos :: [Deporte] -> [Deporte] -> [Deporte]
