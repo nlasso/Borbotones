@@ -69,7 +69,9 @@ liuSongJ (NuevoDia competencias jjoo) at p = (NuevoDia (cambioLiu competencias a
 
 stevenBradburyJ:: JJOO -> Atleta
 stevenBradburyJ (J _ _ _) = error "no hay competencias ni medallas"
-stevenBradBuryJ (NuevoDia competencias jjoo) = dameElMenosCapaz(minimo(capacidadDeGanadores( atletasGanadores(competenciasFinalizadas(todasLasCompetencias (jjoo)))))) (capacidadDeGanadores( atletasGanadores(competenciasFinalizadas(todasLasCompetencias (jjoo))))) 
+stevenBradBuryJ (NuevoDia competencias jjoo) = dameElMenosCapaz(minimo (capacidadDeLosQueGanaron)) (capacidadDeLosQueGanaron) 
+	where 
+	capacidadDeLosQueGanaron = (capacidadDeGanadores( atletasGanadores(competenciasFinalizadas(todasLasCompetencias (jjoo)))))
 
 uyOrdenadoAsiHayUnPatronJ:: JJOO -> Bool
 uyOrdenadoAsiHayUnPatronJ (J _ _ _) = True
@@ -80,13 +82,19 @@ sequiaOlimpicaJ jjoo = secosOlimpicos (paisesJ jjoo) jjoo
 
 transcurrirDiaJ :: JJOO -> JJOO
 transcurrirDiaJ (J anio atletas diaActual) = (J anio atletas (diaActual + 1))
-transcurrirDiaJ (NuevoDia compentencias jjoo)
+transcurrirDiaJ (NuevoDia competencias jjoo)
 	|(jornadaActualJ (NuevoDia competencias jjoo) == (contarDias (NuevoDia competencias jjoo))) =  (NuevoDia (terminarDia (cronogramaJ jjoo  (jornadaActualJ jjoo))) jjoo)
 	|otherwise = transcurrirDiaJ jjoo
+
 
 deportesNoOlimpicosJ :: JJOO -> [Deporte]
 deportesNoOlimpicosJ jjoo = juntarDeportes
 	where	juntarDeportes = buscarDeportesNoOlimp (atletasJ jjoo) (todosLosDeportesJ jjoo (cantDiasJ jjoo))
+
+atletaProdigioJ :: [JJOO] -> (Deporte,Sexo) -> Atleta
+atletaProdigioJ [] _ = error "No hay JJOO"
+atletaProdigioJ (js) (dep,sex) = masJoven (minimo(atletasGanadoresDeLaCat js (dep,sex)))(atletasGanadoresDeLaCat js (dep,sex))
+
 
 
 --------------AUXILIARES----------------
@@ -103,7 +111,7 @@ contarDias (NuevoDia competencias jjoo) = 1 + contarDias jjoo
 -------------------AUXILIARES EJERCICIO DE PASEO---------------------
 buscarAtletasDePaseo :: JJOO -> [Atleta] -> [Atleta]
 buscarAtletasDePaseo (J _ _ _) atletas = atletas
-buscarAtletasDePaseo (NuevoDia competencias jjoo) atletas = buscarAtletasDePaseo jjoo (fueronAPasear (NuevoDia compentencias jjoo) atletas)
+buscarAtletasDePaseo (NuevoDia competencias jjoo) atletas = buscarAtletasDePaseo jjoo (fueronAPasear (NuevoDia competencias jjoo) atletas)
 
 fueronAPasear :: JJOO -> [Atleta] -> [Atleta] 
 fueronAPasear (J _ [] _) [] = []
@@ -209,9 +217,9 @@ participantesExtraidos (x:xs) p
 
 juegoSinParticipantes :: JJOO -> (Deporte, Sexo) -> Pais -> JJOO
 juegoSinParticipantes (J anio atletas diaActual) (deporte, sexo) p = (J anio atletas diaActual)
-juegoSinParticipantes (NuevoDia compentencias jjoo) (deporte, sexo) p
-	|(categoriaPertenece compentencias (deporte, sexo)) = (NuevoDia (modificarCompetencias compentencias (deporte,sexo) p) jjoo)
-	|otherwise = (NuevoDia compentencias (juegoSinParticipantes jjoo (deporte,sexo) p))
+juegoSinParticipantes (NuevoDia competencias jjoo) (deporte, sexo) p
+	|(categoriaPertenece competencias (deporte, sexo)) = (NuevoDia (modificarCompetencias competencias (deporte,sexo) p) jjoo)
+	|otherwise = (NuevoDia competencias (juegoSinParticipantes jjoo (deporte,sexo) p))
 
 categoriaPertenece :: [Competencia] -> (Deporte, Sexo) -> Bool
 categoriaPertenece [] (deporte, sexo) = False
@@ -496,8 +504,8 @@ seguidillaMasLarga jjoo p = maximoInt(maxDif(reverso([jornadaActualJ jjoo] ++ ma
 
 masDiasSinMedallas :: JJOO -> Pais -> [Int]
 masDiasSinMedallas (J _ _ _) p = [0]
-masDiasSinMedallas (NuevoDia compentencias jjoo) p
-	|(jornadaActualJ (NuevoDia competencias jjoo) > contarDias (NuevoDia competencias jjoo) ) && (ganoMedallaEseDia compentencias p) =  contarDias (NuevoDia compentencias jjoo) : masDiasSinMedallas jjoo p
+masDiasSinMedallas (NuevoDia competencias jjoo) p
+	|(jornadaActualJ (NuevoDia competencias jjoo) > contarDias (NuevoDia competencias jjoo) ) && (ganoMedallaEseDia competencias p) =  contarDias (NuevoDia competencias jjoo) : masDiasSinMedallas jjoo p
 	|otherwise = masDiasSinMedallas jjoo p
 
 ganoMedallaEseDia :: [Competencia]-> Pais -> Bool
@@ -568,6 +576,7 @@ crearControlAntiDoping [] = []
 crearControlAntiDoping (x:xs) = [(x, False)]
 
 
+
 ----------------------------------------------DEPORTES NO OLIMPICOS J------------------
 buscarDeportesNoOlimp :: [Atleta] -> [Deporte] -> [Deporte]
 buscarDeportesNoOlimp [] deportes = []
@@ -583,6 +592,32 @@ deportesDistintos (x:xs) ys
 todosLosDeportesJ :: JJOO -> Int -> [Deporte]
 todosLosDeportesJ jjoo 0 = []
 todosLosDeportesJ jjoo x = (cronogramaJ jjoo x) ++ todosLosDeportesJ jjoo (x-1)
+
+--------------------------------------- AuxiliaresAtletaProdigioJ-----------------------------
+
+minimo2::[(Atleta,Int)]->Int
+minimo2 [(x,xs)] = xs
+minimo2 ((x,xs):xss) 
+	| xs <= minimo2 xss = xs
+	|otherwise = minimo2 xss
+
+masJoven:: Int -> [(Atleta,Int)] -> Atleta
+masJoven y [(x,xs)] = x
+masJoven y ((x,xs):xss)
+	| y == xs = x
+	| otherwise = masJoven y xss
+
+atletasGanadoresDeLaCat:: [JJOO] -> (Deporte,Sexo) -> [(Atleta,Int)]
+atletasGanadoresDeLaCat [] _ = []
+atletasGanadoresDeLaCat (j:js) (dep,sex) = (atletaGanadorConEdad(competenciasFinalizadas (todasLasCompetencias j)) (dep,sex) (anioJ j))++(atletasGanadoresDeLaCat js (dep,sex))
+
+atletaGanadorConEdad:: [Competencia] -> (Deporte,Sexo) -> Int -> [(Atleta,Int)]
+atletaGanadorConEdad [] (dep,sex) anio = []
+atletaGanadorConEdad (x:xs) (dep,sex) anio
+	| categoriaC x == (dep,sex) && length(rankingC x) >0 = ((rankingC x)!!0, anio - anioNacimientoA ((rankingC x)!!0)):atletaGanadorConEdad xs (dep,sex) anio
+	|otherwise = atletaGanadorConEdad xs (dep,sex) anio
+
+
 
 ------------------------------------------------ TESTING ------------------------------------------------
 
@@ -606,16 +641,22 @@ ad5 = entrenarDeporteA a5 "Futbol" 74
 a6 = nuevoA "Atleta6" Masculino 1990 "Peru" 93
 ad6 = entrenarDeporteA a6 "Futbol" 74
 
-c1 = nuevaC "Futbol" Masculino [add1,add2,ad4,ad5,ad6]
+a7 = nuevoA "Atleta7" Masculino 1970 "Japon" 22
+ad7 = entrenarDeporteA a7 "Futbol" 74
+
+c1 = nuevaC "Futbol" Masculino [add1,add2,ad4,ad5,ad6,ad7]
 c2 = nuevaC "Handball" Masculino [add1,add2]
 c3 = nuevaC "Volley" Femenino [ad3]
 
-cf1 = finalizarC c1 [10,12,99,93] [(12,True),(99,False)]
-cf1_prima = finalizarC c1 [12, 10] [(12,True),(99,False)]
+cf1 = finalizarC c1 [12,99,93] [(12,True),(99,False)]
+cf2 = finalizarC c1 [22,99,93] [(12,True),(99,False)]
+cf1_prima = finalizarC c1 [12,99] [(12,True),(99,False)]
 
-j1 = nuevoJ 2012 [add1, add2, ad3, ad4,ad5,ad6] [[cf1,cf1,cf1_prima,cf1_prima],[cf1_prima,c1],[c3],[cf1],[cf1_prima],[c2]]
+j1 = nuevoJ 2012 [add1, add2, ad3, ad4,ad5,ad6,ad7] [[cf1,cf1,cf1_prima,cf1_prima],[cf1_prima,c1],[c3],[cf1_prima],[c2]]
 
 j2 = nuevoJ 2012 [add1, add2, ad3, ad4,ad5,ad6] [[cf1,cf1,cf1_prima,cf1_prima]]
 
-j3 = nuevoJ 2012 [add1, add2, ad3, ad4,ad5,ad6] []
+j3 = nuevoJ 2012 [add1, add2, ad3, ad4,ad5,ad6] [[cf1]]
+
+j4 = nuevoJ 2010 [add1, add2, ad3, ad4,ad5,ad6] [[c1]]
 
