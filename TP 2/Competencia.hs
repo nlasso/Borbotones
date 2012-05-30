@@ -59,6 +59,15 @@ gananLosMasCapacesC (Finalizar rank _ c) = capacidadesOrdenadas(reverso (atletas
 sancionarTrampososC :: Competencia -> Competencia
 sancionarTrampososC (Finalizar rank dop c) = (Finalizar (rankSinDop rank (participantesDopados dop)) dop c)
 
+clasificoTarde :: Competencia -> Atleta -> Competencia
+clasificoTarde competencia atleta = modificarCompetencia (categoriaC competencia) atleta (participantesC competencia)
+
+modificarCompetencia :: Categoria -> Atleta -> [Atleta] -> Competencia
+modificarCompetencia cat atleta [] = (C cat)
+modificarCompetencia cat atleta x:xs
+	|(ciaNumberA atleta) == (ciaNumberA x) = modificarCompetencia cat atleta xs
+	|otherwise = (Participar x (modificarCompetencia cat atleta xs))
+
 ----------------------------AUXILIARES--------------------------------------------
 ----------------------------Auxiliar NuevaC---------------------------------------
 

@@ -84,6 +84,9 @@ transcurrirDiaJ (NuevoDia compentencias jjoo)
 	|(jornadaActualJ (NuevoDia competencias jjoo) == (contarDias (NuevoDia competencias jjoo))) =  (NuevoDia (terminarDia (cronogramaJ jjoo  (jornadaActualJ jjoo))) jjoo)
 	|otherwise = transcurrirDiaJ jjoo
 
+deportesNoOlimpicosJ :: JJOO -> [Deporte]
+deportesNoOlimpicosJ jjoo = juntarDeportes
+	where	juntarDeportes = buscarDeportesNoOlimp (atletasJ jjoo) (todosLosDeportesJ jjoo (cantDiasJ jjoo))
 
 
 --------------AUXILIARES----------------
@@ -563,6 +566,23 @@ quitarAtleta (x:xs) atleta
 crearControlAntiDoping :: [Int] -> [(Int,Bool)]
 crearControlAntiDoping [] = []
 crearControlAntiDoping (x:xs) = [(x, False)]
+
+
+----------------------------------------------DEPORTES NO OLIMPICOS J------------------
+buscarDeportesNoOlimp :: [Atleta] -> [Deporte] -> [Deporte]
+buscarDeportesNoOlimp [] deportes = []
+buscarDeportesNoOlimp (x:xs) deportes = (deportesDistintos (deportesA x) deportes) ++ buscarDeportesNoOlimp xs deportes
+
+deportesDistintos :: [Deporte] -> [Deporte] -> [Deporte]
+deportesDistintos [] xs = []
+deportesDistintos (x:xs) ys
+	|not(x `elem` ys) = x : deportesDistintos xs ys
+	|otherwise = deportesDistintos xs ys
+
+
+todosLosDeportesJ :: JJOO -> Int -> [Deporte]
+todosLosDeportesJ jjoo 0 = []
+todosLosDeportesJ jjoo x = (cronogramaJ jjoo x) ++ todosLosDeportesJ jjoo (x-1)
 
 ------------------------------------------------ TESTING ------------------------------------------------
 
