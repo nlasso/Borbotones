@@ -83,13 +83,15 @@ sequiaOlimpicaJ jjoo = secosOlimpicos (paisesJ jjoo) jjoo
 transcurrirDiaJ :: JJOO -> JJOO
 transcurrirDiaJ (J anio atletas diaActual) = (J anio atletas (diaActual + 1))
 transcurrirDiaJ (NuevoDia competencias jjoo)
-	|(jornadaActualJ (NuevoDia competencias jjoo) == (contarDias (NuevoDia competencias jjoo))) =  (NuevoDia (terminarDia (cronogramaJ jjoo  (jornadaActualJ jjoo))) jjoo)
-	|otherwise = transcurrirDiaJ jjoo
+	|(jornadaActualJ (NuevoDia competencias jjoo) == (contarDias (NuevoDia competencias jjoo))) =  (NuevoDia (terminarDia (cronogramaJ jjoo  (jornadaActualJ jjoo))) (transcurrirDiaJ jjoo))
+	|otherwise = (NuevoDia competencias (transcurrirDiaJ jjoo))
 
 
 deportesNoOlimpicosJ :: JJOO -> [Deporte]
 deportesNoOlimpicosJ jjoo = juntarDeportes
 	where	juntarDeportes = buscarDeportesNoOlimp (atletasJ jjoo) (todosLosDeportesJ jjoo (cantDiasJ jjoo))
+
+
 
 atletaProdigioJ :: [JJOO] -> (Deporte,Sexo) -> Atleta
 atletaProdigioJ [] _ = error "No hay JJOO"
@@ -489,6 +491,7 @@ todosLosPaisesYMedallas [] jjoo = []
 todosLosPaisesYMedallas (x:xs) jjoo = (seguidillaMasLarga jjoo x) : todosLosPaisesYMedallas xs jjoo 
 
 maximoInt :: [Int] -> Int
+maximoInt [] = 0
 maximoInt [x] = x
 maximoInt (x:xs)
 	|x >= maximoInt xs = x

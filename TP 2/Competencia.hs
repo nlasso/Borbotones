@@ -64,7 +64,7 @@ clasificoTarde competencia atleta = modificarCompetencia (categoriaC competencia
 
 modificarCompetencia :: Categoria -> Atleta -> [Atleta] -> Competencia
 modificarCompetencia cat atleta [] = (C cat)
-modificarCompetencia cat atleta x:xs
+modificarCompetencia cat atleta (x:xs)
 	|(ciaNumberA atleta) == (ciaNumberA x) = modificarCompetencia cat atleta xs
 	|otherwise = (Participar x (modificarCompetencia cat atleta xs))
 
