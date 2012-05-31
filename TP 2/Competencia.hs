@@ -1,5 +1,5 @@
 module Competencia (Competencia, nuevaC, categoriaC,participantesC, finalizadaC, rankingC, lesTocoControlAntiDopingC, leDioPositivoC, finalizarC, linfordChristieC,
-gananLosMasCapacesC, sancionarTrampososC)
+gananLosMasCapacesC, sancionarTrampososC, clasificoTardeC)
 
 where
 import Tipos
@@ -29,12 +29,10 @@ finalizadaC ( C _ ) = False
 finalizadaC (Participar _ c) = False
 finalizadaC (Finalizar rank dop c) = True
 
-
 rankingC:: Competencia -> [Atleta]
 rankingC (C _) = error "La competencia debe estar finalizada"
 rankingC (Participar _ c) = error "La competencia debe estar finalizada"
 rankingC (Finalizar rank dop c) = atletasCiaNumber rank (participantesC c)
-
 
 lesTocoControlAntiDopingC :: Competencia -> [Atleta]	
 lesTocoControlAntiDopingC (C _) = error "La competencia debe estar finalizada"
@@ -59,14 +57,8 @@ gananLosMasCapacesC (Finalizar rank _ c) = capacidadesOrdenadas(reverso (atletas
 sancionarTrampososC :: Competencia -> Competencia
 sancionarTrampososC (Finalizar rank dop c) = (Finalizar (rankSinDop rank (participantesDopados dop)) dop c)
 
-clasificoTarde :: Competencia -> Atleta -> Competencia
-clasificoTarde competencia atleta = modificarCompetencia (categoriaC competencia) atleta (participantesC competencia)
-
-modificarCompetencia :: Categoria -> Atleta -> [Atleta] -> Competencia
-modificarCompetencia cat atleta [] = (C cat)
-modificarCompetencia cat atleta (x:xs)
-	|(ciaNumberA atleta) == (ciaNumberA x) = modificarCompetencia cat atleta xs
-	|otherwise = (Participar x (modificarCompetencia cat atleta xs))
+clasificoTardeC :: Competencia -> Atleta -> Competencia
+clasificoTardeC competencia atleta = modificarCompetencia (categoriaC competencia) atleta (participantesC competencia)
 
 ----------------------------AUXILIARES--------------------------------------------
 ----------------------------Auxiliar NuevaC---------------------------------------
@@ -164,8 +156,15 @@ compararAtleta atleta (x:xs)
 agregarParticipantes :: [Atleta] -> Competencia -> Competencia
 agregarParticipantes [] comp = comp
 agregarParticipantes (x:xs) comp = Participar x ( agregarParticipantes xs comp ) 
-	
-	
+
+-------------------------------Auxiliar ClasificoTardeC----------------------------
+
+modificarCompetencia :: Categoria -> Atleta -> [Atleta] -> Competencia
+modificarCompetencia cat atleta [] = (C cat)
+modificarCompetencia cat atleta (x:xs)
+	|(ciaNumberA atleta) == (ciaNumberA x) = modificarCompetencia cat atleta xs
+	|otherwise = nuevaC (fst(cat)) (snd(cat)) (atleta:(x:xs))
+
 ------------------------------------------------ TESTING ------------------------------------------------
 
 a1 = nuevoA "Atleta1" Masculino 1989 "Argentina" 10

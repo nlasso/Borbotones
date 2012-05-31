@@ -1,6 +1,6 @@
 module JJOO (JJOO, nuevoJ, anioJ, atletasJ, cantDiasJ, cronogramaJ,
 jornadaActualJ,dePaseoJ,medalleroJ,boicotPorDisciplinaJ,losMasFracasadosJ,
-liuSongJ,stevenBradburyJ,sequiaOlimpicaJ,transcurrirDiaJ)
+liuSongJ,stevenBradburyJ,sequiaOlimpicaJ,transcurrirDiaJ,deportesNoOlimpicosJ,atletaProdigioJ)
 where
 
 import Tipos
@@ -81,20 +81,17 @@ sequiaOlimpicaJ jjoo = secosOlimpicos (paisesJ jjoo) jjoo
 transcurrirDiaJ :: JJOO -> JJOO
 transcurrirDiaJ (J anio atletas diaActual) = (J anio atletas (diaActual + 1))
 transcurrirDiaJ (NuevoDia competencias jjoo)
-	|(jornadaActualJ (NuevoDia competencias jjoo) == (contarDias (NuevoDia competencias jjoo))) =  (NuevoDia (terminarDia (cronogramaJ jjoo  (jornadaActualJ jjoo))) (transcurrirDiaJ jjoo))
-	|otherwise = (NuevoDia competencias (transcurrirDiaJ jjoo))
+	|jornadaActualJ (NuevoDia competencias jjoo) == (contarDias (NuevoDia competencias jjoo)) =  (NuevoDia (terminarDia (cronogramaJ (NuevoDia competencias jjoo)  (jornadaActualJ jjoo))) (transcurrirDiaJ jjoo))
+	|otherwise = (transcurrirDiaJ jjoo)
 
 
 deportesNoOlimpicosJ :: JJOO -> [Deporte]
 deportesNoOlimpicosJ jjoo = juntarDeportes
-	where	juntarDeportes = buscarDeportesNoOlimp (atletasJ jjoo) (todosLosDeportesJ jjoo (cantDiasJ jjoo))
-
-
+	where	juntarDeportes = sinRep(buscarDeportesNoOlimp (atletasJ jjoo) (todosLosDeportesJ jjoo (cantDiasJ jjoo)))
 
 atletaProdigioJ :: [JJOO] -> (Deporte,Sexo) -> Atleta
 atletaProdigioJ [] _ = error "No hay JJOO"
 atletaProdigioJ (js) (dep,sex) = masJoven (minimo(atletasGanadoresDeLaCat js (dep,sex)))(atletasGanadoresDeLaCat js (dep,sex))
-
 
 
 --------------AUXILIARES----------------
@@ -549,29 +546,30 @@ terminarDia (x:xs)
 	|finalizadaC x = x : terminarDia xs
 	|finalizadaC x == False = (finalizarC x ranking doping) : terminarDia xs
 	where
-		ranking = listadoEnCiaNumber(ordenarPorCapacidad (listaCapacidades (participantesC x) x)(participantesC x) x )
+		ranking = listadoEnCiaNumber3(ordenarPorCapacidad (listaCapacidades (participantesC x) x))
 		doping = (crearControlAntiDoping ranking)
 
-listaCapacidades :: [Atleta] -> Competencia -> [Int]
+listaCapacidades :: [Atleta] -> Competencia -> [(Atleta,Int)]
 listaCapacidades [] _ = []
-listaCapacidades (x:xs) competencia = capacidadA x (fst (categoriaC competencia)) : listaCapacidades xs competencia
+listaCapacidades (x:xs) competencia = (x,capacidadA x (fst (categoriaC competencia))) : listaCapacidades xs competencia
 
-ordenarPorCapacidad :: [Int] -> [Atleta] -> Competencia -> [Atleta]
-ordenarPorCapacidad [] atletas competencia = []
-ordenarPorCapacidad xs atletas competencia = (devolverAtleta (maximoInt xs) atletas competencia) : (ordenarPorCapacidad xs (quitarAtleta atletas (devolverAtleta (maximoInt xs) atletas competencia)) competencia)
+ordenarPorCapacidad::[(Atleta,Int)]->[(Atleta,Int)]
+ordenarPorCapacidad [] = []
+ordenarPorCapacidad (xss) = (maximo3 xss):(ordenarPorCapacidad xssSinMax)
+	where xssSinMax = sacarUnaAparicion2 (maximo3 xss) xss
+maximo3::[(Atleta,Int)]->(Atleta,Int)
+maximo3 [(x,xs)] = (x,xs)
+maximo3 ((x,xs):xss) | xs >= snd(maximo3 xss) = (x,xs)
+	|otherwise = maximo3 xss
+sacarUnaAparicion2:: (Atleta,Int)->[(Atleta,Int)]->[(Atleta,Int)]
+sacarUnaAparicion2 (y,(ys)) ((x,(xs)):xss)
+	| ciaNumberA x== ciaNumberA y = xss
+	| otherwise = (x,(xs)):(sacarUnaAparicion2 (y,(ys)) xss)
 
-devolverAtleta :: Int -> [Atleta] -> Competencia -> Atleta
-devolverAtleta capacidad [] competencia = error "Esa capacidad no está contemplada"
-devolverAtleta capacidad (x:xs) competencia
-	|(capacidadA x (fst(categoriaC competencia))) == capacidad = x
-	|otherwise = devolverAtleta capacidad xs competencia
-
-quitarAtleta :: [Atleta] -> Atleta -> [Atleta]
-quitarAtleta [] atleta = []
-quitarAtleta (x:xs) atleta
-	|ciaNumberA x == ciaNumberA atleta = quitarAtleta xs atleta
-	|otherwise = x : quitarAtleta xs atleta
-
+listadoEnCiaNumber3 :: [(Atleta,Int)] -> [Int]
+listadoEnCiaNumber3 [] = []
+listadoEnCiaNumber3 ((x,xs):xss) = (ciaNumberA x) : listadoEnCiaNumber3 xss 	
+	
 crearControlAntiDoping :: [Int] -> [(Int,Bool)]
 crearControlAntiDoping [] = []
 crearControlAntiDoping (x:xs) = [(x, False)]
@@ -649,7 +647,7 @@ ad6 = entrenarDeporteA a6 "Futbol" 74
 a7 = nuevoA "Atleta7" Masculino 1970 "Japon" 22
 ad7 = entrenarDeporteA a7 "Futbol" 74
 
-c1 = nuevaC "Futbol" Masculino [add1,add2,ad4,ad5,ad6,ad7]
+c1 = nuevaC "Futbol" Masculino [add1,add2,ad4,ad5,ad6]
 c2 = nuevaC "Handball" Masculino [add1,add2]
 c3 = nuevaC "Volley" Femenino [ad3]
 
@@ -663,5 +661,4 @@ j2 = nuevoJ 2012 [add1, add2, ad3, ad4,ad5,ad6] [[cf1,cf1,cf1_prima,cf1_prima]]
 
 j3 = nuevoJ 2012 [add1, add2, ad3, ad4,ad5,ad6] [[cf1]]
 
-j4 = nuevoJ 2010 [add1, add2, ad3, ad4,ad5,ad6] [[c1]]
-
+j4 = nuevoJ 2010 [add1, add2, ad3, ad4,ad5,ad6] [[c1,c2,c3]]
