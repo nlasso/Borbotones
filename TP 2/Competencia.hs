@@ -83,7 +83,7 @@ todosDistintos (x:y:xs) = ciaNumberA x /= ciaNumberA y && todosDistintos (y:xs)
 atletasCiaNumber:: [Int] -> [Atleta] -> [Atleta]
 atletasCiaNumber [] _ = []
 atletasCiaNumber (y:ys) (x:xs)
-	| y `elem` ciaNumbersA (x:xs)  = (atletaPorCiaNumber y (x:xs)):(atletasCiaNumber ys xs) 
+	| y `elem` ciaNumbersA (x:xs)  = (atletaPorCiaNumber y (x:xs)):(atletasCiaNumber ys (x:xs)) 
 	| otherwise  = atletasCiaNumber ys (x:xs)
 	
 ciaNumbersA :: [Atleta] -> [Int]
