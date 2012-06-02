@@ -391,10 +391,18 @@ dameElMenosCapaz y ((x,xs):xss)
 	| otherwise = dameElMenosCapaz y xss
 
 ----------------------------Auxiliares uyOrdenadoAsiHayUnPatron-----------------
+
+todasLasCompetencias2:: JJOO -> [Competencia]
+todasLasCompetencias2 (J _ _ _) = []
+todasLasCompetencias2 (NuevoDia competencias jjoo) 
+	| length(competencias)==0 = todasLasCompetencias2 jjoo
+	| otherwise = (competencias++ todasLasCompetencias jjoo)
+	
 paisesGanadores:: [Competencia] -> [Pais]
 paisesGanadores [] = []
 paisesGanadores (x:xs)
 	|length (rankingC x) >0 = (nacionalidadA ((rankingC x)!!0)):(paisesGanadores xs)
+	|otherwise = paisesGanadores xs
 	
 mejorPaisRep:: [Pais] -> [(Pais,Int)]
 mejorPaisRep [] = []
@@ -425,11 +433,20 @@ mejorPais num ((x,xs):(y,ys):xss)
 
 listaMejoresPaises:: JJOO -> [Pais]
 listaMejoresPaises (J _ _ _) = []
-listaMejoresPaises (NuevoDia competencias jjoo) = (mejorPais(maximoPais) (mejorPaisRepetido)):(listaMejoresPaises jjoo)
+listaMejoresPaises (NuevoDia competencias jjoo) 
+	| length(competencias)== 0 = listaMejoresPaises jjoo
+	|hayGanador competencias == False = listaMejoresPaises jjoo
+	|otherwise = (mejorPais(maximoPais) (mejorPaisRepetido)):(listaMejoresPaises jjoo)
 	where
 	maximoPais = (maximo(mejorPaisRep(paisesGanadores(competenciasFinalizadas competencias))))
 	mejorPaisRepetido = (mejorPaisRep(paisesGanadores(competenciasFinalizadas competencias)))
 
+hayGanador :: [Competencia] -> Bool
+hayGanador [] = False
+hayGanador (x:xs)
+	| finalizadaC x = True
+	| not(finalizadaC x) = hayGanador xs
+	
 reverso2 :: [Pais] -> [Pais]
 reverso2 [] = []
 reverso2 (x:xs) = agregarAtras2 x (reverso2 xs)
@@ -463,7 +480,7 @@ eliminarPatron (x:xs) (y:ys) = eliminarPatron xs ys
 
 hayPatron:: [Pais] -> [Pais] -> Bool
 hayPatron [] listpatro = False
-hayPatron [x] listpatro = True
+hayPatron [x] listpatro = comparoLista listpatro [x]
 hayPatron (x:xs) listpatro
 	| length(x:xs) == length(listpatro) = comparoLista listpatro (x:xs)
 	| length(x:xs) > length(listpatro) && comparoLista listpatro (x:xs) = hayPatron (eliminarPatron listpatro (x:xs)) listpatro
@@ -630,4 +647,6 @@ j3 = nuevoJ 2012 [addd1, add2, ad3, ad4,ad5,ad6] [[],[cf1,cf2,cf2,c3],[cf2],[c1]
 
 j4 = nuevoJ 2010 [add1, add2,ad7] [[cf1],[cf2],[cf1],[cf1]]
 
-j5 = nuevoJ 2010 [add1, addd2,ad7] [[cf1,cf1,cf2],[cf2],[],[c1],[c2],[cf1,cf2,cf2],[cf3]]
+j5 = nuevoJ 2010 [add1, addd2,ad7] [[cf1,cf1,cf2],[cf2],[],[c1],[c2],[cf1,cf2,cf2]]
+
+j6 = nuevoJ 2012 [add1,addd2,ad7] [[cf1],[cf2],[cf1],[cf2],[c1]]
