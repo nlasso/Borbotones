@@ -456,7 +456,7 @@ agregarAtras2 x [] = [x]
 agregarAtras2 x (y:ys) = y:(agregarAtras2 x ys) 
 
 posicion:: Pais -> [Pais] -> Int
-posicion x [] = 0
+posicion x [] = 1
 posicion x (y:ys)
 	| x /= y = 1 + posicion x ys
 	| x == y = 1
@@ -647,6 +647,12 @@ j3 = nuevoJ 2012 [addd1, add2, ad3, ad4,ad5,ad6] [[],[cf1,cf2,cf2,c3],[cf2],[c1]
 
 j4 = nuevoJ 2010 [add1, add2,ad7] [[cf1],[cf2],[cf1],[cf1]]
 
-j5 = nuevoJ 2010 [add1, addd2,ad7] [[cf1,cf1,cf2],[cf2],[],[c1],[c2],[cf1,cf2,cf2]]
+j5 = nuevoJ 2010 [add1, addd2,ad7] [[cf1,cf1,cf2],[cf2],[],[c1],[c2],[cf2,cf2,cf1]]
 
-j6 = nuevoJ 2012 [add1,addd2,ad7] [[cf1],[cf2],[cf1],[cf2],[c1]]
+j6 = nuevoJ 2012 [add1,addd2,ad7] [[],[],[cf1,cf1,cf2,cf2],[cf1],[cf2],[],[cf1],[c1,c2]]
+
+j7 = nuevoJ 2012 [add1,addd2,ad7] [[cf1,cf1,cf2,cf2,c2,c1],[cf1],[c1],[],[c2],[cf2,cf1,c1,c2,cf2]]
+
+j8 = nuevoJ 2012 [add1,addd2,ad7] [[],[],[cf1,cf1,cf2],[cf1,cf1,cf2,cf2,cf2],[cf1],[],[cf1,cf1],[c1,c2]]
+
+j9 = nuevoJ 2012 [add1,addd2,ad7] [[cf1,cf1,cf2],[cf2],[c1],[c2],[cf2,cf1,cf2]]
