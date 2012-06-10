@@ -47,33 +47,55 @@ Lista<Atleta> Competencia::ranking() const
 
 Lista<Atleta> Competencia::lesTocoControlAntidoping() const{
 Lista<Atleta> atletasDop = Lista <Atleta>();
-//int i = 0;
-//int j = 0;
-//while(i< _controlAntidoping.longitud())
-//{
- //   while(j < participantes().longitud() && participantes().iesimo(j).ciaNumber() != _ranking.iesimo(i) )
-  //  {
-   //     j++;
-    //}
-   // atletasDelRanking.agregar(participantes().iesimo(j));
-    //i++;
-   // j = 0;
-    //}
+int i = 0;
+int j = 0;
+while(i< _controlAntidoping.longitud())
+{
+    while(j < participantes().longitud() && participantes().iesimo(j).ciaNumber() != _controlAntidoping.iesimo(i).first )
+    {
+        j++;
+    }
+    atletasDop.agregar(participantes().iesimo(j));
+    i++;
+    j = 0;
+    }
 return atletasDop;
 }
 
 bool Competencia::leDioPositivo(const Atleta& a) const
 {
-    return true;
+    bool res;
+    int i = 0;
+
+    while(i < _controlAntidoping.longitud()){
+        if(a.ciaNumber() == _controlAntidoping.iesimo(i).first){ //consultar si tenemos que poner el this aca o no!!!!
+            res = _controlAntidoping.iesimo(i).second;
+            i = _controlAntidoping.longitud() + 1;
+        }
+        i++;
+    }
+    return res;
 }
 
 void Competencia::finalizar(const Lista<int>& posiciones, const Lista<pair<int, bool> >& control)
 {
-
+    _finalizada = true;
+    _ranking = posiciones;
+    _controlAntidoping = control;
 }
 
 void Competencia::linfordChristie(const int ciaNum)
 {
+    int i = 0;
+    bool loEncontre = false;
+
+    while(i < _participantes.longitud() && !loEncontre){
+        if(ciaNum == _participantes.iesimo(i).ciaNumber()){
+            _participantes.sacar(_participantes.iesimo(i));
+            loEncontre = true;
+        }
+        i++;
+    }
 
 }
 
