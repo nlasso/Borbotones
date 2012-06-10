@@ -45,7 +45,7 @@ template<class T>
 std::ostream & operator<<(std::ostream & salida,const Lista<T> & l);
 
 template<class T>
-std::ostream & operator<<(std::ostream & salida,const Lista< pair < T, T > > & l);
+std::ostream & operator<<(std::ostream & salida,const Lista< std::pair < T, T > > & l);
 
 /* Implementaciones - template */
 
@@ -65,7 +65,7 @@ std::ostream & operator<<(std::ostream & salida,const Lista<T> & l)
 }
 
 template<class T>
-std::ostream & operator<<(std::ostream & salida,const Lista< pair < T, T > > & l)
+std::ostream & operator<<(std::ostream & salida,const Lista< std::pair < T, T > > & l)
 {
     salida << "[";
     for( int i = 0; i < l.longitud(); i++ ){

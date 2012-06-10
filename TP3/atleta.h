@@ -32,8 +32,7 @@ class Atleta{
         Pais _nacionalidad;
         int _ciaNumber;
         Lista<pair<Deporte, int> > _deportes;
-
-        enum {ENCABEZADO_ARCHIVO = 'A'};
+            enum {ENCABEZADO_ARCHIVO = 'A'};
 };
 
 std::ostream & operator<<(std::ostream & os,const Atleta & a);

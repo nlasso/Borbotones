@@ -14,7 +14,7 @@ void MenuPrincipal()
     cout.setf(ios::boolalpha);
 
     bool exit = false;
-    int maximaOpcion = 2;
+    int maximaOpcion = 3;
 
     while (!exit)
     {
@@ -22,7 +22,8 @@ void MenuPrincipal()
                 << "Londres 2012" << endl
                 << "0. Atleta" << endl
                 << "1. Competencia" << endl
-                << "2. JJOO" << endl;
+                << "2. JJOO" << endl
+                << "3. Salir" << endl;
 
         int opt = LeerOpcion(maximaOpcion);
         switch(opt)
@@ -43,6 +44,12 @@ void MenuPrincipal()
             {
                 LimpiarPantalla();
                 MenuJJOO();
+                break;
+            }
+            case 3:
+            {
+                exit = true;
+                LimpiarPantalla();
                 break;
             }
         }
@@ -107,11 +114,13 @@ void MenuAtleta()
         }
         case 3:
         {
+            int cantidad;
             //TODO: Chequear si la capacidad era un parametro más
             string nuevoDeporte;
-            cout << "¿Que deporte desea entrenar? :";
+            cout << "Indicar el deporte que desea entrenar y cuanto :";
             cin >> nuevoDeporte;
-            atleta.entrenarNuevoDeporte(nuevoDeporte, atleta.capacidad(nuevoDeporte)+1);
+            cin >> cantidad;
+            atleta.entrenarNuevoDeporte(nuevoDeporte, cantidad);
             LimpiarPantalla();
             MenuAtleta();
             break;
@@ -295,6 +304,7 @@ void MenuCompetencia()
             }
 
             competencia.finalizar(posiciones, resultados);
+            LimpiarPantalla();
             MenuCompetencia();
             break;
         }
@@ -329,6 +339,7 @@ void MenuCompetencia()
             cout << "Tramposos sancionados" << endl;
             Pausar();
             LimpiarPantalla();
+            break;
         }
         case 7:
         {

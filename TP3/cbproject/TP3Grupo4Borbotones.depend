@@ -7,7 +7,7 @@
 	"atleta.h"
 	"lista.h"
 
-1339096350 c:\users\guido\borbotones\tp3\atleta.h
+1339353000 c:\users\guido\borbotones\tp3\atleta.h
 	"tipos.h"
 	"lista.h"
 
@@ -16,11 +16,11 @@
 	<string>
 	<iostream>
 
-1338810688 c:\users\guido\borbotones\tp3\lista.h
+1339275736 c:\users\guido\borbotones\tp3\lista.h
 	<list>
 	<iostream>
 
-1338810688 source:c:\users\guido\borbotones\tp3\interfaz.cpp
+1339275742 source:c:\users\guido\borbotones\tp3\interfaz.cpp
 	"interfaz.h"
 
 1338810688 c:\users\guido\borbotones\tp3\interfaz.h
@@ -39,11 +39,12 @@
 	"atleta.h"
 	"jjoo.h"
 
-1339268230 source:c:\users\guido\borbotones\tp3\ojota.cpp
+1339355719 source:c:\users\guido\borbotones\tp3\ojota.cpp
 	<iostream>
 	<fstream>
 	"interfaz.h"
 
-1339267974 source:c:\users\guido\borbotones\tp3\atleta.cpp
+1339360662 source:c:\users\guido\borbotones\tp3\atleta.cpp
 	"atleta.h"
+	<fstream>
 

@@ -5,7 +5,8 @@
 using namespace std;
 
 
-Atleta atletaProdigio(const JJOO & j) {
+Atleta atletaProdigio(const JJOO & j)
+{
     return Atleta();
 }
 
