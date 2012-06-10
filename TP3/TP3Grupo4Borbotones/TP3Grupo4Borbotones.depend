@@ -39,8 +39,9 @@
 	"atleta.h"
 	"jjoo.h"
 
-1338810688 source:c:\users\guido\borbotones\tp3\ojota.cpp
+1339268230 source:c:\users\guido\borbotones\tp3\ojota.cpp
 	<iostream>
+	<fstream>
 	"interfaz.h"
 
 1339267974 source:c:\users\guido\borbotones\tp3\atleta.cpp
