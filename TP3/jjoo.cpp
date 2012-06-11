@@ -9,40 +9,44 @@ JJOO::JJOO()
 
 JJOO::JJOO(const int anio, const Lista<Atleta>& atletas, const Lista<Lista<Competencia> >& competenciasPorDia)
 {
-
+this->_anio = anio;
+this->_atletas = atletas;
+this->_competenciasPorDia = competenciasPorDia;
+this->_jornadaActual = 1;
 }
 
 int JJOO::anio() const
 {
-    return 0;
+    return this->_anio;
 }
 
 Lista<Atleta> JJOO::atletas() const
 {
-    Lista <Atleta> listaDeAtletas = Lista <Atleta>();
-    return listaDeAtletas; //devuelvo una lista vacia
+    return this->_atletas;
 }
 
 int JJOO::cantDias() const
 {
-    return 0;
+    int cantidad = 0;
+    cantidad = this->_competenciasPorDia.longitud();
+    return cantidad;
 }
 
 int JJOO::jornadaActual() const
 {
-    return 0;
+    return this->_jornadaActual;
 }
 
 Lista<Competencia> JJOO::cronograma(const int dia) const
 {
     Lista <Competencia> todasLasCompetencias = Lista <Competencia>();
-    return todasLasCompetencias;
+    return todasLasCompetencias; //no esta hecho solo devuelvo lista vacia para que ande el return
 }
 
 Lista<Competencia> JJOO::competencias() const
 {
-    Lista <Competencia> todasLasCompetenciasDelDia = Lista <Competencia>();
-    return todasLasCompetenciasDelDia;
+    Lista <Competencia> todasLasCompetencias = Lista <Competencia>();
+    return todasLasCompetencias; //no esta hecho solo devuelvo lista vacia para que ande el return
 }
 
 Lista<Competencia> JJOO::competenciasFinalizadasConOroEnPodio() const
