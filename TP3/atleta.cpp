@@ -99,12 +99,7 @@ void Atleta::mostrar(std::ostream& os) const
 {
 string sex = "";
 string deportes = "";
-string capacidad;
-string finalConcatenacion;
-string abroParentesis;
-string cierroParentesisYComa;
-string coma;
-Lista <string> deportesycap = Lista<string>();
+int capacidad;
 int i = 0;
     if (this->sexo() == Femenino)
     {
@@ -113,28 +108,31 @@ int i = 0;
     else{
         sex = "Masculino";
     }
+os << "A |" << this->nombre() << "| " << "|" << sex << "| " << this->anioNacimiento() << " " << "|" << this->nacionalidad() << "| " << this->ciaNumber() << "|" << "[";
 while (i< _deportes.longitud())
 {
          deportes = _deportes.iesimo(i).first;
          capacidad = _deportes.iesimo(i).second;
-         abroParentesis = "(";
-         cierroParentesisYComa = "),";
-         coma = ",";
-         finalConcatenacion = abroParentesis + deportes + coma + capacidad + cierroParentesisYComa;
-         deportesycap.agregar(finalConcatenacion);
-        i++;
+         if (i== (_deportes.longitud()-1))
+         {
+             os << "(| " << deportes << "|,";
+             os <<  capacidad << ")";
+             i++;
+         }
+         else
+         {
+             os << "(| " << deportes << "|,";
+             os <<  capacidad << "),";
+             i++;
+         }
 }
- os << "A |" << this->nombre() << "| " << "|" << sex << "| " << this->anioNacimiento() << " " << "|" << this->nacionalidad() << "| " << this->ciaNumber() << "|" << "[" <<deportesycap << "]";
+os << "]";
 }
 
 void Atleta::guardar(std::ostream& os) const
 {
 string deportes = "";
-string capacidad = "";
-string finalConcatenacion = "";
-string abroParentesis = "";
-string cierroParentesisYComa = "";
-string coma = "";
+int capacidad;
 int i = 0;
 string sex = "";
 Lista <string> deportesycap = Lista<string>();
@@ -145,20 +143,25 @@ Lista <string> deportesycap = Lista<string>();
     else{
         sex = "Masculino";
     }
+os << "A |" << this->nombre() << "| " << "|" << sex << "| " << this->anioNacimiento() << " " << "|" << this->nacionalidad() << "| " << this->ciaNumber() << "|" << "[";
 while (i< _deportes.longitud())
 {
          deportes = _deportes.iesimo(i).first;
          capacidad = _deportes.iesimo(i).second;
-         abroParentesis = "(";
-         cierroParentesisYComa = "),";
-         coma = ",";
-         finalConcatenacion = abroParentesis + deportes + coma + capacidad + cierroParentesisYComa;
-         deportesycap.agregar(finalConcatenacion);
-        i++;
+         if (i== (_deportes.longitud()-1))
+         {
+             os << "(| " << deportes << "|,";
+             os <<  capacidad << ")";
+             i++;
+         }
+         else
+         {
+             os << "(| " << deportes << "|,";
+             os <<  capacidad << "),";
+             i++;
+         }
 }
-os << "A |" << this->nombre() << "| " << "|" << sex << "| " << this->anioNacimiento() << " " << "|" << this->nacionalidad() << "| " << this->ciaNumber() << "|" << deportesycap << "|";
-
-
+os << "]";
 }
 
 void Atleta::cargar(std::istream& is)
