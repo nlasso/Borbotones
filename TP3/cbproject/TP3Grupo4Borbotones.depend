@@ -1,0 +1,50 @@
+# depslib dependency file v1.0
+1339266842 source:c:\users\guido\borbotones\tp3\competencia.cpp
+	"competencia.h"
+	"atleta.h"
+
+1338810688 c:\users\guido\borbotones\tp3\competencia.h
+	"atleta.h"
+	"lista.h"
+
+1339353000 c:\users\guido\borbotones\tp3\atleta.h
+	"tipos.h"
+	"lista.h"
+
+1338810688 c:\users\guido\borbotones\tp3\tipos.h
+	<stdlib.h>
+	<string>
+	<iostream>
+
+1339275736 c:\users\guido\borbotones\tp3\lista.h
+	<list>
+	<iostream>
+
+1339275742 source:c:\users\guido\borbotones\tp3\interfaz.cpp
+	"interfaz.h"
+
+1338810688 c:\users\guido\borbotones\tp3\interfaz.h
+	<iostream>
+	<fstream>
+	"tipos.h"
+	"atleta.h"
+	"competencia.h"
+	"jjoo.h"
+
+1338810992 c:\users\guido\borbotones\tp3\jjoo.h
+	"competencia.h"
+
+1339266925 source:c:\users\guido\borbotones\tp3\jjoo.cpp
+	"competencia.h"
+	"atleta.h"
+	"jjoo.h"
+
+1339355719 source:c:\users\guido\borbotones\tp3\ojota.cpp
+	<iostream>
+	<fstream>
+	"interfaz.h"
+
+1339360662 source:c:\users\guido\borbotones\tp3\atleta.cpp
+	"atleta.h"
+	<fstream>
+
