@@ -108,11 +108,50 @@ void Competencia::linfordChristie(const int ciaNum)
 
 bool Competencia::gananLosMasCapaces() const
 {
-    return true;
+    bool res = true;
+    Lista<Atleta> rank = this->ranking();
+    Deporte dep = this->categoria().first;
+    bool terminarCiclo = false;
+
+    while(rank.longitud() > 1 && !terminarCiclo){
+        int capacidad1 = rank.iesimo(0).capacidad(dep);
+        rank.sacar(rank.iesimo(0));
+        int capacidad2 = rank.iesimo(0).capacidad(dep);
+        if(capacidad1 < capacidad2){
+            res = false;
+            terminarCiclo = true;
+        }
+    }
+    return res;
+}
+
+Atleta buscarAtleta (Lista<Atleta> a, int b){
+    int i = 0;
+    Atleta miAtleta;
+    bool terminar = false;
+
+    while(i < a.longitud() && !terminar){
+        if(b == a.iesimo(i).ciaNumber()){
+            miAtleta = a.iesimo(i);
+            terminar = true;
+        }
+        i++;
+    }
+    return miAtleta;
 }
 
 void Competencia::sancionarTramposos()
 {
+    Lista<Atleta> particip = this->participantes();
+    Lista<Atleta> dopados = this->lesTocoControlAntidoping();
+
+    int i = 0;
+    while(i < particip.longitud()){
+        if(dopados.pertenece(particip.iesimo(i)) && this->leDioPositivo(particip.iesimo(i))){
+            _participantes.sacar(particip.iesimo(i));
+        }
+        i++;
+    }
 
 }
 

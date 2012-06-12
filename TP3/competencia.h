@@ -37,6 +37,8 @@ class Competencia{
         Lista<pair<int, bool> > _controlAntidoping;
 
         enum {ENCABEZADO_ARCHIVO = 'C'};
+
+        Atleta buscarAtleta (Lista<Atleta> a, int b);
 };
 std::ostream & operator<<(std::ostream & os,const Competencia & c);
 
