@@ -205,6 +205,8 @@ void Atleta::cargar(std::istream& is)
         is >> c;
 
    }
+
+   _deportes.darVuelta(); // Invierto el orden para mantener el original
 }
 
 std::ostream & operator<<(std::ostream & os,const Atleta & a)

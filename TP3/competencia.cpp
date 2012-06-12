@@ -1,5 +1,6 @@
 #include "competencia.h"
 #include "atleta.h"
+#include <string>
 
 Competencia::Competencia()
 {
@@ -157,11 +158,6 @@ bool Competencia::operator==(const Competencia& c) const
 
 void Competencia::mostrar(std::ostream& os) const
 {
-
-}
-
-void Competencia::guardar(std::ostream& os) const
-{
     string cat = this->categoria().first;
     string sex = "";
     string final = "";
@@ -231,7 +227,71 @@ void Competencia::guardar(std::ostream& os) const
 
 }
 
+void Competencia::guardar(std::ostream& os) const
+{
+    this->mostrar(os);
+}
+
 void Competencia::cargar (std::istream& is)
 {
+    string cat = "";
+    string sex = "";
+    string finalizada = "";
+    char b;
+
+    is >> b; // Saco la cabecera
+    is >> b;
+    is >> b;
+
+    getline(is,this->_categoria.first, '|');
+
+    is >> b;
+    is >> b;
+
+    getline(is,sex, '|');
+
+    if (sex == "Femenino"){
+        this->_categoria.second = Femenino;
+    }else{
+        this->_categoria.second = Masculino;
+    }
+
+    is >> b;
+    is >> b;
+
+    getline(is,finalizada, '|');
+
+    if (finalizada == "True"){
+        this->_finalizada = true;
+    }else{
+        this->_finalizada = false;
+    }
+
+    is >> b;
+    is >> b; // Agarro el '(' inicial del atleta
+
+    Atleta atl;
+
+    while(b == '('){
+        atl = Atleta();
+        atl.cargar(is);
+        _participantes.agregar(atl);
+        is >> b; // Saco el ')'
+        is >> b; // Saco el ','
+    }
+
+    _participantes.darVuelta();
+
+    is >> b; // Saco el '['
+    /*
+    string ciaNum;
+
+    while(b != ']'){
+        getline(is,ciaNum, ',');
+        _ranking.agregar(atoi(ciaNum));
+        is >> b;
+        is >> b;
+    }
+    */
 
 }
