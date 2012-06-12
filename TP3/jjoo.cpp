@@ -56,7 +56,28 @@ Lista<Competencia> JJOO::competencias() const
 
 Lista<Competencia> JJOO::competenciasFinalizadasConOroEnPodio() const
 {
+    int h = 0;
+    int j=0;
+    Lista <Competencia> compXdia= Lista <Competencia>();
     Lista <Competencia> todasLasCompetenciasFinalizadasConOro = Lista <Competencia>();
+    while( j< this->cantDias())
+    {
+        compXdia = this->cronograma(j);
+        h = 0;
+        while(h< compXdia.longitud())
+        {
+            if (compXdia.iesimo(h).finalizada() == true && compXdia.iesimo(h).ranking().longitud()>0)
+            {
+                todasLasCompetenciasFinalizadasConOro.agregar(compXdia.iesimo(h));
+                h++;
+            }
+            else
+            {
+                h++;
+            }
+        }
+        j++;
+    }
     return todasLasCompetenciasFinalizadasConOro;
 }
 
@@ -248,20 +269,47 @@ void JJOO::guardar(std::ostream& os) const
 
 void JJOO::cargar (std::istream& is)
 {
-    char c;
-    Atleta a;
-    is >> c; // Saco la J
-    is >> this->_anio;
-    is >> this->_jornadaActual;
-    is >> c; //Saco el [ de la lista de atletas
-    is >> c;
-    while(c == '(')
-          {
-             a.cargar(is) ;
-             this->_atletas.agregar(a);
-             is >> c; // saco parentesis q cierra
-             is >> c; // saco coma
-           }
+char c;
+Atleta a;
+Competencia comp;
+Lista<Competencia> listComp= Lista<Competencia>();
+is >> c; // Saco la J
+is >> this->_anio;
+is >> this->_jornadaActual;
+is >> c; //Saco el [ de la lista de atletas
+is >> c;
+while(c == '(')
+{
+a.cargar(is) ;
+this->_atletas.agregar(a);
+is >> c; // saco parentesis q cierra
+is >> c; // saco coma o corchete q cierra
+if (c == ',')
+{
+is >> c; // saco (
+}
 
+}
+_atletas.darVuelta();
+is >> c; // saco corchete
+is >> c; // saco corchete
+while(c=='[')
+{
+is >> c;
+while(c== '(')
+{
+comp.cargar(is);
+listComp.agregar(comp);
+is >> c; //saco el parentesis
+is >> c; //saco la coma
+is >> c;
+is >> c;
+is >> c;
+}
+
+_competenciasPorDia.agregar(listComp);
+
+}
+_competenciasPorDia.darVuelta();
 }
 

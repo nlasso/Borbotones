@@ -273,64 +273,65 @@ void Competencia::guardar(std::ostream& os) const
 
 void Competencia::cargar (std::istream& is)
 {
-    string cat = "";
-    string sex = "";
-    string finalizada = "";
-    char b;
+string cat = "";
+string sex = "";
+string finalizada = "";
+char b;
 
-    is >> b; // Saco la cabecera
-    is >> b;
-    is >> b;
+is >> b; // Saco la cabecera
+is >> b;
+is >> b;
 
-    getline(is,this->_categoria.first, '|');
+getline(is,this->_categoria.first, '|');
 
-    is >> b;
-    is >> b;
+is >> b;
+is >> b;
 
-    getline(is,sex, '|');
+getline(is,sex, '|');
 
-    if (sex == "Femenino"){
-        this->_categoria.second = Femenino;
-    }else{
-        this->_categoria.second = Masculino;
-    }
+if (sex == "Femenino"){
+this->_categoria.second = Femenino;
+}else{
+this->_categoria.second = Masculino;
+}
 
-    is >> b;
-    is >> b;
+is >> b;
+is >> b;
 
-    getline(is,finalizada, '|');
+getline(is,finalizada, '|');
 
-    if (finalizada == "True"){
-        this->_finalizada = true;
-    }else{
-        this->_finalizada = false;
-    }
+if (finalizada == "True"){
+this->_finalizada = true;
+}else{
+this->_finalizada = false;
+}
 
-    is >> b;
-    is >> b; // Agarro el '(' inicial del atleta
+is >> b;
+is >> b; // Agarro el '(' inicial del atleta
 
-    Atleta atl;
+Atleta atl;
 
-    while(b == '('){
-        atl = Atleta();
-        atl.cargar(is);
-        _participantes.agregar(atl);
-        is >> b; // Saco el ')'
-        is >> b; // Saco el ','
-    }
+while(b == '('){
+atl = Atleta();
+atl.cargar(is);
+_participantes.agregar(atl);
+is >> b; // Saco el ')'
+is >> b; // Saco el ','
+is >> b; // saco el '(';
+}
 
-    _participantes.darVuelta();
+_participantes.darVuelta();
 
-    is >> b; // Saco el '['
-    /*
-    string ciaNum;
+is >> b; // Saco el '['
+/*
+string ciaNum;
 
-    while(b != ']'){
-        getline(is,ciaNum, ',');
-        _ranking.agregar(atoi(ciaNum));
-        is >> b;
-        is >> b;
-    }
-    */
+while(b != ']'){
+getline(is,ciaNum, ',');
+_ranking.agregar(atoi(ciaNum));
+is >> b;
+is >> b;
+}
+*/
 
 }

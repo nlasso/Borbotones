@@ -172,6 +172,8 @@ os << "]";
 
 void Atleta::cargar(std::istream& is)
 {
+   Lista<pair <Deporte,int> > depcap2 = Lista<pair<Deporte,int> >();
+   this->_deportes =depcap2;
    char c;
    string sex;
    pair <Deporte,int> depcap = pair <Deporte,int>();
@@ -194,16 +196,23 @@ void Atleta::cargar(std::istream& is)
    is >> this->_ciaNumber;
    is >> c;
    is >> c;
-   while( c == '('){
-        is >> c;
-        getline(is,depcap.first, '|');
-        is >> c;
-        is >> depcap.second;
-        is >> c;
-        is >> c;
-        this->_deportes.agregar(depcap);
-        is >> c;
+   if(c == '(')
+   {
+       while( c == '(')
+       {
+            is >> c;
+            getline(is,depcap.first, '|');
+            is >> c;
+            is >> depcap.second;
+            this->_deportes.agregar(depcap);
+            is >> c; // tomo parentesis
+            is >> c; // tomo , o ]
+            if(c == ',') // si no es el ultimo deporte sacas otro char para llegar al ( siguiente
+            {
+                is >> c;
+            }
 
+       }
    }
 
    _deportes.darVuelta(); // Invierto el orden para mantener el original
