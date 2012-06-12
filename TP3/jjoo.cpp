@@ -39,14 +39,19 @@ int JJOO::jornadaActual() const
 
 Lista<Competencia> JJOO::cronograma(const int dia) const
 {
-    Lista <Competencia> todasLasCompetencias = Lista <Competencia>();
-    return todasLasCompetencias; //no esta hecho solo devuelvo lista vacia para que ande el return
+    return this->_competenciasPorDia.iesimo(dia);
 }
 
 Lista<Competencia> JJOO::competencias() const
 {
     Lista <Competencia> todasLasCompetencias = Lista <Competencia>();
-    return todasLasCompetencias; //no esta hecho solo devuelvo lista vacia para que ande el return
+    int i = 0;
+    while(i< this->_competenciasPorDia.longitud())
+    {
+        todasLasCompetencias.concatenar(this->_competenciasPorDia.iesimo(i));
+        i++;
+    }
+    return todasLasCompetencias;
 }
 
 Lista<Competencia> JJOO::competenciasFinalizadasConOroEnPodio() const
@@ -111,6 +116,65 @@ bool JJOO::operator==(const JJOO& j) const
 
 void JJOO::mostrar(std::ostream& os) const
 {
+    os << "J " << this->anio() << " " << this->jornadaActual() << endl;
+    os << "[(";
+    int i = 0;
+    int j = 0;
+    int h = 0;
+    Competencia comp;
+    Atleta a;
+    Lista <Competencia> compXdia = Lista<Competencia>();
+    while(i < this->atletas().longitud())
+    {
+        a = this->atletas().iesimo(i);
+        if (i < this->atletas().longitud()-1)
+        {
+            a.mostrar(os);
+            os << "),(";
+            i++;
+        }
+        else
+        {
+            a.mostrar(os);
+            os << ")";
+            i++;
+        }
+    }
+    os << "]" << endl;
+    os << "[";
+    while( j< this->cantDias())
+    {
+        os << "[";
+        compXdia = this->cronograma(j);
+        while(h< compXdia.longitud())
+        {
+            os << "(";
+            if(h< compXdia.longitud()-1)
+            {
+                comp = compXdia.iesimo(h);
+                comp.mostrar(os);
+                os << "),";
+                h++;
+            }
+            else
+            {
+                comp = compXdia.iesimo(h);
+                comp.mostrar(os);
+                os << ")";
+                h++;
+            }
+        }
+        if(j< this->cantDias()-1)
+        {
+            os << "],[";
+            j++;
+        }
+        else
+        {
+            os << "]]";
+            j++;
+        }
+    }
 
 }
 
