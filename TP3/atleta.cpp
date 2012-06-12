@@ -121,13 +121,13 @@ void Atleta::mostrar(std::ostream& os) const
              capacidad = _deportes.iesimo(i).second;
              if (i== (_deportes.longitud()-1))
              {
-                 os << "(| " << deportes << "|,";
+                 os << "(|" << deportes << "|,";
                  os <<  capacidad << ")";
                  i++;
              }
              else
              {
-                 os << "(| " << deportes << "|,";
+                 os << "(|" << deportes << "|,";
                  os <<  capacidad << "),";
                  i++;
              }
@@ -149,20 +149,20 @@ Lista <string> deportesycap = Lista<string>();
     else{
         sex = "Masculino";
     }
-os << "A |" << this->nombre() << "| " << "|" << sex << "| " << this->anioNacimiento() << " " << "|" << this->nacionalidad() << "| " << this->ciaNumber() << "|" << "[";
+os << "A |" << this->nombre() << "| " << "|" << sex << "| " << this->anioNacimiento() << " " << "|" << this->nacionalidad() << "| " << this->ciaNumber() << "" << "[";
 while (i< _deportes.longitud())
 {
          deportes = _deportes.iesimo(i).first;
          capacidad = _deportes.iesimo(i).second;
          if (i== (_deportes.longitud()-1))
          {
-             os << "(| " << deportes << "|,";
+             os << "(|" << deportes << "|,";
              os <<  capacidad << ")";
              i++;
          }
          else
          {
-             os << "(| " << deportes << "|,";
+             os << "(|" << deportes << "|,";
              os <<  capacidad << "),";
              i++;
          }
@@ -174,6 +174,7 @@ void Atleta::cargar(std::istream& is)
 {
    char c;
    string sex;
+   pair <Deporte,int> depcap = pair <Deporte,int>();
    is >> c;
    is >> c;
    getline(is,this->_nombre, '|');
@@ -191,11 +192,32 @@ void Atleta::cargar(std::istream& is)
    is >> c;
    getline(is,this->_nacionalidad, '|');
    is >> this->_ciaNumber;
+   is >> c;
+   is >> c;
+   while( c == '('){
+        is >> c;
+        getline(is,depcap.first, '|');
+        is >> c;
+        is >> depcap.second;
+        is >> c;
+        is >> c;
+        this->_deportes.agregar(depcap);
+        is >> c;
 
+   }
+
+   _deportes.darVuelta(); // Invierto el orden para mantener el original
 }
 
 std::ostream & operator<<(std::ostream & os,const Atleta & a)
 {
-    os << "Nombre: " << a.nombre() << "Sexo" << a.sexo() << "fecha de nacimiento" << a.anioNacimiento() << "nacionalidad" << a.nacionalidad() << "cianumber" << a.ciaNumber() << endl;
+    Lista <int> cap = Lista <int>();
+    int i = 0;
+    while(i< a.deportes().longitud())
+    {
+        cap.agregar(a.capacidad(a.deportes().iesimo(i)));
+        i++;
+    }
+    os << "Nombre: " << a.nombre() << "Sexo" << a.sexo() << "fecha de nacimiento" << a.anioNacimiento() << "nacionalidad" << a.nacionalidad() << "cianumber" << a.ciaNumber() << "deportes" << a.deportes() <<  "Capacidades" << cap << endl;
     return os;
 }
