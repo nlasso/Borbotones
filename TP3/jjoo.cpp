@@ -228,7 +228,55 @@ void JJOO::liuSong(const Atleta& a, const Pais p)
 
 Atleta JJOO::stevenBradbury() const
 {
-    return Atleta();
+    int i = 0;
+    Lista<pair <Atleta,pair <Deporte,Sexo> > > ganadoresPorCat = this->ganadoresPorCategoria();
+    Lista<pair <Atleta,int > > atletasPorCapacidad = Lista<pair <Atleta,int > >();
+    pair <Atleta,int > pairAtCap = pair <Atleta,int >();
+    Deporte dep;
+    Atleta steven;
+
+    // Armo la lista de atletas con su capacidad al ganar la medalla de oro correspondiente
+    while(i < ganadoresPorCat.longitud()){
+        dep = ganadoresPorCat.iesimo(i).second.first;
+        pairAtCap.first = ganadoresPorCat.iesimo(i).first;
+        pairAtCap.second = ganadoresPorCat.iesimo(i).first.capacidad(dep);
+        atletasPorCapacidad.agregar(pairAtCap);
+        i++;
+    }
+
+    // Busco el atleta con menor capacidad de la lista anterior
+    i = 0;
+    int j = 0;
+    bool menosCapaz = true;
+    int capacidad = 0;
+    int capacidad2 = 0;
+
+    while(i < atletasPorCapacidad.longitud()){
+
+        capacidad = atletasPorCapacidad.iesimo(i).second; // Tomo la capacidad del atleta para compararla
+
+        while(j < atletasPorCapacidad.longitud()){
+            capacidad2 = atletasPorCapacidad.iesimo(j).second; // Tomo la capacidad del atleta para compararla
+
+            if(capacidad > capacidad2){
+                menosCapaz = false;
+            }
+
+            j++;
+        }
+
+        // Si cuando termino de comparar encontre al atleta menos capaz, dejo de buscar
+        if(menosCapaz){
+            steven = atletasPorCapacidad.iesimo(i).first;
+        }else{
+            menosCapaz = true; // Si no lo encontre, preasumo que el siguiente va a ser para seguir con las comparaciones
+        }
+
+        i++;
+
+    }
+
+    return steven;
 }
 
 bool JJOO::uyOrdenadoAsiHayUnPatron() const
@@ -324,47 +372,83 @@ void JJOO::guardar(std::ostream& os) const
 
 void JJOO::cargar (std::istream& is)
 {
-char c;
-Atleta a;
-Competencia comp;
-Lista<Competencia> listComp= Lista<Competencia>();
-is >> c; // Saco la J
-is >> this->_anio;
-is >> this->_jornadaActual;
-is >> c; //Saco el [ de la lista de atletas
-is >> c;
-while(c == '(')
-{
-a.cargar(is) ;
-this->_atletas.agregar(a);
-is >> c; // saco parentesis q cierra
-is >> c; // saco coma o corchete q cierra
-if (c == ',')
-{
-is >> c; // saco (
+    char c;
+    Atleta a;
+    Competencia comp;
+    Lista<Competencia> listComp= Lista<Competencia>();
+    is >> c; // Saco la J
+    is >> this->_anio;
+    is >> this->_jornadaActual;
+    is >> c; //Saco el [ de la lista de atletas
+    is >> c;
+    while(c == '(')
+    {
+    a.cargar(is) ;
+    this->_atletas.agregar(a);
+    is >> c; // saco parentesis q cierra
+    is >> c; // saco coma o corchete q cierra
+    if (c == ',')
+    {
+    is >> c; // saco (
+    }
+
+    }
+    _atletas.darVuelta();
+    is >> c; // saco corchete
+    is >> c; // saco corchete
+    while(c=='[')
+    {
+    is >> c;
+    while(c== '(')
+    {
+    comp.cargar(is);
+    listComp.agregar(comp);
+    is >> c; //saco el parentesis
+    is >> c; //saco la coma
+    is >> c;
+    is >> c;
+    is >> c;
+    }
+
+    _competenciasPorDia.agregar(listComp);
+
+    }
+    _competenciasPorDia.darVuelta();
 }
 
-}
-_atletas.darVuelta();
-is >> c; // saco corchete
-is >> c; // saco corchete
-while(c=='[')
-{
-is >> c;
-while(c== '(')
-{
-comp.cargar(is);
-listComp.agregar(comp);
-is >> c; //saco el parentesis
-is >> c; //saco la coma
-is >> c;
-is >> c;
-is >> c;
-}
+/* ==================================== AUXILIARES ========================================= */
 
-_competenciasPorDia.agregar(listComp);
+Lista<pair <Atleta,pair <Deporte,Sexo> > > JJOO::ganadoresPorCategoria() const
+{
+    int dia = 0;
+    int c = 0;
+    pair <Atleta,pair <Deporte,Sexo> > ganadorPorCat = pair <Atleta,pair <Deporte,Sexo> > ();
+    Lista<Competencia> competenciasList = Lista<Competencia>();
+    Lista<pair <Atleta,pair <Deporte,Sexo> > > ganadoresPorCat = Lista<pair <Atleta,pair <Deporte,Sexo> > >();
 
-}
-_competenciasPorDia.darVuelta();
+    // Recorro las jornadas
+    while(dia < this->_competenciasPorDia.longitud()){
+
+        // Recorro las competencias del dia
+        c = 0;
+        competenciasList = this->_competenciasPorDia.iesimo(dia);
+        while(c < competenciasList.longitud()){
+
+            if(competenciasList.iesimo(c).finalizada() && competenciasList.iesimo(c).ranking().longitud() > 0){
+                ganadorPorCat.first = competenciasList.iesimo(c).ranking().iesimo(0); // Guardo al ganador de ORO
+                ganadorPorCat.second = competenciasList.iesimo(c).categoria(); // Guardo la categoria
+                ganadoresPorCat.agregar(ganadorPorCat);
+            }
+
+            c++;
+        }
+        // Fin competencias del dia
+
+        dia++;
+    }
+    // Fin de jornadas
+
+    return ganadoresPorCat;
+
 }
 

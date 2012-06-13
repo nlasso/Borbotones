@@ -42,6 +42,7 @@ class JJOO{
         Lista<Atleta> _atletas;
         int _jornadaActual;
         Lista<Lista<Competencia> > _competenciasPorDia;         // En la i-ésima posición de la lista, las competencias del día i+1.
+        Lista<pair <Atleta,pair <Deporte,Sexo> > > ganadoresPorCategoria() const;
 
         enum {ENCABEZADO_ARCHIVO = 'J'};
 
