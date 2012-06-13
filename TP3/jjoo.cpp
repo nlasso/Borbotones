@@ -1,6 +1,7 @@
 #include "competencia.h"
 #include "atleta.h"
 #include "jjoo.h"
+#include<string>
 
 JJOO::JJOO()
 {
@@ -96,6 +97,7 @@ Lista<pair<Pais,Lista<int> > > JJOO::medallero() const
     Lista<Pais> paisOro = Lista<Pais>();
     Lista<Pais> paisPlata = Lista<Pais>();
     Lista<Pais> paisBronce = Lista<Pais>();
+    pair <Pais,Lista<int> > paisCantidadDeMedallas = pair<Pais,Lista<int> >();
     while( j< this->cantDias())
     {
         compXdia = this->cronograma(j);
@@ -133,10 +135,36 @@ Lista<pair<Pais,Lista<int> > > JJOO::medallero() const
 
 
 
+
+
+
+
+
+
+
+
     Lista <pair <Pais,Lista<int> > > paisInt = Lista <pair <Pais,Lista <int> > >();
 
     return paisInt;
 }
+Lista<pair<Pais,int> > paisRep(Lista<Pais> p) const
+{
+    int i=0;
+    Lista<pair<Pais,int> > paisesYRepeticiones = Lista<pair<Pais,int> >();
+    pair<Pais,int> paisYRep= pair<Pais,int>();
+    while(i<p.longitud())
+    {
+        paisYRep.first = p.iesimo(i);
+        paisYRep.second = p.cantidadDeApariciones(paisYRep.first);
+        if(paisesYRepeticiones.pertenece(paisYRep)==false)
+        {
+            paisesYRepeticiones.agregar(paisYRep);
+        }
+        i++;
+    }
+    return paisesYRepeticiones;
+}
+
 
 int JJOO::boicotPorDisciplina(const Categoria cat, const Pais p)
 {
@@ -187,7 +215,10 @@ Lista<Atleta> JJOO::losMasFracasados(const Pais p) const
     {
         atletaYrepeticiones.first = atletasDelPais.iesimo(i);
         atletaYrepeticiones.second= atletasParticipantes.cantidadDeApariciones(atletaYrepeticiones.first);
+        if(listAtletaYrepeticiones.pertenece(atletaYrepeticiones)==false)
+        {
         listAtletaYrepeticiones.agregar(atletaYrepeticiones);
+        }
         i++;
 
     }
@@ -228,7 +259,10 @@ Lista<Atleta> JJOO::losMasFracasados(const Pais p) const
     {
         atletaYrepeticiones.first = participaronMuchoYNoGanaronNada.iesimo(i);
         atletaYrepeticiones.second = participaronMuchoYNoGanaronNada.cantidadDeApariciones(atletaYrepeticiones.first);
+        if(listAtletaYrepeticiones.pertenece(atletaYrepeticiones)==false)
+        {
         listAtletaYrepeticiones.agregar(atletaYrepeticiones);
+        }
         i++;
     }
     listaDeAtletasFracasados= AtletaMasRepetidoEnTupla(listAtletaYrepeticiones); //obtengo los mas repetidos de la tupla de los fracasados
