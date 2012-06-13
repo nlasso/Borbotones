@@ -436,7 +436,7 @@ void JJOO::mostrar(std::ostream& os) const
         }
         if(j< this->cantDias()-1)
         {
-            os << "],[";
+            os << "],";
             j++;
         }
         else
@@ -481,22 +481,34 @@ void JJOO::cargar (std::istream& is)
     is >> c; // saco corchete
     while(c=='[')
     {
-    is >> c;
-    while(c== '(')
-    {
-    comp.cargar(is);
-    listComp.agregar(comp);
-    is >> c; //saco el parentesis
-    is >> c; //saco la coma
-    is >> c;
-    is >> c;
-    is >> c;
+        is >> c;
+
+        while(c== '(')
+        {
+            comp = Competencia();
+            comp.cargar(is);
+            listComp.agregarAtras(comp);
+            is >> c; //saco el parentesis
+            if(is.peek() == ','){
+                is >> c; //saco la coma
+                is >> c;
+            }else{
+                is >> c; //saco ( o ]
+            }
+
+        }
+
+        is >> c; //saco la coma
+        is >> c;
+
+        _competenciasPorDia.agregar(listComp);
+
+        listComp= Lista<Competencia>();
+
     }
 
-    _competenciasPorDia.agregar(listComp);
-
-    }
     _competenciasPorDia.darVuelta();
+
 }
 
 /* ==================================== AUXILIARES ========================================= */
