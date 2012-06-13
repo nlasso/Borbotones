@@ -83,8 +83,18 @@ Lista<Competencia> JJOO::competenciasFinalizadasConOroEnPodio() const
 
 Lista<Atleta> JJOO::dePaseo() const
 {
-    Lista <Atleta> listaDeAtletas = Lista <Atleta>();
-    return listaDeAtletas;
+    Lista<Competencia> comp = this->competencias();
+    Lista <Atleta> listaDeAtletas = this->atletas();
+    int i = 0;
+    Lista<Atleta> atletasDePaseo;
+
+    while(i < comp.longitud()){
+        Competencia comp1 = comp.iesimo(i);
+        if(!comp1.participantes().pertenece(listaDeAtletas.iesimo(i))){
+            atletasDePaseo.agregar(listaDeAtletas.iesimo(i));
+        }
+    }
+    return atletasDePaseo;
 }
 
 Lista<pair<Pais,Lista<int> > > JJOO::medallero() const

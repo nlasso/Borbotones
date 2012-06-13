@@ -44,6 +44,7 @@ class JJOO{
         Lista<Lista<Competencia> > _competenciasPorDia;         // En la i-ésima posición de la lista, las competencias del día i+1.
 
         enum {ENCABEZADO_ARCHIVO = 'J'};
+
 };
 std::ostream & operator<<(std::ostream & os,const JJOO & j);
 
