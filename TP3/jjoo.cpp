@@ -147,23 +147,23 @@ Lista<pair<Pais,Lista<int> > > JJOO::medallero() const
 
     return paisInt;
 }
-Lista<pair<Pais,int> > paisRep(Lista<Pais> p) const
-{
-    int i=0;
-    Lista<pair<Pais,int> > paisesYRepeticiones = Lista<pair<Pais,int> >();
-    pair<Pais,int> paisYRep= pair<Pais,int>();
-    while(i<p.longitud())
-    {
-        paisYRep.first = p.iesimo(i);
-        paisYRep.second = p.cantidadDeApariciones(paisYRep.first);
-        if(paisesYRepeticiones.pertenece(paisYRep)==false)
-        {
-            paisesYRepeticiones.agregar(paisYRep);
-        }
-        i++;
-    }
-    return paisesYRepeticiones;
-}
+//Lista<pair<Pais,int> > paisRep(Lista<Pais>& p) const
+//{
+//    int i=0;
+ //   Lista<pair<Pais,int> > paisesYRepeticiones = Lista<pair<Pais,int> >();
+//    pair<Pais,int> paisYRep= pair<Pais,int>();
+//    while(i<p.longitud())
+ //   {
+ //       paisYRep.first = p.iesimo(i);
+  //      paisYRep.second = p.cantidadDeApariciones(paisYRep.first);
+   //     if(paisesYRepeticiones.pertenece(paisYRep)==false)
+    //    {
+      //      paisesYRepeticiones.agregar(paisYRep);
+   //     }
+   //     i++;
+ //   }
+ //   return paisesYRepeticiones;
+//}
 
 
 int JJOO::boicotPorDisciplina(const Categoria cat, const Pais p)
