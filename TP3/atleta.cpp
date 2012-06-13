@@ -121,14 +121,14 @@ void Atleta::mostrar(std::ostream& os) const
              capacidad = _deportes.iesimo(i).second;
              if (i== (_deportes.longitud()-1))
              {
-                 os << "(|" << deportes << "|,";
+                 os << "(|" << deportes << "|, ";
                  os <<  capacidad << ")";
                  i++;
              }
              else
              {
-                 os << "(|" << deportes << "|,";
-                 os <<  capacidad << "),";
+                 os << "(|" << deportes << "|, ";
+                 os <<  capacidad << "), ";
                  i++;
              }
     }
@@ -156,14 +156,14 @@ while (i< _deportes.longitud())
          capacidad = _deportes.iesimo(i).second;
          if (i== (_deportes.longitud()-1))
          {
-             os << "(|" << deportes << "|,";
+             os << "(|" << deportes << "|, ";
              os <<  capacidad << ")";
              i++;
          }
          else
          {
-             os << "(|" << deportes << "|,";
-             os <<  capacidad << "),";
+             os << "(|" << deportes << "|, ";
+             os <<  capacidad << "), ";
              i++;
          }
 }
