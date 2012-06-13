@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="tpi" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/tpi" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/tpi" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="../TP3/atleta.cpp" />
+		<Unit filename="../TP3/atleta.h" />
+		<Unit filename="../TP3/competencia.cpp" />
+		<Unit filename="../TP3/competencia.h" />
+		<Unit filename="../TP3/interfaz.cpp" />
+		<Unit filename="../TP3/interfaz.h" />
+		<Unit filename="../TP3/jjoo.cpp" />
+		<Unit filename="../TP3/jjoo.h" />
+		<Unit filename="../TP3/lista.h" />
+		<Unit filename="../TP3/ojota.cpp" />
+		<Unit filename="../TP3/tipos.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

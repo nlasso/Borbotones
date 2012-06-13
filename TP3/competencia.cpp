@@ -363,8 +363,14 @@ void Competencia::cargar (std::istream& is)
             this->_controlAntidoping.agregarAtras(dop);
 
             is >> b; // saco ')'
-            is >> b; // saco ','
-            is >> b; // saco '(' o ']'
+            is >> b; // saco ',' o ']'
+            if ( b == ',' )
+            {
+                    is >> b; // saco '('
+            }
+
+
+
        }
 
        _controlAntidoping.darVuelta();
