@@ -89,7 +89,52 @@ Lista<Atleta> JJOO::dePaseo() const
 
 Lista<pair<Pais,Lista<int> > > JJOO::medallero() const
 {
+    int j,h;
+    Competencia comp;
+    Atleta a;
+    Lista <Competencia> compXdia = Lista <Competencia>();
+    Lista<Pais> paisOro = Lista<Pais>();
+    Lista<Pais> paisPlata = Lista<Pais>();
+    Lista<Pais> paisBronce = Lista<Pais>();
+    while( j< this->cantDias())
+    {
+        compXdia = this->cronograma(j);
+        h = 0;
+        while(h< compXdia.longitud())
+        {
+            comp = compXdia.iesimo(h);
+            if(comp.finalizada()== true)
+            {
+                if(comp.ranking().longitud()>0)
+                {
+                    a = comp.ranking().iesimo(0);
+                    paisOro.agregar(a.nacionalidad());
+                }
+                if(comp.ranking().longitud()>1)
+                {
+                    a = comp.ranking().iesimo(1);
+                    paisPlata.agregar(a.nacionalidad());
+                }
+                if(comp.ranking().longitud()>2)
+                {
+                    a = comp.ranking().iesimo(2);
+                    paisBronce.agregar(a.nacionalidad());
+                }
+                h++;
+            }
+            else
+            {
+                h++;
+            }
+
+        }
+        j++;
+    }
+
+
+
     Lista <pair <Pais,Lista<int> > > paisInt = Lista <pair <Pais,Lista <int> > >();
+
     return paisInt;
 }
 
@@ -190,41 +235,45 @@ Lista<Atleta> JJOO::losMasFracasados(const Pais p) const
     return listaDeAtletasFracasados;
 }
 
-// -------------------- Auxiliar para obtener el maximo repetido
-Lista<Atleta>JJOO::AtletaMasRepetidoEnTupla(Lista<pair<Atleta,int> >& a) const
-{
-    pair <Atleta,int> atletaYrepeticiones= pair<Atleta,int>();
-    Lista <Atleta> listaDeAtletas = Lista <Atleta>();
-    int i=0;
-    int j =0;
-    while(i<a.longitud()) // obtengo atletas mas repetidos de la lista
-    {
-        atletaYrepeticiones.second =a.iesimo(i).second;
-        atletaYrepeticiones.first =a.iesimo(i).first;
-        j=0;
-
-            while(j< a.longitud() && atletaYrepeticiones.second <= a.iesimo(j).second )
-            {
-                j++;
-            }
-        if(j== a.longitud())
-        {
-            listaDeAtletas.agregar(atletaYrepeticiones.first);
-            i++;
-        }
-        else
-        {
-            i++;
-        }
-    }
-    return listaDeAtletas;
-}
-
-
 void JJOO::liuSong(const Atleta& a, const Pais p)
 {
+    Atleta atNuevo( a.nombre(), a.sexo(), a.anioNacimiento(), p, a.ciaNumber()) ;
+    int j,h;
+    Lista <Competencia> compXdia= Lista <Competencia>();
+    Competencia comp;
+    j=0;
+    while(j<a.deportes().longitud())
+    {
+        atNuevo.entrenarNuevoDeporte(a.deportes().iesimo(j),a.capacidad(a.deportes().iesimo(j)));
+        j++;
+    }
+    this->_atletas.sacar(a);
+    this->_atletas.agregar(atNuevo);
+    j = 0;
+    while( j< this->cantDias())
+        {
+            compXdia = this->cronograma(j);
+            h = 0;
+            while(h< compXdia.longitud())
+            {
+                comp = compXdia.iesimo(h);
+                if(comp.participantes().pertenece(a)== true)
+                {
+                    comp.participantes().sacar(a);
+                    comp.participantes().agregar(atNuevo);
+                    h++;
+                }
+                else
+                {
+                        h++;;
+                }
 
+            }
+        j++;
+        }
 }
+
+
 
 Atleta JJOO::stevenBradbury() const
 {
@@ -452,3 +501,32 @@ Lista<pair <Atleta,pair <Deporte,Sexo> > > JJOO::ganadoresPorCategoria() const
 
 }
 
+// -------------------- Auxiliar para obtener el maximo repetido
+Lista<Atleta>JJOO::AtletaMasRepetidoEnTupla(Lista<pair<Atleta,int> >& a) const
+{
+    pair <Atleta,int> atletaYrepeticiones= pair<Atleta,int>();
+    Lista <Atleta> listaDeAtletas = Lista <Atleta>();
+    int i=0;
+    int j =0;
+    while(i<a.longitud()) // obtengo atletas mas repetidos de la lista
+    {
+        atletaYrepeticiones.second =a.iesimo(i).second;
+        atletaYrepeticiones.first =a.iesimo(i).first;
+        j=0;
+
+            while(j< a.longitud() && atletaYrepeticiones.second <= a.iesimo(j).second )
+            {
+                j++;
+            }
+        if(j== a.longitud())
+        {
+            listaDeAtletas.agregar(atletaYrepeticiones.first);
+            i++;
+        }
+        else
+        {
+            i++;
+        }
+    }
+    return listaDeAtletas;
+}
