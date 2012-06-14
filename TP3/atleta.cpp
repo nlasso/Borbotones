@@ -80,19 +80,24 @@ bool Atleta::operator==(const Atleta& a) const
     int i = 0;
 
     // Si la lista de deportes es distinta, ya es falsa la igualdad
-    if(this->deportes().longitud() != a.deportes().longitud()){
+    if(this->_deportes.longitud() != a._deportes.longitud()){
         res = false;
     }else{
 
         while(i < this->_deportes.longitud() ){
             if(this->_deportes.iesimo(i).first != a._deportes.iesimo(i).first || this->_deportes.iesimo(i).second != a._deportes.iesimo(i).second){
                 res = false;
+                i++;
+            }
+            else
+            {
+                i++;
             }
         }
     }
 
-    if(this->nombre() != a.nombre() || this->sexo() != a.sexo() || this->anioNacimiento() != a.anioNacimiento() ||
-       this->nacionalidad() != a.nacionalidad() || this->ciaNumber() != a.ciaNumber()){
+    if(this->_nombre != a._nombre || this->_sexo != a._sexo || this->_anioNacimiento != a._anioNacimiento ||
+       this->_nacionalidad != a._nacionalidad || this->_ciaNumber != a._ciaNumber){
         res = false;
     }
 

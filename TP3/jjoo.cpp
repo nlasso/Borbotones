@@ -61,9 +61,9 @@ Lista<Competencia> JJOO::competenciasFinalizadasConOroEnPodio() const
     int j=0;
     Lista <Competencia> compXdia= Lista <Competencia>();
     Lista <Competencia> todasLasCompetenciasFinalizadasConOro = Lista <Competencia>();
-    while( j< this->cantDias())
+    while( j< this->_competenciasPorDia.longitud())
     {
-        compXdia = this->cronograma(j);
+        compXdia = this->_competenciasPorDia.iesimo(j);
         h = 0;
         while(h< compXdia.longitud())
         {
@@ -90,22 +90,31 @@ Lista<Atleta> JJOO::dePaseo() const
 
 Lista<pair<Pais,Lista<int> > > JJOO::medallero() const
 {
-    int j,h;
+    //defino variables
+    int j,h,i;
     Competencia comp;
     Atleta a;
+    Pais p;
     Lista <Competencia> compXdia = Lista <Competencia>();
+    Lista<Pais> todosLosPaises = Lista<Pais>();
     Lista<Pais> paisOro = Lista<Pais>();
     Lista<Pais> paisPlata = Lista<Pais>();
     Lista<Pais> paisBronce = Lista<Pais>();
+    Lista<pair<Pais,int> >paisOroYRep = Lista<pair<Pais,int> >();
+    Lista<pair<Pais,int> >paisPlataYRep = Lista<pair<Pais,int> >();
+    Lista<pair<Pais,int> >paisBronceYRep = Lista<pair<Pais,int> >();
     pair <Pais,Lista<int> > paisCantidadDeMedallas = pair<Pais,Lista<int> >();
-    while( j< this->cantDias())
+    Lista <pair <Pais,Lista<int> > > elMedallero = Lista <pair <Pais,Lista <int> > >();
+
+    //obtengo a los paises oro plata y bronce
+    while( j< this->_competenciasPorDia.longitud())
     {
-        compXdia = this->cronograma(j);
+        compXdia = this->_competenciasPorDia.iesimo(j);
         h = 0;
         while(h< compXdia.longitud())
         {
             comp = compXdia.iesimo(h);
-            if(comp.finalizada()== true)
+            if(comp.finalizada())
             {
                 if(comp.ranking().longitud()>0)
                 {
@@ -132,38 +141,28 @@ Lista<pair<Pais,Lista<int> > > JJOO::medallero() const
         }
         j++;
     }
-
-
-
-
-
-
-
-
-
-
-
-    Lista <pair <Pais,Lista<int> > > paisInt = Lista <pair <Pais,Lista <int> > >();
-
-    return paisInt;
+    // me guardo en duplas los paises oro plata y bronce con su cantidad de rep en oro plata y bronce
+    paisOroYRep = paisRep(paisOro);
+    paisPlataYRep = paisRep(paisPlata);
+    paisBronceYRep = paisRep(paisBronce);
+    todosLosPaises = this->paises();
+    i=0;
+    // recorro todos los paises y me fijo si el pais gano algo en caso de ganar medallas las voy concatenando con elMedallero
+    while(i<todosLosPaises.longitud())
+    {
+        p = todosLosPaises.iesimo(i);
+        paisCantidadDeMedallas.first = p;
+        paisCantidadDeMedallas.second.agregar(paisMedallero(p,paisOro,paisOroYRep).second);
+        paisCantidadDeMedallas.second.agregar(paisMedallero(p,paisPlata,paisPlataYRep).second);
+        paisCantidadDeMedallas.second.agregar(paisMedallero(p,paisBronce,paisBronceYRep).second);
+        if(paisCantidadDeMedallas.second.iesimo(0)>0 || paisCantidadDeMedallas.second.iesimo(1)>0 || paisCantidadDeMedallas.second.iesimo(2)>0)
+        {
+            elMedallero.agregar(paisCantidadDeMedallas);
+        }
+        i++;
+    }
+    return elMedallero;
 }
-//Lista<pair<Pais,int> > paisRep(Lista<Pais>& p) const
-//{
-//    int i=0;
- //   Lista<pair<Pais,int> > paisesYRepeticiones = Lista<pair<Pais,int> >();
-//    pair<Pais,int> paisYRep= pair<Pais,int>();
-//    while(i<p.longitud())
- //   {
- //       paisYRep.first = p.iesimo(i);
-  //      paisYRep.second = p.cantidadDeApariciones(paisYRep.first);
-   //     if(paisesYRepeticiones.pertenece(paisYRep)==false)
-    //    {
-      //      paisesYRepeticiones.agregar(paisYRep);
-   //     }
-   //     i++;
- //   }
- //   return paisesYRepeticiones;
-//}
 
 
 int JJOO::boicotPorDisciplina(const Categoria cat, const Pais p)
@@ -271,15 +270,16 @@ Lista<Atleta> JJOO::losMasFracasados(const Pais p) const
 
 void JJOO::liuSong(const Atleta& a, const Pais p)
 {
-    Atleta atNuevo( a.nombre(), a.sexo(), a.anioNacimiento(), p, a.ciaNumber()) ;
+    Atleta atNuevo( a.nombre(), a.sexo(), a.anioNacimiento(), p, a.ciaNumber());
     int j,h;
     Lista <Competencia> compXdia= Lista <Competencia>();
     Competencia comp;
     j=0;
+    Lista<Atleta> todosLosAtletas = Lista<Atleta>();
     while(j<a.deportes().longitud())
     {
         atNuevo.entrenarNuevoDeporte(a.deportes().iesimo(j),a.capacidad(a.deportes().iesimo(j)));
-        j++;
+       j++;
     }
     this->_atletas.sacar(a);
     this->_atletas.agregar(atNuevo);
@@ -291,7 +291,7 @@ void JJOO::liuSong(const Atleta& a, const Pais p)
             while(h< compXdia.longitud())
             {
                 comp = compXdia.iesimo(h);
-                if(comp.participantes().pertenece(a)== true)
+                if(comp.participantes().pertenece(a))
                 {
                     comp.participantes().sacar(a);
                     comp.participantes().agregar(atNuevo);
@@ -299,15 +299,12 @@ void JJOO::liuSong(const Atleta& a, const Pais p)
                 }
                 else
                 {
-                        h++;;
+                    h++;
                 }
-
             }
         j++;
         }
 }
-
-
 
 Atleta JJOO::stevenBradbury() const
 {
@@ -575,4 +572,69 @@ Lista<Atleta>JJOO::AtletaMasRepetidoEnTupla(Lista<pair<Atleta,int> >& a) const
         }
     }
     return listaDeAtletas;
+}
+
+Lista<Pais> JJOO::paises() const
+{
+Lista<Atleta> todosLosAtletas = this->atletas();
+Lista<Pais> todosLosPaises = Lista<Pais>();
+while(todosLosAtletas.longitud() > 0){
+Atleta miAtleta = todosLosAtletas.iesimo(0);
+if(todosLosPaises.pertenece(miAtleta.nacionalidad())==false){
+todosLosPaises.agregar(miAtleta.nacionalidad());
+}
+todosLosAtletas.sacar(todosLosAtletas.iesimo(0));
+}
+
+return todosLosPaises;
+}
+
+//---------------------Auxiliar medallero
+
+pair<Pais,int> JJOO::paisMedallero(Pais p, Lista<Pais> paisConMed, Lista<pair<Pais,int> > paisConInt) const
+{
+    int j;
+    pair <Pais,int> paisCantidadDeMedallas = pair<Pais,int> ();
+    if(paisConMed.pertenece(p))
+        {
+            j=0;
+            while(j<paisConInt.longitud())
+            {
+                if(p == paisConInt.iesimo(j).first)
+                {
+                    paisCantidadDeMedallas.first =p;
+                    paisCantidadDeMedallas.second= paisConInt.iesimo(j).second;
+                    j = paisConInt.longitud();
+                }
+                else
+                {
+                    j++;
+                }
+
+            }
+        }
+    else
+    {
+        paisCantidadDeMedallas.first = p;
+        paisCantidadDeMedallas.second = 0;
+    }
+    return paisCantidadDeMedallas;
+}
+
+Lista<pair<Pais,int> > JJOO::paisRep(Lista<Pais>& p) const
+{
+    int i=0;
+    Lista<pair<Pais,int> > paisesYRepeticiones = Lista<pair<Pais,int> >();
+    pair<Pais,int> paisYRep= pair<Pais,int>();
+    while(i<p.longitud())
+    {
+        paisYRep.first = p.iesimo(i);
+        paisYRep.second = p.cantidadDeApariciones(paisYRep.first);
+        if(paisesYRepeticiones.pertenece(paisYRep)==false)
+        {
+            paisesYRepeticiones.agregar(paisYRep);
+        }
+        i++;
+    }
+    return paisesYRepeticiones;
 }
