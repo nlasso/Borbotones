@@ -556,7 +556,7 @@ bool JJOO::operator==(const JJOO& j) const
         }
     }
     else{
-        res == false;
+        res = false;
     }
     return res;
 }
@@ -754,21 +754,6 @@ Lista<Atleta>JJOO::AtletaMasRepetidoEnTupla(Lista<pair<Atleta,int> >& a) const
         }
     }
     return listaDeAtletas;
-}
-
-Lista<Pais> JJOO::paises() const
-{
-Lista<Atleta> todosLosAtletas = this->atletas();
-Lista<Pais> todosLosPaises = Lista<Pais>();
-while(todosLosAtletas.longitud() > 0){
-Atleta miAtleta = todosLosAtletas.iesimo(0);
-if(todosLosPaises.pertenece(miAtleta.nacionalidad())==false){
-todosLosPaises.agregar(miAtleta.nacionalidad());
-}
-todosLosAtletas.sacar(todosLosAtletas.iesimo(0));
-}
-
-return todosLosPaises;
 }
 
 //---------------------Auxiliar medallero
