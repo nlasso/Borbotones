@@ -45,6 +45,14 @@ class JJOO{
 
         enum {ENCABEZADO_ARCHIVO = 'J'};
 
+        Lista<Atleta>AtletaMasRepetidoEnTupla(Lista<pair<Atleta,int> >& a) const;
+        bool ganoMedallaEseDia(const Lista<Competencia>& comp,const Pais p) const;
+        int masDiasSinMedallas(const Pais p) const;
+        int maxDiasSinMedallas(const Lista<Pais>& pais) const;
+        Lista<Pais> paises() const;
+        Lista<int> crearRanking (const Lista<Atleta>& particip,const Deporte& d) const;
+        Lista<pair<int,bool> > crearControl(const Atleta& a, bool b)const;
+
 };
 std::ostream & operator<<(std::ostream & os,const JJOO & j);
 

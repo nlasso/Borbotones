@@ -1,6 +1,5 @@
 #include "competencia.h"
 #include "atleta.h"
-#include <string>
 
 Competencia::Competencia()
 {
@@ -236,10 +235,10 @@ void Competencia::mostrar(std::ostream& os) const
 
         i = 0;
 
-        while( i < this->ranking().longitud() ){
-            os << this->ranking().iesimo(i).ciaNumber();
+        while( i < this->_ranking.longitud() ){
+            os << this->_ranking.iesimo(i);
             //Pongo la coma final si corresponde
-            if( i+1 != this->ranking().longitud() ){ os << ", "; }
+            if( i+1 != this->_ranking.longitud() ){ os << ", "; }
             i++;
         }
 
@@ -273,65 +272,105 @@ void Competencia::guardar(std::ostream& os) const
 
 void Competencia::cargar (std::istream& is)
 {
-string cat = "";
-string sex = "";
-string finalizada = "";
-char b;
+    string cat = "";
+    string sex = "";
+    string finalizada = "";
+    char b;
 
-is >> b; // Saco la cabecera
-is >> b;
-is >> b;
+    is >> b; // Saco la cabecera
+    is >> b;
+    is >> b;
 
-getline(is,this->_categoria.first, '|');
+    getline(is,this->_categoria.first, '|');
 
-is >> b;
-is >> b;
+    is >> b;
+    is >> b;
 
-getline(is,sex, '|');
+    getline(is,sex, '|');
 
-if (sex == "Femenino"){
-this->_categoria.second = Femenino;
-}else{
-this->_categoria.second = Masculino;
+    if (sex == "Femenino"){
+        this->_categoria.second = Femenino;
+    }else{
+        this->_categoria.second = Masculino;
+    }
+
+    is >> b;
+    is >> b;
+
+    getline(is,finalizada, '|');
+
+    if (finalizada == "True"){
+        this->_finalizada = true;
+    }else{
+        this->_finalizada = false;
+    }
+
+    is >> b;
+    is >> b; // Agarro el '(' inicial del atleta
+
+    Atleta atl;
+
+    while(b == '('){
+        atl = Atleta();
+        atl.cargar(is);
+        _participantes.agregar(atl);
+        is >> b; // Saco el ')'
+        is >> b; // Saco el ','
+        if(b == ','){
+            is >> b;
+        }
+    }
+
+    _participantes.darVuelta();
+
+    is >> b; // Saco el '['
+
+    int ciaNum = 0;
+
+    while(b != ']'){
+
+        if(is.peek() != ']'){
+
+            is >> ciaNum;
+            this->_ranking.agregarAtras(ciaNum);
+
+        }
+
+        is >> b;
+
+    }
+
+    is >> b; // Saco el '['
+
+    pair<int, bool> dop = pair<int, bool>();
+    ciaNum = 0;
+    string resultDop = "";
+
+    is >> b; // Saco el '('
+
+    while( b == '(')
+       {
+            is >> dop.first;
+            is >> b; // saco ','
+            is >> b; // saco '|'
+            getline(is,resultDop, '|');
+
+            if(resultDop == "True"){
+                dop.second = true;
+            }else{
+                dop.second = false;
+            }
+            this->_controlAntidoping.agregarAtras(dop);
+
+            is >> b; // saco ')'
+            is >> b; // saco ','
+            is >> b; // saco '(' o ']'
+       }
+
+       _controlAntidoping.darVuelta();
+
+
 }
 
-is >> b;
-is >> b;
 
-getline(is,finalizada, '|');
 
-if (finalizada == "True"){
-this->_finalizada = true;
-}else{
-this->_finalizada = false;
-}
-
-is >> b;
-is >> b; // Agarro el '(' inicial del atleta
-
-Atleta atl;
-
-while(b == '('){
-atl = Atleta();
-atl.cargar(is);
-_participantes.agregar(atl);
-is >> b; // Saco el ')'
-is >> b; // Saco el ','
-is >> b; // saco el '(';
-}
-
-_participantes.darVuelta();
-
-is >> b; // Saco el '['
-/*
-string ciaNum;
-
-while(b != ']'){
-getline(is,ciaNum, ',');
-_ranking.agregar(atoi(ciaNum));
-is >> b;
-is >> b;
-}
-*/
-
-}
