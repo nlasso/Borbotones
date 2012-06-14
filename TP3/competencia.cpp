@@ -45,7 +45,7 @@ Lista<Atleta> Competencia::ranking() const
         {
             j++;
         }
-        atletasDelRanking.agregar(participantes().iesimo(j));
+        atletasDelRanking.agregarAtras(participantes().iesimo(j));
         i++;
         j = 0;
     }

@@ -87,12 +87,10 @@ bool Atleta::operator==(const Atleta& a) const
         while(i < this->_deportes.longitud() ){
             if(this->_deportes.iesimo(i).first != a._deportes.iesimo(i).first || this->_deportes.iesimo(i).second != a._deportes.iesimo(i).second){
                 res = false;
-                i++;
             }
-            else
-            {
-                i++;
-            }
+
+            i++;
+
         }
     }
 
