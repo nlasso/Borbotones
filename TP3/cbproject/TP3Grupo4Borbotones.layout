@@ -1,32 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="../atleta.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="1329" topLine="45" />
+	<File name="../atleta.cpp" open="1" top="1" tabpos="9">
+		<Cursor position="2144" topLine="72" />
 	</File>
 	<File name="../atleta.h" open="1" top="0" tabpos="4">
-		<Cursor position="284" topLine="4" />
+		<Cursor position="449" topLine="4" />
 	</File>
-	<File name="../competencia.cpp" open="1" top="1" tabpos="9">
-		<Cursor position="3765" topLine="139" />
+	<File name="../competencia.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="2501" topLine="81" />
 	</File>
-	<File name="../competencia.h" open="1" top="0" tabpos="6">
-		<Cursor position="708" topLine="5" />
+	<File name="../competencia.h" open="1" top="0" tabpos="3">
+		<Cursor position="881" topLine="11" />
 	</File>
-	<File name="../interfaz.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="2492" topLine="98" />
+	<File name="../interfaz.cpp" open="1" top="0" tabpos="7">
+		<Cursor position="2498" topLine="139" />
 	</File>
-	<File name="../interfaz.h" open="1" top="0" tabpos="3">
+	<File name="../interfaz.h" open="0" top="0" tabpos="3">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="../jjoo.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="0" topLine="0" />
+	<File name="../jjoo.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="6449" topLine="273" />
 	</File>
-	<File name="../lista.h" open="1" top="0" tabpos="5">
-		<Cursor position="3987" topLine="186" />
+	<File name="../jjoo.h" open="1" top="0" tabpos="2">
+		<Cursor position="1409" topLine="23" />
 	</File>
-	<File name="../ojota.cpp" open="1" top="0" tabpos="7">
-		<Cursor position="38" topLine="0" />
+	<File name="../lista.h" open="1" top="0" tabpos="6">
+		<Cursor position="4291" topLine="191" />
+	</File>
+	<File name="../ojota.cpp" open="1" top="0" tabpos="10">
+		<Cursor position="161" topLine="0" />
 	</File>
 	<File name="../tipos.h" open="1" top="0" tabpos="8">
 		<Cursor position="230" topLine="0" />

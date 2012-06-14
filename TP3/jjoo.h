@@ -43,8 +43,10 @@ class JJOO{
         int _jornadaActual;
         Lista<Lista<Competencia> > _competenciasPorDia;         // En la i-ésima posición de la lista, las competencias del día i+1.
 
-        enum {ENCABEZADO_ARCHIVO = 'J'};
 
+        Lista<pair <Atleta,pair <Deporte,Sexo> > > ganadoresPorCategoria() const;
+        Lista<pair<Pais,int> > paisRep(Lista<Pais>& p) const;
+        enum {ENCABEZADO_ARCHIVO = 'J'};
         Lista<Atleta>AtletaMasRepetidoEnTupla(Lista<pair<Atleta,int> >& a) const;
         bool ganoMedallaEseDia(const Lista<Competencia>& comp,const Pais p) const;
         int masDiasSinMedallas(const Pais p) const;
@@ -52,6 +54,7 @@ class JJOO{
         Lista<Pais> paises() const;
         Lista<int> crearRanking (const Lista<Atleta>& particip,const Deporte& d) const;
         Lista<pair<int,bool> > crearControl(const Atleta& a, bool b)const;
+        pair<Pais,int> paisMedallero(Pais p, Lista<Pais> paisConMed, Lista<pair<Pais,int> > paisConInt) const;
 
 };
 std::ostream & operator<<(std::ostream & os,const JJOO & j);
