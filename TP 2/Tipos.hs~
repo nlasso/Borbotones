@@ -1,6 +1,0 @@
-module Tipos where
-type Deporte = String deriving(Eq)
-type Pais = String
-type Categoria = (Deporte, Sexo)
-data Sexo = Femenino | Masculino deriving (Show, Eq)
-
