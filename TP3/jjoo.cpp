@@ -178,29 +178,22 @@ Lista<pair<Pais,Lista<int> > > JJOO::medallero() const
 int JJOO::boicotPorDisciplina(const Categoria cat, const Pais p)
 {
     int echados = 0;
+    int d = -1;
+    int c = -1;
     int i = 0;
     int j = 0;
 
+    // Busco las posiciones del dia y la competencia que tengo que boicotear
     // Recorro los dias
     while(i < _competenciasPorDia.longitud()){
 
         // Recorro las competencias del dia
+        j = 0;
         while(j < _competenciasPorDia.iesimo(i).longitud()){
 
-            // Si es la competencia de la categoria cat realizo el boicot
             if(_competenciasPorDia.iesimo(i).iesimo(j).categoria() == cat){
-
-                // Competencia a reemplazar
-                Competencia comp;
-                Lista<Atleta > preAtletas = _competenciasPorDia.iesimo(i).iesimo(j).participantes();
-                // Boicot de participantes
-                quitarAtletas(preAtletas ,p);
-
-                // Si esta finalizada, boicto de ranking, doping
-                if(comp.finalizada()){
-
-                }
-
+                d = i;
+                c = j;
             }
 
             j++;
@@ -208,6 +201,73 @@ int JJOO::boicotPorDisciplina(const Categoria cat, const Pais p)
 
         i++;
     }
+
+    // Genero los dias y sus cronogramas boicoteando lo que corresponda
+    Lista<Lista<Competencia> > competenciasBoicoteadas = Lista<Lista<Competencia> >();
+    i = 0;
+    j = 0;
+
+    while(i < _competenciasPorDia.longitud()){
+
+        Lista<Competencia> competenciasDelDia = Lista<Competencia>();
+
+        // Recorro las competencias del dia
+        j = 0;
+        while(j < _competenciasPorDia.iesimo(i).longitud()){
+
+            // Si llego a la competencia para modificar, realizo el boicot
+            if(d==i && c==j){
+
+                // Si esta finalizada, boicot de participantes, ranking y doping
+                if(_competenciasPorDia.iesimo(i).iesimo(j).finalizada()){
+
+                    Lista<Atleta > preParticipantes = _competenciasPorDia.iesimo(i).iesimo(j).participantes();
+                    Lista<Atleta > preRanking = _competenciasPorDia.iesimo(i).iesimo(j).ranking();
+                    Lista<Atleta > preDoping = _competenciasPorDia.iesimo(i).iesimo(j).lesTocoControlAntidoping();
+                    Deporte dep = _competenciasPorDia.iesimo(i).iesimo(j).categoria().first;
+                    Sexo sex = _competenciasPorDia.iesimo(i).iesimo(j).categoria().second;
+
+                    Lista<int > posiciones = filtrarPosiciones(preRanking, p);
+                    Lista<pair<int,bool> > control = filtrarControl(_competenciasPorDia.iesimo(i).iesimo(j), p);
+
+                    // Boicot
+                    echados = quitarAtletas(preParticipantes, p);
+
+                    Competencia comp(dep, sex, preParticipantes);
+                    comp.finalizar(posiciones, control);
+                    competenciasDelDia.agregarAtras(comp);
+
+
+                // Si no solo de participantes
+                }else{
+
+                    // Competencia a reemplazar
+                    Lista<Atleta > preParticipantes = _competenciasPorDia.iesimo(i).iesimo(j).participantes();
+                    Deporte dep = _competenciasPorDia.iesimo(i).iesimo(j).categoria().first;
+                    Sexo sex = _competenciasPorDia.iesimo(i).iesimo(j).categoria().second;
+
+                    // Boicot
+                    echados = quitarAtletas(preParticipantes ,p);
+
+                    Competencia comp(dep, sex, preParticipantes);
+                    competenciasDelDia.agregarAtras(comp);
+
+                }
+
+            }else{
+                competenciasDelDia.agregarAtras(_competenciasPorDia.iesimo(i).iesimo(j));
+            }
+
+            j++;
+        }
+
+        // Agrego las competencias del dia
+        competenciasBoicoteadas.agregarAtras(competenciasDelDia);
+
+        i++;
+    }
+
+    _competenciasPorDia = competenciasBoicoteadas;
 
     return echados;
 }
@@ -838,8 +898,55 @@ Lista<pair<int,bool> > JJOO::crearControl(const Atleta& a, bool b)const
     return result;
 }
 
-void JJOO::quitarAtletas(Lista<Atleta >& atletas, const Pais& p)
+int JJOO::quitarAtletas(Lista<Atleta >& atletas, const Pais& p)
 {
+    int i = 0;
+    int echados = 0;
 
+    while(i < atletas.longitud()){
+
+        if(atletas.iesimo(i).nacionalidad() == p){
+            atletas.sacar(atletas.iesimo(i));
+            echados++;
+        }
+
+        i++;
+    }
+
+    return echados;
+}
+
+Lista<int > JJOO::filtrarPosiciones(Lista<Atleta >& atletas, const Pais& p)
+{
+    int i = 0;
+    Lista<int > posiciones = Lista<int >();
+
+    while(i < atletas.longitud()){
+
+        if(atletas.iesimo(i).nacionalidad() != p){
+            posiciones.agregarAtras(atletas.iesimo(i).ciaNumber());
+        }
+
+        i++;
+    }
+
+    return posiciones;
+}
+
+Lista<pair<int,bool> > JJOO::filtrarControl(const Competencia& comp, const Pais& p)
+{
+    int i = 0;
+    Lista<pair<int,bool> > doping = Lista<pair<int,bool> >();
+
+    while(i < comp.lesTocoControlAntidoping().longitud()){
+
+        if(comp.lesTocoControlAntidoping().iesimo(i).nacionalidad() != p){
+            doping.agregarAtras(pair<int,bool>(comp.lesTocoControlAntidoping().iesimo(i).ciaNumber(), comp.leDioPositivo(comp.lesTocoControlAntidoping().iesimo(i))));
+        }
+
+        i++;
+    }
+
+    return doping;
 
 }
