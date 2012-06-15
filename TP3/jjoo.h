@@ -55,6 +55,7 @@ class JJOO{
         Lista<int> crearRanking (const Lista<Atleta>& particip,const Deporte& d) const;
         Lista<pair<int,bool> > crearControl(const Atleta& a, bool b)const;
         pair<Pais,int> paisMedallero(Pais p, Lista<Pais> paisConMed, Lista<pair<Pais,int> > paisConInt) const;
+        void quitarAtletas(Lista<Atleta >& atletas, const Pais& p);
 
 };
 std::ostream & operator<<(std::ostream & os,const JJOO & j);
