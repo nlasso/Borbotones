@@ -19,8 +19,8 @@
 	<File name="../interfaz.h" open="0" top="0" tabpos="3">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="../jjoo.cpp" open="1" top="1" tabpos="1">
-		<Cursor position="35605" topLine="1185" />
+	<File name="../jjoo.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="35710" topLine="1029" />
 	</File>
 	<File name="../jjoo.h" open="1" top="0" tabpos="2">
 		<Cursor position="1409" topLine="23" />
@@ -28,8 +28,8 @@
 	<File name="../lista.h" open="1" top="0" tabpos="6">
 		<Cursor position="4291" topLine="191" />
 	</File>
-	<File name="../ojota.cpp" open="1" top="0" tabpos="10">
-		<Cursor position="161" topLine="0" />
+	<File name="../ojota.cpp" open="1" top="1" tabpos="10">
+		<Cursor position="125" topLine="3" />
 	</File>
 	<File name="../tipos.h" open="1" top="0" tabpos="8">
 		<Cursor position="230" topLine="0" />
