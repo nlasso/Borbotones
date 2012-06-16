@@ -87,13 +87,22 @@ Lista<Atleta> JJOO::dePaseo() const
     Lista<Competencia> comp = this->competencias();
     Lista <Atleta> listaDeAtletas = this->atletas();
     int i = 0;
-    Lista<Atleta> atletasDePaseo;
+    Lista<Atleta> atletasDePaseo = Lista<Atleta>();
 
-    while(i < comp.longitud()){
-        Competencia comp1 = comp.iesimo(i);
-        if(!comp1.participantes().pertenece(listaDeAtletas.iesimo(i))){
+    while(i < listaDeAtletas.longitud()){
+        bool atletaNoPertenece = true;
+        int j = 0;
+        while(j < comp.longitud() && atletaNoPertenece){
+            Competencia comp1 = comp.iesimo(j);
+            if(comp1.participantes().pertenece(listaDeAtletas.iesimo(i))){
+                atletaNoPertenece = false;
+            }
+            j++;
+        }
+        if(atletaNoPertenece){
             atletasDePaseo.agregar(listaDeAtletas.iesimo(i));
         }
+        i++;
     }
     return atletasDePaseo;
 }
@@ -631,14 +640,12 @@ Lista<Pais> JJOO::sequiaOlimpica() const
 {
     Lista<Pais> todosLosPaises = this->paises();
     Lista<Pais> paisesSecos = Lista<Pais>();
-    int j = todosLosPaises.longitud();
-    int i = 0;
-    while(j > 0){
-        if(this->masDiasSinMedallas(todosLosPaises.iesimo(i)) == this->maxDiasSinMedallas(todosLosPaises)){
-            paisesSecos.agregar(todosLosPaises.iesimo(i));
+    int j = todosLosPaises.longitud() - 1;
+    while(j >= 0){
+        if(this->masDiasSinMedallas(todosLosPaises.iesimo(j)) == this->maxDiasSinMedallas(todosLosPaises)){
+            paisesSecos.agregar(todosLosPaises.iesimo(j));
         }
         j--;
-        i++;
     }
 
     return paisesSecos;
@@ -1194,10 +1201,12 @@ Lista<int> JJOO::crearRanking(const Lista<Atleta>& participant,const Deporte& d)
 Lista<pair<int,bool> > JJOO::crearControl(const Atleta& a, bool b)const
 {
     Lista<pair<int,bool> > result = Lista<pair<int,bool> >();
+    if(crearRanking.longitud() >= 1){
     pair<int,bool> item = pair<int,bool>();
     item.first = a.ciaNumber();
     item.second = b;
     result.agregar(item);
+    }
     return result;
 }
 
