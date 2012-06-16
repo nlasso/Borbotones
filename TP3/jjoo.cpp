@@ -87,13 +87,22 @@ Lista<Atleta> JJOO::dePaseo() const
     Lista<Competencia> comp = this->competencias();
     Lista <Atleta> listaDeAtletas = this->atletas();
     int i = 0;
-    Lista<Atleta> atletasDePaseo;
+    Lista<Atleta> atletasDePaseo = Lista<Atleta>();
 
-    while(i < comp.longitud()){
-        Competencia comp1 = comp.iesimo(i);
-        if(!comp1.participantes().pertenece(listaDeAtletas.iesimo(i))){
+    while(i < listaDeAtletas.longitud()){
+        bool atletaNoPertenece = true;
+        int j = 0;
+        while(j < comp.longitud() && atletaNoPertenece){
+            Competencia comp1 = comp.iesimo(j);
+            if(comp1.participantes().pertenece(listaDeAtletas.iesimo(i))){
+                atletaNoPertenece = false;
+            }
+            j++;
+        }
+        if(atletaNoPertenece){
             atletasDePaseo.agregar(listaDeAtletas.iesimo(i));
         }
+        i++;
     }
     return atletasDePaseo;
 }
@@ -177,7 +186,39 @@ Lista<pair<Pais,Lista<int> > > JJOO::medallero() const
 
 int JJOO::boicotPorDisciplina(const Categoria cat, const Pais p)
 {
-    return 0;
+    int echados = 0;
+    int i = 0;
+    int j = 0;
+
+    // Recorro los dias
+    while(i < _competenciasPorDia.longitud()){
+
+        // Recorro las competencias del dia
+        while(j < _competenciasPorDia.iesimo(i).longitud()){
+
+            // Si es la competencia de la categoria cat realizo el boicot
+            if(_competenciasPorDia.iesimo(i).iesimo(j).categoria() == cat){
+
+                // Competencia a reemplazar
+                Competencia comp;
+                Lista<Atleta > preAtletas = _competenciasPorDia.iesimo(i).iesimo(j).participantes();
+                // Boicot de participantes
+                quitarAtletas(preAtletas ,p);
+
+                // Si esta finalizada, boicto de ranking, doping
+                if(comp.finalizada()){
+
+                }
+
+            }
+
+            j++;
+        }
+
+        i++;
+    }
+
+    return echados;
 }
 
 Lista<Atleta> JJOO::losMasFracasados(const Pais p) const
@@ -378,166 +419,15 @@ Lista<Pais> JJOO::sequiaOlimpica() const
 {
     Lista<Pais> todosLosPaises = this->paises();
     Lista<Pais> paisesSecos = Lista<Pais>();
-    int j = todosLosPaises.longitud();
-    int i = 0;
-    while(j > 0){
-        if(this->masDiasSinMedallas(todosLosPaises.iesimo(i)) == this->maxDiasSinMedallas(todosLosPaises)){
-            paisesSecos.agregar(todosLosPaises.iesimo(i));
+    int j = todosLosPaises.longitud() - 1;
+    while(j >= 0){
+        if(this->masDiasSinMedallas(todosLosPaises.iesimo(j)) == this->maxDiasSinMedallas(todosLosPaises)){
+            paisesSecos.agregar(todosLosPaises.iesimo(j));
         }
         j--;
-        i++;
     }
 
     return paisesSecos;
-}
-//-----------------AUXILIARES---------------
-
-int JJOO::masDiasSinMedallas(const Pais p) const
-{
-    int dia = this->jornadaActual();
-    Lista<int> diasSinMedallas = Lista<int>();
-    diasSinMedallas.agregar(this->jornadaActual());
-    dia = dia-1;
-    while(dia > 0){
-        if(this->ganoMedallaEseDia(this->cronograma(dia),p)){
-            diasSinMedallas.agregar(dia);
-            dia = dia-1;
-        }
-        else{
-            dia = dia-1;
-        }
-    }
-
-    diasSinMedallas.darVuelta();
-
-    Lista<int> diferencias = Lista<int>();
-    int j = 0;
-    int k = 1;
-    while(diasSinMedallas.longitud()>1){
-        diferencias.agregar(diasSinMedallas.iesimo(1) - diasSinMedallas.iesimo(0));
-        j++;
-        k++;
-    }
-
-    while(diferencias.longitud() > 1){
-        if(diferencias.iesimo(0) > diferencias.iesimo(1)){
-            diferencias.sacar(diferencias.iesimo(1));
-        }
-        else{
-            if(diferencias.iesimo(0) < diferencias.iesimo(1)){
-            diferencias.sacar(diferencias.iesimo(0));
-            }
-            else{
-                diferencias.cola();
-            }
-        }
-    }
-
-    return diferencias.iesimo(0);
-}
-
-bool JJOO::ganoMedallaEseDia(const Lista<Competencia>& comp,const Pais p) const
-{
-    bool res = false;
-    int i = 0;
-    while(i < comp.longitud() || !res){
-        Competencia comp1 = comp.iesimo(i);
-        Atleta atletaOro = comp1.ranking().iesimo(0);
-        Atleta atletaPlata = comp1.ranking().iesimo(1);
-        Atleta atletaBronce = comp1.ranking().iesimo(2);
-        if(p == atletaOro.nacionalidad() || p == atletaPlata.nacionalidad() || p == atletaBronce.nacionalidad()){
-            res = true;
-        }
-        i++;
-    }
-    return res;
-}
-
-int JJOO::maxDiasSinMedallas(const Lista<Pais>& pais) const
-{
-    Lista<Pais> p = pais;
-
-     while(p.longitud() > 1){
-        if(this->masDiasSinMedallas(p.iesimo(0)) > this->masDiasSinMedallas(p.iesimo(1))){
-            p.sacar(p.iesimo(1));
-        }
-        else{
-            if(this->masDiasSinMedallas(p.iesimo(0)) < this->masDiasSinMedallas(p.iesimo(1))){
-            p.sacar(p.iesimo(0));
-            }
-        }
-    }
-    return masDiasSinMedallas(p.iesimo(0));
-}
-Lista<Pais> JJOO::paises() const
-{
-    Lista<Atleta> todosLosAtletas = this->atletas();
-    Lista<Pais> todosLosPaises = Lista<Pais>();
-    while(todosLosAtletas.longitud() > 0){
-        Atleta miAtleta = todosLosAtletas.iesimo(0);
-        if(todosLosPaises.pertenece(miAtleta.nacionalidad())){
-            todosLosPaises.agregar(miAtleta.nacionalidad());
-        }
-        todosLosAtletas.sacar(todosLosAtletas.iesimo(0));
-    }
-
-    return todosLosPaises;
-}
-void JJOO::transcurrirDia()
-{
-    Lista<Competencia> competenciasDelDia = _competenciasPorDia.iesimo(_jornadaActual);
-    int i = 0;
-    while(competenciasDelDia.longitud() > 0){
-        Competencia comp = competenciasDelDia.iesimo(i);
-        if(!comp.finalizada()){
-            comp.finalizar(this->crearRanking(comp.participantes(),comp.categoria().first),this->crearControl(comp.participantes().iesimo(0),true));
-            i++;
-        }
-        else{
-            i++;
-        }
-    }
-    _jornadaActual = _jornadaActual + 1;
-
-}
-
-//----------------AUXILIARES TRANSCURRIR DIA--------------
-Lista<int> JJOO::crearRanking(const Lista<Atleta>& participant,const Deporte& d) const
-{
-    Lista<int> posiciones = Lista<int>();
-    Lista<Atleta> particip = participant;
-    while(particip.longitud() > 0){
-        int i = 0;
-        int j = 1;
-
-        while(j < particip.longitud()){
-            Atleta participante1 = particip.iesimo(i);
-            Atleta participante2 = particip.iesimo(j);
-            if(participante1.capacidad(d) >= participante2.capacidad(d)){
-                j++;
-            }
-            else{
-                i = j;
-                j++;
-            }
-        }
-        Atleta participanteFinal = particip.iesimo(i);
-        int number = participanteFinal.ciaNumber();
-        posiciones.agregar(number);
-        particip.sacar(participanteFinal);
-        j = 1;
-        i = 0;
-    }
-    return posiciones;
-}
-Lista<pair<int,bool> > JJOO::crearControl(const Atleta& a, bool b)const
-{
-    Lista<pair<int,bool> > result = Lista<pair<int,bool> >();
-    pair<int,bool> item = pair<int,bool>();
-    item.first = a.ciaNumber();
-    item.second = b;
-    result.agregar(item);
-    return result;
 }
 
 bool JJOO::operator==(const JJOO& j) const
@@ -804,4 +694,159 @@ Lista<pair<Pais,int> > JJOO::paisRep(Lista<Pais>& p) const
         i++;
     }
     return paisesYRepeticiones;
+}
+
+int JJOO::masDiasSinMedallas(const Pais p) const
+{
+    int dia = this->jornadaActual();
+    Lista<int> diasSinMedallas = Lista<int>();
+    diasSinMedallas.agregar(this->jornadaActual());
+    dia = dia-1;
+    while(dia > 0){
+        if(this->ganoMedallaEseDia(this->cronograma(dia),p)){
+            diasSinMedallas.agregar(dia);
+            dia = dia-1;
+        }
+        else{
+            dia = dia-1;
+        }
+    }
+
+    diasSinMedallas.darVuelta();
+
+    Lista<int> diferencias = Lista<int>();
+    int j = 0;
+    int k = 1;
+    while(diasSinMedallas.longitud()>1){
+        diferencias.agregar(diasSinMedallas.iesimo(1) - diasSinMedallas.iesimo(0));
+        j++;
+        k++;
+    }
+
+    while(diferencias.longitud() > 1){
+        if(diferencias.iesimo(0) > diferencias.iesimo(1)){
+            diferencias.sacar(diferencias.iesimo(1));
+        }
+        else{
+            if(diferencias.iesimo(0) < diferencias.iesimo(1)){
+            diferencias.sacar(diferencias.iesimo(0));
+            }
+            else{
+                diferencias.cola();
+            }
+        }
+    }
+
+    return diferencias.iesimo(0);
+}
+
+bool JJOO::ganoMedallaEseDia(const Lista<Competencia>& comp,const Pais p) const
+{
+    bool res = false;
+    int i = 0;
+    while(i < comp.longitud() || !res){
+        Competencia comp1 = comp.iesimo(i);
+        Atleta atletaOro = comp1.ranking().iesimo(0);
+        Atleta atletaPlata = comp1.ranking().iesimo(1);
+        Atleta atletaBronce = comp1.ranking().iesimo(2);
+        if(p == atletaOro.nacionalidad() || p == atletaPlata.nacionalidad() || p == atletaBronce.nacionalidad()){
+            res = true;
+        }
+        i++;
+    }
+    return res;
+}
+
+int JJOO::maxDiasSinMedallas(const Lista<Pais>& pais) const
+{
+    Lista<Pais> p = pais;
+
+     while(p.longitud() > 1){
+        if(this->masDiasSinMedallas(p.iesimo(0)) > this->masDiasSinMedallas(p.iesimo(1))){
+            p.sacar(p.iesimo(1));
+        }
+        else{
+            if(this->masDiasSinMedallas(p.iesimo(0)) < this->masDiasSinMedallas(p.iesimo(1))){
+            p.sacar(p.iesimo(0));
+            }
+        }
+    }
+    return masDiasSinMedallas(p.iesimo(0));
+}
+Lista<Pais> JJOO::paises() const
+{
+    Lista<Atleta> todosLosAtletas = this->atletas();
+    Lista<Pais> todosLosPaises = Lista<Pais>();
+    while(todosLosAtletas.longitud() > 0){
+        Atleta miAtleta = todosLosAtletas.iesimo(0);
+        if(todosLosPaises.pertenece(miAtleta.nacionalidad())){
+            todosLosPaises.agregar(miAtleta.nacionalidad());
+        }
+        todosLosAtletas.sacar(todosLosAtletas.iesimo(0));
+    }
+
+    return todosLosPaises;
+}
+void JJOO::transcurrirDia()
+{
+    Lista<Competencia> competenciasDelDia = _competenciasPorDia.iesimo(_jornadaActual);
+    int i = 0;
+    while(competenciasDelDia.longitud() > 0){
+        Competencia comp = competenciasDelDia.iesimo(i);
+        if(!comp.finalizada()){
+            comp.finalizar(this->crearRanking(comp.participantes(),comp.categoria().first),this->crearControl(comp.participantes().iesimo(0),true));
+            i++;
+        }
+        else{
+            i++;
+        }
+    }
+    _jornadaActual = _jornadaActual + 1;
+
+}
+
+//----------------AUXILIARES TRANSCURRIR DIA--------------
+Lista<int> JJOO::crearRanking(const Lista<Atleta>& participant,const Deporte& d) const
+{
+    Lista<int> posiciones = Lista<int>();
+    Lista<Atleta> particip = participant;
+    while(particip.longitud() > 0){
+        int i = 0;
+        int j = 1;
+
+        while(j < particip.longitud()){
+            Atleta participante1 = particip.iesimo(i);
+            Atleta participante2 = particip.iesimo(j);
+            if(participante1.capacidad(d) >= participante2.capacidad(d)){
+                j++;
+            }
+            else{
+                i = j;
+                j++;
+            }
+        }
+        Atleta participanteFinal = particip.iesimo(i);
+        int number = participanteFinal.ciaNumber();
+        posiciones.agregar(number);
+        particip.sacar(participanteFinal);
+        j = 1;
+        i = 0;
+    }
+    return posiciones;
+}
+
+Lista<pair<int,bool> > JJOO::crearControl(const Atleta& a, bool b)const
+{
+    Lista<pair<int,bool> > result = Lista<pair<int,bool> >();
+    pair<int,bool> item = pair<int,bool>();
+    item.first = a.ciaNumber();
+    item.second = b;
+    result.agregar(item);
+    return result;
+}
+
+void JJOO::quitarAtletas(Lista<Atleta >& atletas, const Pais& p)
+{
+
+
 }

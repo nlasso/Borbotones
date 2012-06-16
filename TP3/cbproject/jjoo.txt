@@ -2,9 +2,9 @@ J 2012 3
 [(A |Juan| |Masculino| 1920 |Argentina| 1 [(|Football|, 35), (|Rugby|, 10)]),
 (A |Jorge| |Masculino| 1930 |Argentina| 2 [(|Football|, 32), (|Rugby|, 20)]),
 (A |Juliana| |Femenino| 1932 |Bosnia| 3 [(|Handball|, 50)]),
-(A |Jenny| |Femenino| 1922 |USA| 4 [(|Softball|, 20)]),
+(A |Jackson| |Masculino| 1935 |Escocia| 6 [(|Basket|, 25), (|Football|, 40), (|Rugby|, 5)]),
 (A |Jordan| |Masculino| 1930 |USA| 5 [(|Basket|, 25), (|Football|, 40), (|Rugby|, 5)]),
-(A |Jackson| |Masculino| 1935 |Escocia| 6 [(|Basket|, 25), (|Football|, 40), (|Rugby|, 5)])]
+(A |Jenny| |Femenino| 1922 |USA| 4 [(|Softball|, 20)])]
 [[(C (|Rugby|, |Masculino|) |True|
 [(A |Juan| |Masculino| 1920 |Argentina| 1 [(|Football|, 35), (|Rugby|, 10)]),
 (A |Jorge| |Masculino| 1930 |Argentina| 2 [(|Football|, 32), (|Rugby|, 20)]),
