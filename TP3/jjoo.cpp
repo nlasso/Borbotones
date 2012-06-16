@@ -1201,10 +1201,12 @@ Lista<int> JJOO::crearRanking(const Lista<Atleta>& participant,const Deporte& d)
 Lista<pair<int,bool> > JJOO::crearControl(const Atleta& a, bool b)const
 {
     Lista<pair<int,bool> > result = Lista<pair<int,bool> >();
+    if(crearRanking.longitud() >= 1){
     pair<int,bool> item = pair<int,bool>();
     item.first = a.ciaNumber();
     item.second = b;
     result.agregar(item);
+    }
     return result;
 }
 
