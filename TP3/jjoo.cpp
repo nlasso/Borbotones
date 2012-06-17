@@ -643,12 +643,12 @@ Lista<Pais> JJOO::sequiaOlimpica() const
 {
     Lista<Pais> todosLosPaises = this->paises();
     Lista<Pais> paisesSecos = Lista<Pais>();
-    int j = todosLosPaises.longitud() - 1;
-    while(j >= 0){
+    int j = 0;
+    while(todosLosPaises.longitud() > j){
         if(this->masDiasSinMedallas(todosLosPaises.iesimo(j)) == this->maxDiasSinMedallas(todosLosPaises)){
             paisesSecos.agregar(todosLosPaises.iesimo(j));
         }
-        j--;
+        j++;
     }
 
     return paisesSecos;
@@ -1059,26 +1059,20 @@ int JJOO::masDiasSinMedallas(const Pais p) const
     int dia = this->jornadaActual();
     Lista<int> diasSinMedallas = Lista<int>();
     diasSinMedallas.agregar(this->jornadaActual());
-    dia = dia-1;
+    dia = dia - 1;
     while(dia > 0){
         if(this->ganoMedallaEseDia(this->cronograma(dia),p)){
             diasSinMedallas.agregar(dia);
-            dia = dia-1;
         }
-        else{
-            dia = dia-1;
-        }
+        dia--;
     }
 
     diasSinMedallas.darVuelta();
 
     Lista<int> diferencias = Lista<int>();
-    int j = 0;
-    int k = 1;
     while(diasSinMedallas.longitud()>1){
         diferencias.agregar(diasSinMedallas.iesimo(1) - diasSinMedallas.iesimo(0));
-        j++;
-        k++;
+        diasSinMedallas.cola();
     }
 
     while(diferencias.longitud() > 1){
@@ -1102,7 +1096,7 @@ bool JJOO::ganoMedallaEseDia(const Lista<Competencia>& comp,const Pais p) const
 {
     bool res = false;
     int i = 0;
-    while(i < comp.longitud() || !res){
+    while(i < comp.longitud() && !res){
         Competencia comp1 = comp.iesimo(i);
         Atleta atletaOro = comp1.ranking().iesimo(0);
         Atleta atletaPlata = comp1.ranking().iesimo(1);
@@ -1129,7 +1123,7 @@ int JJOO::maxDiasSinMedallas(const Lista<Pais>& pais) const
             }
         }
     }
-    return masDiasSinMedallas(p.iesimo(0));
+    return this->masDiasSinMedallas(p.iesimo(0));
 }
 
 Lista<Pais> JJOO::paises() const
@@ -1143,12 +1137,8 @@ Atleta a;
         if(todosLosPaises.pertenece(todosLosAtletas.iesimo(i).nacionalidad())==false)
         {
             todosLosPaises.agregar(todosLosAtletas.iesimo(i).nacionalidad());
-            i++;
         }
-        else
-        {
-            i++;
-        }
+        i++;
     }
 return todosLosPaises;
 }
