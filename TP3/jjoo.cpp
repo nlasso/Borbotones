@@ -1095,12 +1095,28 @@ bool JJOO::ganoMedallaEseDia(const Lista<Competencia>& comp,const Pais p) const
     int i = 0;
     while(i < comp.longitud() && !res){
         Competencia comp1 = comp.iesimo(i);
-        Atleta atletaOro = comp1.ranking().iesimo(0);
-        Atleta atletaPlata = comp1.ranking().iesimo(1);
-        Atleta atletaBronce = comp1.ranking().iesimo(2);
-        if(p == atletaOro.nacionalidad() || p == atletaPlata.nacionalidad() || p == atletaBronce.nacionalidad()){
-            res = true;
+        Atleta atletaOro;
+        Atleta atletaPlata;
+        Atleta atletaBronce;
+        if(comp1.ranking().longitud() >=1){
+            atletaOro = comp1.ranking().iesimo(0);
+            if(p == atletaOro.nacionalidad()){
+                res = true;
+            }
         }
+        if(comp1.ranking().longitud() >=2){
+            atletaPlata = comp1.ranking().iesimo(1);
+            if(p == atletaOro.nacionalidad() || p == atletaPlata.nacionalidad()){
+                res = true;
+            }
+        }
+        if(comp1.ranking().longitud() >=3){
+            atletaBronce = comp1.ranking().iesimo(2);
+            if(p == atletaOro.nacionalidad() || p == atletaPlata.nacionalidad() || p == atletaBronce.nacionalidad()){
+                res = true;
+            }
+        }
+
         i++;
     }
     return res;
@@ -1128,10 +1144,9 @@ Lista<Pais> JJOO::paises() const
 Lista<Atleta> todosLosAtletas = this->atletas();
 Lista<Pais> todosLosPaises = Lista<Pais>();
 int i=0;
-Atleta a;
     while(todosLosAtletas.longitud() > i)
     {
-        if(todosLosPaises.pertenece(todosLosAtletas.iesimo(i).nacionalidad())==false)
+        if(!todosLosPaises.pertenece(todosLosAtletas.iesimo(i).nacionalidad()))
         {
             todosLosPaises.agregar(todosLosAtletas.iesimo(i).nacionalidad());
         }
@@ -1144,18 +1159,16 @@ void JJOO::transcurrirDia()
 {
     Lista<Competencia> competenciasDelDia = _competenciasPorDia.iesimo(_jornadaActual);
     int i = 0;
-    while(competenciasDelDia.longitud() > 0){
+    while(competenciasDelDia.longitud() > i){
         Competencia comp = competenciasDelDia.iesimo(i);
         if(!comp.finalizada()){
             comp.finalizar(this->crearRanking(comp.participantes(),comp.categoria().first),this->crearControl(comp.participantes().iesimo(0),true));
-            i++;
         }
-        else{
-            i++;
-        }
+        i++;
     }
+    if((_jornadaActual) < this->cantDias()){
     _jornadaActual = _jornadaActual + 1;
-
+    }
 }
 
 //----------------AUXILIARES TRANSCURRIR DIA--------------
