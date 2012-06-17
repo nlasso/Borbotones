@@ -541,9 +541,10 @@ bool JJOO::uyOrdenadoAsiHayUnPatron() const
     i=0;
     while(i< this->cantDias())
     {
+        compXdia = Lista<Competencia>();
         compXdia = this->cronograma(i);
-        j = 0;
         Lista <Pais> paisOro = Lista <Pais>();
+        j = 0;
         while(j<compXdia.longitud())
         {
             comp = compXdia.iesimo(j);
@@ -559,12 +560,14 @@ bool JJOO::uyOrdenadoAsiHayUnPatron() const
         paisEnTupla = paisRep(paisOro);
         mejorPaisDelDia = mejorPais(paisEnTupla);
         mejoresPaisesDeCadaDia.agregar(mejorPaisDelDia);
+        Lista <Pais> paisOro = Lista <Pais>();
         }
         i++;
     }
+    mejoresPaisesDeCadaDia.darVuelta();
     p = mejoresPaisesDeCadaDia.iesimo(0);
     i=1;
-    h=0;
+    h=1;
 
     // obtengo cuando se repite el primer pais
     while(i<=mejoresPaisesDeCadaDia.longitud())
@@ -576,7 +579,7 @@ bool JJOO::uyOrdenadoAsiHayUnPatron() const
         }
         else
         {
-            i= mejoresPaisesDeCadaDia.longitud();
+            i= mejoresPaisesDeCadaDia.longitud()+1;
         }
     }
     i=0;
