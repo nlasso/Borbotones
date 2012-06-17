@@ -10,8 +10,10 @@ Atleta atletaProdigio(const JJOO & j)
 {
     int i = 0;
     Atleta a;
+
     if(j.competenciasFinalizadasConOroEnPodio().longitud()>0)
         {
+            //
             a = j.competenciasFinalizadasConOroEnPodio().iesimo(0).ranking().iesimo(0);
         }
     while(i< j.competenciasFinalizadasConOroEnPodio().longitud())
