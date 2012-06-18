@@ -601,6 +601,7 @@ bool JJOO::uyOrdenadoAsiHayUnPatron() const
     }
     i=0;
     j=0;
+    listaPatron.darVuelta();
     while(i<mejoresPaisesDeCadaDia.longitud() && !terminarCiclo)
     {
         if(listaPatron.longitud() == mejoresPaisesDeCadaDia.longitud()) // si son iguales las long significa q no encontro igualdad x ende true
@@ -615,7 +616,7 @@ bool JJOO::uyOrdenadoAsiHayUnPatron() const
             if(mejoresPaisesDeCadaDia.iesimo(i)== listaPatron.iesimo(j))
             {
                 i++;
-                if(j== listaPatron.longitud())
+                if(j== listaPatron.longitud()-1)
                 {
                     j=0;
                 }
@@ -751,6 +752,8 @@ void JJOO::cargar (std::istream& is)
     char c;
     Atleta a;
     Competencia comp;
+    _atletas = Lista<Atleta>();
+    _competenciasPorDia = Lista<Lista<Competencia> >();
     Lista<Competencia> listComp= Lista<Competencia>();
     is >> c; // Saco la J
     is >> this->_anio;
@@ -1019,7 +1022,7 @@ Pais JJOO::mejorPais(Lista<pair<Pais,int> >& p) const
         j=i+1;
         while(j<=p.longitud())
         {
-            if(paisYrepeticiones.second> p.iesimo(j).second)
+            if(paisYrepeticiones.second>= p.iesimo(j).second)
             {
                 j++;
             }
