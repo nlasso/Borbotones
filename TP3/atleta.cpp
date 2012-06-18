@@ -1,4 +1,5 @@
 #include "atleta.h"
+#include <string>
 #include <fstream>
 
 Atleta::Atleta()
@@ -67,11 +68,16 @@ int Atleta::capacidad(const Deporte d)const{
 
 void Atleta::entrenarNuevoDeporte(const Deporte deporte, const int cap){
     pair <Deporte,int> depcap = pair<Deporte,int>();
+    Lista<pair<Deporte,int> > listdepcap = Lista<pair<Deporte,int> >();
     depcap.first = deporte;
     depcap.second = cap;
     if (!deportes().pertenece(deporte)){
         this->_deportes.agregar(depcap);
     }
+    listdepcap = ordenadoDeportes(this->_deportes);
+    this->_deportes = Lista<pair<Deporte,int> >();
+    this->_deportes = listdepcap;
+
 }
 
 bool Atleta::operator==(const Atleta& a) const
@@ -233,3 +239,40 @@ std::ostream & operator<<(std::ostream & os,const Atleta & a)
     os << "Nombre: " << a.nombre() << "Sexo" << a.sexo() << "fecha de nacimiento" << a.anioNacimiento() << "nacionalidad" << a.nacionalidad() << "cianumber" << a.ciaNumber() << "deportes" << a.deportes() <<  "Capacidades" << cap << endl;
     return os;
 }
+
+
+
+
+//----------------------------ORDENAR DEPORTES
+
+    Lista<pair<Deporte,int> > Atleta::ordenadoDeportes(Lista<pair<Deporte,int> > deportescap)
+    {
+    Lista<pair <Deporte,int> > listadepcap = Lista<pair <Deporte,int> >();
+	pair<Deporte,int> depcap = pair <Deporte,int>();
+	int p = 0;
+	int i = 0;
+	int j = 0;
+    while(j < deportescap.longitud())
+		{
+        p = j;
+        depcap = deportescap.iesimo(0);
+        i =j+1;
+		while (i < deportescap.longitud())
+			{
+				if (depcap.first <= deportescap.iesimo(i).first)
+				{
+				i++;
+			}
+				else
+				{
+					depcap = deportescap.iesimo(i);
+					p = i;
+					i++;
+				}
+			}
+		listadepcap.agregarAtras(deportescap.iesimo(p));
+		deportescap.eliminarPosicion(p);
+        j = 0;
+		}
+    return listadepcap;
+	}

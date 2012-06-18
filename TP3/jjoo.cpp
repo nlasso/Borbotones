@@ -541,9 +541,10 @@ bool JJOO::uyOrdenadoAsiHayUnPatron() const
     i=0;
     while(i< this->cantDias())
     {
+        compXdia = Lista<Competencia>();
         compXdia = this->cronograma(i);
-        j = 0;
         Lista <Pais> paisOro = Lista <Pais>();
+        j = 0;
         while(j<compXdia.longitud())
         {
             comp = compXdia.iesimo(j);
@@ -559,12 +560,14 @@ bool JJOO::uyOrdenadoAsiHayUnPatron() const
         paisEnTupla = paisRep(paisOro);
         mejorPaisDelDia = mejorPais(paisEnTupla);
         mejoresPaisesDeCadaDia.agregar(mejorPaisDelDia);
+        Lista <Pais> paisOro = Lista <Pais>();
         }
         i++;
     }
+    mejoresPaisesDeCadaDia.darVuelta();
     p = mejoresPaisesDeCadaDia.iesimo(0);
     i=1;
-    h=0;
+    h=1;
 
     // obtengo cuando se repite el primer pais
     while(i<=mejoresPaisesDeCadaDia.longitud())
@@ -576,7 +579,7 @@ bool JJOO::uyOrdenadoAsiHayUnPatron() const
         }
         else
         {
-            i= mejoresPaisesDeCadaDia.longitud();
+            i= mejoresPaisesDeCadaDia.longitud()+1;
         }
     }
     i=0;
@@ -598,6 +601,7 @@ bool JJOO::uyOrdenadoAsiHayUnPatron() const
     }
     i=0;
     j=0;
+    listaPatron.darVuelta();
     while(i<mejoresPaisesDeCadaDia.longitud() && !terminarCiclo)
     {
         if(listaPatron.longitud() == mejoresPaisesDeCadaDia.longitud()) // si son iguales las long significa q no encontro igualdad x ende true
@@ -612,7 +616,7 @@ bool JJOO::uyOrdenadoAsiHayUnPatron() const
             if(mejoresPaisesDeCadaDia.iesimo(i)== listaPatron.iesimo(j))
             {
                 i++;
-                if(j== listaPatron.longitud())
+                if(j== listaPatron.longitud()-1)
                 {
                     j=0;
                 }
@@ -748,6 +752,8 @@ void JJOO::cargar (std::istream& is)
     char c;
     Atleta a;
     Competencia comp;
+    _atletas = Lista<Atleta>();
+    _competenciasPorDia = Lista<Lista<Competencia> >();
     Lista<Competencia> listComp= Lista<Competencia>();
     is >> c; // Saco la J
     is >> this->_anio;
@@ -1016,7 +1022,7 @@ Pais JJOO::mejorPais(Lista<pair<Pais,int> >& p) const
         j=i+1;
         while(j<=p.longitud())
         {
-            if(paisYrepeticiones.second> p.iesimo(j).second)
+            if(paisYrepeticiones.second>= p.iesimo(j).second)
             {
                 j++;
             }
@@ -1095,12 +1101,28 @@ bool JJOO::ganoMedallaEseDia(const Lista<Competencia>& comp,const Pais p) const
     int i = 0;
     while(i < comp.longitud() && !res){
         Competencia comp1 = comp.iesimo(i);
-        Atleta atletaOro = comp1.ranking().iesimo(0);
-        Atleta atletaPlata = comp1.ranking().iesimo(1);
-        Atleta atletaBronce = comp1.ranking().iesimo(2);
-        if(p == atletaOro.nacionalidad() || p == atletaPlata.nacionalidad() || p == atletaBronce.nacionalidad()){
-            res = true;
+        Atleta atletaOro;
+        Atleta atletaPlata;
+        Atleta atletaBronce;
+        if(comp1.ranking().longitud() >=1){
+            atletaOro = comp1.ranking().iesimo(0);
+            if(p == atletaOro.nacionalidad()){
+                res = true;
+            }
         }
+        if(comp1.ranking().longitud() >=2){
+            atletaPlata = comp1.ranking().iesimo(1);
+            if(p == atletaOro.nacionalidad() || p == atletaPlata.nacionalidad()){
+                res = true;
+            }
+        }
+        if(comp1.ranking().longitud() >=3){
+            atletaBronce = comp1.ranking().iesimo(2);
+            if(p == atletaOro.nacionalidad() || p == atletaPlata.nacionalidad() || p == atletaBronce.nacionalidad()){
+                res = true;
+            }
+        }
+
         i++;
     }
     return res;
@@ -1128,10 +1150,9 @@ Lista<Pais> JJOO::paises() const
 Lista<Atleta> todosLosAtletas = this->atletas();
 Lista<Pais> todosLosPaises = Lista<Pais>();
 int i=0;
-Atleta a;
     while(todosLosAtletas.longitud() > i)
     {
-        if(todosLosPaises.pertenece(todosLosAtletas.iesimo(i).nacionalidad())==false)
+        if(!todosLosPaises.pertenece(todosLosAtletas.iesimo(i).nacionalidad()))
         {
             todosLosPaises.agregar(todosLosAtletas.iesimo(i).nacionalidad());
         }
@@ -1144,18 +1165,16 @@ void JJOO::transcurrirDia()
 {
     Lista<Competencia> competenciasDelDia = _competenciasPorDia.iesimo(_jornadaActual);
     int i = 0;
-    while(competenciasDelDia.longitud() > 0){
+    while(competenciasDelDia.longitud() > i){
         Competencia comp = competenciasDelDia.iesimo(i);
         if(!comp.finalizada()){
             comp.finalizar(this->crearRanking(comp.participantes(),comp.categoria().first),this->crearControl(comp.participantes().iesimo(0),true));
-            i++;
         }
-        else{
-            i++;
-        }
+        i++;
     }
+    if((_jornadaActual) < this->cantDias()){
     _jornadaActual = _jornadaActual + 1;
-
+    }
 }
 
 //----------------AUXILIARES TRANSCURRIR DIA--------------
