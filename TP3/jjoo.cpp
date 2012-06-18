@@ -1170,11 +1170,12 @@ void JJOO::transcurrirDia()
     while(competenciasActuales.longitud() > i){
         Competencia comp = competenciasActuales.iesimo(i);
         if(!comp.finalizada()){
-            comp.finalizar(this->crearRanking(comp.participantes(),comp.categoria().first),this->crearControl(comp.participantes().iesimo(0),true));
-            competenciasModificadas.agregar(comp);
+            Competencia nuevaComp(comp.categoria().first,comp.categoria().second,comp.participantes());
+            nuevaComp.finalizar(this->crearRanking(nuevaComp.participantes(),nuevaComp.categoria().first),this->crearControl(nuevaComp.participantes().iesimo(0),true));
+            competenciasModificadas.agregarAtras(nuevaComp);
         }
         else{
-            competenciasModificadas.agregar(competenciasActuales.iesimo(i));
+            competenciasModificadas.agregarAtras(competenciasActuales.iesimo(i));
         }
         i++;
     }

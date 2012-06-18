@@ -49,11 +49,12 @@
 	<fstream>
 	"interfaz.h"
 
-1339700021 source:/home/nlasso/Documents/Facultad/Algo1/Borbotones/TP3/atleta.cpp
+1339997477 source:/home/nlasso/Documents/Facultad/Algo1/Borbotones/TP3/atleta.cpp
 	"atleta.h"
+	<string>
 	<fstream>
 
-1339364843 /home/nlasso/Documents/Facultad/Algo1/Borbotones/TP3/atleta.h
+1339997477 /home/nlasso/Documents/Facultad/Algo1/Borbotones/TP3/atleta.h
 	"tipos.h"
 	"lista.h"
 
@@ -93,7 +94,7 @@
 	<fstream>
 	"interfaz.h"
 
-1339995851 source:/home/nlasso/Documents/Facultad/Algo1/Borbotones/TP3/jjoo.cpp
+1339998626 source:/home/nlasso/Documents/Facultad/Algo1/Borbotones/TP3/jjoo.cpp
 	"competencia.h"
 	"atleta.h"
 	"jjoo.h"
