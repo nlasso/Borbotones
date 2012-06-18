@@ -1060,38 +1060,41 @@ Pais JJOO::mejorPais(Lista<pair<Pais,int> >& p) const
 
 int JJOO::masDiasSinMedallas(const Pais p) const
 {
-    int dia = this->jornadaActual();
+    int dia = (this->jornadaActual());
     Lista<int> diasSinMedallas = Lista<int>();
     diasSinMedallas.agregar(this->jornadaActual());
-    dia = dia - 1;
-    while(dia > 0){
+    dia = dia - 2;
+    while(dia >= 0){
         if(this->ganoMedallaEseDia(this->cronograma(dia),p)){
-            diasSinMedallas.agregar(dia);
+            diasSinMedallas.agregar(dia+1);
         }
         dia--;
     }
 
-    diasSinMedallas.darVuelta();
-
     Lista<int> diferencias = Lista<int>();
-    while(diasSinMedallas.longitud()>1){
-        diferencias.agregar(diasSinMedallas.iesimo(1) - diasSinMedallas.iesimo(0));
-        diasSinMedallas.cola();
+    if(diasSinMedallas.longitud()==1){
+        diferencias.agregar(_jornadaActual);
     }
-
-    while(diferencias.longitud() > 1){
-        if(diferencias.iesimo(0) > diferencias.iesimo(1)){
-            diferencias.sacar(diferencias.iesimo(1));
+    else{
+        while(diasSinMedallas.longitud()>1){
+            diferencias.agregar(diasSinMedallas.iesimo(1) - diasSinMedallas.iesimo(0));
+            diasSinMedallas.cola();
         }
-        else{
-            if(diferencias.iesimo(0) < diferencias.iesimo(1)){
-            diferencias.sacar(diferencias.iesimo(0));
+        while(diferencias.longitud() > 1){
+            if(diferencias.iesimo(0) > diferencias.iesimo(1)){
+                diferencias.sacar(diferencias.iesimo(1));
             }
             else{
-                diferencias.cola();
+                if(diferencias.iesimo(0) < diferencias.iesimo(1)){
+                diferencias.sacar(diferencias.iesimo(0));
+                }
+                else{
+                    diferencias.cola();
+                }
             }
         }
     }
+
 
     return diferencias.iesimo(0);
 }
@@ -1140,6 +1143,9 @@ int JJOO::maxDiasSinMedallas(const Lista<Pais>& pais) const
         else{
             if(this->masDiasSinMedallas(p.iesimo(0)) < this->masDiasSinMedallas(p.iesimo(1))){
             p.sacar(p.iesimo(0));
+            }
+            else{
+                p.cola();
             }
         }
     }
