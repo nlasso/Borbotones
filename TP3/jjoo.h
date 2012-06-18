@@ -55,7 +55,7 @@ class JJOO{
         Lista<int> crearRanking (const Lista<Atleta>& particip,const Deporte& d) const;
         Lista<pair<int,bool> > crearControl(const Atleta& a, bool b)const;
         pair<Pais,int> paisMedallero(Pais p, Lista<Pais> paisConMed, Lista<pair<Pais,int> > paisConInt) const;
-        int quitarAtletas(Lista<Atleta >& atletas, const Pais& p);
+        Lista<Atleta > quitarAtletas(const Lista<Atleta > atletas, const Pais& p, int& echados);
         Lista<int > filtrarPosiciones(Lista<Atleta >& atletas, const Pais& p);
         Lista<pair<int,bool> > filtrarControl(const Competencia& comp, const Pais& p);
          Pais mejorPais(Lista<pair<Pais,int> >& p) const;

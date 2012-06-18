@@ -241,13 +241,11 @@ int JJOO::boicotPorDisciplina(const Categoria cat, const Pais p)
                     Deporte dep = _competenciasPorDia.iesimo(i).iesimo(j).categoria().first;
                     Sexo sex = _competenciasPorDia.iesimo(i).iesimo(j).categoria().second;
 
+                    Lista<Atleta > participantes = quitarAtletas(preParticipantes, p, echados);
                     Lista<int > posiciones = filtrarPosiciones(preRanking, p);
                     Lista<pair<int,bool> > control = filtrarControl(_competenciasPorDia.iesimo(i).iesimo(j), p);
 
-                    // Boicot
-                    echados = quitarAtletas(preParticipantes, p);
-
-                    Competencia comp(dep, sex, preParticipantes);
+                    Competencia comp(dep, sex, participantes);
                     comp.finalizar(posiciones, control);
                     competenciasDelDia.agregarAtras(comp);
 
@@ -261,9 +259,9 @@ int JJOO::boicotPorDisciplina(const Categoria cat, const Pais p)
                     Sexo sex = _competenciasPorDia.iesimo(i).iesimo(j).categoria().second;
 
                     // Boicot
-                    echados = quitarAtletas(preParticipantes ,p);
+                    Lista<Atleta > participantes = quitarAtletas(preParticipantes, p, echados);
 
-                    Competencia comp(dep, sex, preParticipantes);
+                    Competencia comp(dep, sex, participantes);
                     competenciasDelDia.agregarAtras(comp);
 
                 }
@@ -1236,22 +1234,23 @@ Lista<pair<int,bool> > JJOO::crearControl(const Atleta& a, bool b)const
     return result;
 }
 
-int JJOO::quitarAtletas(Lista<Atleta >& atletas, const Pais& p)
+Lista<Atleta > JJOO::quitarAtletas(const Lista<Atleta > atletas, const Pais& p, int& echados)
 {
     int i = 0;
-    int echados = 0;
+    Lista<Atleta > posiciones = Lista<Atleta >();
 
     while(i < atletas.longitud()){
 
-        if(atletas.iesimo(i).nacionalidad() == p){
-            atletas.sacar(atletas.iesimo(i));
+        if(atletas.iesimo(i).nacionalidad() != p){
+            posiciones.agregarAtras(atletas.iesimo(i));
+        }else{
             echados++;
         }
 
         i++;
     }
 
-    return echados;
+    return posiciones;
 }
 
 Lista<int > JJOO::filtrarPosiciones(Lista<Atleta >& atletas, const Pais& p)
