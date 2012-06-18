@@ -5,7 +5,10 @@
 
 JJOO::JJOO()
 {
-
+    this->_anio = 2012;
+    this->_atletas = Lista<Atleta>();
+    this->_competenciasPorDia = Lista<Lista<Competencia> >();
+    this->_jornadaActual = 1;
 }
 
 JJOO::JJOO(const int anio, const Lista<Atleta>& atletas, const Lista<Lista<Competencia> >& competenciasPorDia)
@@ -1169,7 +1172,13 @@ void JJOO::transcurrirDia()
         Competencia comp = competenciasActuales.iesimo(i);
         if(!comp.finalizada()){
             Competencia nuevaComp(comp.categoria().first,comp.categoria().second,comp.participantes());
-            nuevaComp.finalizar(this->crearRanking(nuevaComp.participantes(),nuevaComp.categoria().first),this->crearControl(nuevaComp.participantes().iesimo(0),true));
+            Lista<int > ranking = Lista<int >();
+            Lista<pair<int,bool > > doping = Lista<pair<int,bool > >();
+            if(nuevaComp.participantes().longitud() > 0){
+                ranking = this->crearRanking(nuevaComp.participantes(),nuevaComp.categoria().first);
+                doping = this->crearControl(nuevaComp.participantes().iesimo(0),true);
+            }
+            nuevaComp.finalizar(ranking,doping);
             competenciasModificadas.agregarAtras(nuevaComp);
         }
         else{

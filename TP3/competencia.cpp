@@ -3,7 +3,11 @@
 
 Competencia::Competencia()
 {
-
+    this->_categoria = pair<Deporte,Sexo>();
+    this->_participantes = Lista<Atleta>();
+    this->_finalizada = false;
+    this->_ranking = Lista<int>();
+    this->_controlAntidoping = Lista<pair<int,bool> >();
 }
 
 Competencia::Competencia(const Deporte d, const Sexo s, const Lista<Atleta>& participantes)
@@ -233,6 +237,8 @@ void Competencia::mostrar(std::ostream& os) const
 
     os << "[";
 
+    if (finalizada()){
+
         i = 0;
 
         while( i < this->_ranking.longitud() ){
@@ -241,9 +247,12 @@ void Competencia::mostrar(std::ostream& os) const
             if( i+1 != this->_ranking.longitud() ){ os << ", "; }
             i++;
         }
+    }
 
     os << "] ";
     os << "[";
+
+    if (finalizada()){
 
         i = 0;
         string positivo = "";
@@ -260,6 +269,8 @@ void Competencia::mostrar(std::ostream& os) const
             if( i+1 != this->lesTocoControlAntidoping().longitud() ){ os << ", "; }
             i++;
         }
+
+    }
 
     os << "]";
 
