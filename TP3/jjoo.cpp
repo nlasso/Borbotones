@@ -1160,15 +1160,34 @@ return todosLosPaises;
 
 void JJOO::transcurrirDia()
 {
-    Lista<Competencia> competenciasDelDia = _competenciasPorDia.iesimo(_jornadaActual);
+    Lista<Lista<Competencia> > competenciasDelDia = Lista<Lista<Competencia> >();
+    Lista<Competencia> competenciasActuales = _competenciasPorDia.iesimo(_jornadaActual-1);
+    Lista<Competencia> competenciasModificadas = Lista<Competencia>();
     int i = 0;
-    while(competenciasDelDia.longitud() > i){
-        Competencia comp = competenciasDelDia.iesimo(i);
+    while(competenciasActuales.longitud() > i){
+        Competencia comp = competenciasActuales.iesimo(i);
         if(!comp.finalizada()){
             comp.finalizar(this->crearRanking(comp.participantes(),comp.categoria().first),this->crearControl(comp.participantes().iesimo(0),true));
+            competenciasModificadas.agregar(comp);
+        }
+        else{
+            competenciasModificadas.agregar(competenciasActuales.iesimo(i));
         }
         i++;
     }
+    int j = 0;
+    while(_competenciasPorDia.longitud() > j){
+        if(j == (_jornadaActual-1)){
+            competenciasDelDia.agregarAtras(competenciasModificadas);
+        }
+        else{
+            competenciasDelDia.agregarAtras(_competenciasPorDia.iesimo(j));
+        }
+        j++;
+    }
+    _competenciasPorDia = Lista<Lista<Competencia> >();
+    _competenciasPorDia = competenciasDelDia;
+
     if((_jornadaActual) < this->cantDias()){
     _jornadaActual = _jornadaActual + 1;
     }

@@ -5,13 +5,13 @@
 		<Cursor position="2144" topLine="87" />
 	</File>
 	<File name="../atleta.h" open="1" top="0" tabpos="4">
-		<Cursor position="449" topLine="4" />
+		<Cursor position="449" topLine="0" />
 	</File>
 	<File name="../competencia.cpp" open="1" top="0" tabpos="5">
-		<Cursor position="2501" topLine="81" />
+		<Cursor position="2225" topLine="81" />
 	</File>
 	<File name="../competencia.h" open="1" top="0" tabpos="3">
-		<Cursor position="343" topLine="8" />
+		<Cursor position="632" topLine="2" />
 	</File>
 	<File name="../interfaz.cpp" open="1" top="0" tabpos="7">
 		<Cursor position="2498" topLine="139" />
@@ -19,8 +19,8 @@
 	<File name="../interfaz.h" open="0" top="0" tabpos="3">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="../jjoo.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="35710" topLine="1029" />
+	<File name="../jjoo.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="35439" topLine="1157" />
 	</File>
 	<File name="../jjoo.h" open="1" top="0" tabpos="2">
 		<Cursor position="1409" topLine="23" />
@@ -28,8 +28,8 @@
 	<File name="../lista.h" open="1" top="0" tabpos="6">
 		<Cursor position="4291" topLine="191" />
 	</File>
-	<File name="../ojota.cpp" open="1" top="1" tabpos="10">
-		<Cursor position="125" topLine="3" />
+	<File name="../ojota.cpp" open="1" top="0" tabpos="10">
+		<Cursor position="371" topLine="0" />
 	</File>
 	<File name="../tipos.h" open="1" top="0" tabpos="8">
 		<Cursor position="230" topLine="0" />
