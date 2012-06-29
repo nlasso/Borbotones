@@ -5,52 +5,50 @@
 
 JJOO::JJOO()
 {
-    this->_anio = 2012;
-    this->_atletas = Lista<Atleta>();
-    this->_competenciasPorDia = Lista<Lista<Competencia> >();
-    this->_jornadaActual = 1;
+    _anio = 2012;
+    _atletas = Lista<Atleta>();
+    _competenciasPorDia = Lista<Lista<Competencia> >();
+    _jornadaActual = 1;
 }
 
 JJOO::JJOO(const int anio, const Lista<Atleta>& atletas, const Lista<Lista<Competencia> >& competenciasPorDia)
 {
-this->_anio = anio;
-this->_atletas = atletas;
-this->_competenciasPorDia = competenciasPorDia;
-this->_jornadaActual = 1;
+    _anio = anio;
+    _atletas = atletas;
+    _competenciasPorDia = competenciasPorDia;
+    _jornadaActual = 1;
 }
 
 int JJOO::anio() const
 {
-    return this->_anio;
+    return _anio;
 }
 
 Lista<Atleta> JJOO::atletas() const
 {
-    return this->_atletas;
+    return _atletas;
 }
 
 int JJOO::cantDias() const
 {
-    int cantidad = 0;
-    cantidad = this->_competenciasPorDia.longitud();
-    return cantidad;
+    return _competenciasPorDia.longitud();
 }
 
 int JJOO::jornadaActual() const
 {
-    return this->_jornadaActual;
+    return _jornadaActual;
 }
 
 Lista<Competencia> JJOO::cronograma(const int dia) const
 {
-    return this->_competenciasPorDia.iesimo(dia);
+    return this->_competenciasPorDia.iesimo(dia-1);
 }
 
 Lista<Competencia> JJOO::competencias() const
 {
     Lista <Competencia> todasLasCompetencias = Lista <Competencia>();
     int i = 0;
-    while(i< this->_competenciasPorDia.longitud())
+    while(i< this->cantDias())
     {
         todasLasCompetencias.concatenar(this->_competenciasPorDia.iesimo(i));
         i++;

@@ -1,13 +1,26 @@
-\documentclass[a4paper]{article}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
+\documentclass[10pt,titlepage,a4paper]{article}
+\usepackage[spanish]{babel} % Le indicamos a LaTeX que vamos a escribir en espaol.
+\usepackage[utf8]{inputenc} % Permite utilizar tildes y ees normalmente
+
 \usepackage{caratula}
-\usepackage[spanish]{babel}
-\usepackage[latin1]{inputenc}
-%\usepackage{bbm}
-\usepackage{framed}
+\usepackage{verbatim}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\fancyfoot[C]{ \hspace{195pt} \footnotesize{\thepage\ \textsl{/} \pageref{LastPage}}}
+\renewcommand{\headrulewidth}{0pt}
+
+
+\titulo{TPI OJOTA (Organizaci\'on de Juegos Ol\'impicos) v1.0}
+\submateria{Primer cuatrimestre 2012}
+\materia{Algoritmos y Estructura de Datos I}
+\grupo{Grupo 4}
+\integrante{Nicolas Lasso}{763/10}{lasso.nico@gmail.com}
+\integrante{Guido Tripodi}{843/10}{guido.tripodi@hotmail.com}
+\integrante{Tomas Agustin Shaurli}{671/10}{zeratulzero@hotmail.com}
+\integrante{Patricio Inzaghi}{255/11}{pinzaghi@dc.uba.ar}
+
 \input{macrosAlgo1}
 
 \newcommand{\comen}[2]{%
@@ -17,173 +30,34 @@
 }
 
 \begin{document}
-
-\newpage
-
-\materia{Algoritmos y Estructura de Datos I}
-\submateria{Primer cuatrimestre 2012}
-\titulo{TP OJOTA (Organizaci\'on de Juegos Ol\'impicos) v1.0}
-
-\grupo{Grupo 4}
-
-
-\integrante{Nicolas Lasso}{763/10}{lasso.nico@gmail.com}
-\integrante{Guido Tripodi}{843/10}{guido.tripodi@hotmail.com}
-\integrante{Tomas Agustin Shaurli}{671/10}{zeratulzero@hotmail.com}
-\integrante{Patricio Inzaghi}{255/11}{pinzaghi@dc.uba.ar}
-
 \maketitle
 
 \newpage
+
+\section{Aclaraciones}
+
+\begin{enumerate}
+\item
+En el ejercicio 7, en caso de empate en medallas de oro, se compara las medallas de plata, si siguen siendo las mismas, se compara las medallas de bronce. En caso de tener las 3 medallas iguales se considera mejor al primero que se comparo.
+Si no hay ningun pais con medallas la lista resultante sera vacia.
+
+\item
+En el ejercicio 12, consideramos a un patron, como la secuencia de paises hasta que aparece un elemento repetido sin incluirlo. Por Ej: [ Argentina, USA, Canada, Argentina, Chile ] el patron seria [ Argentina, USA, Canada ], en cambio en [ Argentina, USA, USA, Argentina, Chile ] el patron seria [ Argentina, USA ].
+
+\item
+En el ejercicio 17, consideramos a un atleta prodigio, aquel que obtuvo una medalla de oro en la categoria pedida, a menor edad que el resto de los ganadores de los otros JJOO en esa misma categoria.
+\end{enumerate}
 
 \section{Resolucion}
 
 \begin{enumerate}
 
-\item
-\begin{problema}{entrenarNuevoDeporte}{a: Atleta, d: Deporte, c: \ent}{}
-\requiere {d \notin deportes(pre(a))}
-\requiere {0 \leq c \leq 100}
-\modifica {a}
-\asegura{nombre(a) == nombre(pre(a))}
-\asegura{sexo(a) == sexo(pre(a))}
-\asegura{añoNacimiento(a) == añoNacimiento(pre(a))}
-\asegura{naionalidad(a) == nacionalidad(pre(a))}
-\asegura{ciaNumber(a) == ciaNumber(pre(a))}
-\asegura{mismos(deportes(a),deportes(pre(a)):d)}
-\asegura{ordenada(deportes(a))}
-\asegura{capacidad(a,d)==c}
-\end{problema}
+\input{ej1_3}
+\input{ej4_6}
+\input{ej7_10}
+\input{ej11_14}
 
-\item
-\begin{problema}{finalizarCompetencia}{c: Competencia, posiciones: [Atleta], control: [(Atleta, \bool)]}{}
-\modifica{c}
-\asegura{categoria(c)==categoria(pre(c))}
-\asegura{participantes(c)==participantes(pre(c))}
-\asegura{finalizada(c)}
-\asegura{ranking(c)==posiciones}
-\asegura{mismos([prm(d)|d \leftarrow control], lesTocoControlAntiDoping(c))}
-\asegura{(\forall x \leftarrow control), lesDioPositivo(c,prm(x)) == sgd(x)}
-\end{problema}
-
-\item
-\begin{problema}{linfordChristie}{c: Competencia, a: Atleta}{}
-\requiere{finalizada(c)==\False}
-\requiere{en(a,participantes(c))}
-\modifica{c}
-\asegura{categoria(c) == categoria(pre(c))}
-\asegura{atletaNoPertenece(a,participantes(c))}
-\asegura{long(participantes(c))==long(participantes(pre(c))-1}
-\asegura{mismos(a:participantes(c),participantes(pre(c)))}
-\end{problema}
-
-\item
-\begin{problema}{gananLosMasCapaces}{c: Competencia}{\bool}
-\requiere{finalizada(c)==\True}
-\requiere{\mid ranking(c)\mid  > 1}
-\asegura{Result == masCapaces(c)}
-\end{problema}
-
-\item
-\begin{problema}{sancionarTramposos}{c: Competencia}{}
-\modifica{c}
-\asegura{categoria(c)==categoria(pre(c))}
-\asegura{finalizada(c)}
-\asegura{participantes(c)==participantes(pre(c))}
-\asegura{lesTocoControlAntiDoping(c) == lesTocoControlAntiDoping(pre(c))}
-\asegura{leDioPositivo(c,a)==leDioPositivo(pre(c),pre(a))}
-\asegura{ranking(c)==borrarPositivos(pre(c))}
-\end{problema}
-
-\item
-\begin{problema}{dePaseo}{j: JJOO}{[Atleta]}
-\requiere{cantDias(j) \geq 1}
-\requiere{|atletas(j)| > 0}
-\asegura{result == [x |y \leftarrow cantDias(j), k \leftarrow cronograma(j,y), x \leftarrow atletas(j),x\notin participantes(k)]}
-\end{problema}
-
-\item
-\begin{problema}{medallero}{j: JJOO}{[(Pa\'{i}s, [\ent])]}
-\asegura{(\forall p \selec result, algunaMedalla(sgd(p)))}
-\asegura{(\forall p \selec result, |sgd(p)| == 3 )}
-\asegura{(\forall x \selec [0..|result|-1), mejoresOIgualesMedallas(sgd(result_x),sgd(result_x_+_1)) )}
-\end{problema}
-
-\item
-\begin{problema}{boicotPorDisciplina}{j: JJOO, cat: (Deporte, Sexo), p: Pa\'{i}s }{\ent}
-\requiere{long(atletas(j))>0}
-% \requiere{(\exists a \in atletasEnCategoria(j,cat,p)) nacionalidad(a) == p}
-% \requiere{(\exists c \in competencias(j)) categoria(c) == cat} % Requiere que exista la categoria (Deporte,Sexo) en todas las competencias
-\modifica{j}
-\asegura{año(j)== año(pre(j))}
-\asegura{cantDias(j)== cantDias(pre(j))}
-\asegura{cronograma(j)== cronograma(pre(j))}
-\asegura{jornadaactual(j)== jornadaactual(pre(j))}
-\asegura{(\forall a \in atletasEnCategoria(j,cat,p)) a \notin atletas(j)}
-\asegura{ result == |atletasEnCategoria(j,cat,p)|}
-\end{problema}
-
-\item
-\begin{problema}{losMasFracasados}{j: JJOO, p: Pa\'{i}s }{[Atleta]}
-
-\asegura{ordenada(sgd(atletasYCompetencias(j,p)))}
-\asegura{atletasFracasados(j,p)}
-
-\aux{atletasDelPais}{j:JJOO, p: Pa\'{i}s }{[Atleta]}{ [x | x \leftarrow atletas(j), nacionalidad(x)==p] }
-
-\aux{atletasYCompetencias}{j:JJOO, p: Pa\'{i}s}{[(Atleta,\ent)]}{[(x, y)|x \leftarrow atletasDelPais(j,p),y \leftarrow long([z_i | h \leftarrow [1..cantDias(j)], z \leftarrow cronograma(j,h), i\leftarrow [0..|z|-1],k \leftarrow [3..|z|-1], alguno(x == participantes(z_i)) \wedge alguno(ranking(z_i)_k == x)])]}
-
-\aux{atletasFracasados}{j:JJOO, p: Pa\'{i}s}{[Atleta]}{[x | (x,y) \leftarrow atletasYCompetencias(j,p),\\ 
-y == sgd(atletasYCompetencias(j,p)_|_a_t_l_e_t_a_s_Y_C_o_m_p_e_t_e_n_c_i_a_s_(_j_,_p_)_|_-_1 )]}
-
-\end{problema}
-
-\item
-\begin{problema}{liuSong}{j: JJOO, a: Atleta, p: Pa\'{i}s }{}
-\requiere{a \in atletas(pre(j))}
-\modifica{a,j}
-\asegura{nombre(a)==nombre(pre(a))}
-\asegura{sexo(a)==sexo(pre(a))}
-\asegura{añoNacimiento(a)==añoNacimiento(pre(a))}
-\asegura{ciaNumber(a)==ciaNumber(pre(a))}
-\asegura{depores(a)==deportes(pre(a))}
-\asegura{nacionalidad(a)==p}
-\asegura{año(j)==año(pre(j))}
-\asegura{cantDias(j)==cantDias(pre(j))}
-\asegura{cronograma(j)==cronograma(pre(j))}
-\asegura{jornadaActual(j)==jornadaActual(pre(j))}
-\asegura{|atletas(j)|==|atletas(pre(j))|}
-\aux{quitarAtleta}{j:JJOO,a:Atleta}{[Atleta]}{[x | x \leftarrow atletas(j), x\not= a]}
-\asegura {atletas(j)==(quitarAtleta(pre(j),pre(a)):a)}
-\end{problema}
-
-\item
-\begin{problema}{stevenBradbury}{j: JJOO}{Atleta}
-\requiere{ (\exists dia \in [1...cantDias(j)], cron \in cronograma(j,dia), comp \in cron) finalizada(comp)} % Requiero que haya alguna competencia del cronograma de algun dia finalizada
-\asegura{ (\exists dia \in [1...cantDias(j)], cron \in cronograma(j,dia), comp \in cron) result == ranking(comp)_0 } % Aseguro que ese atleta gano un ORO
-\asegura{ (\forall a \in atletas(j), a \neq result) capacidad(result) \leq capacidad(a) } % Aseguro que es el menos capaz
-\end{problema}
-
-\item
-\begin{problema}{uyOrdenadoAs\'{i}HayUnPatr\'{o}n}{j: JJOO}{\bool}
-\aux{mejoresAtletas}{j:JJOO}{[Atleta]}{ [ ranking(c)_0 | c \in competenciasFinalizadas(j) ] }
-\aux{paisesConRepetidos}{j: JJOO}{[Pais]}{ [ nacionalidad(a) | a \in atletas(j) ] }
-\aux{orosPorPais}{l:[Atleta]}{\ent}{ [ l |  ] }
-\end{problema}
-
-\item
-\begin{problema}{sequ\'{i}aOl\'{i}mpica}{j: JJOO}{[Pa\'{i}s]}
-\aux{todosLosPaises}{J:JJOO}{[Pa\'{i}s]}{[nacionalidad(x)| x \leftarrow atletas(j)]}
-\asegura{sinRepetidos(todosLosPaises(j))}
-
-\end{problema}
-
-\item
-\begin{problema}{transcurrirDia}{j: JJOO}{}
-\end{problema}
-
-\end{itemize}
-
+\end{enumerate}
 
 \newpage
 
@@ -204,19 +78,6 @@ y == sgd(atletasYCompetencias(j,p)_|_a_t_l_e_t_a_s_Y_C_o_m_p_e_t_e_n_c_i_a_s_(_j
 \section{Auxiliares}
 
 \input{auxiliaresTipos.tex}
-
-\section{Aclaraciones}
-
-\begin{enumerate}
-\item
-En el ejercicio 4 requerimos que el ranking sea mayor a uno ya que 
-sino no quedaria sin efecto la funcion auxiliar ya que de esta manera 
-no se podrian comparar los atletas porque habria uno solo.
-
-\item
-En el ejercicio 7, en caso de empate en medallas de oro, se compara las medallas de plata, si siguen siendo las mismas, se compara las medallas de bronce. En caso de tener las 3 medallas iguales se considera mejor al primero que se comparo.
-\end{enumerate}
-
 
 
 \end{document}

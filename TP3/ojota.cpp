@@ -9,14 +9,10 @@ using namespace std;
 Atleta atletaProdigio(const JJOO & j)
 {
     int i = 0;
-    Atleta a;
+    int n = j.competenciasFinalizadasConOroEnPodio().longitud();
+	Atleta a = j.competenciasFinalizadasConOroEnPodio().iesimo(0).ranking().iesimo(0);
 
-    if(j.competenciasFinalizadasConOroEnPodio().longitud()>0)
-        {
-            //
-            a = j.competenciasFinalizadasConOroEnPodio().iesimo(0).ranking().iesimo(0);
-        }
-    while(i< j.competenciasFinalizadasConOroEnPodio().longitud())
+    while(i< n)
     {
             if(a.anioNacimiento()< j.competenciasFinalizadasConOroEnPodio().iesimo(i).ranking().iesimo(0).anioNacimiento())
             {

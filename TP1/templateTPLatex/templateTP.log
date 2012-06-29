@@ -1,23 +1,14 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.4.9)  14 MAY 2012 14:19
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.11.21)  18 JUN 2012 17:45
 entering extended mode
+ %&-line parsing enabled.
 **templateTP.tex
-
-(C:\Users\nicolas.lasso\Borbotones3\Borbotones\TP1\templateTPLatex\templateTP.t
-ex
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
-abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
-croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
-vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
-an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
-romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
-sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
-senglishmax, welsh, loaded.
-("C:\Program Files (x86)\New folder\tex\latex\base\article.cls"
+(./templateTP.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, spanish, galician, catalan, loaded.
+(/usr/share/texmf-texlive/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files (x86)\New folder\tex\latex\base\size10.clo"
+(/usr/share/texmf-texlive/tex/latex/base/size10.clo
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -32,20 +23,14 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files (x86)\New folder\tex\generic\babel\babel.sty"
-Package: babel 2008/07/08 v3.8m The Babel package
+(/usr/share/texmf-texlive/tex/generic/babel/babel.sty
+Package: babel 2008/07/06 v3.8l The Babel package
 
-*************************************
-* Local config file bblopts.cfg used
-*
-("C:\Program Files (x86)\New folder\tex\latex\00miktex\bblopts.cfg"
-File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
-)
-("C:\Program Files (x86)\New folder\tex\generic\babel\spanish.ldf"
+(/usr/share/texmf-texlive/tex/generic/babel/spanish.ldf
 Language: spanish.ldf 2009/01/02 v5.0h Spanish support from the babel system
 
-("C:\Program Files (x86)\New folder\tex\generic\babel\babel.def"
-File: babel.def 2008/07/08 v3.8m Babel common definitions
+(/usr/share/texmf-texlive/tex/generic/babel/babel.def
+File: babel.def 2008/07/06 v3.8l Babel common definitions
 \babel@savecnt=\count87
 \U@D=\dimen103
 )
@@ -57,19 +42,19 @@ Package babel Info: Making . an active character on input line 585.
 Package babel Info: Making < an active character on input line 630.
 Package babel Info: Making > an active character on input line 630.
 ))
-("C:\Program Files (x86)\New folder\tex\latex\base\inputenc.sty"
+(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 
-("C:\Program Files (x86)\New folder\tex\latex\base\utf8.def"
+(/usr/share/texmf-texlive/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-("C:\Program Files (x86)\New folder\tex\latex\base\t1enc.dfu"
+(/usr/share/texmf-texlive/tex/latex/base/t1enc.dfu
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -219,7 +204,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-("C:\Program Files (x86)\New folder\tex\latex\base\ot1enc.dfu"
+(/usr/share/texmf-texlive/tex/latex/base/ot1enc.dfu
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -250,7 +235,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-("C:\Program Files (x86)\New folder\tex\latex\base\omsenc.dfu"
+(/usr/share/texmf-texlive/tex/latex/base/omsenc.dfu
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -273,18 +258,18 @@ Now handling font encoding U ...
    defining Unicode char U+2026 (decimal 8230)
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
-))
-(C:\Users\nicolas.lasso\Borbotones3\Borbotones\TP1\templateTPLatex\caratula.sty
+)) (./caratula.sty
 Package: caratula 2003/4/13 v0.1 Para componer caratulas de TPs del DC
+
 Cargando package 'caratula' v0.2 (21/4/2003)
 \intlist=\toks17
-) ("C:\Program Files (x86)\New folder\tex\latex\tools\verbatim.sty"
+) (/usr/share/texmf-texlive/tex/latex/tools/verbatim.sty
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks18
 \verbatim@line=\toks19
 \verbatim@in@stream=\read1
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+(/usr/share/texmf-texlive/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip43
 \f@ncyO@elh=\skip44
 \f@ncyO@erh=\skip45
@@ -294,15 +279,14 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \f@ncyO@erf=\skip49
 \f@ncyO@olf=\skip50
 \f@ncyO@orf=\skip51
-)
-(C:\Users\nicolas.lasso\Borbotones3\Borbotones\TP1\templateTPLatex\macrosAlgo1.
-tex ("C:\Program Files (x86)\New folder\tex\latex\base\ifthen.sty"
+) (./macrosAlgo1.tex
+(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-("C:\Program Files (x86)\New folder\tex\latex\amsfonts\amssymb.sty"
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2009/06/22 v3.00
 
-("C:\Program Files (x86)\New folder\tex\latex\amsfonts\amsfonts.sty"
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \@emptytoks=\toks20
 \symAMSa=\mathgroup4
@@ -310,8 +294,8 @@ Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
-("C:\Program Files (x86)\New folder\tex\latex\tools\multicol.sty"
-Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
+(/usr/share/texmf-texlive/tex/latex/tools/multicol.sty
+Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
 \c@tracingmulticols=\count90
 \mult@box=\box26
 \multicol@leftmargin=\dimen104
@@ -356,175 +340,28 @@ Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
 \multicolundershoot=\dimen111
 \mult@nat@firstbox=\box50
 \colbreak@box=\box51
-\multicol@sort@counter=\count98
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\textpos\textpos.sty"
-Package: textpos 2010/09/30 v1.7g
 
-Package: `textpos' 1.7g <2010 September 30>
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ms\everyshi.sty"
-Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
-)
-\TP@textbox=\box52
-\TP@holdbox=\box53
-\TPHorizModule=\dimen112
-\TPVertModule=\dimen113
-\TP@margin=\dimen114
-\TP@absmargin=\dimen115
+! LaTeX Error: File `textpos.sty' not found.
 
-Grid set 16 x 16 = 37.34424pt x 52.81541pt
-\TPboxrulesize=\dimen116
-\TP@ox=\dimen117
-\TP@oy=\dimen118
-\TP@tbargs=\toks21
-\TP@prevdepth=\dimen119
-TextBlockOrigin set to 0pt x 0pt
-) ("C:\Program Files (x86)\New folder\tex\latex\geometry\geometry.sty"
-Package: geometry 2010/09/12 v5.6 Page Geometry
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
 
-("C:\Program Files (x86)\New folder\tex\latex\graphics\keyval.sty"
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks22
-)
-("C:\Program Files (x86)\New folder\tex\generic\oberdiek\ifpdf.sty"
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-)
-("C:\Program Files (x86)\New folder\tex\generic\oberdiek\ifvtex.sty"
-Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
-Package ifvtex Info: VTeX not detected.
-)
-("C:\Program Files (x86)\New folder\tex\generic\ifxetex\ifxetex.sty"
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-)
-\Gm@cnth=\count99
-\Gm@cntv=\count100
-\c@Gm@tempcnt=\count101
-\Gm@bindingoffset=\dimen120
-\Gm@wd@mp=\dimen121
-\Gm@odd@mp=\dimen122
-\Gm@even@mp=\dimen123
-\Gm@layoutwidth=\dimen124
-\Gm@layoutheight=\dimen125
-\Gm@layouthoffset=\dimen126
-\Gm@layoutvoffset=\dimen127
-\Gm@dimlist=\toks23
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.6 ^^M
+       
+*** (cannot \read from terminal in nonstop modes)
 
-("C:\Program Files (x86)\New folder\tex\latex\geometry\geometry.cfg"))
-("C:\Program Files (x86)\New folder\tex\latex\graphics\color.sty"
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
-LaTeX Info: Redefining \color on input line 76.
-
-("C:\Program Files (x86)\New folder\tex\latex\00miktex\color.cfg"
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
-)
-Package color Info: Driver file: pdftex.def on input line 130.
-
-("C:\Program Files (x86)\New folder\tex\latex\pdftex-def\pdftex.def"
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-("C:\Program Files (x86)\New folder\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
-)
-("C:\Program Files (x86)\New folder\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count102
-))
-\c@consigna=\count103
-)
-(C:\Users\nicolas.lasso\Borbotones3\Borbotones\TP1\templateTPLatex\templateTP.a
-ux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
- ABD: EveryShipout initializing macros
-*geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
-*geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
-* paper: a4paper
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(28.45274pt, 540.60239pt, 28.45274pt)
-* v-part:(T,H,B)=(28.45274pt, 759.6886pt, 56.9055pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=540.60239pt
-* \textheight=759.6886pt
-* \oddsidemargin=-43.81725pt
-* \evensidemargin=-43.81725pt
-* \topmargin=-80.81725pt
-* \headheight=12.0pt
-* \headsep=25.0pt
-* \topskip=10.0pt
-* \footskip=30.0pt
-* \marginparwidth=57.0pt
-* \marginparsep=11.0pt
-* \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count104
-\scratchdimen=\dimen128
-\scratchbox=\box54
-\nofMPsegments=\count105
-\nofMParguments=\count106
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count107
-\MPscratchDim=\dimen129
-\MPnumerator=\count108
-\makeMPintoPDFobject=\count109
-\everyMPtoPDFconversion=\toks25
-)
-LaTeX Font Info:    Try loading font information for U+msa on input line 33.
- ("C:\Program Files (x86)\New folder\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 33.
-
-("C:\Program Files (x86)\New folder\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) [1
-
-{C:/Users/nicolas.lasso/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(C:\Users\nicolas.lasso\Borbotones3\Borbotones\TP1\templateTPLatex\templateTP.a
-ux) ) 
+ 
 Here is how much of TeX's memory you used:
- 3104 strings out of 494045
- 40083 string characters out of 3145946
- 106154 words of memory out of 3000000
- 6362 multiletter control sequences out of 15000+200000
- 7324 words of font info for 29 fonts, out of 3000000 for 9000
- 715 hyphenation exceptions out of 8191
- 27i,7n,43p,224b,187s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/New folder/fonts/type1/public/amsfonts/cm/cmbx10.p
-fb><C:/Program Files (x86)/New folder/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-><C:/Program Files (x86)/New folder/fonts/type1/public/amsfonts/cm/cmr10.pfb><C
-:/Program Files (x86)/New folder/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/P
-rogram Files (x86)/New folder/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on templateTP.pdf (1 page, 68676 bytes).
-PDF statistics:
- 26 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 1535 strings out of 494999
+ 17397 string characters out of 1180815
+ 68821 words of memory out of 3000000
+ 4759 multiletter control sequences out of 15000+50000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 54 hyphenation exceptions out of 8191
+ 25i,0n,43p,224b,38s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!
