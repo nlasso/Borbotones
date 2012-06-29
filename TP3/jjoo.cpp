@@ -41,14 +41,14 @@ int JJOO::jornadaActual() const
 
 Lista<Competencia> JJOO::cronograma(const int dia) const
 {
-    return this->_competenciasPorDia.iesimo(dia-1);
+    return _competenciasPorDia.iesimo(dia-1);
 }
 
 Lista<Competencia> JJOO::competencias() const
 {
     Lista <Competencia> todasLasCompetencias = Lista <Competencia>();
-    int i = 0;
-    while(i< this->cantDias())
+    int i = 1;
+    while(i<= this->cantDias())
     {
         todasLasCompetencias.concatenar(this->_competenciasPorDia.iesimo(i));
         i++;
@@ -62,21 +62,17 @@ Lista<Competencia> JJOO::competenciasFinalizadasConOroEnPodio() const
     int j=0;
     Lista <Competencia> compXdia= Lista <Competencia>();
     Lista <Competencia> todasLasCompetenciasFinalizadasConOro = Lista <Competencia>();
-    while( j< this->_competenciasPorDia.longitud())
+    while( j< _competenciasPorDia.longitud())
     {
-        compXdia = this->_competenciasPorDia.iesimo(j);
+        compXdia = _competenciasPorDia.iesimo(j);
         h = 0;
         while(h< compXdia.longitud())
         {
             if (compXdia.iesimo(h).finalizada() == true && compXdia.iesimo(h).ranking().longitud()>0)
             {
                 todasLasCompetenciasFinalizadasConOro.agregar(compXdia.iesimo(h));
-                h++;
             }
-            else
-            {
-                h++;
-            }
+            h++;
         }
         j++;
     }
@@ -128,8 +124,8 @@ Lista<pair<Pais,Lista<int> > > JJOO::medallero() const
     Lista <pair <Pais,Lista<int> > > elMedalleroOrdenado = Lista <pair <Pais,Lista <int> > >();
 
     //obtengo a los paises oro plata y bronce
-    j =0;
-    while( j< this->cantDias())
+    j =1;
+    while( j<= this->cantDias())
     {
         compXdia = this->cronograma(j);
         h = 0;
@@ -289,7 +285,7 @@ Lista<Atleta> JJOO::losMasFracasados(const Pais p) const
 {
     int i=0;
     int h=0;
-    int j=0;
+    int j=1;
     Lista <Competencia> compXdia= Lista <Competencia>();
     Competencia comp;
     Atleta a;
@@ -305,14 +301,10 @@ Lista<Atleta> JJOO::losMasFracasados(const Pais p) const
         if(this->_atletas.iesimo(i).nacionalidad() == p)
         {
             atletasDelPais.agregar(this->_atletas.iesimo(i));
-            i++;
         }
-        else
-        {
-            i++;
-        }
+        i++;
     }
-    while( j< this->cantDias()) // saco todos los participantes del jjoo
+    while( j<= this->cantDias()) // saco todos los participantes del jjoo
     {
         compXdia = this->cronograma(j);
         h = 0;
@@ -341,27 +333,19 @@ Lista<Atleta> JJOO::losMasFracasados(const Pais p) const
     while(i<listaDeAtletas.longitud()) // obtengo a los fracasados que participaron mas y no ganaron nada
     {
         a = listaDeAtletas.iesimo(i);
-        j=0;
-        while( j< this->cantDias())
+        j=1;
+        while( j<= this->cantDias())
         {
             compXdia = this->cronograma(j);
             h = 0;
             while(h< compXdia.longitud())
             {
                 comp = compXdia.iesimo(h);
-                if(comp.participantes().pertenece(a)== true)
-                {
-                   if(!(a== comp.ranking().iesimo(0) && a== comp.ranking().iesimo(1) && a== comp.ranking().iesimo(2)))
+                    if(comp.participantes().pertenece(a) && comp.finalizada() && !((comp.ranking().longitud()>0 && a== comp.ranking().iesimo(0)) || (comp.ranking().longitud()>1 && a== comp.ranking().iesimo(1)) || (comp.ranking().longitud()>2 && a== comp.ranking().iesimo(2))))
                     {
                         participaronMuchoYNoGanaronNada.agregar(a);
                     }
-                    h++;
-                }
-                else
-                {
-                    h++;
-                }
-
+                h++;
             }
         j++;
         }
@@ -438,7 +422,7 @@ void JJOO::liuSong(const Atleta& a, const Pais p)
                     Competencia compConLiuCambiada(comp.categoria().first, comp.categoria().second, atletaSacandoALiu);
                     if(comp.finalizada()== true) // SI ESTA FINALIZADA ARMO LAS LISTAS PARA FINALIZARLA
                     {
-                        atletasDelRanking = comp.participantes();
+                        atletasDelRanking = comp.ranking();
                         losDelRanking = atCia(atletasDelRanking);
                         atletasDelRanking = Lista<Atleta>();
                         i =0;
@@ -537,8 +521,8 @@ bool JJOO::uyOrdenadoAsiHayUnPatron() const
     Lista <Pais> listaPatron = Lista<Pais>();
     bool terminarCiclo;
     bool hayPatron;
-    i=0;
-    while(i< this->cantDias())
+    i=1;
+    while(i<= this->cantDias())
     {
         compXdia = Lista<Competencia>();
         compXdia = this->cronograma(i);
@@ -656,13 +640,14 @@ Lista<Pais> JJOO::sequiaOlimpica() const
 
 bool JJOO::operator==(const JJOO& j) const
 {
+    Competencia comp;
     bool res = true;
-    int dias = 0;
-    if(this->_anio == j._anio && this->_jornadaActual == j._jornadaActual && this->cantDias()==j.cantDias() && mismos(this->_atletas,j._atletas)){
+    int dias = 1;
+    if(_anio == j._anio && _jornadaActual == j._jornadaActual && cantDias()==j.cantDias() && mismos(_atletas,j._atletas)){
         dias = this->cantDias();
         bool sonMismos = true;
         while(dias > 0 && sonMismos){
-            if(!mismos(this->_competenciasPorDia.iesimo(dias),j._competenciasPorDia.iesimo(dias))){
+            if(!mismos(this->cronograma(dias),j.cronograma(dias))){
                 sonMismos = false;
                 res = false;
             }
@@ -681,7 +666,7 @@ void JJOO::mostrar(std::ostream& os) const
     os << "J " << this->anio() << " " << this->jornadaActual() << endl;
     os << "[(";
     int i = 0;
-    int j = 0;
+    int j = 1;
     int h = 0;
     Competencia comp;
     Atleta a;
@@ -704,7 +689,7 @@ void JJOO::mostrar(std::ostream& os) const
     }
     os << "]" << endl;
     os << "[";
-    while( j< this->cantDias())
+    while( j<= this->cantDias())
     {
         os << "[";
         compXdia = this->cronograma(j);
@@ -762,7 +747,7 @@ void JJOO::cargar (std::istream& is)
     while(c == '(')
     {
     a.cargar(is) ;
-    this->_atletas.agregar(a);
+    this->_atletas.agregarAtras()(a);
     is >> c; // saco parentesis q cierra
     is >> c; // saco coma o corchete q cierra
     if (c == ',')
@@ -771,7 +756,6 @@ void JJOO::cargar (std::istream& is)
     }
 
     }
-    _atletas.darVuelta();
     is >> c; // saco corchete
     is >> c; // saco corchete
     while(c=='[')
@@ -796,13 +780,13 @@ void JJOO::cargar (std::istream& is)
         is >> c; //saco la coma
         is >> c;
 
-        _competenciasPorDia.agregar(listComp);
+        _competenciasPorDia.agregarAtras(listComp);
 
         listComp= Lista<Competencia>();
 
     }
 
-    _competenciasPorDia.darVuelta();
+
 
 }
 
@@ -831,11 +815,11 @@ Lista<pair <Atleta,pair <Deporte,Sexo> > > JJOO::ganadoresPorCategoria() const
     Lista<pair <Atleta,pair <Deporte,Sexo> > > ganadoresPorCat = Lista<pair <Atleta,pair <Deporte,Sexo> > >();
 
     // Recorro las jornadas
-    while(dia < this->_competenciasPorDia.longitud()){
+    while(dia < _competenciasPorDia.longitud()){
 
         // Recorro las competencias del dia
         c = 0;
-        competenciasList = this->_competenciasPorDia.iesimo(dia);
+        competenciasList = _competenciasPorDia.iesimo(dia);
         while(c < competenciasList.longitud()){
 
             if(competenciasList.iesimo(c).finalizada() && competenciasList.iesimo(c).ranking().longitud() > 0){
@@ -1061,10 +1045,10 @@ int JJOO::masDiasSinMedallas(const Pais p) const
     int dia = (this->jornadaActual());
     Lista<int> diasSinMedallas = Lista<int>();
     diasSinMedallas.agregar(this->jornadaActual());
-    dia = dia - 2;
-    while(dia >= 0){
+    dia = dia - 1;
+    while(dia > 0){
         if(this->ganoMedallaEseDia(this->cronograma(dia),p)){
-            diasSinMedallas.agregar(dia+1);
+            diasSinMedallas.agregar(dia);
         }
         dia--;
     }
