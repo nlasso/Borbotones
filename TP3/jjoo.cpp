@@ -519,7 +519,6 @@ bool JJOO::uyOrdenadoAsiHayUnPatron() const
     Lista<pair<Pais,int> > paisEnTupla =Lista<pair<Pais,int> >();
     Competencia comp;
     Lista <Pais> listaPatron = Lista<Pais>();
-    bool terminarCiclo;
     bool hayPatron;
     i=1;
     while(i<= this->cantDias())
@@ -585,12 +584,12 @@ bool JJOO::uyOrdenadoAsiHayUnPatron() const
     i=0;
     j=0;
     listaPatron.darVuelta();
-    while(i<mejoresPaisesDeCadaDia.longitud() && !terminarCiclo)
+    while(i<mejoresPaisesDeCadaDia.longitud())
     {
         if(listaPatron.longitud() == mejoresPaisesDeCadaDia.longitud()) // si son iguales las long significa q no encontro igualdad x ende true
         {
             hayPatron = true;
-            terminarCiclo = true;
+            i++;
         }
         else
         {
@@ -611,7 +610,7 @@ bool JJOO::uyOrdenadoAsiHayUnPatron() const
             else
             {
                 hayPatron = false;
-                terminarCiclo = true;
+                i++;
             }
         }
         }
@@ -640,15 +639,34 @@ Lista<Pais> JJOO::sequiaOlimpica() const
 
 bool JJOO::operator==(const JJOO& j) const
 {
-    Competencia comp;
+    int i = 0;
     bool res = true;
     int dias = 1;
-    if(_anio == j._anio && _jornadaActual == j._jornadaActual && cantDias()==j.cantDias() && mismos(_atletas,j._atletas)){
+    if(_anio == j._anio && _jornadaActual == j._jornadaActual && this->cantDias()==j.cantDias() && j._atletas.longitud() == _atletas.longitud() ){
+
+        // Veo si los atletas son los mismos
+        while(i > 0){
+            if(!j._atletas.pertenece(_atletas.iesimo(i))){
+                res = false;
+            }
+            i--;
+        }
+
         dias = this->cantDias();
-        bool sonMismos = true;
-        while(dias > 0 && sonMismos){
-            if(!mismos(this->cronograma(dias),j.cronograma(dias))){
-                sonMismos = false;
+        while(dias > 0){
+            if(this->cronograma(dias).longitud()== j.cronograma(dias).longitud()){
+                i = 0;
+                while(i<this->cronograma(dias).longitud())
+                {
+                    if(!j.cronograma(dias).pertenece(this->cronograma(dias).iesimo(i)))
+                    {
+                      res = false;
+                    }
+                    i++;
+                }
+            }
+            else
+            {
                 res = false;
             }
             dias--;
@@ -659,6 +677,7 @@ bool JJOO::operator==(const JJOO& j) const
     }
     return res;
 }
+
 
 
 void JJOO::mostrar(std::ostream& os) const
@@ -747,7 +766,7 @@ void JJOO::cargar (std::istream& is)
     while(c == '(')
     {
     a.cargar(is) ;
-    this->_atletas.agregarAtras()(a);
+    this->_atletas.agregarAtras(a);
     is >> c; // saco parentesis q cierra
     is >> c; // saco coma o corchete q cierra
     if (c == ',')

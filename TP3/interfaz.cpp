@@ -518,7 +518,18 @@ void MenuJJOO()
             archivoEntrada.close();
             jjooCreado = true;
             LimpiarPantalla();
+
+            JJOO jjoo2;
+            ifstream archivoEntrada2;
+            AbrirArchivoParaLeer(archivoEntrada2);
+            jjoo2.cargar(archivoEntrada2);
+            archivoEntrada2.close();
+            jjooCreado = true;
+            LimpiarPantalla();
+            if(jjoo==jjoo2)
+            {
             MenuJJOO();
+            }
             break;
         }
         case 3:
