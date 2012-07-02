@@ -234,7 +234,7 @@ void MenuCompetencia()
             << "2. Cargar competencia" << endl;
     if (competenciaCreada)
     {
-        maximaOpcion = 14;
+        maximaOpcion = 15;
         cout << "3. Finalizar competencia" << endl
             << "4. LinfordChristie" << endl
             << "5. ¿Ganan los mas capaces?" << endl
@@ -246,7 +246,8 @@ void MenuCompetencia()
             << "11. Guardar" << endl
             << "12. Mostrar" << endl
             << "13. Participantes" << endl
-            << "14. Categoria" << endl;
+            << "14. Categoria" << endl
+			<< "15. Clasifico tarde" << endl;
     }
 
     int opt = LeerOpcion(maximaOpcion);
@@ -411,6 +412,15 @@ void MenuCompetencia()
             MenuCompetencia();
             break;
         }
+		case 15:
+		{
+			cout << "Ingresando nuevo participante" << endl;
+			Atleta nuevoAtleta = MenuCrearAtleta();
+			competencia.clasificoTarde(nuevoAtleta);
+			LimpiarPantalla();
+			MenuCompetencia();
+			break;
+		}
     }
 }
 
@@ -471,7 +481,7 @@ void MenuJJOO()
             << "2. Cargar JJOO" << endl;
     if (jjooCreado)
     {
-        maximaOpcion = 18;
+        maximaOpcion = 19;
         cout << "3. Transcurrir dia" << endl
             << "4. StevenBradbury" << endl
             << "5. LiuSong" << endl
@@ -487,7 +497,8 @@ void MenuJJOO()
             << "15. Ver Jornada actual" << endl
             << "16. Ver atletas" << endl
             << "17. Cantidad de dias" << endl
-            << "18. Atleta Prodigio" << endl;
+            << "18. Atleta Prodigio" << endl
+			<< "19. Deportes no olimpicos" << endl;
     }
 
     int opt = LeerOpcion(maximaOpcion);
@@ -518,18 +529,7 @@ void MenuJJOO()
             archivoEntrada.close();
             jjooCreado = true;
             LimpiarPantalla();
-
-            JJOO jjoo2;
-            ifstream archivoEntrada2;
-            AbrirArchivoParaLeer(archivoEntrada2);
-            jjoo2.cargar(archivoEntrada2);
-            archivoEntrada2.close();
-            jjooCreado = true;
-            LimpiarPantalla();
-            if(jjoo==jjoo2)
-            {
             MenuJJOO();
-            }
             break;
         }
         case 3:
@@ -706,6 +706,17 @@ void MenuJJOO()
             MenuJJOO();
             break;
         }
+		case 19:
+		{
+			cout << "Deportes no olimpicos" << endl;
+			Lista<Deporte> deportes = jjoo.deportesNoOlimpicos();
+			cout << "[ ";
+			for(int i = 0; i < deportes.longitud(); i++)
+			{
+				cout << deportes.iesimo(i) << " ";
+			}
+			cout << "]";
+		}
     }
 }
 

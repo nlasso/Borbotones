@@ -159,6 +159,11 @@ void Competencia::sancionarTramposos()
 
 }
 
+void Competencia::clasificoTarde(const Atleta& a){
+
+
+}
+
 
 bool Competencia::operator==(const Competencia& c) const
 {

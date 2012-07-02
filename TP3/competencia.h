@@ -21,6 +21,7 @@ class Competencia{
         void linfordChristie(const int ciaNum);
         bool gananLosMasCapaces() const;
         void sancionarTramposos();
+        void clasificoTarde(const Atleta& a);
 
         bool operator==(const Competencia& c) const;
 

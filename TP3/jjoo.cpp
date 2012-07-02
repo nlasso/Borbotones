@@ -637,6 +637,60 @@ Lista<Pais> JJOO::sequiaOlimpica() const
     return paisesSecos;
 }
 
+Lista<Deporte> JJOO::deportesNoOlimpicos() const
+{
+        int i = 0;
+        int j = 0;
+        int c = 0;
+        int dia = 1;
+        Lista<Deporte> deportesNoOlim = Lista<Deporte>();
+        Lista<Deporte> deportesComp = Lista<Deporte>();
+        Deporte dep;
+
+        // Obtengo los deportes de las competencias
+        while(dia <= cantDias()){
+
+            c = 0;
+            while(c < cronograma(dia).longitud()){
+
+                dep = cronograma(dia).iesimo(c).categoria().first;
+
+                if( !deportesComp.pertenece(dep)){
+                    deportesComp.agregar(dep);
+                }
+
+                c++;
+            }
+
+            dia++;
+        }
+
+        // Recorro los atletas
+        while(i < atletas().longitud()){
+
+            // Recorro sus deportes
+            j = 0;
+            while(j < atletas().iesimo(i).deportes().longitud()){
+
+                // Deporte en cuestion
+                dep = atletas().iesimo(i).deportes().iesimo(j);
+
+                // Si el deporte no esta agregado a la lista de deportes no olimpicos
+                // y no se encuentra en los deportes de las competencias lo agrego
+                if( !deportesNoOlim.pertenece(dep) && !deportesComp.pertenece(dep) ){
+                    deportesNoOlim.agregar(dep);
+                }
+
+                j++;
+
+            }
+
+            i++;
+        }
+
+        return deportesNoOlim;
+}
+
 bool JJOO::operator==(const JJOO& j) const
 {
     int i = 0;

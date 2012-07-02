@@ -30,6 +30,7 @@ class JJOO{
         bool uyOrdenadoAsiHayUnPatron() const;
         Lista<Pais> sequiaOlimpica() const;
         void transcurrirDia();
+        Lista<Deporte> deportesNoOlimpicos() const;
 
 		bool operator==(const JJOO& j) const;
 
