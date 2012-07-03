@@ -12,10 +12,7 @@ Competencia::Competencia()
 
 Competencia::Competencia(const Deporte d, const Sexo s, const Lista<Atleta>& participantes)
 {
-    pair<Deporte,Sexo> cat = pair <Deporte,Sexo>();
-    cat.first = d;
-    cat.second = s;
-    this->_categoria = cat;
+    _categoria= pair <Deporte,Sexo>(d,s);
     this->_participantes = participantes;
     this->_finalizada = false;
     this->_ranking = Lista<int>();
@@ -115,15 +112,13 @@ bool Competencia::gananLosMasCapaces() const
     bool res = true;
     Lista<Atleta> rank = this->ranking();
     Deporte dep = this->categoria().first;
-    bool terminarCiclo = false;
 
-    while(rank.longitud() > 1 && !terminarCiclo){
+    while(rank.longitud() > 1 ){
         int capacidad1 = rank.iesimo(0).capacidad(dep);
         rank.sacar(rank.iesimo(0));
         int capacidad2 = rank.iesimo(0).capacidad(dep);
         if(capacidad1 < capacidad2){
             res = false;
-            terminarCiclo = true;
         }
     }
     return res;
@@ -132,12 +127,10 @@ bool Competencia::gananLosMasCapaces() const
 Atleta buscarAtleta (Lista<Atleta> a, int b){
     int i = 0;
     Atleta miAtleta;
-    bool terminar = false;
 
-    while(i < a.longitud() && !terminar){
+    while(i < a.longitud() ){
         if(b == a.iesimo(i).ciaNumber()){
             miAtleta = a.iesimo(i);
-            terminar = true;
         }
         i++;
     }
@@ -146,13 +139,13 @@ Atleta buscarAtleta (Lista<Atleta> a, int b){
 
 void Competencia::sancionarTramposos()
 {
-    Lista<Atleta> particip = this->participantes();
+    Lista<Atleta> particip = this->ranking();
     Lista<Atleta> dopados = this->lesTocoControlAntidoping();
 
     int i = 0;
     while(i < particip.longitud()){
         if(dopados.pertenece(particip.iesimo(i)) && this->leDioPositivo(particip.iesimo(i))){
-            _participantes.sacar(particip.iesimo(i));
+            _ranking.sacar(_ranking.iesimo(i));
         }
         i++;
     }
@@ -170,8 +163,8 @@ bool Competencia::operator==(const Competencia& c) const
     bool res = true;
 
     // Miro observadores simples para ver la igualdad
-    if(this->categoria() != c.categoria() || this->finalizada() != c.finalizada() || !(this->participantes() == c.participantes())
-       || !(this->ranking() == c.ranking()) || !(this->lesTocoControlAntidoping() == c.lesTocoControlAntidoping()) )
+    if(this->categoria() != c.categoria() || this->finalizada() != c.finalizada() || !mismos(this->participantes(), c.participantes())
+       || !(this->ranking() == c.ranking()) || !mismos(this->lesTocoControlAntidoping(), c.lesTocoControlAntidoping()) )
     {
        res = false;
     }
@@ -393,6 +386,5 @@ void Competencia::cargar (std::istream& is)
 
 
 }
-
 
 

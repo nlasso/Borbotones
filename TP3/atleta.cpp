@@ -4,52 +4,50 @@
 
 Atleta::Atleta()
 {
-    this->_nombre = "Atleta1";
-    this->_sexo = Masculino;
-    this->_anioNacimiento = 1990;
-    this->_nacionalidad = "Argentina";
-    this->_ciaNumber = 2012;
-    Lista<pair<Deporte,int> > depcapvacio;
-    this->_deportes = depcapvacio;
+    _nombre = "Atleta1";
+    _sexo = Masculino;
+    _anioNacimiento = 1990;
+    _nacionalidad = "Argentina";
+    _ciaNumber = 2012;
+    _deportes = Lista<pair<Deporte,int> >();
 }
 
 Atleta::Atleta(const string nombre,const Sexo sexo, const int anio, const Pais pais, const int ciaNumber){
-    this->_nombre = nombre;
-    this->_sexo = sexo;
-    this->_anioNacimiento = anio;
-    this->_nacionalidad = pais;
-    this->_ciaNumber = ciaNumber;
-    Lista<pair<Deporte,int> > depcapvacio;
-    this->_deportes = depcapvacio;
+    _nombre = nombre;
+    _sexo = sexo;
+    _anioNacimiento = anio;
+    _nacionalidad = pais;
+    _ciaNumber = ciaNumber;
+    _deportes = Lista<pair<Deporte,int> >();
 }
 
  string Atleta::nombre() const{
-    return this->_nombre;
+    return _nombre;
  }
 
  Sexo Atleta::sexo() const{
-    return this->_sexo;
+    return _sexo;
  }
 
  int Atleta::anioNacimiento() const{
-    return this->_anioNacimiento;
+    return _anioNacimiento;
  }
 
 Pais Atleta::nacionalidad() const{
-    return this->_nacionalidad;
+    return _nacionalidad;
 }
 
 int Atleta::ciaNumber() const{
-    return this->_ciaNumber;
+    return _ciaNumber;
 }
 
 Lista<Deporte> Atleta::deportes() const{
     int i = 0;
     Lista<Deporte> deportesDelAtleta = Lista <Deporte>();
     pair <Deporte,int> dep = pair <Deporte,int>();
-    while(i< this->_deportes.longitud())
+    while(i< _deportes.longitud())
     {
-            dep = this->_deportes.iesimo(i);
+            dep = _deportes.iesimo(i);
             deportesDelAtleta.agregar(dep.first);
             i++;
     }
@@ -67,16 +65,23 @@ int Atleta::capacidad(const Deporte d)const{
 }
 
 void Atleta::entrenarNuevoDeporte(const Deporte deporte, const int cap){
-    pair <Deporte,int> depcap = pair<Deporte,int>();
+    pair <Deporte,int> depcap = pair<Deporte,int>(deporte, cap);
     Lista<pair<Deporte,int> > listdepcap = Lista<pair<Deporte,int> >();
-    depcap.first = deporte;
-    depcap.second = cap;
     if (!deportes().pertenece(deporte)){
-        this->_deportes.agregar(depcap);
+        _deportes.agregar(depcap);
+    }else{
+        int i = 0;
+        while(i < _deportes.longitud()){
+            if(depcap.first == _deportes.iesimo(i).first){
+                _deportes.sacar(_deportes.iesimo(i));
+            }
+            i++;
+        }
+        _deportes.agregar(depcap);
     }
     listdepcap = ordenadoDeportes(this->_deportes);
-    this->_deportes = Lista<pair<Deporte,int> >();
-    this->_deportes = listdepcap;
+    _deportes = Lista<pair<Deporte,int> >();
+    _deportes = listdepcap;
 
 }
 
@@ -248,7 +253,7 @@ std::ostream & operator<<(std::ostream & os,const Atleta & a)
     Lista<pair<Deporte,int> > Atleta::ordenadoDeportes(Lista<pair<Deporte,int> > deportescap)
     {
     Lista<pair <Deporte,int> > listadepcap = Lista<pair <Deporte,int> >();
-	pair<Deporte,int> depcap = pair <Deporte,int>();
+	pair<Deporte,int> depcap = pair<Deporte,int>();
 	int p = 0;
 	int i = 0;
 	int j = 0;
@@ -270,7 +275,7 @@ std::ostream & operator<<(std::ostream & os,const Atleta & a)
 					i++;
 				}
 			}
-		listadepcap.agregarAtras(deportescap.iesimo(p));
+		listadepcap.agregar(deportescap.iesimo(p));
 		deportescap.eliminarPosicion(p);
         j = 0;
 		}
