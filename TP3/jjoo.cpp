@@ -50,7 +50,7 @@ Lista<Competencia> JJOO::competencias() const
     int i = 1;
     while(i<= this->cantDias())
     {
-        todasLasCompetencias.concatenar(this->_competenciasPorDia.iesimo(i));
+        todasLasCompetencias.concatenar(this->cronograma(i));
         i++;
     }
     return todasLasCompetencias;
@@ -81,15 +81,15 @@ Lista<Competencia> JJOO::competenciasFinalizadasConOroEnPodio() const
 
 Lista<Atleta> JJOO::dePaseo() const
 {
-    Lista<Competencia> comp = this->competencias();
-    Lista <Atleta> listaDeAtletas = this->atletas();
+    Lista<Competencia> comp = competencias();
+    Lista<Atleta> listaDeAtletas = _atletas;
     int i = 0;
     Lista<Atleta> atletasDePaseo = Lista<Atleta>();
 
     while(i < listaDeAtletas.longitud()){
         bool atletaNoPertenece = true;
         int j = 0;
-        while(j < comp.longitud() && atletaNoPertenece){
+        while(j < comp.longitud()){
             Competencia comp1 = comp.iesimo(j);
             if(comp1.participantes().pertenece(listaDeAtletas.iesimo(i))){
                 atletaNoPertenece = false;
@@ -163,7 +163,7 @@ Lista<pair<Pais,Lista<int> > > JJOO::medallero() const
     paisOroYRep = paisRep(paisOro);
     paisPlataYRep = paisRep(paisPlata);
     paisBronceYRep = paisRep(paisBronce);
-    todosLosPaises = this->paises();
+    todosLosPaises = paises();
     i=0;
     // recorro todos los paises y me fijo si el pais gano algo en caso de ganar medallas las voy concatenando con elMedallero
     while(i<todosLosPaises.longitud())
@@ -699,15 +699,16 @@ bool JJOO::operator==(const JJOO& j) const
     if(_anio == j._anio && _jornadaActual == j._jornadaActual && this->cantDias()==j.cantDias() && j._atletas.longitud() == _atletas.longitud() ){
 
         // Veo si los atletas son los mismos
-        while(i > 0){
+        i = 0;
+        while(i < _atletas.longitud()){
             if(!j._atletas.pertenece(_atletas.iesimo(i))){
                 res = false;
             }
-            i--;
+            i++;
         }
 
-        dias = this->cantDias();
-        while(dias > 0){
+        dias = 1;
+        while(dias <= this->cantDias()){
             if(this->cronograma(dias).longitud()== j.cronograma(dias).longitud()){
                 i = 0;
                 while(i<this->cronograma(dias).longitud())
@@ -723,7 +724,7 @@ bool JJOO::operator==(const JJOO& j) const
             {
                 res = false;
             }
-            dias--;
+            dias++;
         }
     }
     else{

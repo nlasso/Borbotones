@@ -95,12 +95,9 @@ void Competencia::finalizar(const Lista<int>& posiciones, const Lista<pair<int, 
 void Competencia::linfordChristie(const int ciaNum)
 {
     int i = 0;
-    bool loEncontre = false;
-
-    while(i < _participantes.longitud() && !loEncontre){
+    while(i < _participantes.longitud()){
         if(ciaNum == _participantes.iesimo(i).ciaNumber()){
-            _participantes.sacar(_participantes.iesimo(i));
-            loEncontre = true;
+            _participantes.eliminarPosicion(i);
         }
         i++;
     }
@@ -115,7 +112,7 @@ bool Competencia::gananLosMasCapaces() const
 
     while(rank.longitud() > 1 ){
         int capacidad1 = rank.iesimo(0).capacidad(dep);
-        rank.sacar(rank.iesimo(0));
+        rank.eliminarPosicion(0);
         int capacidad2 = rank.iesimo(0).capacidad(dep);
         if(capacidad1 < capacidad2){
             res = false;
@@ -124,7 +121,7 @@ bool Competencia::gananLosMasCapaces() const
     return res;
 }
 
-Atleta buscarAtleta (Lista<Atleta> a, int b){
+Atleta Competencia::buscarAtleta (Lista<Atleta> a, int b){
     int i = 0;
     Atleta miAtleta;
 
@@ -139,16 +136,21 @@ Atleta buscarAtleta (Lista<Atleta> a, int b){
 
 void Competencia::sancionarTramposos()
 {
-    Lista<Atleta> particip = this->ranking();
+    Lista<int> rank = Lista<int>();
     Lista<Atleta> dopados = this->lesTocoControlAntidoping();
 
     int i = 0;
-    while(i < particip.longitud()){
-        if(dopados.pertenece(particip.iesimo(i)) && this->leDioPositivo(particip.iesimo(i))){
-            _ranking.sacar(_ranking.iesimo(i));
+
+    while(i < _ranking.longitud()){
+        Atleta a = this->buscarAtleta(_participantes, _ranking.iesimo(i));
+
+        if(!dopados.pertenece(a) || (dopados.pertenece(a) && !this->leDioPositivo(a))) {
+            rank.agregarAtras(i);
         }
         i++;
     }
+
+    _ranking = rank;
 
 }
 
@@ -160,39 +162,44 @@ void Competencia::clasificoTarde(const Atleta& a){
 bool Competencia::operator==(const Competencia& c) const
 {
     bool res = true;
-
+    int i= 0;
     // Miro observadores simples para ver la igualdad
-    if(this->categoria() != c.categoria() || this->finalizada() != c.finalizada() || !mismos(this->participantes(), c.participantes())
-       || !(this->ranking() == c.ranking()) || !mismos(this->lesTocoControlAntidoping(), c.lesTocoControlAntidoping()) )
+    if(categoria() != c.categoria() || finalizada() != c.finalizada()  || !(_ranking == c._ranking) )
     {
        res = false;
     }
+    if(_participantes.longitud() != c._participantes.longitud())
+    {
+        res = false;
+    }
+    else
+    {        //Veo que los participantes son los mismos
+     i = 0;
+        while(i < _participantes.longitud()){
+            if(!c._participantes.pertenece(_participantes.iesimo(i))){
+                res = false;
+            }
+            i++;
+        }
+    }
+
 
     // Si la lista de lesTocoControlAntidoping es distinta, ya es falsa la igualdad
     if(this->lesTocoControlAntidoping().longitud() != c.lesTocoControlAntidoping().longitud()){
         res = false;
     }else{
 
-        int i = 0;
-
-        // Recorro los que les toco control antidoping para ver si dio el mismo resultado en las 2 competencias
-        while(i < this->lesTocoControlAntidoping().longitud())
-        {
-
-            Atleta a1 = this->lesTocoControlAntidoping().iesimo(i);
-            Atleta a2 = c.lesTocoControlAntidoping().iesimo(i);
-
-            if( this->leDioPositivo(a1) != c.leDioPositivo(a2) ){
+     i = 0;
+        while(i < _controlAntidoping.longitud()){
+            if(!c._controlAntidoping.pertenece(_controlAntidoping.iesimo(i))){
                 res = false;
             }
-
             i++;
         }
 
     }
 
-
-    return res;
+   return res;
 }
 
 void Competencia::mostrar(std::ostream& os) const

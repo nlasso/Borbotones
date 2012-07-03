@@ -22,6 +22,12 @@ Atleta atletaProdigio(const JJOO & j)
     }
     return a;
 }
-
+/*
+int main()
+{
+    MenuPrincipal();
+    return 0;
+}
+*/
 
 

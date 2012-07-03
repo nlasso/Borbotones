@@ -448,10 +448,10 @@ void testJJOO() {
 }
 
 #define RUNTEST(t) { cerr << "Corriendo test " << #t << endl; t (); cerr << "Terminado test " << #t << endl; }
+
 int main() {
   RUNTEST(testAtleta);
    RUNTEST(testCompetencia);
    RUNTEST(testJJOO);
 }
-
 
