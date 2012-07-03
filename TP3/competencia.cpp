@@ -153,8 +153,7 @@ void Competencia::sancionarTramposos()
 }
 
 void Competencia::clasificoTarde(const Atleta& a){
-
-
+    _participantes.agregarAtras(a);
 }
 
 
