@@ -136,22 +136,20 @@ Atleta Competencia::buscarAtleta (Lista<Atleta> a, int b){
 
 void Competencia::sancionarTramposos()
 {
-    Lista<int> rank = Lista<int>();
     Lista<Atleta> dopados = this->lesTocoControlAntidoping();
-
     int i = 0;
 
     while(i < _ranking.longitud()){
         Atleta a = this->buscarAtleta(_participantes, _ranking.iesimo(i));
 
-        if(!dopados.pertenece(a) || (dopados.pertenece(a) && !this->leDioPositivo(a))) {
-            rank.agregarAtras(i);
+        if(dopados.pertenece(a) && this->leDioPositivo(a)){
+            _ranking.sacar(_ranking.iesimo(i));
         }
-        i++;
+        else
+        {
+         i++;
+        }
     }
-
-    _ranking = rank;
-
 }
 
 void Competencia::clasificoTarde(const Atleta& a){
