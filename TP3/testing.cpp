@@ -453,5 +453,7 @@ int main() {
   RUNTEST(testAtleta);
    RUNTEST(testCompetencia);
    RUNTEST(testJJOO);
+
+return 0;
 }
 
