@@ -149,12 +149,8 @@ Lista<pair<Pais,Lista<int> > > JJOO::medallero() const
                     a = comp.ranking().iesimo(2);
                     paisBronce.agregar(a.nacionalidad());
                 }
-                h++;
             }
-            else
-            {
-                h++;
-            }
+            h++;
 
         }
         j++;
@@ -745,10 +741,10 @@ void JJOO::mostrar(std::ostream& os) const
     Competencia comp;
     Atleta a;
     Lista <Competencia> compXdia = Lista<Competencia>();
-    while(i < this->atletas().longitud())
+    while(i < atletas().longitud())
     {
-        a = this->atletas().iesimo(i);
-        if (i < this->atletas().longitud()-1)
+        a = atletas().iesimo(i);
+        if (i < atletas().longitud()-1)
         {
             a.mostrar(os);
             os << "),(";
@@ -763,10 +759,10 @@ void JJOO::mostrar(std::ostream& os) const
     }
     os << "]" << endl;
     os << "[";
-    while( j<= this->cantDias())
+    while( j<= cantDias())
     {
         os << "[";
-        compXdia = this->cronograma(j);
+        compXdia = cronograma(j);
         h = 0;
         while(h< compXdia.longitud())
         {
@@ -786,7 +782,7 @@ void JJOO::mostrar(std::ostream& os) const
                 h++;
             }
         }
-        if(j< this->cantDias()-1)
+        if(j< cantDias()-1)
         {
             os << "],";
             j++;
@@ -1288,7 +1284,7 @@ Lista<int> JJOO::crearRanking(const Lista<Atleta>& participant,const Deporte& d)
         }
         Atleta participanteFinal = particip.iesimo(i);
         int number = participanteFinal.ciaNumber();
-        posiciones.agregar(number);
+        posiciones.agregarAtras(number);
         particip.sacar(participanteFinal);
         j = 1;
         i = 0;

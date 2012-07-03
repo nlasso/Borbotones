@@ -226,12 +226,12 @@ void Competencia::mostrar(std::ostream& os) const
 
         int i = 0;
 
-        while( i < this->participantes().longitud() ){
+        while( i < participantes().longitud() ){
             os << "(";
-            this->participantes().iesimo(i).mostrar(os);
+            participantes().iesimo(i).mostrar(os);
             os << ")";
             //Pongo la coma final si corresponde
-            if( i+1 != this->participantes().longitud() ){ os << ", "; }
+            if( i+1 != participantes().longitud() ){ os << ", "; }
             i++;
         }
 
@@ -243,10 +243,10 @@ void Competencia::mostrar(std::ostream& os) const
 
         i = 0;
 
-        while( i < this->_ranking.longitud() ){
-            os << this->_ranking.iesimo(i);
+        while( i < _ranking.longitud() ){
+            os << _ranking.iesimo(i);
             //Pongo la coma final si corresponde
-            if( i+1 != this->_ranking.longitud() ){ os << ", "; }
+            if( i+1 != _ranking.longitud() ){ os << ", "; }
             i++;
         }
     }
@@ -259,16 +259,16 @@ void Competencia::mostrar(std::ostream& os) const
         i = 0;
         string positivo = "";
 
-        while( i < this->lesTocoControlAntidoping().longitud() ){
-            Atleta at = this->lesTocoControlAntidoping().iesimo(i);
-            if (this->leDioPositivo(at)){
+        while( i < lesTocoControlAntidoping().longitud() ){
+            Atleta at = lesTocoControlAntidoping().iesimo(i);
+            if (leDioPositivo(at)){
                 positivo = "True";
             }else{
                 positivo = "False";
             }
             os << "(" << at.ciaNumber() << ", |" << positivo << "|)";
             //Pongo la coma final si corresponde
-            if( i+1 != this->lesTocoControlAntidoping().longitud() ){ os << ", "; }
+            if( i+1 != lesTocoControlAntidoping().longitud() ){ os << ", "; }
             i++;
         }
 
@@ -294,7 +294,7 @@ void Competencia::cargar (std::istream& is)
     is >> b;
     is >> b;
 
-    getline(is,this->_categoria.first, '|');
+    getline(is,_categoria.first, '|');
 
     is >> b;
     is >> b;
@@ -302,9 +302,9 @@ void Competencia::cargar (std::istream& is)
     getline(is,sex, '|');
 
     if (sex == "Femenino"){
-        this->_categoria.second = Femenino;
+        _categoria.second = Femenino;
     }else{
-        this->_categoria.second = Masculino;
+        _categoria.second = Masculino;
     }
 
     is >> b;
@@ -313,9 +313,9 @@ void Competencia::cargar (std::istream& is)
     getline(is,finalizada, '|');
 
     if (finalizada == "True"){
-        this->_finalizada = true;
+        _finalizada = true;
     }else{
-        this->_finalizada = false;
+        _finalizada = false;
     }
 
     is >> b;
@@ -345,7 +345,7 @@ void Competencia::cargar (std::istream& is)
         if(is.peek() != ']'){
 
             is >> ciaNum;
-            this->_ranking.agregarAtras(ciaNum);
+            _ranking.agregarAtras(ciaNum);
 
         }
 
@@ -373,7 +373,7 @@ void Competencia::cargar (std::istream& is)
             }else{
                 dop.second = false;
             }
-            this->_controlAntidoping.agregarAtras(dop);
+            _controlAntidoping.agregar(dop);
 
             is >> b; // saco ')'
             is >> b; // saco ',' o ']'
@@ -386,7 +386,7 @@ void Competencia::cargar (std::istream& is)
 
        }
 
-       _controlAntidoping.darVuelta();
+
 
 
 }
