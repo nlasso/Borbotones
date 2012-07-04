@@ -488,6 +488,7 @@ Atleta JJOO::stevenBradbury() const
 
         capacidad = atletasPorCapacidad.iesimo(i).second; // Tomo la capacidad del atleta para compararla
 
+            j=0;
         while(j < atletasPorCapacidad.longitud()){
             capacidad2 = atletasPorCapacidad.iesimo(j).second; // Tomo la capacidad del atleta para compararla
 
