@@ -524,7 +524,7 @@ bool JJOO::uyOrdenadoAsiHayUnPatron() const
     Lista<pair<Pais,int> > paisEnTupla =Lista<pair<Pais,int> >();
     Competencia comp;
     Lista <Pais> listaPatron = Lista<Pais>();
-    bool hayPatron;
+    bool hayPatron = true;
     i=1;
     while(i<= this->cantDias())
     {
@@ -538,7 +538,7 @@ bool JJOO::uyOrdenadoAsiHayUnPatron() const
             if(comp.finalizada()==true && comp.ranking().longitud()>0)
             {
                 a = comp.ranking().iesimo(0);
-                paisOro.agregar(a.nacionalidad());
+                paisOro.agregarAtras(a.nacionalidad());
             }
             j++;
         }
@@ -546,12 +546,11 @@ bool JJOO::uyOrdenadoAsiHayUnPatron() const
         {
         paisEnTupla = paisRep(paisOro);
         mejorPaisDelDia = mejorPais(paisEnTupla);
-        mejoresPaisesDeCadaDia.agregar(mejorPaisDelDia);
+        mejoresPaisesDeCadaDia.agregarAtras(mejorPaisDelDia);
         Lista <Pais> paisOro = Lista <Pais>();
         }
         i++;
     }
-    mejoresPaisesDeCadaDia.darVuelta();
     p = mejoresPaisesDeCadaDia.iesimo(0);
     i=1;
     h=1;
@@ -561,12 +560,15 @@ bool JJOO::uyOrdenadoAsiHayUnPatron() const
     {
         if(!(p == mejoresPaisesDeCadaDia.iesimo(i)))
         {
-            h++;
+            if(h==i)
+            {
+                h++;
+            }
             i++;
         }
         else
         {
-            i= mejoresPaisesDeCadaDia.longitud()+1;
+            i++;
         }
     }
     i=0;
@@ -577,18 +579,13 @@ bool JJOO::uyOrdenadoAsiHayUnPatron() const
     {
         if(h>0)
         {
-        listaPatron.agregar(mejoresPaisesDeCadaDia.iesimo(i));
-        i++;
+        listaPatron.agregarAtras(mejoresPaisesDeCadaDia.iesimo(i));
         h--; // h es mi contador de lugares de patron
         }
-        else
-        {
-            i=mejoresPaisesDeCadaDia.longitud();
-        }
+        i++;
     }
     i=0;
     j=0;
-    listaPatron.darVuelta();
     while(i<mejoresPaisesDeCadaDia.longitud())
     {
         if(listaPatron.longitud() == mejoresPaisesDeCadaDia.longitud()) // si son iguales las long significa q no encontro igualdad x ende true
@@ -619,10 +616,6 @@ bool JJOO::uyOrdenadoAsiHayUnPatron() const
             }
         }
         }
-    }
-    if(i==mejoresPaisesDeCadaDia.longitud())
-    {
-        hayPatron = true;
     }
     return hayPatron;
 }
