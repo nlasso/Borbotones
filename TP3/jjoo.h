@@ -62,6 +62,7 @@ class JJOO{
          Pais mejorPais(Lista<pair<Pais,int> >& p) const;
        Lista<pair<Pais,Lista<int> > > ordenarMedallero(Lista<pair<Pais,Lista<int> > >& medallero) const;
        Lista<int> atCia(const Lista<Atleta>& a);
+       bool elJuegoRecienEmpieza() const;
 
 
 };

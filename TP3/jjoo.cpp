@@ -296,13 +296,13 @@ Lista<Atleta> JJOO::losMasFracasados(const Pais p) const
     {
         if(this->_atletas.iesimo(i).nacionalidad() == p)
         {
-            atletasDelPais.agregar(this->_atletas.iesimo(i));
+            atletasDelPais.agregar(_atletas.iesimo(i));
         }
         i++;
     }
-    while( j<= this->cantDias()) // saco todos los participantes del jjoo
+    while( j<= cantDias()) // saco todos los participantes del jjoo
     {
-        compXdia = this->cronograma(j);
+        compXdia = cronograma(j);
         h = 0;
         while(h< compXdia.longitud())
         {
@@ -330,9 +330,9 @@ Lista<Atleta> JJOO::losMasFracasados(const Pais p) const
     {
         a = listaDeAtletas.iesimo(i);
         j=1;
-        while( j<= this->cantDias())
+        while( j<= cantDias())
         {
-            compXdia = this->cronograma(j);
+            compXdia = cronograma(j);
             h = 0;
             while(h< compXdia.longitud())
             {
@@ -346,6 +346,15 @@ Lista<Atleta> JJOO::losMasFracasados(const Pais p) const
         j++;
         }
         i++;
+    }
+    if(elJuegoRecienEmpieza())
+    {
+        i=0;
+        while(i<listaDeAtletas.longitud())
+        {
+            participaronMuchoYNoGanaronNada.agregar(listaDeAtletas.iesimo(i));
+            i++;
+        }
     }
     listAtletaYrepeticiones= Lista<pair<Atleta,int> >();
     i=0;
@@ -404,7 +413,7 @@ void JJOO::liuSong(const Atleta& a, const Pais p)
     while( j< this->_competenciasPorDia.longitud())
         {
             compXdia = Lista<Competencia>();
-            compXdia = this->_competenciasPorDia.iesimo(j);
+            compXdia = _competenciasPorDia.iesimo(j);
             h = 0;
             while(h< compXdia.longitud())
             {
@@ -432,22 +441,22 @@ void JJOO::liuSong(const Atleta& a, const Pais p)
                         }
                         compConLiuCambiada.finalizar(losDelRanking,listaAtletaDop); // LA FINALIZO
                     }
-                    compXdiaNuevo.agregar(compConLiuCambiada); // AGREGO MI COMPETENCIA CON LIU CAMBIADA PARA IR INSERTANDO ORDENADAMENTE
+                    compXdiaNuevo.agregarAtras(compConLiuCambiada); // AGREGO MI COMPETENCIA CON LIU CAMBIADA PARA IR INSERTANDO ORDENADAMENTE
                 }
                 else
                 {
-                    compXdiaNuevo.agregar(comp); // COMO NO ESTA LIU INSERTO LA COMPETENCIA COMO ESTABA SIN CAMBIAR
+                    compXdiaNuevo.agregarAtras(comp); // COMO NO ESTA LIU INSERTO LA COMPETENCIA COMO ESTABA SIN CAMBIAR
                 }
                 h++;
             }
-            compXdiaNuevo.darVuelta(); // DOY VUELTA PARA MANTENER ORDEN ORIGINAL
-        todasLasCompetencias.agregar(compXdiaNuevo); // AGREGO AL LISTAS DE LISTAS
+            //compXdiaNuevo.darVuelta(); // DOY VUELTA PARA MANTENER ORDEN ORIGINAL
+        todasLasCompetencias.agregarAtras(compXdiaNuevo); // AGREGO AL LISTAS DE LISTAS
         compXdiaNuevo = Lista<Competencia>();
         j++;
         }
-this->_competenciasPorDia = Lista<Lista<Competencia> >();
-todasLasCompetencias.darVuelta();
-this->_competenciasPorDia = todasLasCompetencias;
+_competenciasPorDia = Lista<Lista<Competencia> >();
+//todasLasCompetencias.darVuelta();
+_competenciasPorDia = todasLasCompetencias;
 }
 
 Atleta JJOO::stevenBradbury() const
@@ -938,6 +947,27 @@ Lista<Atleta>JJOO::AtletaMasRepetidoEnTupla(Lista<pair<Atleta,int> >& a) const
         }
     }
     return listaDeAtletas;
+}
+
+bool JJOO::elJuegoRecienEmpieza() const
+{
+    int i=1;
+    bool res = true;
+    while(i<= cantDias())
+    {
+        Lista<Competencia> comp = cronograma(i);
+        int j=0;
+        while(j<comp.longitud())
+        {
+            if(comp.iesimo(j).finalizada())
+            {
+                res = false;
+            }
+            j++;
+        }
+        i++;
+    }
+    return res;
 }
 
 //---------------------Auxiliar medallero
