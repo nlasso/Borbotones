@@ -76,7 +76,7 @@ bool Competencia::leDioPositivo(const Atleta& a) const
     int i = 0;
 
     while(i < _controlAntidoping.longitud()){
-        if(a.ciaNumber() == _controlAntidoping.iesimo(i).first){ //consultar si tenemos que poner el this aca o no!!!!
+        if(a.ciaNumber() == _controlAntidoping.iesimo(i).first){
             res = _controlAntidoping.iesimo(i).second;
             i = _controlAntidoping.longitud() + 1;
         }
@@ -202,11 +202,11 @@ bool Competencia::operator==(const Competencia& c) const
 
 void Competencia::mostrar(std::ostream& os) const
 {
-    string cat = this->categoria().first;
+    string cat = categoria().first;
     string sex = "";
     string final = "";
 
-    if (this->categoria().second == Femenino){
+    if (categoria().second == Femenino){
         sex = "Femenino";
     }else{
         sex = "Masculino";
@@ -322,11 +322,11 @@ void Competencia::cargar (std::istream& is)
     is >> b; // Agarro el '(' inicial del atleta
 
     Atleta atl;
-
+    _participantes = Lista<Atleta>();
     while(b == '('){
         atl = Atleta();
         atl.cargar(is);
-        _participantes.agregar(atl);
+        _participantes.agregarAtras(atl);
         is >> b; // Saco el ')'
         is >> b; // Saco el ','
         if(b == ','){
@@ -334,12 +334,12 @@ void Competencia::cargar (std::istream& is)
         }
     }
 
-    _participantes.darVuelta();
+    //_participantes.darVuelta();
 
     is >> b; // Saco el '['
 
     int ciaNum = 0;
-
+    _ranking = Lista<int>();
     while(b != ']'){
 
         if(is.peek() != ']'){
@@ -360,7 +360,7 @@ void Competencia::cargar (std::istream& is)
     string resultDop = "";
 
     is >> b; // Saco el '('
-
+    _controlAntidoping = Lista<pair<int,bool> >();
     while( b == '(')
        {
             is >> dop.first;
@@ -373,7 +373,7 @@ void Competencia::cargar (std::istream& is)
             }else{
                 dop.second = false;
             }
-            _controlAntidoping.agregar(dop);
+            _controlAntidoping.agregarAtras(dop);
 
             is >> b; // saco ')'
             is >> b; // saco ',' o ']'
